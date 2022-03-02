@@ -56,16 +56,16 @@ To investigate the factors involved in determining correlations between studies,
 
 PopHuman stuff: pi and ... [@Casillas2018-nk]
 
+![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png)
+
 ## Gene Ontology enrichment
 
 # Results
 
 ![Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction](figures/corr_plot.png)
 
-\newpage
 ![Density plot ofstandard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/sd_dist.png)
 
-\newpage
 ![Standard deviation correlation PCoA](figures/sd_PCoA_plot.png)
 
 
