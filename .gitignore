@@ -38,3 +38,4 @@ vignettes/*.pdf
 # R Environment Variables
 .Renviron
 .vscode/tasks.json
+out/main.pdf
