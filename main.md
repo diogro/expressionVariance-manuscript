@@ -2,8 +2,8 @@
 title: The landscape of gene expression variation in human populations
 bibliography: [./references.bib]
 csl: [./evolution.csl]
-# mainfont: Skolar PE TEST Regular
-# sansfont: Skolar Sans PE TEST
+mainfont: Skolar PE TEST Regular
+sansfont: Skolar Sans PE TEST
 mainfontoptions:
 - Numbers=Lowercase
 - Numbers=Proportional
@@ -19,7 +19,7 @@ link-citations: true
 
 Gene expression variation drives phenotypic difference.
 
-Structure of genetic variation can affect .
+Structure of genetic variation can affect phenotypes (and fitness). Gene are expected to differ in their gene expression variance due to several factors: genetic variation, selection, GxE interactions, robustness of gene expression regulation... Can we expect that the pattern of genetic variation across populations to be similar? Which genes are expected to change more or less? Which genes are expected to be more or less variable?
 
 Here we use public gene expression data sets to evaluate how the differences in gene expression variation is structures across several independent studies. We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable. We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance. 
 
@@ -42,7 +42,7 @@ Filtering by min cpm and mean cpm. Variance stabilizing transformation from DESe
 
 ## Gene connectivity
 
-To estimate the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes. To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression. We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%. In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene. So, for each study we have a measure of the average correlation of each gene with every other gene. The average connectivity for each gene is the average across all studies in which that gene is expressed.
+As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes. To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression. We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%. In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene. So, for each study we have a measure of the average correlation of each gene with every other gene. The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
 ## Variance correlation
 
