@@ -52,22 +52,29 @@ PCoA of studies using the Spearman correlation matrix.
 
 To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
 
-## Gene level statistics
-
-PopHuman stuff: pi and ... [@Casillas2018-nk]
-
-![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png)
-
 ## Gene Ontology enrichment
 
 # Results
 
-![Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction](figures/corr_plot.png)
+## Standard deviations across studies
 
-![Density plot ofstandard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/sd_dist.png)
+![Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/sd_dist.png){ width=50% }
 
-![Standard deviation correlation PCoA](figures/sd_PCoA_plot.png)
+## Correlation between variation across studies
 
+![Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction](figures/corr_plot.png){ width=50% }
+
+![Standard deviation correlation PCoA](figures/sd_PCoA_plot.png){ width=50% }
+
+# GO enrichment
+
+![Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5% quantiles of the gene variation rank](figures/local_go_lowerUpper.png){ width=50% }
+
+## Gene level statistics
+
+PopHuman stuff: pi and ... [@Casillas2018-nk]
+
+![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png){ width=50% }
 
 \newpage
 
