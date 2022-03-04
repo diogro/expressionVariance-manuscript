@@ -1,2 +1,8 @@
 all:
-	pandoc main.md --bibliography references.bib --citeproc -o out/main.pdf --pdf-engine=xelatex
+	pandoc main.md -s --bibliography references.bib --biblatex -o main.tex --pdf-engine=xelatex
+	xelatex main
+	biber main
+	xelatex main
+	xelatex main
+	mv main.pdf out/
+	ls main* | grep -v main.md | xargs rm

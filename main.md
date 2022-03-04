@@ -2,6 +2,9 @@
 title: The landscape of gene expression variation in human populations
 bibliography: [./references.bib]
 csl: [./evolution.csl]
+header-includes:
+- \usepackage[backref=true]{biblatex}
+- \DefineBibliographyStrings{english}{ backrefpage = {page}, backrefpages = {pages}}
 mainfont: Skolar PE TEST Regular
 sansfont: Skolar Sans PE TEST
 mainfontoptions:
@@ -56,7 +59,7 @@ To investigate the factors involved in determining correlations between studies,
 
 # Results
 
-## Standard deviations across studies
+![Violin plot showing the relationship between SD rank and mean pi value for genes](figures/pi.png)
 
 ![Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/sd_dist.png){ width=50% }
 
