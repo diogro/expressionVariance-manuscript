@@ -39,3 +39,4 @@ vignettes/*.pdf
 .Renviron
 .vscode/tasks.json
 out/main.pdf
+.vscode/settings.json
