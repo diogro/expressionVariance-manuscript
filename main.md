@@ -20,7 +20,9 @@ link-citations: true
 
 # Intro
 
-Gene expression variation drives phenotypic difference.
+Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations. In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance. However, gene expression variation can be directly involved in determining fitness [@Wang2011-ts], and the relation between gene expression variation can be a powerful indicator of gene environment interactions and disease[@Lea2019-pq]. Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
+
+While mean gene expression levels are the main target of analysis, differences in the variation of gene expression can also be  relevant to fitness [@Wang2011-ts]. 
 
 Structure of genetic variation can affect phenotypes (and fitness). Gene are expected to differ in their gene expression variance due to several factors: genetic variation, selection, GxE interactions, robustness of gene expression regulation... Can we expect that the pattern of genetic variation across populations to be similar? Which genes are expected to change more or less? Which genes are expected to be more or less variable?
 
@@ -41,7 +43,7 @@ We use a standardized pipeline to measure gene expression variation while removi
 
 Case-control studies were filtered to keep only control samples. 
 
-Filtering by min cpm and mean cpm. Variance stabilizing transformation from DESeq2 [@Love2014-mp]. Fixed effects correction. Outlier removal using [@Chen2020-fy]. Gene expression variance is measured in the residuals after fixed effect correction and outlier removal.
+Filtering by min count per million (cpm) reads and mean cpm. Variance stabilizing transformation from DESeq2 [@Love2014-mp]. Fixed effects correction. Outlier removal using [@Chen2020-fy]. Gene expression variance is measured in the residuals after fixed effect correction and outlier removal.
 
 ## Gene connectivity
 
@@ -58,8 +60,6 @@ To investigate the factors involved in determining correlations between studies,
 ## Gene Ontology enrichment
 
 # Results
-
-![Violin plot showing the relationship between SD rank and mean pi value for genes](figures/pi.png)
 
 ![Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/sd_dist.png){ width=50% }
 
