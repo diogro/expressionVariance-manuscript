@@ -27,19 +27,29 @@ link-citations: true
 
 # Intro
 
-Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations. In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance. However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and the relation between gene expression variation can be a powerful indicator of gene environment interactions and disease [@Lea2019-pq]. Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
+__Contrasting average gene expression with gene expression variation__: Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations. In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance. However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and the relation between gene expression variation can be a powerful indicator of gene environment interactions and disease [@Lea2019-pq]. Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
 
-The evolution of trait variation is still a poorly understood phenomena[@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf].
-Structure of gene expression variation can affect higher level phenotypes, and the interaction between stabilizing (variance reducing) selection and pleiotropy can lead to complicated dynamics [@Wagner1997-hw; @Wolf2001-fm]. 
+__Why is gene expression variation important?__: The evolution of trait variation is still a poorly understood phenomena[@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf].
+Structure of gene expression variation can affect higher level phenotypes, and the interaction between stabilizing (variance reducing) selection and pleiotropy can lead to complicated dynamics [@Wagner1997-hw; @Wolf2001-fm]. More on the consequences of gene expression variation...
 
-The final observed gene expression variation is the product of several interacting processes, and genes are expected to differ in their gene expression variance due to several factors . genetic variation, selection, GxE interactions, robustness of gene expression regulation... Can we expect that the pattern of genetic variation across populations to be similar? Which genes are expected to change more or less? Which genes are expected to be more or less variable?
+
+__What processes affect variation__: 
+
+The final observed gene expression variation is the product of several interacting processes, and genes are expected to differ in their gene expression variance due to several factors:
+
+- Directional and stabilizing selection on standing variation
+- Mutational target size
+- GxG interactions
+- GxE interactions
+- Canalization and indirect selection on modifiers
+
+Can we expect that the pattern of genetic variation across populations to be similar? Which genes are expected to change more or less? Which genes are expected to be more or less variable?
+
+In general, if traits are under stabilizing selection, we expect that any deviation from the optimal level of expression is a cost, and gene variants that increase the phenotypic variation should be selected againts. Alternatively, the phenotypic variation can become canalized, that is, robust to genetic variation that would otherwise lead to increased phenotypic variation. Canalization can also refer to robustness in relation to environmental perturbations, and canalized genes are expected to have less variable expression levels across environments.
 
 Evolution of canalization is still up in the air. Can some class of genes be less variable even in the face of genetic and environmental perturbations? 
 
-Here we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples. We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable. We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance. 
-
-
-
+__What we did:__ Here we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples. We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable. We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance. 
 
 # Results
 
