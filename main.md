@@ -5,6 +5,13 @@ csl: [./evolution.csl]
 header-includes:
 - \usepackage[backref=true]{biblatex}
 - \DefineBibliographyStrings{english}{ backrefpage = {page}, backrefpages = {pages}}
+- \usepackage{multicol}
+- \usepackage{setspace}
+- \newcommand{\hideFromPandoc}[1]{#1}
+- \hideFromPandoc{
+    \let\Begin\begin
+    \let\End\end
+    }
 mainfont: Skolar PE TEST Regular
 sansfont: Skolar Sans PE TEST
 mainfontoptions:
@@ -62,6 +69,9 @@ Gene expression variance is reasonably conserved across studies.
 Gene expression variance is predictive of biological function.
 Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression.
 
+\Begin{multicols}{2}
+\footnotesize 
+
 # Methods
 
 ## Data sources
@@ -84,6 +94,8 @@ __Genetic variation__: Pophuman measurements of gene level polimorphism (proxy f
 
 __Gene connectivity__: As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes. To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression. We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%. In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene. So, for each study we have a measure of the average correlation of each gene with every other gene. The average connectivity for each gene is the average across all studies in which that gene is expressed.As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes. To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression. We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%. In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene. So, for each study we have a measure of the average correlation of each gene with every other gene. The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
+\normalsize
+\End{multicols}
 
 # References
 
