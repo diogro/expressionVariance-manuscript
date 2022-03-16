@@ -34,16 +34,11 @@ link-citations: true
 
 # Intro
 
-<!--__Contrasting average gene expression with gene expression variation__:-->
 Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations. In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po]. However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq]. From an evolutionary perpective, the availability of gene expression variation is what allows evolutionary change, and the genetic architecture of gene expression variation can also evolve [@Bruijning2020-bf]. Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
 
-__Why is gene expression variation important?__: The evolution of trait variation is still a poorly understood phenomena[@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf].
-Structure of gene expression variation can affect higher level phenotypes, and the interaction between stabilizing (variance reducing) selection and pleiotropy can lead to complicated dynamics [@Wagner1997-hw; @Wolf2001-fm].
+__What processes affect variation__: The evolution of trait variation is still a poorly understood phenomena[@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf]. From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifuing selection or selective sweeps, would decrease variation. From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variation while selected alleles sweep to fixation, followed by a reduction in variation as these alleles become fixed. This simple picture is complicated by epistatic interactions between loci and other aspects of gentic architecture. For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection. Epistatic variation can also alter the availability of genetic variation in the direction of selection [@Pavlicev2015-up]. These types of interactions can lead to complicated dynamics [@Wagner1997-hw; @Wolf2001-fm].  
+
 Trait variation evolution is in part a consequence of trait evolution. The relative importance of indirect effects due to trait evolution and direct effects due to direct selection on variation are unknown. More on the consequences of gene expression variation...
-
-
-
-__What processes affect variation__: 
 
 The final observed gene expression variation is the product of several interacting processes, and genes are expected to differ in their gene expression variance due to several factors:
 
@@ -55,11 +50,9 @@ The final observed gene expression variation is the product of several interacti
 
 Can we expect that the pattern of genetic variation across populations to be similar? Which genes are expected to change more or less? Which genes are expected to be more or less variable?
 
-In general, if traits are under stabilizing selection, we expect that any deviation from the optimal level of expression is a cost, and gene variants that increase the phenotypic variation should be selected againts. Alternatively, the phenotypic variation can become canalized, that is, robust to genetic variation that would otherwise lead to increased phenotypic variation. Canalization can also refer to robustness in relation to environmental perturbations, and canalized genes are expected to have less variable expression levels across environments.
+__Canalization paragraph__: In general, if traits are under stabilizing selection, we expect that any deviation from the optimal level of expression is a cost, and gene variants that increase the phenotypic variation should be selected againts. Alternatively, the phenotypic variation can become canalized, that is, robust to genetic variation that would otherwise lead to increased phenotypic variation. Canalization can also refer to robustness in relation to environmental perturbations, and canalized genes are expected to have less variable expression levels across environments. The conditions in which we expect canalization to evolve are somewhat limited [@Flatt2005-da; @Hansen2011-es; @Proulx2005-ko]. 
 
-Evolution of canalization is still up in the air. Can some class of genes be less variable even in the face of genetic and environmental perturbations? 
-
-__What we did:__ Here we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples. We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable. We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance. 
+__What we did__: Here we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples. We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable. We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance. 
 
 # Results
 
