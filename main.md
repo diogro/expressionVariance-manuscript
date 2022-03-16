@@ -1,5 +1,11 @@
 ---
-title: The landscape of gene expression variation in human populations
+title: Caracterizing the landscape of gene expression variation in humans
+author:
+-  Scott Wolffffffff
+-  Diogo Melo
+-  Kristina Garske
+-  Luisa Pallares
+-  Julien Ayroles
 bibliography: [./references.bib]
 csl: [./evolution.csl]
 header-includes:
@@ -10,8 +16,7 @@ header-includes:
 - \newcommand{\hideFromPandoc}[1]{#1}
 - \hideFromPandoc{
     \let\Begin\begin
-    \let\End\end
-    }
+    \let\End\end}
 mainfont: Skolar PE TEST Regular
 sansfont: Skolar Sans PE TEST
 mainfontoptions:
@@ -25,12 +30,17 @@ geometry:
 link-citations: true
 ---
 
+# Abstract
+
 # Intro
 
-__Contrasting average gene expression with gene expression variation__: Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations. In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance. However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and the relation between gene expression variation can be a powerful indicator of gene environment interactions and disease [@Lea2019-pq]. Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
+<!--__Contrasting average gene expression with gene expression variation__:-->
+Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations. In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po]. However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq]. From an evolutionary perpective, the availability of gene expression variation is what allows evolutionary change, and the genetic architecture of gene expression variation can also evolve [@Bruijning2020-bf]. Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
 
 __Why is gene expression variation important?__: The evolution of trait variation is still a poorly understood phenomena[@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf].
-Structure of gene expression variation can affect higher level phenotypes, and the interaction between stabilizing (variance reducing) selection and pleiotropy can lead to complicated dynamics [@Wagner1997-hw; @Wolf2001-fm]. More on the consequences of gene expression variation...
+Structure of gene expression variation can affect higher level phenotypes, and the interaction between stabilizing (variance reducing) selection and pleiotropy can lead to complicated dynamics [@Wagner1997-hw; @Wolf2001-fm].
+Trait variation evolution is in part a consequence of trait evolution. The relative importance of indirect effects due to trait evolution and direct effects due to direct selection on variation are unknown. More on the consequences of gene expression variation...
+
 
 
 __What processes affect variation__: 
@@ -76,8 +86,10 @@ PopHuman stuff: pi and ... [@Casillas2018-nk]
 # Discussion
 
 Gene expression variance is reasonably conserved across studies.
-Gene expression variance is predictive of biological function.
+Gene expression variance is predictive of biological function. High and low variance genes are enriched for terms that are consistent with base organismal functions and gene x environment interactions.
 Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression.
+
+Funcional stuff? I'm missing what the functional mapping is giving us.
 
 \Begin{multicols}{2}
 \footnotesize 
