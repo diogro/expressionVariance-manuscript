@@ -45,20 +45,21 @@ Finally, we explored the link between gene expression variation and biological f
 
 # Results
 
-Standard deviations on gene expression was calculated for each dataset using a standard pipeline that normalized the mean-variance relation in count data, controled for batch effects, and removed outliers (see methods for details). Spearman correlations between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr] A). Observed range of gene expression standard deviations (SD) across genes is variable across studies, but can be normalized to that the distributions are comparable ([@fig:sd_corr] C).
+Standard deviations on gene expression was calculated for each dataset using a standard pipeline that normalized the mean-variance relation in count data, controled for batch effects, and removed outliers (see methods for details). Spearman correlations between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr] A). Observed range of gene expression standard deviations (SD) across genes is variable across studies, but can be normalized to that the distributions are comparable ([@fig:sd_corr] C). To rank genes according to their variation across all studies, we use the score of each gene in the first principal component of the Spearman correlation matrix. This generates a ranked list of genes, with most variable genes having highest SD rank. The red and blue thicks at the bottom of @fig:sd_corr A show the position on the distributions of the least and most variable genes in our SD rank. 
 
 ![A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/fig1.png){#fig:sd_corr}
 
-# GO enrichment
+## GO enrichment
 
 ![Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5% quantiles of the gene variation rank](figures/local_go_lowerUpper.png){ width=50% }
 
 ## Gene level statistics
+
 Gene-centric statistics are essential in establishing a complete picture of the forces acting upon a given gene and the subsequent transcriptional variation [@Casillas2018-nk]. Here, we show that the gene expression variation is influenced by the presence of a number of factors at the gene level, including the relative nucleotide diversity and connectivity.
 
 We should add $d_{XY}$
 
-Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes. The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\Theta$.
+Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes. The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\Theta$.
 
 
 ![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png){ width=50% }
