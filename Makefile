@@ -1,5 +1,5 @@
 all:
-	pandoc main.md -s --bibliography references.bib --biblatex -o main.tex --pdf-engine=xelatex
+	pandoc main.md -s --filter pandoc-crossref --bibliography references.bib --biblatex -o main.tex --pdf-engine=xelatex
 	xelatex main
 	biber main
 	xelatex main

@@ -41,16 +41,13 @@ The evolution of trait variation is still a poorly understood phenomena [@Hansen
 __Canalization paragraph__: In general, if traits are under stabilizing selection, we expect that any deviation from the optimal level of expression is a cost, and gene variants that increase the phenotypic variation should be selected againts. Alternatively, the phenotypic variation can become canalized, that is, robust to genetic variation that would otherwise lead to increased phenotypic variation. Canalization can also refer to robustness in relation to environmental perturbations, and canalized genes are expected to have less variable expression levels across environments. The conditions in which we expect canalization to evolve are somewhat limited [@Flatt2005-da; @Hansen2011-es; @Proulx2005-ko]. 
 
 __What we did__: Here we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples. We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable. We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance. 
+Finally, we explored the link between gene expression variation and biological function by leveraging gene ontology anotations.
 
 # Results
 
-![Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/sd_dist.png){ width=50% }
+Standard deviations on gene expression was calculated for each dataset using a standard pipeline that normalized the mean-variance relation in count data, controled for batch effects, and removed outliers (see methods for details). Spearman correlations between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr] A). Observed range of gene expression standard deviations (SD) across genes is variable across studies, but can be normalized to that the distributions are comparable ([@fig:sd_corr] C).
 
-## Correlation between variation across studies
-
-![Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction](figures/corr_plot.png){ width=50% }
-
-![Standard deviation correlation PCoA](figures/sd_PCoA_plot.png){ width=50% }
+![A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/fig1.png){#fig:sd_corr}
 
 # GO enrichment
 
@@ -89,7 +86,7 @@ We selected 60 studies with large sample sizes from public gene expression repos
 
 We use a standardized pipeline to measure gene expression variation while removing extraneous sources of variation. Case-control studies were filtered to keep only control samples. 
 
-For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean 5 cpm reads. To account for the mean variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp]. Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed effect model.Outlier individuals in the residual distribution were removed using a robust PCA approach of automatic outlier detection [@Chen2020-fy]. Gene expression standard deviation is measured in the residuals after fixed effect correction and outlier removal.
+For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean 5 cpm reads. To account for the mean variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp]. Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed effect model. Outlier individuals in the residual distribution were removed using a robust PCA approach of automatic outlier detection [@Chen2020-fy]. Gene expression standard deviation is measured in the residuals after fixed effect correction and outlier removal.
 
 ## Variance correlation
 
