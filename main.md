@@ -49,7 +49,7 @@ Gene expression standard deviations (SD) were calculated for each dataset using 
 
 ![A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (blue) and lowest (red).](figures/fig1.png){#fig:sd_corr}
 
-![Correlation modeling.]((figures/correlationModeling.png)) {#fig:corr_model width=75%}
+![Correlation modeling.](figures/correlationModeling.png){#fig:corr_model width=75%}
 
 ## GO enrichment
 
