@@ -6,3 +6,5 @@ all:
 	xelatex main
 	mv main.pdf out/
 	ls main* | grep -v main.md | xargs rm
+clean:
+	ls main* | grep -v main.md | xargs rm
