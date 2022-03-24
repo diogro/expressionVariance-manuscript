@@ -41,3 +41,5 @@ vignettes/*.pdf
 out/main.pdf
 .vscode/settings.json
 .DS_Store
+
+main.*
