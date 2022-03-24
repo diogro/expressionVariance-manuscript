@@ -76,6 +76,9 @@ Nucleotide diversity ($\pi$), the average pairwise number of differences per sit
 
 Gene expression variance is reasonably conserved across studies.
 Gene expression variance is predictive of biological function. High and low variance genes are enriched for terms that are consistent with base organismal functions and gene x environment interactions.
+How do different GO terms differ in their underlaying variation?
+Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
+Tissue differences in gene expression variance are an unexplored field.
 Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression.
 
 Funcional stuff? I'm missing what the functional mapping is giving us.
