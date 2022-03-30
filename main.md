@@ -61,14 +61,17 @@ We explore the relation between variation and funcion by using the tails of our 
 
 ## Gene level statistics
 
-Gene-centric statistics are essential in establishing a complete picture of the forces acting upon a given gene and the subsequent transcriptional variation [@Casillas2018-nk]. Here, we show that the gene expression variation is influenced by the presence of a number of factors at the gene level, including the relative nucleotide diversity and connectivity.
+We use populational and evolutionary gene-level statistics to link processes that potentially influence variation in gene expression to the observed variation rank. We focus on 3 gene-level measures: nucleotide diversity, (substitutions?), and gene expression connectivity. Diversity is 
+used as a proxy for cis regulation sites, and we expect variation to increase with diversity. Connectivity, a proxy for regulatory interactions with other genes, in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability. Finally, $d_{XY}$.... All of these patterns can be seen in [@fig:gene_stats] and are consistend with our expectations. We also use linear models to measure the assocition between rank and these statistics while accounting for the effect of mean expression. The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
+
 
 We should add $d_{XY}$
 
-Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes. The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\Theta$.
+![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png){#fig:gene_stats width=50% }
 
+## Disease stuff??
 
-![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png){ width=50% }
+Scott? I don´t remember what was the final shape of this.
 
 \newpage
 
@@ -104,7 +107,7 @@ We assessed the similarity in gene expression variation across studies by using 
 
 ## Gene level statistics
 
-__Genetic variation__: Genetic variation measures were obtained from the PopHuman project, which provides a comprehensive set of genomic information for human populations derived from the 1000 Genomes Project. Gene level metrics were used when available. If only window based metrics are available, we assembled gene level information from 5kb window tracks where each window that overlaps with a given gene was assigned to the gene and the mean metric value is reported. In parallel, we use the PopHumanScan dataset, which expands PopHuman by compiling and annotating regions under selection. Similarly, we used gene level information when possible, and for tracks with only window based metrics, gene level information was assembled from the 10kb windows using the same assignment method described above.
+__Genetic variation__: Genetic variation measures were obtained from the PopHuman project, which provides a comprehensive set of genomic information for human populations derived from the 1000 Genomes Project. Gene level metrics were used when available. If only window based metrics are available, we assembled gene level information from 5kb window tracks where each window that overlaps with a given gene was assigned to the gene and the mean metric value is reported. In parallel, we use the PopHumanScan dataset, which expands PopHuman by compiling and annotating regions under selection. Similarly, we used gene level information when possible, and for tracks with only window based metrics, gene level information was assembled from the 10kb windows using the same assignment method described above. Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes. The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\Theta$.
 
 __Gene connectivity__: As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes. To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression. We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%. In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene. So, for each study we have a measure of the average correlation of each gene with every other gene. The average connectivity for each gene is the average across all studies in which that gene is expressed.As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes. To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression. We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%. In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene. So, for each study we have a measure of the average correlation of each gene with every other gene. The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
