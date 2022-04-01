@@ -126,9 +126,12 @@ However, the largest driver of differences across studies was idiosyncratic diff
 bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variation.
 Differences in variation are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variation also carry information about tissue specific patterns.
 
-
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variation across studies, with high correlations between gene expression variation cross most studies (75% of correlations are between 0.45 and 0.9).
-Leveraging this similarity between gene expression variation across studies, we used a standard multivariate strategy to create a single rank of expression variation, which allow us to order almost 13k genes according to their gene expression variation.
+Leveraging this similarity between gene expression variation across studies, we used a standard multivariate strategy to create a single rank of expression variation, which allowed us to order almost 13k genes according to their gene expression variation.
+This rank is associated with within gene genetic variation, with more polimorphic genes being more variable.
+Conversely, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
+
+Lines of evidence point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent. Likewise, constrained genes, with high connectivity, also less variable. Furthermore, this ordering is linked to function and interacting with the environment, suggesting a role for disruptive selection.
 
 
 
