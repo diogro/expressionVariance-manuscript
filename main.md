@@ -120,16 +120,16 @@ Scott? I don´t remember what was the final shape of this.
 # Discussion
 
 Gene expression variation is a largely unexplored aspect of molecular phenotypes.
-By using large publicly available data sets, we were able to show that gene expression variance is reasonably conserved across studies.
-Differences in gene expression variation were driven by technical aspects of gene expression measurement, with data derived from large consortium showing more similar patters on variation across genes; and to tissue, with studies using the same tissues also showing higher similarities.
+By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
+Differences in gene expression variation were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variation across genes; and to tissue, with studies using the same tissues also showing higher similarities.
 However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e.
 bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variation.
 Differences in variation are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variation also carry information about tissue specific patterns.
 
-While these observed differences are notable, we also find a broadly similar pattern of gene expression variation across studies, with high correlations between gene expression variation cross most studies (75% of correlations are between 0.45 and 0.9).
-Leveraging this similarity between gene expression variation across studies, we used a standard multivariate strategy to create a single rank of expression variation, which allowed us to order almost 13k genes according to their gene expression variation.
+While these observed differences are notable, we also find a broadly similar pattern of gene expression variation across studies, with high correlations between gene expression variation across most studies (75% of correlations are between 0.45 and 0.9).
+Leveraging this similarity between gene expression variation, we used a standard multivariate strategy to create a single rank of expression variation, which allowed us to order almost 13k genes according to their expression variation.
 This rank is associated with within gene genetic variation, with more polimorphic genes being more variable.
-Conversely, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
+Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
 Lines of evidence point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent. Likewise, constrained genes, with high connectivity, also less variable. Furthermore, this ordering is linked to function and interacting with the environment, suggesting a role for disruptive selection.
 
