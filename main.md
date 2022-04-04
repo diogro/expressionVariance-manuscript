@@ -134,14 +134,15 @@ Furthermore, genes with high connectivity, those with higher levels of gene expr
 While indirect, all these patterns point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. These same genes are also expected to be under strong purigying selection and show low levels of substitutions and polymorphics, which we also observe. Likewise, genes whose function is contrained by miriad interactions with several other genes, those with high connectivity, also less variable. Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
 
 
-__Drafts:__ Gene expression variance is predictive of biological function.
-High and low variance genes are enriched for terms that are consistent with base organismal functions and gene x environment interactions.
-How do different GO terms differ in their underlying variation?
-Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
-Tissue differences in gene expression variance are an unexplored field.
-Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression.
+__Drafts:__ 
 
-Funcional stuff? I'm missing what the functional mapping is giving us.
+- Gene expression variance is predictive of biological function.
+- High and low variance genes are enriched for terms that are consistent with base organismal functions and gene x environment interactions.
+- How do different GO terms differ in their underlying variation?
+- Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
+- Tissue differences in gene expression variance are an unexplored field.
+- Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression. 
+- Funcional stuff? I'm missing what the functional mapping is giving us.
 
 \Begin{multicols}{2}
 \footnotesize 
@@ -165,7 +166,7 @@ For each study, we filtered genes that did not achieve a minimum of 1 count per 
 To account for the mean variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
 Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed effect model.
 Outlier individuals in the residual distribution were removed using a robust PCA approach of automatic outlier detection [@Chen2020-fy].
-Gene expression standard deviation is measured in the residuals after fixed effect correction and outlier removal.
+Gene expression standard deviation is measured in the residuals after fixed effect correction and outlier removal. Code for reproducing all analysis is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var)
 
 ## Variance correlation
 
