@@ -6,6 +6,8 @@ author:
 -  Kristina Garske
 -  Luisa Pallares
 -  Julien Ayroles
+classoption:
+- twocolumn
 bibliography: [./references.bib]
 csl: [./evolution.csl]
 header-includes:
@@ -14,6 +16,9 @@ header-includes:
 - \usepackage{multicol}
 - \usepackage{setspace}
 - \usepackage{float}
+- \usepackage{afterpage}
+- \usepackage{stfloats}
+- \usepackage{graphicx}
 - \newcommand{\hideFromPandoc}[1]{#1}
 - \hideFromPandoc{
     \let\Begin\begin
@@ -33,7 +38,6 @@ link-citations: true
 
 # Abstract
 
-\Begin{multicols}{2}
 # Intro
 
 Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations.
@@ -69,42 +73,46 @@ Finally, we explored the link between gene expression variation and biological f
 
 Gene expression standard deviations (SD) were calculated for each data set using a single pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
 Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A).
-A principal coordinate analysis using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but gTEX and TCGA studies are clustered among themselves and close together.
+A principal coordinate analysis using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together.
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail bellow.
 Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable ([@fig:sd_corr]C).
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
 To create this rank, we use the score of each gene in the first principal component of the Spearman correlation matrix.
 This generates a ranked list of genes, with most variable genes having highest rank.
 The red and blue ticks at the bottom of [@fig:sd_corr]C show the positions on the standard deviation distributions of the least and most variable genes in our variation rank.
-
-\begin{figure*}[!hb]
+<!-- \pagebreak -->
+\begin{figure*}[b!]
     \centering
-    \includegraphics{figures/fig1.png}
+     \includegraphics[width=\dimexpr 0.9\textwidth]{figures/fig1.png}
     \caption{A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
     \label{fig:sd_corr}
 \end{figure*}
 
 __Modeling across study SD correlations:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
-This modeling ([@fig:corr_model]) shows that comparisons of studimaes within gTEX and TCGA have on average higher values of $\rho_s$, but also that comparing studies across gTEX and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
+This modeling ([@fig:corr_model]) shows that comparisons of studimaes within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
 Since these two sources are independent, this effect on the similarities could be due to the quality of the data coming from these two large projects.
 Tissue also affect the similarity between gene expression SD, with studies using the same tissue being  on average more similar ([@fig:corr_model]B).
-The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from gTEX) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
+The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
 These studies also show up further away in the PCoA plot in [@fig:sd_corr]B.
-
-\begin{figure*}[!hb]
+\
+\begin{figure*}[h!]
     \centering
-    \includegraphics{figures/correlationModeling.png}
-    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in \ref{fig:sd_corr}A. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from gTEX) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the \"Other\" category (non gTEX and TCGA) tend to be lower, while comparison involving gTEX and TCGA are higher.}
+    \includegraphics[width=\linewidth]{figures/correlationModeling.png}
+    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in \ref{fig:sd_corr}A. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the \"Other\" category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.}
     \label{fig:corr_model}
 \end{figure*}
 
+\pagebreak
 ## Gene Ontology enrichment
-
 We explore the relation between variation and function by using the tails of our variance rank to perform a Gene Ontology (GO) enrichment analysis.
 Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left), and  enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right).
 This suggests clear influence of selection and gene by environment interactions in the determination of gene expression variance.
-
-![Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5% quantiles of the gene variation rank](figures/local_go_lowerUpper.png){#fig:go_tails width=75% }
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/local_go_lowerUpper.png}
+    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variation rank}
+    \label{fig:go_tails}
+\end{figure}
 
 ## Gene level statistics
 
@@ -118,16 +126,17 @@ All of these patterns can be seen in [@fig:gene_stats] and are consistent with o
 We also use linear models to measure the association between rank and these statistics while accounting for the effect of mean expression.
 The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
 
-
+\begin{figure}
+    \centering
+    \includegraphics[width=\linewidth]{figures/pi.png}
+    \caption{Violin plot showing the relationship between SD rank and mean value for genes}
+    \label{fig:gene_stats}
+\end{figure}
 We should add $d_{XY}$
-
-![Violin plot showing the relationship between SD rank and mean π value for genes](figures/pi.png){#fig:gene_stats width=50% }
 
 ## Disease stuff??
 
 Scott? I don´t remember what was the final shape of this.
-
-\newpage
 
 # Discussion
 
@@ -165,7 +174,7 @@ __Drafts:__
 
 We selected 60 studies with large sample sizes from public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn].
 We use studies to refer to independent data sets, which could have been generated by the same consortium.
-For example, the gTEX data are separated by tissue, and we refer to each tissue as a separate study.
+For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 
 
 ## Data processing pipeline
@@ -215,7 +224,7 @@ So, for each study we have a measure of the average correlation of each gene wit
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
 \normalsize
-\End{multicols}
+
 
 # References
 
