@@ -134,9 +134,7 @@ Furthermore, genes with high connectivity, those with higher levels of gene expr
 While indirect, all these patterns point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. These same genes are also expected to be under strong purigying selection and show low levels of substitutions and polymorphics, which we also observe. Likewise, genes whose function is contrained by miriad interactions with several other genes, those with high connectivity, also less variable. Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
 
 
-
-
-Gene expression variance is predictive of biological function.
+__Drafts:__ Gene expression variance is predictive of biological function.
 High and low variance genes are enriched for terms that are consistent with base organismal functions and gene x environment interactions.
 How do different GO terms differ in their underlying variation?
 Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
