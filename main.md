@@ -131,7 +131,7 @@ Leveraging this similarity between gene expression variation, we used a standard
 This rank is associated with within gene genetic variation, with more polimorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
-Lines of evidence point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent. Likewise, constrained genes, with high connectivity, also less variable. Furthermore, this ordering is linked to function and interacting with the environment, suggesting a role for disruptive selection.
+While indirect, all these patterns point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. These same genes are also expected to be under strong purigying selection and show low levels of substitutions and polymorphics, which we also observe. Likewise, genes whose function is contrained by miriad interactions with several other genes, those with high connectivity, also less variable. Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
 
 
 
