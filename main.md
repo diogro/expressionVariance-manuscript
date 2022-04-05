@@ -74,7 +74,7 @@ Finally, we explored the link between gene expression variation and biological f
  
 \begin{figure*}[t!]
     \centering
-     \includegraphics[width=\dimexpr 0.9\textwidth]{figures/fig1.png}
+     \includegraphics[width=\dimexpr 1\textwidth]{figures/fig1.png}
     \caption{A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
     \label{fig:sd_corr}
 \end{figure*}
