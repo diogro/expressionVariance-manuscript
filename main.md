@@ -207,10 +207,16 @@ This suggests clear influence of selection and gene by environment interactions 
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/go_skewness.png}
-    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in \ref{fig:sd_corr}A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the ``Other''  category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.}
+    \caption{Distributions of decile ranks of second level GO terms. Each plot shows the count of genes in each decile of the rank. These GO terms are filtered for gene counts greater than 100 and sorted by the skewness of the distribution. The top panel shows the top 5 and the bottom panel shows the bottom 5.}
     \label{fig:go_skewness}
 \end{figure*}
 
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/skew_entropy.png}
+    \caption{Relationship between skew and entropy of rank decile distributions for each GO term. The GO terms are filtered for gene counts greater than 100 as in fig. \ref{fig:go_skewness}.}
+    \label{fig:skew_entropy}
+\end{figure*}
 ## Gene level statistics
 
 We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variation rank.
