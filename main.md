@@ -9,10 +9,10 @@ author:
 classoption:
 - twocolumn
 bibliography: [./references.bib]
-csl: [./evolution.csl]
+csl: [./cse.csl]
 header-includes:
-- \usepackage[backref=true]{biblatex}
-- \DefineBibliographyStrings{english}{ backrefpage = {page}, backrefpages = {pages}}
+- \usepackage[backref=true,style=authoryear]{biblatex}
+- \DefineBibliographyStrings{english}{backrefpage = {page}, backrefpages = {pages}}
 - \usepackage{multicol}
 - \usepackage{setspace}
 - \usepackage{float}
@@ -36,6 +36,94 @@ geometry:
 link-citations: true
 ---
 
+<!-- https://tex.stackexchange.com/questions/536353/biblatex-colors-and-links-only-the-year-not-the-rest-of-the-citation -->
+\makeatletter
+\renewbibmacro*{cite:plabelyear+extradate}{%
+  \iffieldundef{labelyear}{}
+    {\clearfield{labelmonth}% don't want months in citations
+     \clearfield{labelday}% don't want days in citations
+     \clearfield{labelendmonth}% don't want months in citations
+     \clearfield{labelendday}% don't want days in citations
+     \iffieldsequal{labelyear}{labelendyear}% Don't want no-op year ranges
+       {\clearfield{labelendyear}}
+       {}%
+     \iffieldundef{origyear}
+       {}
+       {\printorigdate%
+        \setunit*{\addslash}}%
+     \iffieldundef{related}
+       {}
+       {\iffieldequalstr{relatedtype}{reprintfrom}
+         {\entrydata*{\thefield{related}}{\printlabeldateextra}%
+          \setunit*{\addslash}}
+         {}}%
+     \printlabeldateextra}}
+
+\renewbibmacro*{cite}{%
+  \iffieldequals{fullhash}{\cbx@lasthash}
+   {\setunit{\compcitedelim}%
+    \printtext[bibhyperref]{%
+      \usebibmacro{cite:plabelyear+extradate}}}%
+   {\printtext[bibhyperref]{%
+      \ifnameundef{labelname}
+       {\usebibmacro{cite:noname}%
+         \setunit{\printdelim{nameyeardelim}}%
+         \usebibmacro{cite:plabelyear+extradate}%
+         \savefield{fullhash}{\cbx@lasthash}}
+       {\ifnameundef{shortauthor}
+         {\printnames{labelname}}%
+         {\cbx@apa@ifnamesaved
+           {\printnames{shortauthor}}
+           {\ifnameundef{groupauthor}
+             {\printnames[labelname]{author}}
+             {\printnames[labelname]{groupauthor}}%
+            \addspace\printnames[sabrackets]{shortauthor}}}%
+         \setunit{\printdelim{nameyeardelim}}%
+        \usebibmacro{cite:plabelyear+extradate}%
+        \savefield{fullhash}{\cbx@lasthash}}}}%
+   \setunit{\multicitedelim}}
+
+\renewbibmacro*{textcite}{%
+  \iffieldequals{fullhash}{\cbx@lasthash}
+    {\setunit{\compcitedelim}%
+     \printtext[bibhyperref]{%
+       \usebibmacro{cite:plabelyear+extradate}}}
+    {%
+    \ifbool{cbx:parens}
+      {\bibcloseparen\global\boolfalse{cbx:parens}}
+      {}%
+      \setunit{\compcitedelim}%
+      \ifnameundef{labelname}
+       {\iffieldundef{shorthand}%
+         {\printtext[bibhyperref]{%
+            \usebibmacro{cite:noname}}%
+          \setunit{\ifbool{cbx:np}%
+                   {\printdelim{nameyeardelim}}%
+                   {\global\booltrue{cbx:parens}\addspace\bibopenparen}}%
+          \printtext[bibhyperref]{%
+            \usebibmacro{cite:plabelyear+extradate}}}
+         {\printtext[bibhyperref]{%
+            \usebibmacro{cite:shorthand}}}}
+       {\printtext[bibhyperref]{%
+          \ifnameundef{shortauthor}%
+           {\printnames{labelname}}
+           {\cbx@apa@ifnamesaved
+             {\printnames{shortauthor}}
+             {\ifnameundef{groupauthor}
+               {\printnames[labelname]{author}}
+               {\printnames[labelname]{groupauthor}}}}}%
+        \setunit{\ifbool{cbx:np}
+                  {\printdelim{nameyeardelim}}
+                  {\global\booltrue{cbx:parens}\addspace\bibopenparen}}%
+        \printtext[bibhyperref]{%
+          \ifnameundef{shortauthor}
+           {}
+           {\cbx@apa@ifnamesaved
+             {}
+             {\printnames{shortauthor}\setunit{\printdelim{nameyeardelim}}}}%
+          \usebibmacro{cite:plabelyear+extradate}}%
+        \savefield{fullhash}{\cbx@lasthash}}}}
+\makeatother
 # Abstract
 
 # Intro
@@ -65,7 +153,7 @@ The conditions in which we expect canalization to evolve are somewhat limited [@
 
 
 __What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
-We collected and compared the gene expression variation across several studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
+We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
 We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance.
 Finally, we explored the link between gene expression variation and biological function by leveraging gene ontology annotations.
 
@@ -82,7 +170,7 @@ Finally, we explored the link between gene expression variation and biological f
 Gene expression standard deviations (SD) were calculated for each data set using a single pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
 Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A and B).
 A principal coordinate analysis using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
-This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail bellow.
+This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
 Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
 To create this rank, we use the score of each gene in the first principal component of the Spearman correlation matrix.
@@ -91,9 +179,9 @@ The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on th
 
 
 __Modeling across study SD correlations:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
-This modeling ([@fig:corr_model]) shows that comparisons of studimaes within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
+This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
 Since these two sources are independent, this effect on the similarities could be due to the quality of the data coming from these two large projects.
-Tissue also affect the similarity between gene expression SD, with studies using the same tissue being  on average more similar ([@fig:corr_model]B).
+Tissue also affects the similarity between gene expression SD, with studies using the same tissue being, on average, more similar ([@fig:corr_model]B).
 The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
 These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 
@@ -121,9 +209,22 @@ We also explore the distribution of variation among the genes associated with GO
     \label{fig:go_tails}
 \end{figure}
 
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/go_skewness.png}
+    \caption{Distributions of decile ranks of second level GO terms. Each plot shows the count of genes in each decile of the rank. These GO terms are filtered for gene counts greater than 100 and sorted by the skewness of the distribution. The top panel shows the top 5 and the bottom panel shows the bottom 5.}
+    \label{fig:go_skewness}
+\end{figure*}
+
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/skew_entropy.png}
+    \caption{Relationship between skew and entropy of rank decile distributions for each GO term. The GO terms are filtered for gene counts greater than 100 as in fig. \ref{fig:go_skewness}.}
+    \label{fig:skew_entropy}
+\end{figure*}
 ## Gene level statistics
 
-We use populational and evolutionary gene-level statistics to link processes that potentially influence variation in gene expression to the observed variation rank.
+We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variation rank.
 We focus on 3 gene-level measures: nucleotide diversity, (substitutions?), and gene expression connectivity.
 Diversity is 
 used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
@@ -143,23 +244,25 @@ We should add $d_{XY}$
 
 ## Disease stuff??
 
+Hello
+
 Scott? I don´t remember what was the final shape of this.
 
 # Discussion
 
 Gene expression variation is a largely unexplored aspect of molecular phenotypes.
 By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
-Differences in gene expression variation were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variation across genes; and to tissue, with studies using the same tissues also showing higher similarities.
+Differences in gene expression variation were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variation across genes; and by tissue, with studies using the same tissues also showing higher similarities.
 However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e.
 bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variation.
 Differences in variation are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variation also carry information about tissue specific patterns.
 
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variation across studies, with high correlations between gene expression variation across most studies (75% of correlations are between 0.45 and 0.9).
 Leveraging this similarity between gene expression variation, we used a standard multivariate strategy to create a single rank of expression variation, which allowed us to order almost 13k genes according to their expression variation.
-This rank is associated with within gene genetic variation, with more polimorphic genes being more variable.
+This rank is associated with within gene genetic variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
-While indirect, all these patterns point to a selective strucuturing of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. These same genes are also expected to be under strong purigying selection and show low levels of substitutions and polymorphics, which we also observe. Likewise, genes whose function is contrained by miriad interactions with several other genes, those with high connectivity, also less variable. Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
+While indirect, all these patterns point to a selective structuring of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphism, which we observe. Likewise, genes whose function is contrained by myriad interactions with several other genes, those with high connectivity, also less variable. Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
 
 
 __Drafts:__ 
@@ -170,12 +273,16 @@ __Drafts:__
 - Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
 - Tissue differences in gene expression variance are an unexplored field.
 - Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression. 
-- Funcional stuff? I'm missing what the functional mapping is giving us.
+- Functional stuff? I'm missing what the functional mapping is giving us.
 
 
 \footnotesize 
 
 # Methods
+
+## Code availability
+
+All code for reproducing all analysis and figures is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
 
 ## Data sources
 
@@ -187,14 +294,14 @@ For example, the GTEx data are separated by tissue, and we refer to each tissue 
 ## Data processing pipeline
 
 We use a standardized pipeline to measure gene expression variation while removing extraneous sources of variation.
-Data from Case-control studies was filtered to keep only control samples.
+Data from case-control studies was filtered to keep only control samples.
 
 
 For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean 5 cpm reads.
 To account for the mean variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
 Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed effect model.
 Outlier individuals in the residual distribution were removed using a robust PCA approach of automatic outlier detection [@Chen2020-fy].
-Gene expression standard deviation is measured in the residuals after fixed effect correction and outlier removal. Code for reproducing all analysis is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var)
+Gene expression standard deviation is measured in the residuals after fixed effect correction and outlier removal. 
 
 ## Variance correlation
 
@@ -231,8 +338,6 @@ So, for each study we have a measure of the average correlation of each gene wit
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
 \normalsize
-
-
 # References
 
 
