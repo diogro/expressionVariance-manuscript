@@ -239,6 +239,8 @@ We should add $d_{XY}$
 
 ## Disease stuff??
 
+Hello
+
 Scott? I don´t remember what was the final shape of this.
 
 # Discussion
