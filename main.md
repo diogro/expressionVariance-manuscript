@@ -105,10 +105,15 @@ These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 \end{figure*}
 
 \pagebreak
+
 ## Gene Ontology enrichment
-We explore the relation between variation and function by using the tails of our variance rank to perform a Gene Ontology (GO) enrichment analysis.
+
+We explore the relation between variation and function by using the tails of our variation rank to perform a Gene Ontology (GO) enrichment analysis.
 Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left), and  enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right).
-This suggests clear influence of selection and gene by environment interactions in the determination of gene expression variance.
+This suggests clear influence of selection and gene by environment interactions in the determination of gene expression variation.
+
+We also explore the distribution of variation among the genes associated with GO terms. For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy). Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation. We then count how many genes in each decile has been associated with each term. If variation is not linked to the GO annotations, terms should have an equal proportion of genes in each decile. We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile. Higher entropy is associated with more uniform distribution of genes across deciles. GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented. 
+
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/local_go_lowerUpper.png}
