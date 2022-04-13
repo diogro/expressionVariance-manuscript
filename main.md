@@ -178,8 +178,9 @@ This generates a ranked list of genes, with most variable genes having highest r
 The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable genes in our variation rank.
 
 
-__Modeling across study SD correlations:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
-This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
+__Modeling across study SD correlations:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
+We use study, tissue and study origin as predictors of the pairwise correlations (see Methods).
+This linear model ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
 Since these two sources are independent, this effect on the similarities could be due to the quality of the data coming from these two large projects.
 Tissue also affects the similarity between gene expression SD, with studies using the same tissue being, on average, more similar ([@fig:corr_model]B).
 The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
