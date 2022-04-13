@@ -157,7 +157,7 @@ Finally, we explored the link between gene expression variation and biological f
 \begin{figure*}[t!]
     \centering
      \includegraphics[width=\dimexpr 1\textwidth]{figures/fig1.png}
-    \caption{A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
+    \caption{A. Heatplot of the across study Spearman rank correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variation have higher correlations; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA, with colors ; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
     \label{fig:sd_corr}
 \end{figure*}
 
@@ -172,7 +172,7 @@ This generates a ranked list of genes, with most variable genes having highest r
 The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable genes in our variation rank.
 
 
-__Modeling across study SD correlations:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
+__What drives differences in gene expression variation?:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
 In this mode, we use study, sampled tissue and study origin as predictors of the pairwise correlations (see Methods).
 This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
 Since these two sources are independent, this effect on the similarities could be due to the quality of the data coming from these two large projects.
