@@ -229,12 +229,6 @@ All of these patterns can be seen in [@fig:gene_stats] and are consistent with o
 We also use linear models to measure the association between rank and these statistics while accounting for the effect of mean expression.
 The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figures/pi.png}
-    \caption{Violin plot showing the relationship between SD rank and mean value for genes}
-    \label{fig:gene_stats}
-\end{figure}
 We should add $d_{XY}$
 
 ## Disease stuff??
