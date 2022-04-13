@@ -146,12 +146,6 @@ Furthermore, gene by environment (GxE) interactions can also lead to changes in 
 To what extent these different processes shape gene expression variation is an open question.
 Can we expect the pattern of genetic variation across populations to be similar? Which genes are expected to differ more or less in their variation? Which genes are expected to be more or less variable?
 
-__Canalization paragraph__: In general, if traits are under stabilizing selection, we expect that any deviation from the optimal level of expression is a cost, and gene variants that increase the phenotypic variation should be selected against.
-Alternatively, the phenotypic variation can become canalized, that is, robust to genetic variation that would otherwise lead to increased phenotypic variation.
-Canalization can also refer to robustness in relation to environmental perturbations, and canalized genes are expected to have less variable expression levels across environments.
-The conditions in which we expect canalization to evolve are somewhat limited [@Flatt2005-da; @Hansen2011-es; @Proulx2005-ko].
-
-
 __What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
 We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
 We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance.
