@@ -132,19 +132,19 @@ Molecular phenotypes such as gene expression are a powerful tool for understandi
 In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po].
 However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
 From an evolutionary perspective, the availability of gene expression variation is what allows evolutionary change, and the genetic architecture of gene expression variation can also evolve [@Bruijning2020-bf].
-Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
+Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment. 
+In particular, we lack a clear picture of which genes show more gene expression variation, or even if the pattern of gene expression variation is consistent across populations. 
 
-The evolution of trait variation is still a poorly understood phenomena [@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf].
+Several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
 From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifying selection or selective sweeps, would decrease variation.
 From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variation while selected alleles sweep to fixation, followed by a reduction in variation as these alleles become fixed.
 This simple picture is complicated by epistatic interactions between loci and other aspects of genetic architecture.
 For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
-Epistatic interactions can also alter the distribution of genetic variation across traits, leading to feedback between selection and genetic architecture [@Pavlicev2015-up; @Penna2017-if].
-These types of interactions can lead to complicated dynamics [@Wolf2001-fm].
 The indirect effect of directional selection on variation opens the possibility that the main driver of gene expression variation is not direct selection on variation but indirect effects due to selection on trait means [@Hansen2011-es].
 Furthermore, gene by environment (GxE) interactions can also lead to changes in the observed phenotypic variation of gene expression, further complicating the landscape of variation.
 To what extent these different processes shape gene expression variation is an open question.
-Can we expect the pattern of genetic variation across populations to be similar? Which genes are expected to differ more or less in their variation? Which genes are expected to be more or less variable?
+If consistent selection across populations is the main driver of gene expression variation, we would expect to have consistently more or less variable genes. 
+If idiosyncratic selection patterns and context specific environmental interactions are more important, we could observe large differences in gene expression variation across populations.
 
 __What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
 We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
