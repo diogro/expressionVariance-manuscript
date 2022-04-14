@@ -146,7 +146,11 @@ To what extent these different processes shape gene expression variation is an o
 If consistent selection across populations is the main driver of gene expression variation, we would expect to have consistently more or less variable genes. 
 If idiosyncratic selection patterns and context specific environmental interactions are more important, we could observe large differences in gene expression variation across populations.
 
-Even inside the same individual, gene expression is also variable across tissues. To what extent differences in mean expression translate into differences in expression variation is not clear. Of course, genes that are exclusively expressed in a single cell type or tissue are necessarily more variable in that particular tissue, but differentially expressed genes could also be more variable in a particular context. 
+Even inside the same individual, gene expression is also variable across tissues. 
+To what extent differences in mean expression translate into differences in expression variation is not clear. 
+Of course, genes that are exclusively expressed in a single cell type or tissue are necessarily more variable in that particular tissue, but differentially expressed genes could also be more variable in a particular context. 
+For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue. 
+Alternatively, expression variation across tissues could be highly correlated, and in this example selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
 
 __What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
 We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
