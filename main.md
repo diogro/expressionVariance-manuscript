@@ -1,15 +1,18 @@
 ---
-title: Characterizing the landscape of gene expression variation in humans
+title: "Characterizing the landscape of gene expression variation in humans"
 author:
--  Scott Wolf*
--  Diogo Melo*
--  Kristina Garske
--  Luisa Pallares
--  Julien Ayroles
-classoption:
-- twocolumn
-bibliography: [./references.bib]
-csl: [./cse.csl]
+- Scott Wolf*
+- Diogo Melo*
+- Kristina Garske
+- Luisa Pallares
+- Julien Ayroles
+classoption: twocolumn
+output: pdf_document
+geometry:
+- top=20mm
+- left=25mm
+- right=25mm
+- bottom=20mm
 header-includes:
 - \usepackage[backref=true,style=authoryear]{biblatex}
 - \DefineBibliographyStrings{english}{backrefpage = {page}, backrefpages = {pages}}
@@ -20,20 +23,15 @@ header-includes:
 - \usepackage{stfloats}
 - \usepackage{graphicx}
 - \newcommand{\hideFromPandoc}[1]{#1}
-- \hideFromPandoc{
-    \let\Begin\begin
-    \let\End\end}
+- \hideFromPandoc{ \let\Begin\begin \let\End\end}
+link-citations: yes
 mainfont: Skolar PE TEST Regular
-sansfont: Skolar Sans PE TEST
 mainfontoptions:
 - Numbers=Lowercase
 - Numbers=Proportional
-geometry:
-- top=20mm
-- left=25mm
-- right=25mm
-- bottom=20mm
-link-citations: true
+csl: ./cse.csl
+sansfont: Skolar Sans PE TEST
+bibliography: ./references.bib
 ---
 
 <!-- https://tex.stackexchange.com/questions/536353/biblatex-colors-and-links-only-the-year-not-the-rest-of-the-citation -->
@@ -237,19 +235,25 @@ The strongest effect was of... (stats), followed by ...(stats), and  ... (stats)
 \end{figure}
 We should add $d_{XY}$
 
-## Disease stuff??
+## High-variance genes are associated with active gene regulatory features
 
-Hello
-
-Scott? I don´t remember what was the final shape of this.
+To gain insight into genomic characteristics that are associated with gene expression variation, we assessed the epigenetic landscape of the gene regions surrounding low- vs. high-variance genes. 
+We determined the proportion of the gene regions (gene +/- 250 kb) that fall within a given chromatin state, as defined globally in [Trykna ref]. 
+We then correlated the gene expression variance rank metric with these proportions [figure].
+As expected, given the existence of a mean-variance relationship for gene expression [refs and figure], the higher the gene expression variance metric, the higher the proportion of the surrounding gene region made up of transcribed chromatin states [figure].
+Conversely, the lower the gene expression variance metric, the higher the proportion of the surrounding gene region that is made up of repressed chromatin states [figure]. 
+Surprisingly, the level of gene expression variance was inversely correlated with the proportion of the surrounding gene region made up of enhancer chromatin states, transcription factor binding sites, and open chromatin regions. 
+This might seem counterintuitive, as one could hypothesize that genes that are more highly regulated at the transcriptional level by elements in the surrounding genomic region might exhibit more expression variance due to XX.
+However, gene regulation through enhancers can be highly cell-type-specific, and our variance metric is based upon the correlation between gene expression variance across cell-types (e.g., a high standard deviation in many studies would lead to a high metric for gene expression variance). 
+In line with this, we found that genes that are expressed in a cell-type-specific manner are enriched in the low-expression-variance genes (genes in the lowest 5% of the gene expresssion variance metric are enriched 13.7-fold in cell-type-specific gene expression relative to XX, phypergeom = XX), whereas ubiquitously expressed genes are enriched in the high-expression-variance genes (genes in the highest 5% of the gene expression variance metric are enriched 1.1-fold in ubiquitously expressed genes relative to XX, phypergeom = XX). 
+To demonstrate this further, we determined the tissue-level gene expression variance metric across XX tissues from XX studies (median X studies (range X-X) per tissue) [...]
 
 # Discussion
 
 Gene expression variation is a largely unexplored aspect of molecular phenotypes.
 By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
 Differences in gene expression variation were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variation across genes; and by tissue, with studies using the same tissues also showing higher similarities.
-However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e.
-bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variation.
+However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variation.
 Differences in variation are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variation also carry information about tissue specific patterns.
 
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variation across studies, with high correlations between gene expression variation across most studies (75% of correlations are between 0.45 and 0.9).
@@ -257,7 +261,10 @@ Leveraging this similarity between gene expression variation, we used a standard
 This rank is associated with within gene genetic variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
-While indirect, all these patterns point to a selective structuring of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphism, which we observe. Likewise, genes whose function is contrained by myriad interactions with several other genes, those with high connectivity, also less variable. Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
+While indirect, all these patterns point to a selective structuring of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
+These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphism, which we observe. 
+Likewise, genes whose function is contrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
+Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
 
 
 __Drafts:__ 
