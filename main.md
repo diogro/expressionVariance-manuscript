@@ -130,25 +130,25 @@ Molecular phenotypes such as gene expression are a powerful tool for understandi
 In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po].
 However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
 From an evolutionary perspective, the availability of gene expression variation is what allows evolutionary change, and the genetic architecture of gene expression variation can also evolve [@Bruijning2020-bf].
-Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
+Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment. 
+In particular, we lack a clear picture of which genes show more gene expression variation, or even if the pattern of gene expression variation is consistent across populations. 
 
-The evolution of trait variation is still a poorly understood phenomena [@Hansen2011-es], and several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf].
+Several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
 From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifying selection or selective sweeps, would decrease variation.
 From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variation while selected alleles sweep to fixation, followed by a reduction in variation as these alleles become fixed.
 This simple picture is complicated by epistatic interactions between loci and other aspects of genetic architecture.
 For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
-Epistatic interactions can also alter the distribution of genetic variation across traits, leading to feedback between selection and genetic architecture [@Pavlicev2015-up; @Penna2017-if].
-These types of interactions can lead to complicated dynamics [@Wolf2001-fm].
 The indirect effect of directional selection on variation opens the possibility that the main driver of gene expression variation is not direct selection on variation but indirect effects due to selection on trait means [@Hansen2011-es].
 Furthermore, gene by environment (GxE) interactions can also lead to changes in the observed phenotypic variation of gene expression, further complicating the landscape of variation.
 To what extent these different processes shape gene expression variation is an open question.
-Can we expect the pattern of genetic variation across populations to be similar? Which genes are expected to differ more or less in their variation? Which genes are expected to be more or less variable?
+If consistent selection across populations is the main driver of gene expression variation, we would expect to have consistently more or less variable genes. 
+If idiosyncratic selection patterns and context specific environmental interactions are more important, we could observe large differences in gene expression variation across populations.
 
-__Canalization paragraph__: In general, if traits are under stabilizing selection, we expect that any deviation from the optimal level of expression is a cost, and gene variants that increase the phenotypic variation should be selected against.
-Alternatively, the phenotypic variation can become canalized, that is, robust to genetic variation that would otherwise lead to increased phenotypic variation.
-Canalization can also refer to robustness in relation to environmental perturbations, and canalized genes are expected to have less variable expression levels across environments.
-The conditions in which we expect canalization to evolve are somewhat limited [@Flatt2005-da; @Hansen2011-es; @Proulx2005-ko].
-
+Even within individuals, gene expression is also variable across tissues [@GTEx2017-xb]. 
+To what extent differences in expression level translate to differences in expression variation is not clear.
+Of course, genes that are exclusively expressed in a single cell type or tissue are necessarily more variable in that particular tissue, but differentially expressed genes could also be more variable in a particular context. 
+For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue. 
+Alternatively, expression variation across tissues could be highly correlated, and in this example selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
 
 __What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
 We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
@@ -161,7 +161,7 @@ Finally, we explored the link between gene expression variation and biological f
 \begin{figure*}[t!]
     \centering
      \includegraphics[width=\dimexpr 1\textwidth]{figures/fig1.png}
-    \caption{A. Correlation plot showing the cross study Spearman rank correlation of standard deviations after filtering and batch correction. B. Standard deviation correlation PCoA. C. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
+    \caption{A. Heatplot of the across study Spearman rank correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variation have higher correlations; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA, with colors ; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
     \label{fig:sd_corr}
 \end{figure*}
 
@@ -176,7 +176,8 @@ This generates a ranked list of genes, with most variable genes having highest r
 The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable genes in our variation rank.
 
 
-__Modeling across study SD correlations:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
+__What drives differences in gene expression variation?:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
+In this mode, we use study, sampled tissue and study origin as predictors of the pairwise correlations (see Methods).
 This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
 Since these two sources are independent, this effect on the similarities could be due to the quality of the data coming from these two large projects.
 Tissue also affects the similarity between gene expression SD, with studies using the same tissue being, on average, more similar ([@fig:corr_model]B).
@@ -191,10 +192,15 @@ These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 \end{figure*}
 
 \pagebreak
+
 ## Gene Ontology enrichment
-We explore the relation between variation and function by using the tails of our variance rank to perform a Gene Ontology (GO) enrichment analysis.
+
+We explore the relation between variation and function by using the tails of our variation rank to perform a Gene Ontology (GO) enrichment analysis.
 Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left), and  enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right).
-This suggests clear influence of selection and gene by environment interactions in the determination of gene expression variance.
+This suggests clear influence of selection and gene by environment interactions in the determination of gene expression variation.
+
+We also explore the distribution of variation among the genes associated with GO terms. For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy). Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation. We then count how many genes in each decile has been associated with each term. If variation is not linked to the GO annotations, terms should have an equal proportion of genes in each decile. We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile. Higher entropy is associated with more uniform distribution of genes across deciles. GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented. 
+
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/local_go_lowerUpper.png}
@@ -227,12 +233,6 @@ All of these patterns can be seen in [@fig:gene_stats] and are consistent with o
 We also use linear models to measure the association between rank and these statistics while accounting for the effect of mean expression.
 The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
 
-\begin{figure}
-    \centering
-    \includegraphics[width=\linewidth]{figures/pi.png}
-    \caption{Violin plot showing the relationship between SD rank and mean value for genes}
-    \label{fig:gene_stats}
-\end{figure}
 We should add $d_{XY}$
 
 ## High-variance genes are associated with active gene regulatory features
