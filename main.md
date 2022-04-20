@@ -210,7 +210,7 @@ We also explore the distribution of variation among the genes associated with GO
 
 \begin{figure*}[t!]
     \centering
-    \includegraphics[width=\linewidth]{figures/go_skewness.png}
+    \includegraphics[width=\linewidth]{figures/GOterm_decile_barplot.png}
     \caption{Distributions of decile ranks of second level GO terms. Each plot shows the count of genes in each decile of the rank. These GO terms are filtered for gene counts greater than 100 and sorted by the skewness of the distribution. The top panel shows the top 5 and the bottom panel shows the bottom 5.}
     \label{fig:go_skewness}
 \end{figure*}
