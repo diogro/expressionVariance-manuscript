@@ -137,7 +137,7 @@ Several competing forces act to shape gene expression variation [@Houle1998-mj; 
 From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifying selection or selective sweeps, would decrease variation.
 From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variation while selected alleles sweep to fixation, followed by a reduction in variation as these alleles become fixed.
 This simple picture is complicated by epistatic interactions between loci and other aspects of genetic architecture.
-For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1996-hw; @Pavlicev2011-xm].
+For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
 The indirect effect of directional selection on variation opens the possibility that the main driver of gene expression variation is not direct selection on variation but indirect effects due to selection on trait means [@Hansen2011-es].
 Furthermore, gene by environment (GxE) interactions can also lead to changes in the observed phenotypic variation of gene expression, further complicating the landscape of variation.
 To what extent these different processes shape gene expression variation is an open question.
@@ -167,7 +167,7 @@ Finally, we explored the link between gene expression variation and biological f
 
 Gene expression standard deviations (SD) were calculated for each data set using a single pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
 Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A and B).
-A principal coordinate analysis using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
+A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
 Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
@@ -183,8 +183,9 @@ The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on th
 \end{figure*}
 
 __What drives differences in gene expression variation?:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
-In this mode, we use study, sampled tissue and study origin as predictors of the pairwise correlations (see Methods).
-This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a similar increase in the average correlation ([@fig:corr_model]C).
+In this mode, we use study, sampled tissue, and study origin as predictors of the pairwise correlations (see Methods).
+This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation ([@fig:corr_model]C).
+Correlation involving studies that are not from TCGA and GTEx (marked as "Other") are on average lower ([@fig:corr_model]C).
 Since these two sources are independent, this effect on the similarities could be due to the quality of the data coming from these two large projects.
 Tissue also affects the similarity between gene expression SD, with studies using the same tissue being, on average, more similar ([@fig:corr_model]B).
 The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
@@ -279,12 +280,11 @@ Furthermore, genes involved with direct interaction to the environment, which mu
 __Drafts:__ 
 
 - Gene expression variance is predictive of biological function.
-- High and low variance genes are enriched for terms that are consistent with base organismal functions and gene x environment interactions.
+- High and low variance genes are enriched for terms that are consistent with base organismal functions and interacting with the environment.
 - How do different GO terms differ in their underlying variation?
 - Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
 - Tissue differences in gene expression variance are an unexplored field.
 - Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression. 
-- Functional stuff? I'm missing what the functional mapping is giving us.
 
 
 \footnotesize 
@@ -317,13 +317,14 @@ Gene expression standard deviation is measured in the residuals after fixed effe
 ## Variance correlation
 
 We assessed the similarity in gene expression variation across studies by using a between study Spearman correlation matrix of the measured standard deviations.
+Only genes present in all studies were used to calculate the Spearman correlation matrix, 4300 genes in total.
 Using Spearman correlations avoid problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
 This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression variation.
 This is accomplished by adding a per-study random effect, see [@Dias2021-hb] for details.
 Given that most of the variation in the Spearman correlation across studies is explained by a single principal component, we use the ranked projections of gene expression variance in this principal component to create an across study rank of gene variation.
 The higher the rank, the higher the gene standard deviation of a given gene.
-Genes that were expressed in at least 50% of the studies were included in the rank.
+Genes that were expressed in at least 50% of the studies were included in the rank. In order to project a particular gene onto the PC1 of the between study correlation matrix, we impute missing values using a PCA based imputation [@Husson2019-sl]. The imputation procedure has minimal effect on the ranking, and imputing missing standard deviation ranks at the beginning or at the end of the ranks produces similar results.
 
 ## Gene level statistics
 
