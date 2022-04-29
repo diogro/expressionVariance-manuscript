@@ -137,7 +137,7 @@ Several competing forces act to shape gene expression variation [@Houle1998-mj; 
 From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifying selection or selective sweeps, would decrease variation.
 From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variation while selected alleles sweep to fixation, followed by a reduction in variation as these alleles become fixed.
 This simple picture is complicated by epistatic interactions between loci and other aspects of genetic architecture.
-For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
+For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1996-hw; @Pavlicev2011-xm].
 The indirect effect of directional selection on variation opens the possibility that the main driver of gene expression variation is not direct selection on variation but indirect effects due to selection on trait means [@Hansen2011-es].
 Furthermore, gene by environment (GxE) interactions can also lead to changes in the observed phenotypic variation of gene expression, further complicating the landscape of variation.
 To what extent these different processes shape gene expression variation is an open question.
@@ -240,9 +240,9 @@ We then correlated the gene expression variance rank metric with these proportio
 As expected, given the existence of a mean-variance relationship for gene expression [refs and figure], the higher the gene expression variance metric, the higher the proportion of the surrounding gene region made up of transcribed chromatin states [figure].
 Conversely, the lower the gene expression variance metric, the higher the proportion of the surrounding gene region that is made up of repressed chromatin states [figure]. 
 Surprisingly, the level of gene expression variance was inversely correlated with the proportion of the surrounding gene region made up of enhancer chromatin states, transcription factor binding sites, and open chromatin regions. 
-This might seem counterintuitive, as one could hypothesize that genes that are more highly regulated at the transcriptional level by elements in the surrounding genomic region might exhibit more expression variance due to XX.
+This might seem counter-intuitive, as one could hypothesize that genes that are more highly regulated at the transcriptional level by elements in the surrounding genomic region might exhibit more expression variance due to XX.
 However, gene regulation through enhancers can be highly cell-type-specific, and our variance metric is based upon the correlation between gene expression variance across cell-types (e.g., a high standard deviation in many studies would lead to a high metric for gene expression variance). 
-In line with this, we found that genes that are expressed in a cell-type-specific manner are enriched in the low-expression-variance genes (genes in the lowest 5% of the gene expresssion variance metric are enriched 13.7-fold in cell-type-specific gene expression relative to XX, phypergeom = XX), whereas ubiquitously expressed genes are enriched in the high-expression-variance genes (genes in the highest 5% of the gene expression variance metric are enriched 1.1-fold in ubiquitously expressed genes relative to XX, phypergeom = XX). 
+In line with this, we found that genes that are expressed in a cell-type-specific manner are enriched in the low-expression-variance genes (genes in the lowest 5% of the gene expression variance metric are enriched 13.7-fold in cell-type-specific gene expression relative to XX, phypergeom = XX), whereas ubiquitously expressed genes are enriched in the high-expression-variance genes (genes in the highest 5% of the gene expression variance metric are enriched 1.1-fold in ubiquitously expressed genes relative to XX, phypergeom = XX). 
 To demonstrate this further, we determined the tissue-level gene expression variance metric across XX tissues from XX studies (median X studies (range X-X) per tissue) [...]
 
 # Discussion
@@ -260,8 +260,8 @@ Furthermore, genes with high connectivity, those with higher levels of gene expr
 
 While indirect, all these patterns point to a selective structuring of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
 These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphism, which we observe. 
-Likewise, genes whose function is contrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
-Furthermore, genes involved with direct interaction to the enviromnment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
+Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
+Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
 
 
 __Drafts:__ 
