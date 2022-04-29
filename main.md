@@ -173,7 +173,7 @@ Observed range of gene expression SD across genes is variable across studies, bu
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
 To create this rank, we use the score of each gene in the first principal component of the Spearman correlation matrix.
 This generates a ranked list of genes, with most variable genes having highest rank.
-The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable genes in our variation rank.
+The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable gene in our variation rank.
 
 \begin{figure*}[t!]
     \centering
@@ -190,18 +190,27 @@ Tissue also affects the similarity between gene expression SD, with studies usin
 The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
 These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 
-## Does gene ontology explain variation in expression?
+## Does biological function explain variation in expression?
 
-To explore the relationship between variation and function broadly displayed in our data, we first explored the ontologies enriched in genes in the tails of our variation ranking. Taking the top 5% most variable and the bottom 5% least variable genes, we performed a Gene Ontology (GO) enrichment analysis to understanding the representative functions of these consistently high and low-variance genes. Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left) and enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right). This suggests the influence of selection and gene by environment interactions in the determination of gene expression variation.
+To explore the relationship between variation and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking and performed a Gene Ontology (GO) enrichment analysis within each group. This allows us to establish the representative functions of these consistently high and low-variance genes. Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left) and enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right). 
 
-We also explore the distribution of variation among the genes associated with GO terms. For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy). Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation. We then count how many genes in each decile has been associated with each term. If variation is not linked to the GO annotations, terms should have an equal proportion of genes in each decile. We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile. Higher entropy is associated with more uniform distribution of genes across deciles. GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented. 
+We also explore the distribution of variation among the genes associated with GO terms. For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy). Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation. We then count how many genes in each decile has been associated with each term. If variation is not linked to the GO annotations, terms should have an equal proportion of genes in each decile. We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile. Higher entropy is associated with more uniform distribution of genes across deciles. GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented. Skewness by entropy for each GO term can be seen in @fig:skew_entropy. Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with house keeping functions, like RNA localization, translation initiation, methylation and chromosome segregation. Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment. 
+
+Both GO related analysis suggests a strong influence of biological function in determining gene expression variation. Genes associated with house keeping functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/local_go_lowerUpper.png}
-    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variation rank}
+    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variation rank. High-variance gene are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions.}
     \label{fig:go_tails}
 \end{figure}
+
+\begin{figure*}[t!]
+    \centering
+    \includegraphics[width=\linewidth]{figures/skew_entropy.png}
+    \caption{Relationship between skew and entropy of rank decile distributions for each GO term. The GO terms are filtered for gene counts greater than 100 as in fig. \ref{fig:go_skewness}.}
+    \label{fig:skew_entropy}
+\end{figure*}
 
 \begin{figure*}[t!]
     \centering
@@ -210,21 +219,16 @@ We also explore the distribution of variation among the genes associated with GO
     \label{fig:go_skewness}
 \end{figure*}
 
-\begin{figure*}[t!]
-    \centering
-    \includegraphics[width=\linewidth]{figures/skew_entropy.png}
-    \caption{Relationship between skew and entropy of rank decile distributions for each GO term. The GO terms are filtered for gene counts greater than 100 as in fig. \ref{fig:go_skewness}.}
-    \label{fig:skew_entropy}
-\end{figure*}
-## Gene level statistics
+
+
+## Sequence variation and gene expression connectivity
 
 We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variation rank.
 We focus on 3 gene-level measures: nucleotide diversity, (substitutions?), and gene expression connectivity.
-Diversity is 
-used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
+Diversity is used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
 Connectivity, a proxy for regulatory interactions with other genes, in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
 Finally, $d_{XY}$....
-All of these patterns can be seen in [@fig:gene_stats] and are consistent with our expectations.
+
 We also use linear models to measure the association between rank and these statistics while accounting for the effect of mean expression.
 The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
 
@@ -233,9 +237,9 @@ The strongest effect was of... (stats), followed by ...(stats), and  ... (stats)
 \begin{tabular}{|l|l|l|}
 \hline
 Covariate         & P-value      & Partial Spearman Correlation \\ \hline
-pi                & $9.578246 \times 10^{-85}$ & 0.18429186                   \\ \hline
-mean connectivity & $5.877388 \times 10^{-3}$ & -0.02413178                  \\ \hline
-alpha             & $1.188250 \times 10^{-3}$ & -0.04624022                  \\ \hline
+pi                & $9.57 \times 10^{-85}$ & 0.184              \\ \hline
+mean connectivity & $5.87 \times 10^{-3}$ & -0.024              \\ \hline
+alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 \end{tabular}%
 }
 \end{table}
@@ -345,9 +349,5 @@ So, for each study we have a measure of the average correlation of each gene wit
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
 \normalsize
-# References
 
-
-
-
-
+<div id="refs"></div>
