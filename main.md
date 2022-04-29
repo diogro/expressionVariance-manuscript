@@ -150,7 +150,7 @@ Of course, genes that are exclusively expressed in a single cell type or tissue 
 For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue. 
 Alternatively, expression variation across tissues could be highly correlated, and in this example selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
 
-__What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
+Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
 We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
 We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance.
 Finally, we explored the link between gene expression variation and biological function by leveraging gene ontology annotations.
@@ -190,11 +190,9 @@ Tissue also affects the similarity between gene expression SD, with studies usin
 The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
 These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 
-## Gene Ontology enrichment
+## Does gene ontology explain variation in expression?
 
-We explore the relation between variation and function by using the tails of our variation rank to perform a Gene Ontology (GO) enrichment analysis.
-Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left), and  enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right).
-This suggests clear influence of selection and gene by environment interactions in the determination of gene expression variation.
+To explore the relationship between variation and function broadly displayed in our data, we first explored the ontologies enriched in genes in the tails of our variation ranking. Taking the top 5% most variable and the bottom 5% least variable genes, we performed a Gene Ontology (GO) enrichment analysis to understanding the representative functions of these consistently high and low-variance genes. Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left) and enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right). This suggests the influence of selection and gene by environment interactions in the determination of gene expression variation.
 
 We also explore the distribution of variation among the genes associated with GO terms. For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy). Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation. We then count how many genes in each decile has been associated with each term. If variation is not linked to the GO annotations, terms should have an equal proportion of genes in each decile. We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile. Higher entropy is associated with more uniform distribution of genes across deciles. GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented. 
 
@@ -230,7 +228,17 @@ All of these patterns can be seen in [@fig:gene_stats] and are consistent with o
 We also use linear models to measure the association between rank and these statistics while accounting for the effect of mean expression.
 The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
 
-We should add $d_{XY}$
+\begin{table}[]
+\resizebox{\linewidth}{!}{%
+\begin{tabular}{|l|l|l|}
+\hline
+Covariate         & P-value      & Partial Spearman Correlation \\ \hline
+pi                & $9.578246 \times 10^{-85}$ & 0.18429186                   \\ \hline
+mean connectivity & $5.877388 \times 10^{-3}$ & -0.02413178                  \\ \hline
+alpha             & $1.188250 \times 10^{-3}$ & -0.04624022                  \\ \hline
+\end{tabular}%
+}
+\end{table}
 
 ## High-variance genes are associated with active gene regulatory features
 
