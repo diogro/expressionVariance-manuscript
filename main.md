@@ -279,6 +279,8 @@ Leveraging this similarity between gene expression variation, we used a standard
 This rank is associated with within gene genetic variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
+Functional analysis using GO enrichment indicated a clear link between function and gene expression variation. First, genes with high gene expression variation were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in immune response are enriched for high variance genes.
+
 While indirect, all these patterns point to a selective structuring of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
 These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphism, which we observe. 
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
