@@ -198,12 +198,12 @@ To explore the relationship between variation and function, we took the top 5% m
 We also explore the distribution of variation among the genes associated with GO terms.
 For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy).
 Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation.
-We then count how many genes in each decile has been associated with each term. If variation is not linked to the GO annotations, terms should have an equal proportion of genes in each decile.
+We then count how many genes in each decile has been associated with each term. If variation rank is not linked to the GO annotations, terms should have an equal proportion of genes in each decile.
 We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile.
 Higher entropy is associated with more uniform distribution of genes across deciles.
-GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented.
-Skewness by entropy for each GO term can be seen in @fig:skew_entropy. Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with house keeping functions, like RNA localization, translation initiation, methylation and chromosome segregation.
-Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment.
+GO terms with low entropy indicate some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented.
+Skewness by entropy for each GO term can be seen in @fig:skew_entropy. Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with house keeping functions, like RNA localization, translation initiation, methylation and chromosome segregation (@fig:go_skewness A).
+Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment (@fig:go_skewness B).
 
 Both GO related analysis suggests a strong influence of biological function in determining gene expression variation. Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
 
@@ -279,22 +279,27 @@ Leveraging this similarity between gene expression variation, we used a standard
 This rank is associated with within gene genetic variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
-Functional analysis using GO enrichment indicated a clear link between function and gene expression variation. First, genes with high gene expression variation were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in immune response are enriched for high variance genes.
+Functional analysis using GO enrichment indicated a clear link between function and gene expression variation. First, genes with high gene expression variation were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
 
-While indirect, all these patterns point to a selective structuring of gene expression variation. Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
-These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphism, which we observe. 
+While indirect, all these patterns point to a selective structuring of gene expression variation.
+Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
+These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe. 
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
-Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of immune related genes among the most variable.
+Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
+Given this strong functional linkage between function and variation, it is not surprising that the ranking of gene variation be somewhat consistent across studies, allowing us to create our ranking in the first place. 
+We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels.
+
+Given this consistency, the natural question is then how to changes in these well regulated levels of gene expression variation behave in perturbed or disease conditions.
+Presumably genes will differ in their capacity to maintain their baseline variation levels, and changes in the variation level of some genes could have major physiological consequences.
 
 
 __Drafts:__ 
 
-- Gene expression variance is predictive of biological function.
-- High and low variance genes are enriched for terms that are consistent with base organismal functions and interacting with the environment.
-- How do different GO terms differ in their underlying variation?
 - Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
 - Tissue differences in gene expression variance are an unexplored field.
-- Gene expression variance can be partially explained by genetic variation and genetic associations between gene expression. 
+- Variation in perturbed conditions
+- Differences in robustness
+- Did we look into tissue specificity and rank? 
 
 
 \footnotesize 
