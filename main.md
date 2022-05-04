@@ -193,7 +193,7 @@ These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 
 ## Does biological function explain variation in expression?
 
-To explore the relationship between variation and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking and performed a Gene Ontology (GO) enrichment analysis within each group. This allows us to establish the representative functions of these consistently high and low-variance genes. Among the 5% most variable genes we observe enrichment for immune function (@fig:go_tails, left) and enrichment for house keeping genes among the 5% least variable genes (@fig:go_tails, right). 
+To explore the relationship between variation and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (about ~560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group. This allows us to establish the representative functions of these consistently high and low-variance genes. In total, using a Benjamini-Hochberg adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing). Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (@fig:go_tails, left); among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails, right). 
 
 We also explore the distribution of variation among the genes associated with GO terms.
 For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy).
@@ -203,14 +203,14 @@ We measure how far from this uniform allocation each term is by measuring the Sh
 Higher entropy is associated with more uniform distribution of genes across deciles.
 GO terms with low entropy indicated some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented.
 Skewness by entropy for each GO term can be seen in @fig:skew_entropy. Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with house keeping functions, like RNA localization, translation initiation, methylation and chromosome segregation.
-Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment. 
+Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment.
 
-Both GO related analysis suggests a strong influence of biological function in determining gene expression variation. Genes associated with house keeping functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
+Both GO related analysis suggests a strong influence of biological function in determining gene expression variation. Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/local_go_lowerUpper.png}
-    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variation rank. High-variance gene are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions.}
+    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variation rank. High-variance gene are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions. All displayed terms are significant with a 5\% FDR corrected p-value below $10^{-3}$.}
     \label{fig:go_tails}
 \end{figure}
 
@@ -301,10 +301,6 @@ __Drafts:__
 
 # Methods
 
-## Code availability
-
-All code for reproducing all analysis and figures is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
-
 ## Data sources
 
 We selected 60 RNA-seq studies with large sample sizes from public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn]. We only used studies for which raw read count data was available, and for which we could parse the metadata for batch effects.
@@ -360,6 +356,10 @@ We then trim this graph by keeping only edges for which the Spearman correlation
 In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene.
 So, for each study we have a measure of the average correlation of each gene with every other gene.
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
+
+## Code availability
+
+All code for reproducing all analysis and figures is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
 
 \normalsize
 
