@@ -1,5 +1,5 @@
 ---
-title: "Characterizing the landscape of gene expression variation in humans"
+title: "Characterizing the landscape of gene expression variance in humans"
 author:
 - Scott Wolf*
 - Diogo Melo*
@@ -128,32 +128,32 @@ bibliography: ./references.bib
 
 Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations.
 In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po].
-However, gene expression variation can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
-From an evolutionary perspective, the availability of gene expression variation is what allows evolutionary change, and the genetic architecture of gene expression variation can also evolve [@Bruijning2020-bf].
-Understanding the landscape of gene expression variation, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment. 
-In particular, we lack a clear picture of which genes show more gene expression variation, or even if the pattern of gene expression variation is consistent across populations. 
+However, gene expression variance can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
+From an evolutionary perspective, the availability of gene expression variance is what allows evolutionary change, and the genetic architecture of gene expression variance can also evolve [@Bruijning2020-bf].
+Understanding the landscape of gene expression variance, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment. 
+In particular, we lack a clear picture of which genes show more gene expression variance, or even if the pattern of gene expression variance is consistent across populations. 
 
-Several competing forces act to shape gene expression variation [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
+Several competing forces act to shape gene expression variance [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
 From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifying selection or selective sweeps, would decrease variation.
-From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variation while selected alleles sweep to fixation, followed by a reduction in variation as these alleles become fixed.
+From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variance while selected alleles sweep to fixation, followed by a reduction in variance as these alleles become fixed.
 This simple picture is complicated by epistatic interactions between loci and other aspects of genetic architecture.
-For example, pleiotropic effects allow selection on one trait to influence the variation of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
-The indirect effect of directional selection on variation opens the possibility that the main driver of gene expression variation is not direct selection on variation but indirect effects due to selection on trait means [@Hansen2011-es].
-Furthermore, gene by environment (GxE) interactions can also lead to changes in the observed phenotypic variation of gene expression, further complicating the landscape of variation.
-To what extent these different processes shape gene expression variation is an open question.
-If consistent selection across populations is the main driver of gene expression variation, we would expect to have consistently more or less variable genes. 
-If idiosyncratic selection patterns and context specific environmental interactions are more important, we could observe large differences in gene expression variation across populations.
+For example, pleiotropic effects allow selection on one trait to influence the variance of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
+The indirect effect of directional selection on variance opens the possibility that the main driver of gene expression variance is not direct selection on variance but indirect effects due to selection on trait means [@Hansen2011-es].
+Furthermore, gene by environment (GxE) interactions can also lead to changes in the observed phenotypic variance of gene expression, further complicating the landscape of variation.
+To what extent these different processes shape gene expression variance is an open question.
+If consistent selection across populations is the main driver of gene expression variance, we would expect to have consistently more or less variable genes. 
+If idiosyncratic selection patterns and context specific environmental interactions are more important, we could observe large differences in gene expression variance across populations.
 
 Even within individuals, gene expression is also variable across tissues [@GTEx2017-xb]. 
-To what extent differences in expression level translate to differences in expression variation is not clear.
+To what extent differences in mean expression level translate to differences in expression variance is not clear.
 Of course, genes that are exclusively expressed in a single cell type or tissue are necessarily more variable in that particular tissue, but differentially expressed genes could also be more variable in a particular context. 
-For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue. 
-Alternatively, expression variation across tissues could be highly correlated, and in this example selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
+For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduction in variation and differences in variance across tissue. 
+Alternatively, expression variance across tissues could be highly correlated, and in this example selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
 
-Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
-We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
+Here, we use public gene expression data sets to evaluate how the differences in gene expression variance is structured across independent samples.
+We collected and compared the gene expression variance across many studies, and used the similarities across these studies to create a gene expression variance ranking, which orders genes from least variable to most variable.
 We then explore the expected drivers of this gene expression ranking, showing that both cis and trans regulation are involved with the determination of gene expression variance.
-Finally, we explored the link between gene expression variation and biological function by leveraging gene ontology annotations.
+Finally, we explored the link between gene expression variance and biological function by leveraging gene ontology annotations.
 
 # Results
 
@@ -161,19 +161,19 @@ Finally, we explored the link between gene expression variation and biological f
 \begin{figure*}[t!]
     \centering
      \includegraphics[width=\dimexpr 1\textwidth]{figures/fig1.png}
-    \caption{A. Heatplot of the across study Spearman rank correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variation have higher correlations; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA, with colors ; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
+    \caption{A. Heatplot of the across study Spearman rank correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA, with colors ; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
     \label{fig:sd_corr}
 \end{figure*}
 
 Gene expression standard deviations (SD) were calculated for each data set using a single pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
-Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A and B).
+Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A and B).
 A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
 Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
-Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
+Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variance across genes by using a single rank, averaging the ordering across all studies.
 To create this rank, we use the score of each gene in the first principal component of the Spearman correlation matrix.
 This generates a ranked list of genes, with most variable genes having highest rank.
-The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable gene in our variation rank.
+The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable gene in our variance rank.
 
 \begin{figure*}[t!]
     \centering
@@ -182,7 +182,7 @@ The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on th
     \label{fig:corr_model}
 \end{figure*}
 
-__What drives differences in gene expression variation?:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
+__What drives differences in gene expression variance?:__ To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb]. 
 In this mode, we use study, sampled tissue, and study origin as predictors of the pairwise correlations (see Methods).
 This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation ([@fig:corr_model]C).
 Correlation involving studies that are not from TCGA and GTEx (marked as "Other") are on average lower ([@fig:corr_model]C).
@@ -191,26 +191,26 @@ Tissue also affects the similarity between gene expression SD, with studies usin
 The largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving bone marrow (from GTEx) and study SRP057500 (which used platelets) are on average lower ([@fig:corr_model]A).
 These studies also show up further away in the PCoA plot in [@fig:sd_corr]C.
 
-## Does biological function explain variation in expression?
+## Does biological function explain variance in expression?
 
-To explore the relationship between variation and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (about ~560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group. This allows us to establish the representative functions of these consistently high and low-variance genes. In total, using a Benjamini-Hochberg adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing). Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (@fig:go_tails, left); among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails, right). 
+To explore the relationship between variance and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (about ~560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group. This allows us to establish the representative functions of these consistently high and low-variance genes. In total, using a Benjamini-Hochberg adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing). Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (@fig:go_tails, left); among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails, right). 
 
-We also explore the distribution of variation among the genes associated with GO terms.
+We also explore the distribution of expression variance among the genes associated with GO terms.
 For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy).
-Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variation deciles, with the first decile having the lowest variation.
-We then count how many genes in each decile has been associated with each term. If variation rank is not linked to the GO annotations, terms should have an equal proportion of genes in each decile.
+Using only the set of genes that are associated with at least one of these level-3 terms, we separate the genes into expression variance deciles, with the first decile having the lowest variance.
+We then count how many genes in each decile has been associated with each term. If variance rank is not linked to the GO annotations, terms should have an equal proportion of genes in each decile.
 We measure how far from this uniform allocation each term is by measuring the Shannon entropy of the proportion of genes in each decile.
 Higher entropy is associated with more uniform distribution of genes across deciles.
-GO terms with low entropy indicate some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variation terms are over-represented, and positive if low-variation deciles are over-represented.
+GO terms with low entropy indicate some decile is over-represented in the genes associated with that term. We also measure skewness for each term, which should be zero if no decile is over-represented, negative if high-variance terms are over-represented, and positive if low-variance deciles are over-represented.
 Skewness by entropy for each GO term can be seen in @fig:skew_entropy. Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with house keeping functions, like RNA localization, translation initiation, methylation and chromosome segregation (@fig:go_skewness A).
 Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment (@fig:go_skewness B).
 
-Both GO related analysis suggests a strong influence of biological function in determining gene expression variation. Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
+Both GO related analysis suggests a strong influence of biological function in determining gene expression variance. Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
 
 \begin{figure}
     \centering
     \includegraphics[width=\linewidth]{figures/local_go_lowerUpper.png}
-    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variation rank. High-variance gene are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions. All displayed terms are significant with a 5\% FDR corrected p-value below $10^{-3}$.}
+    \caption{Gene set enrichment analyses testing for over representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variance rank. High-variance gene are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions. All displayed terms are significant with a 5\% FDR corrected p-value below $10^{-3}$.}
     \label{fig:go_tails}
 \end{figure}
 
@@ -232,7 +232,7 @@ Both GO related analysis suggests a strong influence of biological function in d
 
 ## Sequence variation and gene expression connectivity
 
-We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variation rank.
+We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variance rank.
 We focus on 3 gene-level measures: nucleotide diversity, (substitutions?), and gene expression connectivity.
 Diversity is used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
 Connectivity, a proxy for regulatory interactions with other genes, in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
@@ -255,7 +255,7 @@ alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 
 ## High-variance genes are associated with active gene regulatory features
 
-To gain insight into genomic characteristics that are associated with gene expression variation, we assessed the epigenetic landscape of the gene regions surrounding low- vs. high-variance genes. 
+To gain insight into genomic characteristics that are associated with gene expression variance, we assessed the epigenetic landscape of the gene regions surrounding low- vs. high-variance genes. 
 We determined the proportion of the gene regions (gene +/- 250 kb) that fall within a given chromatin state, as defined globally in [Trykna ref]. 
 We then correlated the gene expression variance rank metric with these proportions [figure].
 As expected, given the existence of a mean-variance relationship for gene expression [refs and figure], the higher the gene expression variance metric, the higher the proportion of the surrounding gene region made up of transcribed chromatin states [figure].
@@ -268,28 +268,34 @@ To demonstrate this further, we determined the tissue-level gene expression vari
 
 # Discussion
 
-Gene expression variation is a largely unexplored aspect of molecular phenotypes.
+gene expression variance is a largely unexplored aspect of molecular phenotypes.
 By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
-Differences in gene expression variation were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variation across genes; and by tissue, with studies using the same tissues also showing higher similarities.
-However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variation.
-Differences in variation are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variation also carry information about tissue specific patterns.
+Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
+However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+Differences in variance are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variance also carry information about tissue specific patterns.
 
-While these observed differences are notable, we also find a broadly similar pattern of gene expression variation across studies, with high correlations between gene expression variation across most studies (75% of correlations are between 0.45 and 0.9).
-Leveraging this similarity between gene expression variation, we used a standard multivariate strategy to create a single rank of expression variation, which allowed us to order almost 13k genes according to their expression variation.
-This rank is associated with within gene genetic variation, with more polymorphic genes being more variable.
+While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9).
+Leveraging this similarity between gene expression variance, we used a standard multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes according to their expression variance.
+This rank is associated with within-gene sequence variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable. 
 
-Functional analysis using GO enrichment indicated a clear link between function and gene expression variation. First, genes with high gene expression variation were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
+Functional analysis using GO enrichment indicated a clear link between function and gene expression variance. First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
 
-While indirect, all these patterns point to a selective structuring of gene expression variation.
+While indirect, all these patterns point to a selective structuring of gene expression variance.
 Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
 These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe. 
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
-Given this strong functional linkage between function and variation, it is not surprising that the ranking of gene variation be somewhat consistent across studies, allowing us to create our ranking in the first place. 
+Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place. 
 We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels.
 
-Given this consistency, the natural question is then how to changes in these well regulated levels of gene expression variation behave in perturbed or disease conditions.
+Given this consistency, the natural question is then how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
+Comparing two HapMap populations, Li et al [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
+In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non randomly distributed across signaling networks.
+The authors also find a link between gene network connectivity and expression variance, consistent with the effect we find using the gene expression variance rank.
+Also, the pattern of variance alteration differed across diseases, with Parkinson's patients showing increased expression variance, and Schizophrenia patients showing more constrained patters of expression.
+The authors hypothesizes that the reduced variance in Schizophrenia patients reduces the robustness of their gene expression networks.
+
 Presumably genes will differ in their capacity to maintain their baseline variation levels, and changes in the variation level of some genes could have major physiological consequences.
 
 
@@ -315,7 +321,7 @@ For example, the GTEx data are separated by tissue, and we refer to each tissue 
 
 ## Data processing pipeline
 
-We use a standardized pipeline to measure gene expression variation while removing extraneous sources of variation.
+We use a standardized pipeline to measure gene expression variance while removing extraneous sources of variation.
 Data from case-control studies was filtered to keep only control samples.
 
 
@@ -327,11 +333,11 @@ Gene expression standard deviation is measured as the residual standard deviatio
 
 ## Variance correlation
 
-We assessed the similarity in gene expression variation across studies by using a between study Spearman correlation matrix of the measured standard deviations.
+We assessed the similarity in gene expression variance across studies by using a between study Spearman correlation matrix of the measured standard deviations.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, 4300 genes in total.
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
-This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression variation.
+This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression variance.
 This is accomplished by adding a per-study random effect, see [@Dias2021-hb] for details.
 Given that most of the variation in the Spearman correlation across studies is explained by a single principal component, we use the ranked projections of gene expression variance in this principal component (PC1) to create an across study rank of gene variation.
 The higher the rank, the higher the gene standard deviation of a given gene.
