@@ -148,7 +148,7 @@ Even within individuals, gene expression is also variable across tissues [@GTEx2
 To what extent differences in expression level translate to differences in expression variation is not clear.
 Of course, genes that are exclusively expressed in a single cell type or tissue are necessarily more variable in that particular tissue, but differentially expressed genes could also be more variable in a particular context. 
 For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue. 
-Alternatively, expression variation across tissues could be highly correlated, and in this example selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
+Alternatively, expression variation across tissues could be highly correlated, and in this example, selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
 
 __What we did__: Here, we use public gene expression data sets to evaluate how the differences in gene expression variation is structured across independent samples.
 We collected and compared the gene expression variation across many studies, and used the similarities across these studies to create a gene expression variation ranking, which orders genes from least variable to most variable.
@@ -166,10 +166,10 @@ Finally, we explored the link between gene expression variation and biological f
 \end{figure*}
 
 Gene expression standard deviations (SD) were calculated for each data set using a single pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
-Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A and B).
+Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one tissue and/or study tend to be most variable in all tissues and/or studies ([@fig:sd_corr]A and B).
 A principal coordinate analysis using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
-Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
+While the observed range of gene expression SD across genes is variable across studies, the SD can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
 To create this rank, we use the score of each gene in the first principal component of the Spearman correlation matrix.
 This generates a ranked list of genes, with most variable genes having highest rank.
@@ -231,19 +231,6 @@ We also use linear models to measure the association between rank and these stat
 The strongest effect was of... (stats), followed by ...(stats), and  ... (stats).
 
 We should add $d_{XY}$
-
-## High-variance genes are associated with active gene regulatory features
-
-To gain insight into genomic characteristics that are associated with gene expression variation, we assessed the epigenetic landscape of the gene regions surrounding low- vs. high-variance genes. 
-We determined the proportion of the gene regions (gene +/- 250 kb) that fall within a given chromatin state, as defined globally in [Trykna ref]. 
-We then correlated the gene expression variance rank metric with these proportions [figure].
-As expected, given the existence of a mean-variance relationship for gene expression [refs and figure], the higher the gene expression variance metric, the higher the proportion of the surrounding gene region made up of transcribed chromatin states [figure].
-Conversely, the lower the gene expression variance metric, the higher the proportion of the surrounding gene region that is made up of repressed chromatin states [figure]. 
-Surprisingly, the level of gene expression variance was inversely correlated with the proportion of the surrounding gene region made up of enhancer chromatin states, transcription factor binding sites, and open chromatin regions. 
-This might seem counterintuitive, as one could hypothesize that genes that are more highly regulated at the transcriptional level by elements in the surrounding genomic region might exhibit more expression variance due to XX.
-However, gene regulation through enhancers can be highly cell-type-specific, and our variance metric is based upon the correlation between gene expression variance across cell-types (e.g., a high standard deviation in many studies would lead to a high metric for gene expression variance). 
-In line with this, we found that genes that are expressed in a cell-type-specific manner are enriched in the low-expression-variance genes (genes in the lowest 5% of the gene expresssion variance metric are enriched 13.7-fold in cell-type-specific gene expression relative to XX, phypergeom = XX), whereas ubiquitously expressed genes are enriched in the high-expression-variance genes (genes in the highest 5% of the gene expression variance metric are enriched 1.1-fold in ubiquitously expressed genes relative to XX, phypergeom = XX). 
-To demonstrate this further, we determined the tissue-level gene expression variance metric across XX tissues from XX studies (median X studies (range X-X) per tissue) [...]
 
 # Discussion
 
