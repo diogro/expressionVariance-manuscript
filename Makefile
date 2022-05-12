@@ -1,13 +1,16 @@
-all:
-	pandoc main.md -s --filter pandoc-crossref --bibliography references.bib --biblatex -o main.tex --pdf-engine=xelatex
-	xelatex main
-	biber main
-	xelatex main
-	xelatex main
-	mv main.pdf out/
-	ls main* | grep -v main.md | xargs rm
-doc:
-	pandoc main.md -s --filter pandoc-crossref --bibliography references.bib --biblatex -o main.docx 
-	mv main.docx out/
+# Assume pandoc-scholar is in the parent directory.
+# Should usually be overwritten or configured via an environment variable.
+PANDOC_SCHOLAR_PATH   ?= $(PWD)/pandoc-scholar
+ARTICLE_FILE=main.md
+BIBLIOGRAPHY_FILE=references.bib
+include $(PANDOC_SCHOLAR_PATH)/Makefile
+
+pdf:
+	xelatex outfile.latex
+	biber outfile
+	xelatex outfile.latex
+	xelatex outfile.latex
+	mv outfile.pdf out/
+	ls outfile* | grep -v main.md | xargs rm
 clean:
-	ls main* | grep -v main.md | xargs rm
+	ls outfile* | grep -v main.md | xargs rm

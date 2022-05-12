@@ -1,11 +1,32 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 author:
-- Scott Wolf*
-- Diogo Melo*
-- Kristina Garske
-- Luisa Pallares
-- Julien Ayroles
+  - Scott Wolf:
+      institute:
+        - lsi
+      email: swwolf@princeton.edu
+      orcid: 0000-0000-0000-0000
+      equal_contributor: "yes"
+  - Diogo Melo:
+      institute: eeb
+      equal_contributor: "yes"
+  - Kristina Garske:
+      institute: eeb
+  - Luisa Pallares:
+      institute: fml
+  - Julien Ayroles:
+      institute:
+        - lsi
+        - eeb
+      email: jayroles@princeton.edu
+      correspondence: "yes"
+institute:
+  - lsi:
+      name: Lewis-Sigler Institute for Integrative Genomics, Princeton University
+  - eeb:
+      name: Department of Ecology and Evolutionary Biology, Princeton University
+  - fml:
+      name: Friedrich Miescher Laboratory, Max Planck Society
 classoption: twocolumn
 output: pdf_document
 geometry:
@@ -24,6 +45,7 @@ header-includes:
 - \usepackage{graphicx}
 - \newcommand{\hideFromPandoc}[1]{#1}
 - \hideFromPandoc{ \let\Begin\begin \let\End\end}
+- \addbibresource{references.bib}
 link-citations: yes
 mainfont: Skolar PE TEST Regular
 mainfontoptions:
@@ -366,6 +388,4 @@ The average connectivity for each gene is the average across all studies in whic
 
 All code for reproducing all analysis and figures, along with a walthrough, is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
 
-\normalsize
-
-<div id="refs"></div>
+\printbibliography

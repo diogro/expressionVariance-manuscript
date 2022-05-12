@@ -14,8 +14,7 @@ PANDOC ?= pandoc
 # Configuration (overwrite using Makefile.local.in if necessary)
 ARTICLE_FILE          ?= example/article.md
 OUTFILE_PREFIX        ?= outfile
-DEFAULT_EXTENSIONS    ?= latex pdf docx odt epub html
-ADDITIONAL_EXTENSIONS ?= xml jats jsonld txt
+DEFAULT_EXTENSIONS    ?= latex
 JSON_FILE             ?= $(OUTFILE_PREFIX).enriched.json
 FLATTENED_JSON_FILE   ?= $(OUTFILE_PREFIX).flattened.json
 LUA_FILTERS           ?= $(LUA_FILTERS_PATH)/cito/cito.lua \
