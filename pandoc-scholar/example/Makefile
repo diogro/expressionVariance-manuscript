@@ -1,11 +1,11 @@
 # Assume pandoc-scholar is in the parent directory.
 # Should usually be overwritten or configured via an environment variable.
-PANDOC_SCHOLAR_PATH   ?= $(PWD)/pandoc-scholar
+PANDOC_SCHOLAR_PATH   ?= $(shell dirname $(PWD))
 ARTICLE_FILE=main.md
 BIBLIOGRAPHY_FILE=references.bib
 include $(PANDOC_SCHOLAR_PATH)/Makefile
 
-pdf:
+all:
 	xelatex outfile.latex
 	biber outfile
 	xelatex outfile.latex
