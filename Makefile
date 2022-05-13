@@ -5,7 +5,7 @@ ARTICLE_FILE=main.md
 BIBLIOGRAPHY_FILE=references.bib
 include $(PANDOC_SCHOLAR_PATH)/Makefile
 
-pdf:
+default:
 	xelatex outfile.latex
 	biber outfile
 	xelatex outfile.latex

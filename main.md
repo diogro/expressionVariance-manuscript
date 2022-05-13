@@ -292,7 +292,7 @@ For example, both the proportion of gene regions made up of enhancers and repres
 As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene [KG supp fig 1].
 The magnitude of the correlation with general RefSeq gene features, such as promoter and coding sequence, is lower for both the variance and mean, and we see that this coincides with an overal positive (in the case of the mean) and negative (in the case of the variance) associations with gene density in the expanded gene regions (gene +/- 250 kb) [KG supp table 1; KG supp fig 1].
 Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance [KG supp fig 1].
-Taken together, these results are in line with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression. 
+Taken together, these results are in line with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
 tissue-level results incoming...
 
@@ -312,9 +312,9 @@ Furthermore, genes with high connectivity, those with higher levels of gene expr
 Functional analysis using GO enrichment indicated a clear link between function and gene expression variance. First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
 
 While indirect, all these patterns point to a selective structuring of gene expression variance.
-Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
-These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe. 
-Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable. 
+Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes.
+These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe.
+Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place.
 We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels.
@@ -383,7 +383,7 @@ If only window based metrics are available, we assembled gene level information 
 In parallel, we use the PopHumanScan data set, which expands PopHuman by compiling and annotating regions under selection.
 Similarly, we used gene level information when possible, and for tracks with only window based metrics, gene level information was assembled from the 10kb windows using the same assignment method described above.
 Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes.
-The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\Theta$.
+The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\theta$.
 
 __Gene connectivity__: As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
 To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
@@ -393,12 +393,6 @@ So, for each study we have a measure of the average correlation of each gene wit
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
 To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
-We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%.
-In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene.
-So, for each study we have a measure of the average correlation of each gene with every other gene.
-The average connectivity for each gene is the average across all studies in which that gene is expressed.
-
-## Chromatin state correlates of gene expression variance
 
 __Chromatin state correlates of gene expression variance__: We first obtain various annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning].
 A subset of these annotations are used to quantify functional and molecular correlates of the gene expression variance metric: 1) promoter, coding, and 3' and 5' UTR are annotations from the RefSeq gene model; 2) CTCF, promoter flanking, transcribed, transcription start site, and enhancer categories were defined as the union [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 3) the repressed category was defined as the intersection [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 4) conserved elements were identified across 29 mammalian species [@lindblad2011high; @ward2012evidence]; 5) TFBS were identified from digital genomic footprinting of DNase hypersensitive sites in 57 cell lines [@gusev2014partitioning; @encode2012integrated]; super-enhancers were defined as the union [@finucane2015partitioning] of all super-enhancers identified in 86 human cell and tissue types [@hnisz2013super]; 6) DHS sites were defined as the union [@finucane2015partitioning] of DHSs identified across 13 cell lines [@encode2012integrated; @trynka2013chromatin].
