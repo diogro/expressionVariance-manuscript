@@ -299,10 +299,12 @@ Taken together, these results are in line with gene expression variance being mo
 # Discussion
 
 <!-- gene expression variance is a largely unexplored aspect of molecular phenotypes. -->
-By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
+By using large publicly available data sets, we were able to  map the landscape of gene expression variance in several human tissues.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
-However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
-Differences in variance are informative beyond the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variance also carry information about tissue specific patterns.
+This would suggest that careful consideration of sample sizes and experiment design are fundamental to the study of gene expression variance, and the usual small samples of RNAseq studies might be underpowered for the study of this particular aspect of gene expression.
+Furthermore, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+Understanding the consequences of these differences in variance for specific tissues is still an open field.
+It is clear, howerver, that differences in variance are informative beyond the differences in mean expression. Even after we account for differences in mean expression,  differences in gene expression variance carry information about tissue origin and function. 
 
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
 Leveraging this similarity between gene expression variance, we used a multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes according to their expression variance.
@@ -317,7 +319,7 @@ These same genes are also expected to be under strong purifying selection and sh
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place.
-We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels.
+We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
 Given this consistency, the natural question is then how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
 Comparing two HapMap populations, Li et al [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
