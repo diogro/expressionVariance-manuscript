@@ -166,19 +166,11 @@ Finally, we explored the link between gene expression variance and biological fu
 \end{figure*}
 
 Gene expression standard deviations (SD) were calculated for each data set using a single pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
-<<<<<<< HEAD
-Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variation, so genes that are most variable in one tissue and/or study tend to be most variable in all tissues and/or studies ([@fig:sd_corr]A and B).
-A principal coordinate analysis using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
-This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
-While the observed range of gene expression SD across genes is variable across studies, the SD can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
-Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variation across genes by using a single rank, averaging the ordering across all studies.
-=======
 Spearman correlations ($\rho_s$) between gene expression SD reveal a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies ([@fig:sd_corr]A and B).
 A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together ([@fig:sd_corr]C).
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
 Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable ([@fig:sd_corr]D).
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variance across genes by using a single rank, averaging the ordering across all studies.
->>>>>>> 18814da4741b6856fd0fad1ff51eb7830157f0c2
 To create this rank, we use the score of each gene in the first principal component of the Spearman correlation matrix.
 This generates a ranked list of genes, with most variable genes having highest rank.
 The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on the standard deviation distributions of the least and most variable gene in our variance rank.
@@ -205,9 +197,10 @@ To explore the relationship between variance and function, we took the top 5% mo
 This allows us to establish the representative functions of these consistently high and low-variance genes. 
 In total, using a Benjamini-Hochberg adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing). 
 Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (@fig:go_tails, left).
-In line with this GO term enrichment, the top 5% most variable genes are enriched 8-fold for genes that encode secreted proteins, relative to all other genes (phypergeom=1.3x10-150).
-Among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails, right); and accordingly we find that previously characterized human housekeeping genes [ref Hounkpe et al. 2021 NAR] are enriched within the 5% least variable genes 2-fold relative to all other genes (phypergeom=1.1x10-24). 
-
+In line with this GO term enrichment, the top 5% most variable genes are enriched 7.7-fold for genes that encode secreted proteins, relative to all other genes (phypergeom=1.3x10-150).
+Among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails, right); and accordingly we find that previously characterized human housekeeping genes [@hounkpe2021hrt] are enriched within the 5% least variable genes 2.0-fold relative to all other genes (phypergeom=1.1x10-24). 
+The genes exhibiting the lowest variance (lowest 5%) are also enriched for those that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, phypergeom=2.2x10-04).
+Genes with a high pLI have been shown to be important in housekeeping functions, and have higher mean expression values across a broad set of tissues and cell types [@lek2016analysis]. Our result that genes with low variance are enriched for both housekeeping genes and genes with high pLI is consistent with this previous report; and we further see that the mean expression of genes positively correlates with pLI (Partial Spearman correlation rho = 0.32, p = 2.3x10-260), showing the opposite relationship between variance and mean expression when considering pLI.
 
 We also explore the distribution of expression variance among the genes associated with GO terms.
 For this, we gather all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 for the top of the GO hierarchy).
@@ -267,12 +260,25 @@ alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 }
 \end{table}
 
+## How do molecular signatures of gene regulation relate to gene expression variance?
+
+We assess how local chromatin state relates to gene expression variance.
+We use each gene, including the surrounding 10 kb on both ends, to calculate the proportion of gene regions that corresponds to functional chromatin states and annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning], including promoter and enhancer regions, open chromatin (assayed through DNase hypersensitivity (DHS)), and transcription factor binding sites (TFBS).
+Biochemical features associated with cis gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
+For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (Benjamini-Hochberg adjP<0.05) [KG supp fig 1].
+As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene [KG supp fig 1].
+The magnitude of the correlation with general RefSeq gene features, such as promoter and coding sequence, is lower for both the variance and mean, and we see that this coincides with an overal positive (in the case of the mean) and negative (in the case of the variance) associations with gene density in the expanded gene regions (gene +/- 250 kb) [KG supp table 1; KG supp fig 1].
+Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance [KG supp fig 1].
+Taken together, these results are in line with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression. 
+
+tissue-level results incoming...
+
 # Discussion
 
-gene expression variance is a largely unexplored aspect of molecular phenotypes.
+Gene expression variance is a largely unexplored aspect of molecular phenotypes.
 By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
-However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues known to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Differences in variance are informative in excess of the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variance also carry information about tissue specific patterns.
 
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
@@ -285,7 +291,7 @@ Functional analysis using GO enrichment indicated a clear link between function 
 While indirect, all these patterns point to a selective structuring of gene expression variance.
 Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
 These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe. 
-Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, also less variable. 
+Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable. 
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place. 
 We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels.
@@ -368,6 +374,12 @@ We then trim this graph by keeping only edges for which the Spearman correlation
 In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene.
 So, for each study we have a measure of the average correlation of each gene with every other gene.
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
+
+## Chromatin state correlates of gene expression variance
+
+__Chromatin state correlates of gene expression variance__: We first obtain various annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning].
+A subset of these annotations are used to quantify functional and molecular correlates of the gene expression variance metric: 1) promoter, coding, and 3' and 5' UTR are annotations from the RefSeq gene model; 2) CTCF, promoter flanking, transcribed, transcription start site, and enhancer categories were defined as the union [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 3) the repressed category was defined as the intersection [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 4) conserved elements were identified across 29 mammalian species [@lindblad2011high; @ward2012evidence]; 5) TFBS were identified from digital genomic footprinting of DNase hypersensitive sites in 57 cell lines [@gusev2014partitioning; @encode2012integrated]; super-enhancers were defined as the union [@finucane2015partitioning] of all super-enhancers identified in 86 human cell and tissue types [@hnisz2013super]; 6) DHS sites were defined as the union [@finucane2015partitioning] of DHSs identified across 13 cell lines [@encode2012integrated; @trynka2013chromatin].
+
 
 ## Code availability
 
