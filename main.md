@@ -200,11 +200,13 @@ The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on th
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/correlationModeling.png}
-    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in fig.~\ref{fig:sd_corr}A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the ``Other''  category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.}
+    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in fig.~\ref{fig:sd_corr}A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the ``Other'' category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.} <!-- `` -->
     \label{fig:corr_model}
-\end{figure*}
+\end{figure*} 
+
 
 ## What drives differences in gene expression variance?
+
 To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
 In this mode, we use study, sampled tissue, and study origin as predictors of the pairwise correlations (see Methods).
 This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation ([@fig:corr_model]C).
@@ -298,20 +300,24 @@ Taken together, these results are in line with gene expression variance being mo
 
 # Discussion
 
-<!-- gene expression variance is a largely unexplored aspect of molecular phenotypes. -->
-By using large publicly available data sets, we were able to  map the landscape of gene expression variance in several human tissues.
+By using large publicly available data sets, we were able to probe the landscape of gene expression variance in several human tissues.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
 This would suggest that careful consideration of sample sizes and experiment design are fundamental to the study of gene expression variance, and the usual small samples of RNAseq studies might be underpowered for the study of this particular aspect of gene expression.
 Furthermore, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
-It is clear, however, that differences in variance are informative beyond the differences in mean expression. Even after we account for differences in mean expression,  differences in gene expression variance carry information about tissue origin and function. 
+It is clear, however, that differences in variance are informative beyond the differences in mean expression.
+Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
 
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
 Leveraging this similarity between gene expression variance, we used a multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes according to their expression variance.
 This rank is associated with within-gene sequence variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable.
 
-Functional analysis using GO enrichment indicated a clear link between function and gene expression variance. First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
+Functional analysis using GO enrichment indicated a clear link between function and gene expression variance.
+First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction.
+Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication.
+This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy.
+Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
 
 While indirect, all these patterns point to a selective structuring of gene expression variance.
 Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes.
