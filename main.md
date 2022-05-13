@@ -333,8 +333,15 @@ In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression v
 These authors also find a link between gene network connectivity and expression variance, consistent with the effect we find using the gene expression variance rank.
 Also, the pattern of variance alteration differed across diseases, with Parkinson's patients showing increased expression variance, and Schizophrenia patients showing more constrained patters of expression.
 The authors hypothesizes that the reduced variance in Schizophrenia patients reduces the robustness of their gene expression networks.
+This suggests several types of shifts in gene expression variation are possible, with different outcomes. 
+We highlight three different possibilities:
+First, low variance genes, under strong stabilizing selection, could become more variable under stress, indicating a reduced capacity for maintaining homeostasis. 
+Second, high variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to responding to external stimuli.
+Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
+Any one of these changes in expression variance pattern could have major physiological consequences.
 
-Presumably genes will differ in their capacity to maintain their baseline variation levels, and changes in the variation level of some genes could have major physiological consequences.
+Presumably genes will differ in their capacity to maintain their baseline variation levels.
+
 
 
 __Drafts:__
@@ -371,7 +378,7 @@ Gene expression standard deviation is measured as the residual standard deviatio
 
 ## Variance correlation
 
-We assessed the similarity in gene expression variance across studies by using a between study Spearman correlation matrix of the measured SDs.
+We assessed the similarity in gene expression variance across studies by using a between-study Spearman correlation matrix of the measured SDs.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, 4300 genes in total.
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
