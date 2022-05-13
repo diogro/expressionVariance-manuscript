@@ -294,7 +294,7 @@ The magnitude of the correlation with general RefSeq gene features, such as prom
 Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance [KG supp fig 1].
 Taken together, these results are in line with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
-tissue-level results incoming...
+<!-- tissue-level results incoming... -->
 
 # Discussion
 
