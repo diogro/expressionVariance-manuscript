@@ -32,3 +32,4 @@ out/main.pdf
 .DS_Store
 main.*
 expVarManuscript.Rproj
+out/outfile.pdf

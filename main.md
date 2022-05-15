@@ -200,11 +200,13 @@ The red and blue ticks at the bottom of [@fig:sd_corr]D show the positions on th
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/correlationModeling.png}
-    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in fig.~\ref{fig:sd_corr}A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the ``Other''  category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.}
+    \caption{Coefficients estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in fig.~\ref{fig:sd_corr}A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50\% and 95\% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the ``Other'' category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.} <!-- `` -->
     \label{fig:corr_model}
-\end{figure*}
+\end{figure*} 
+
 
 ## What drives differences in gene expression variance?
+
 To characterize the drivers of across study similarity, we directly model the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
 In this mode, we use study, sampled tissue, and study origin as predictors of the pairwise correlations (see Methods).
 This modeling ([@fig:corr_model]) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation ([@fig:corr_model]C).
@@ -340,26 +342,32 @@ How to bring back to selection/conservation etc? ConsHMM could also be used?
 
 # Discussion
 
-<!-- gene expression variance is a largely unexplored aspect of molecular phenotypes. -->
-By using large publicly available data sets, we were able to show that gene expression variance is reasonably consistent across studies.
+By using large publicly available data sets, we were able to probe the landscape of gene expression variance in several human tissues.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
-However, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
-Differences in variance are informative beyond the differences in mean expression: it is not just that more expressed genes are more variable, residual differences in gene expression variance also carry information about tissue specific patterns.
+This would suggest that careful consideration of sample sizes and experiment design are fundamental to the study of gene expression variance, and the usual small samples of RNA-seq studies might be underpowered for the study of this particular aspect of gene expression.
+Furthermore, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+Understanding the consequences of these differences in variance for specific tissues is still an open field.
+It is clear, however, that differences in variance are informative beyond the differences in mean expression.
+Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
 
 While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
 Leveraging this similarity between gene expression variance, we used a multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes according to their expression variance.
 This rank is associated with within-gene sequence variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable.
 
-Functional analysis using GO enrichment indicated a clear link between function and gene expression variance. First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction. Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication. This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy. Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
+Functional analysis using GO enrichment indicated a clear link between function and gene expression variance.
+First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction.
+Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication.
+This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy.
+Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
 
 While indirect, all these patterns point to a selective structuring of gene expression variance.
-Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes. 
-These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe. 
-Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable. 
+Stabilizing and purifying selection are consistent, genes expected to be under strong variance reducing stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes.
+These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe.
+Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place.
-We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels.
+We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
 Given this consistency, the natural question is then how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
 Comparing two HapMap populations, Li et al [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
@@ -367,8 +375,15 @@ In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression v
 These authors also find a link between gene network connectivity and expression variance, consistent with the effect we find using the gene expression variance rank.
 Also, the pattern of variance alteration differed across diseases, with Parkinson's patients showing increased expression variance, and Schizophrenia patients showing more constrained patters of expression.
 The authors hypothesizes that the reduced variance in Schizophrenia patients reduces the robustness of their gene expression networks.
+This suggests several types of shifts in gene expression variation are possible, with different outcomes. 
+We highlight three different possibilities:
+First, low variance genes, under strong stabilizing selection, could become more variable under stress, indicating a reduced capacity for maintaining homeostasis. 
+Second, high variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to responding to external stimuli.
+Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
+Any one of these changes in expression variance pattern could have major physiological consequences.
 
-Presumably genes will differ in their capacity to maintain their baseline variation levels, and changes in the variation level of some genes could have major physiological consequences.
+Presumably genes will differ in their capacity to maintain their baseline variation levels.
+
 
 
 __Drafts:__
@@ -405,7 +420,7 @@ Gene expression standard deviation is measured as the residual standard deviatio
 
 ## Variance correlation
 
-We assessed the similarity in gene expression variance across studies by using a between study Spearman correlation matrix of the measured SDs.
+We assessed the similarity in gene expression variance across studies by using a between-study Spearman correlation matrix of the measured SDs.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, 4300 genes in total.
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
@@ -428,7 +443,7 @@ If only window based metrics are available, we assembled gene level information 
 In parallel, we use the PopHumanScan data set, which expands PopHuman by compiling and annotating regions under selection.
 Similarly, we used gene level information when possible, and for tracks with only window based metrics, gene level information was assembled from the 10kb windows using the same assignment method described above.
 Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes.
-The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\Theta$.
+The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\theta$.
 
 __Gene connectivity__: As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
 To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
@@ -438,10 +453,6 @@ So, for each study we have a measure of the average correlation of each gene wit
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
 To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
-We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%.
-In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene.
-So, for each study we have a measure of the average correlation of each gene with every other gene.
-The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
 ## Chromatin state correlates of gene expression variance: global
 
