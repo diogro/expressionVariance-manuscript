@@ -285,16 +285,58 @@ alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 
 ## How do molecular signatures of gene regulation relate to gene expression variance?
 
-We assess how local chromatin state relates to gene expression variance.
-We use each gene, including the surrounding 10 kb on both ends, to calculate the proportion of gene regions that corresponds to functional chromatin states and annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning], including promoter and enhancer regions, open chromatin (assayed through DNase hypersensitivity (DHS)), and transcription factor binding sites (TFBS).
+We assess how local epigenetic features relate to gene expression variance.
+We use each gene, including the surrounding 10 kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic marks and gene annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning], including promoter and enhancer regions, open chromatin (assayed through DNase hypersensitivity (DHS)), and transcription factor binding sites (TFBS).
 Biochemical features associated with cis gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
-For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (Benjamini-Hochberg adjP<0.05) [KG supp fig 1].
-As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene [KG supp fig 1].
+For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (Benjamini-Hochberg adjusted $p < 0.05$) [KG supp fig 1].
+As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and that made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
+This shows that gene expression variance is not simply associated with the same features as mean expression levels. 
 The magnitude of the correlation with general RefSeq gene features, such as promoter and coding sequence, is lower for both the variance and mean, and we see that this coincides with an overal positive (in the case of the mean) and negative (in the case of the variance) associations with gene density in the expanded gene regions (gene +/- 250 kb) [KG supp table 1; KG supp fig 1].
-Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance [KG supp fig 1].
+Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positivey correlated with the mean expression [KG supp fig 1].
 Taken together, these results are in line with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression. 
 
-tissue-level results incoming...
+These results are largely in line with a previous assessment of human microarray data across 41 tissues to identify gene expression variance correlates with epigenetic marks on a tissue-by-tissue basis [@Alemu2014-jo]. 
+This is notable, as the gene expression variance metric used in the current study is a single representative value for the expression variance across all tissues and studies assessed, and its relationship with global genomic annotations also defined across many tissues or cell types (see Methods and [@finucane2015partitioning]).
+The concordance between these two sets of results is consistent with the fact that a gene's expression variance in one tissue is highly correlated with its expression variance in other tissues ([@fig:sd_corr]A and B), and thus a global view into expression variance should, for the most part, recapitulate what is seen at the tissue-specific level. 
+Two major considerations arise when interpreting these results.
+First, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it diffcult to parse out the differential effects of individual regulatory states on gene expression variance (KG is assuming this - need to do a formal analysis).
+For example, open chromatin sites are braodly associated with regions that are available for gene regulation and overlap with enhancers, polycomb-mediated repressive sites, and promoters [ref and analysis], among others.
+Second, there has been a massive increase in epigenetic data collected in over 100 human tissues and cell types since these previous microarray and epigenetic mark data were curated and published, meaning we now have more cell-type-specific information and increased understanding of the diversity of regulatory states that can take shape within the nucleus.
+To address these points, we investigate both cross-tissue and tissue-specific expression variance relationships with non-overlapping annotations of chromatin states as defined through ChromHMM [@ernst2012chromhmm].
+The genome segmentations were defined using epigenetic data collected through ENCODE [ref] and Roadmap [ref], either at the universal level across 127 cell and tissue types [@vu2022universal] or in each tissue independently [ref].
+For eight of the tissue types assessed in the current study, we use the ChromHMM states from the corresponding tissue when available, and we use a representative cell type when the tissue itself is not available [KG supp table 2].
+
+For the cross-tissue gene expression variance comparison with the universal chromatin states, we mostly reproduce the results obtained when using the previously curated gene regulatory feature annotations, such as the positive correlation between gene expression variance and both enhancer and polycomb-mediated repressed chromatin states; and the inverse relationship between gene expression variance and active promoters or transcribed states [KG supp fig 2].
+One notable difference is that the strong positive correlation seen between gene expression variance and the union of DHS among cell types [KG supp fig 1] is not seen when using the universal chromatin state for DNase [KG supp fig 2].
+This is likely due in part to the aforementioned difference between overlapping [@finucane2015partitioning] and non-overlapping [@vu2022universal] annotations, such that regions that contain both DNase hypersensitive sites and other gene regulatory epigenetic marks are defined as the chromatin state associated with the other epigenetic marks [@vu2022universal]. 
+This suggests that the DNase state represents a distinct form of gene regulation not clearly defined through the histone marks profiled and used to define the universal chromatin states.
+Indeed, Vu et al. find that the DNase chromatin state that is associated with DNase only across all cell types studied is most strongly enriched for CTCF-specific chromatin states [@vu2022universal]. 
+CTCF can function as an activator, repressor, or insulator protein [ref], and the diverse roles it plays in gene regulation, particuarly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. (need to develop and then refine this more - lit review and any additional analysis)
+
+## Do tissue-specific chromatin states associate with tissue-level gene expression variance?
+
+We next compare the cross-tissue gene expression variance relationships with universal chromatin states to the tissue-level gene expression variance relationships with tissue-specific chromatin states (need to make this wording more clear). 
+Many of the cross-tissue coorelations are recapitulated in the tissue-level assessment, including a strong and highly consistent positive correlation between enhancer states and gene expression variance and an inverse relationship between gene expression variance and gene transcription or ZNF states [KG supp fig 2].
+Two blood associations stand out as being different from the consistent effects across the other tissue-level and cross-tissue associations. 
+The weak promoter state is positively correlated with gene expression variance in all comparisons except blood, reflective of a likely role of bivalent promoters in context-dependent gene expression [? lit review of bivalent promoters, development, the role in differentiated cells].
+Furthermore, as opposed to a consistent inverse correlation of gene expression variance with weak transcription, in blood the expression variance is positively correlated with this chromatin state [KG supp fig 2]. 
+(These results may have something to do with the fact that the top 5% most variable genes are enriched for GO terms related to immunity but I need to get everything into context and think of potential other analyses)
+
+Some notable differences exist between the universal and tissue-specific chromatin state associations with gene expression variance. 
+First, while the universal heterochromatin state positively correlates with cross-tissue gene expression variance, the tissue-specific heterochromatin states are inversely correlated with the tissue-level gene expression variance [KG supp fig 2]. 
+Heterochromatin states in a given cell type should show reduced variance because there should be drastically reduced gene expression overall, as we see in the inverse correlation of heterochromatin states with mean gene expression [KG supp fig 2]. 
+The reason for a universal heterochromatin state showing a positive association with gene expression variance remains to be determined. 
+The universal promoter chromatin state is inversely associated with gene expression variance, in line with our result that genes that are ubiquitously expressed and involved in houskeeping functions are enriched in the low variance genes.
+However, interestingly in both adipose and liver tissues, the tissue-specific promoter state is positively correlated with the tissue-level gene expression variance [KG supp fig 2].
+This could be reflective of the necessity for rapid environmental responses at key expressed genes in these metabolic tissues [ref?].
+Taken together, XX.
+(look more closely at the Alemu paper supplement to see if they show similar results - I don't think they do a great job comparing the tissue patterns in their results/dicussion?)
+
+We ask whether the associations seen between a given tissue's gene expression variance and its corresponding chromatin state is specific to that tissue by comparing the tissue-level expression variance to the universal and other tissue chromatin states [KG supp fig 3].
+
+Maybe do some TF binding site analyses in the different tissue-specific regions to see what might be contributing to gene expression variance at the cross-tissue vs. tissue level. 
+
+How to bring back to selection/conservation etc? ConsHMM could also be used?
 
 # Discussion
 
@@ -375,6 +417,9 @@ Genes that were expressed in at least 50% of the studies were included in the ra
 In order to project a particular gene onto the PC1 of the between study correlation matrix, we impute missing values using a PCA based imputation [@Husson2019-sl].
 The imputation procedure has minimal effect on the ranking, and imputing missing SD ranks at the beginning or at the end of the ranks produces similar results.
 
+__Tissue-level variance ranking__: While we see a strong correlation between gene expression variance across tissues,  it is important to note that this assessment was performed on only the 4300 genes expressed in all studies. 
+We further investigate the tissue-level expression variance ranks as they relate to genomic regulation.
+
 ## Gene level statistics
 
 __Genetic variation__: Genetic variation measures were obtained from the PopHuman project, which provides a comprehensive set of genomic information for human populations derived from the 1000 Genomes Project.
@@ -398,10 +443,18 @@ In this trimmed network, we then take the average of the Spearman correlation of
 So, for each study we have a measure of the average correlation of each gene with every other gene.
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
-## Chromatin state correlates of gene expression variance
+## Chromatin state correlates of gene expression variance: global
 
-__Chromatin state correlates of gene expression variance__: We first obtain various annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning].
+__Data used__: We first obtain various annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning].
 A subset of these annotations are used to quantify functional and molecular correlates of the gene expression variance metric: 1) promoter, coding, and 3' and 5' UTR are annotations from the RefSeq gene model; 2) CTCF, promoter flanking, transcribed, transcription start site, and enhancer categories were defined as the union [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 3) the repressed category was defined as the intersection [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 4) conserved elements were identified across 29 mammalian species [@lindblad2011high; @ward2012evidence]; 5) TFBS were identified from digital genomic footprinting of DNase hypersensitive sites in 57 cell lines [@gusev2014partitioning; @encode2012integrated]; super-enhancers were defined as the union [@finucane2015partitioning] of all super-enhancers identified in 86 human cell and tissue types [@hnisz2013super]; 6) DHS sites were defined as the union [@finucane2015partitioning] of DHSs identified across 13 cell lines [@encode2012integrated; @trynka2013chromatin].
+
+__Correlations__: We   
+
+## Tissue-level expression variance assessment
+
+__Data used__: 
+
+__Correlations__: Correlations were performed in the same manner as the global assessment (above) and corrected (Benjamini-Hochberg) for all tests (all tissue-level (n = 8 tissues) gene expression variance ranks plus the cross-tissue ranks correlated with all five chromatin state categories in each tissue plus the universal annotation (n = 405 tests)).
 
 
 ## Code availability
