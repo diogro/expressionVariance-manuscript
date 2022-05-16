@@ -454,19 +454,20 @@ The average connectivity for each gene is the average across all studies in whic
 As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
 To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
 
-## Chromatin state correlates of gene expression variance: global
+## Epigenetic mark and gene feature correlates of gene expression variance
 
 __Data used__: We first obtain various annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning].
 A subset of these annotations are used to quantify functional and molecular correlates of the gene expression variance metric: 1) promoter, coding, and 3' and 5' UTR are annotations from the RefSeq gene model; 2) CTCF, promoter flanking, transcribed, transcription start site, and enhancer categories were defined as the union [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 3) the repressed category was defined as the intersection [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 4) conserved elements were identified across 29 mammalian species [@lindblad2011high; @ward2012evidence]; 5) TFBS were identified from digital genomic footprinting of DNase hypersensitive sites in 57 cell lines [@gusev2014partitioning; @encode2012integrated]; super-enhancers were defined as the union [@finucane2015partitioning] of all super-enhancers identified in 86 human cell and tissue types [@hnisz2013super]; 6) DHS sites were defined as the union [@finucane2015partitioning] of DHSs identified across 13 cell lines [@encode2012integrated; @trynka2013chromatin].
 
-__Correlations__: We   
+__Correlations__: We use the ppcor R package [@kim2015ppcor] v1.1 to run the pairwise partial Spearman correlations for three variables: the gene expression variance and mean ranks and the proportion of the gene regions (gene +/- 10 kb) made up of the various features described above, one at a time. 
+We extract the partial Spearman correlation rho and p-values for the variance and mean associations with the chromatin and gene features. 
+P-values are corrected using the Benjamini-Hochberg procedure and comparisons with an adjusted $p < 0.05$ are considered significant.
 
-## Tissue-level expression variance assessment
+## Cross-tissue vs. tissue-level gene expression variance 
 
-__Data used__: 
+__Data used__: We use the universal [@vu2022universal] and tissue-specific [ref] ChromHMM [@ernst2012chromhmm] chromatin states to compare the non-overlapping genome segmentation to cross-tissue and tissue-level gene expression variance metrics. 
 
-__Correlations__: Correlations were performed in the same manner as the global assessment (above) and corrected (Benjamini-Hochberg) for all tests (all tissue-level (n = 8 tissues) gene expression variance ranks plus the cross-tissue ranks correlated with all five chromatin state categories in each tissue plus the universal annotation (n = 405 tests)).
-
+__Correlations__: Correlations were performed in the same manner as the global assessment (above) and corrected (Benjamini-Hochberg) for all tests (all tissue-level (n = 8 tissues) gene expression variance ranks plus the cross-tissue ranks correlated with all 13 chromatin state categories in each tissue plus the universal annotation (n = 1,053 tests)).
 
 ## Code availability
 
