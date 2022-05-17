@@ -9,6 +9,8 @@ author:
       equal_contributor: "yes"
   - Diogo Melo:
       institute: eeb
+      email: damelo@princeton.edu
+      orcid: 0000-0002-7603-0092
       equal_contributor: "yes"
   - Kristina M. Garske:
       institute: lsi
