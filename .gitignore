@@ -33,3 +33,15 @@ out/main.pdf
 main.*
 expVarManuscript.Rproj
 out/outfile.pdf
+outfile.aux
+outfile.bbl
+outfile.bcf
+outfile.blg
+outfile.enriched.json
+outfile.latex
+outfile.log
+outfile.pdf
+outfile.run.xml
+.vscode/configurationCache.log
+.vscode/dryrun.log
+.vscode/targets.log
