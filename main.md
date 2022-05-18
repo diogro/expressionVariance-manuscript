@@ -250,7 +250,7 @@ Both GO analyses suggests a strong influence of biological function in determini
 \begin{figure*}[t!]
     \centering
     \includegraphics[width=\linewidth]{figures/skew_entropy.png}
-    \caption{Relationship between skew and entropy of rank decile distributions for each GO term. The GO terms are filtered for gene counts greater than 100 as in fig. \ref{fig:go_skewness}.}
+    \caption{Relationship between skew and entropy of rank decile distributions for each GO term. High entropy terms, to the right of the plot, are associated with a more egalitarian proportion of genes in each of the SD rank deciles. Terms on the left of the plot are associated with more genes in some particular decile. The skewness in the y-axis measures if the high- or low-variance deciles are more represented for a particular term. Terms on the positive side of the y-axis are associated with low-variation genes, and terms on the negative side of the y-axis are associated with high variation genes. The GO terms are filtered for gene counts greater than 100, as in fig. \ref{fig:go_skewness}.}
     \label{fig:skew_entropy}
 \end{figure*}
 
