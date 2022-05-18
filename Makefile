@@ -11,7 +11,7 @@ pdf:
 	biber outfile
 	xelatex outfile.latex
 	xelatex outfile.latex
-	mv outfile.pdf out/
+	mv outfile.pdf out/main.pdf
 	ls outfile* | grep -v main.md | xargs rm
 cleanall:
 	ls outfile* | grep -v main.md | xargs rm
