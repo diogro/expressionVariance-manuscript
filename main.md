@@ -302,7 +302,7 @@ This is notable, as the gene expression variance metric used in the current stud
 The concordance between these two sets of results is consistent with the fact that a gene's expression variance in one tissue is highly correlated with its expression variance in other tissues ([@fig:sd_corr]A and B), and thus a global view into expression variance should, for the most part, recapitulate what is seen at the tissue-specific level. 
 Two major considerations arise when interpreting these results.
 First, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it diffcult to parse out the differential effects of individual regulatory states on gene expression variance (KG is assuming this - need to do a formal analysis).
-For example, open chromatin sites are braodly associated with regions that are available for gene regulation and overlap with enhancers, polycomb-mediated repressive sites, and promoters [ref and analysis], among others.
+For example, open chromatin sites are broadly associated with regions that are available for gene regulation and overlap with enhancers, polycomb-mediated repressive sites, and promoters [ref and analysis], among others.
 Second, there has been a massive increase in epigenetic data collected in over 100 human tissues and cell types since these previous microarray and epigenetic mark data were curated and published, meaning we now have more cell-type-specific information and increased understanding of the diversity of regulatory states that can take shape within the nucleus.
 To address these points, we investigate both cross-tissue and tissue-specific expression variance relationships with non-overlapping annotations of chromatin states as defined through ChromHMM [@ernst2012chromhmm].
 The genome segmentations were defined using epigenetic data collected through ENCODE [ref] and Roadmap [ref], either at the universal level across 127 cell and tissue types [@vu2022universal] or in each tissue independently [ref].
@@ -453,6 +453,16 @@ So, for each study we have a measure of the average correlation of each gene wit
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
 To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
+
+## Assessing gene functions enriched in least and most variable genes
+
+__GO term enrichment__: 
+
+__Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract information on which proteins are secreted [@uhlen2019human] and test for an enrichment of genes with secreted products in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
+
+__Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for an enrichment of houskeeping genes in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
+
+__Probability of being loss-of-function intolerant__: 
 
 ## Epigenetic mark and gene feature correlates of gene expression variance
 
