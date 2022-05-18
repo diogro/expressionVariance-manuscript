@@ -28,6 +28,7 @@ institute:
       name: Department of Ecology and Evolutionary Biology, Princeton University
   - fml:
       name: Friedrich Miescher Laboratory, Max Planck Society
+# classoption: twocolumn
 output: pdf_document
 geometry:
 - top=20mm
