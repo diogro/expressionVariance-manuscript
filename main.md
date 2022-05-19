@@ -36,6 +36,8 @@ geometry:
 - right=25mm
 - bottom=20mm
 header-includes:
+- \usepackage[left]{lineno}
+- \linenumbers
 - \usepackage[backref=true,style=authoryear]{biblatex}
 - \DefineBibliographyStrings{english}{backrefpage = {page}, backrefpages = {pages}}
 - \usepackage{multicol}
@@ -184,7 +186,7 @@ Finally, we explored the link between gene expression variance and biological fu
 \begin{figure*}[t!]
     \centering
      \includegraphics[width=\dimexpr 1\textwidth]{figures/fig1.png}
-    \caption{A. Correlation heatmap showing the across study Spearman correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA, with colors ; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
+    \caption{A. Correlation heatmap showing the across study Spearman correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).}
     \label{fig:sd_corr}
 \end{figure*}
 
@@ -221,7 +223,7 @@ These studies also show up further away in the PCoA plot in fig. \ref{fig:sd_cor
 
 To explore the relationship between variance and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (about ~560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group.
 This allows us to establish the representative functions of these consistently high and low-variance genes.
-In total, using a Benjamini-Hochberg adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing).
+In total, using a Benjamini-Hochberg (BH) adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing).
 Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (fig. \ref{fig:go_tails}A).
 In line with this GO term enrichment, the top 5% most variable genes are enriched 7.7-fold for genes that encode secreted proteins, relative to all other genes ($p < 10^{-3}$).
 Among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (fig. \ref{fig:go_tails}B); and accordingly we find that previously characterized human housekeeping genes [@Hounkpe2020-yq] are enriched within the 5% least variable genes 2.0-fold relative to all other genes ($p < 10^{-3}$).
@@ -287,7 +289,7 @@ alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 We assess how local epigenetic features relate to gene expression variance.
 We use each gene, including the surrounding 10 kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic marks and gene annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning], including promoter and enhancer regions, open chromatin (assayed through DNase hypersensitivity (DHS)), and transcription factor binding sites (TFBS).
 Biochemical features associated with cis gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
-For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (Benjamini-Hochberg adjusted $p < 0.05$) [KG supp fig 1].
+For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted $p < 0.05$) [KG supp fig 1].
 As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and that made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
 This shows that gene expression variance is not simply associated with the same features as mean expression levels.
 The magnitude of the correlation with general RefSeq gene features, such as promoter and coding sequence, is lower for both the variance and mean, and we see that this coincides with an overal positive (in the case of the mean) and negative (in the case of the variance) associations with gene density in the expanded gene regions (gene +/- 250 kb) [KG supp table 1; KG supp fig 1].
@@ -473,7 +475,7 @@ P-values are corrected using the Benjamini-Hochberg procedure and comparisons wi
 
 __Data used__: We use the universal [@vu2022universal] and tissue-specific [ref] ChromHMM [@ernst2012chromhmm] chromatin states to compare the non-overlapping genome segmentation to cross-tissue and tissue-level gene expression variance metrics.
 
-__Correlations__: Correlations were performed in the same manner as the global assessment (above) and corrected (Benjamini-Hochberg) for all tests (all tissue-level (n = 8 tissues) gene expression variance ranks plus the cross-tissue ranks correlated with all 13 chromatin state categories in each tissue plus the universal annotation (n = 1,053 tests)).
+__Correlations__: Correlations were performed in the same manner as the global assessment (above) and corrected (BH) for all tests (all tissue-level (n = 8 tissues) gene expression variance ranks plus the cross-tissue ranks correlated with all 13 chromatin state categories in each tissue plus the universal annotation (n = 1,053 tests)).
 
 ## Code availability
 
