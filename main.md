@@ -52,7 +52,7 @@ mainfont: Skolar PE TEST Regular
 mainfontoptions:
 - Numbers=Lowercase
 - Numbers=Proportional
-csl: ./cse.csl
+# csl: ./cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
 abstract: Variance in gene expression provides a basis for understanding physiology, disease, and evolution. Transcriptional profiling has revealed how differences in mean expression across groups can drive phenotypic variation in human populations. Recent work has expanded towards understanding the role variation in expression plays in shaping this phenotypic variation.  However, the precise landscape in which this variance exists remains unknown and the factors affecting variation across the landscape remain understudied. Here we show the landscape of expression variation over 20,000 samples across 60 studies and N tissues. Using both within study rankings of variation and a cross-study variance score,  we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Our results serve both a baseline for understanding the landscape of gene expression variance and for study the drivers of the variance. We anticipate that exploring these large public datasets will provide insights into something... probably...
@@ -452,13 +452,13 @@ The average connectivity for each gene is the average across all studies in whic
 
 ## Assessing gene functions enriched in least and most variable genes
 
-__GO term enrichment__: 
+__GO term enrichment__:
 
 __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract information on which proteins are secreted [@uhlen2019human] and test for an enrichment of genes with secreted products in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
 
 __Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for an enrichment of houskeeping genes in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
 
-__Probability of being loss-of-function intolerant__: 
+__Probability of being loss-of-function intolerant__:
 
 ## Epigenetic mark and gene feature correlates of gene expression variance
 
