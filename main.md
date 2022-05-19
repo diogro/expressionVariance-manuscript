@@ -430,7 +430,7 @@ In order to project a particular gene onto the PC1 of the between study correlat
 The imputation procedure has minimal effect on the ranking, and imputing missing SD ranks at the beginning or at the end of the ranks produces similar results.
 We also create a tissue specific variance ranking, using the same ranking procedure but joining studies done in the same tissue type.
 For this tissue level ranking, we only use genes that are expressed in all studies of a given tissue.
-For tissues that are represented by a single study, we use the SD ranking for that study as the tisseu rank.
+For tissues that are represented by a single study, we use the SD ranking for that study as the tissue rank.
 We further investigate the tissue-level expression variance ranks as they relate to genomic regulation.
 
 ## Gene level statistics
@@ -456,7 +456,7 @@ __GO term enrichment__:
 
 __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract information on which proteins are secreted [@uhlen2019human] and test for an enrichment of genes with secreted products in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
 
-__Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for an enrichment of houskeeping genes in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
+__Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for an enrichment of housekeeping genes in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
 
 __Probability of being loss-of-function intolerant__:
 
