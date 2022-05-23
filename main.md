@@ -353,7 +353,7 @@ How to bring back to selection/conservation etc? ConsHMM could also be used?
 By using large publicly available data sets, we were able to probe the landscape of gene expression variance in several human tissues.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
 This would suggest that careful consideration of sample sizes and experiment design are fundamental to the study of gene expression variance, and the usual small samples of RNA-seq studies might be underpowered for the study of this particular aspect of gene expression.
-Furthermore, the largest driver of differences across studies was idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+Furthermore, the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
 Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
@@ -375,7 +375,11 @@ These same genes are also expected to be under strong purifying selection and sh
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place.
-We find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
+One interesting aspect of the GO term analysis shown if figures \ref{skew_entropy} and \ref{go_skewness} is that there is no term associated with enrichment for intermediate variance: the low-entropy terms have either positive or negative skew, never zero skew. 
+In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation. 
+Either there is not relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes. 
+This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection or (2) biological processes under disruptive selection.
+To sum up, we find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection. 
 
 Given this consistency, the natural question is then how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
 Comparing two HapMap populations, Li et al [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
