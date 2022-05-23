@@ -54,7 +54,7 @@ mainfont: Skolar PE TEST Regular
 mainfontoptions:
 - Numbers=Lowercase
 - Numbers=Proportional
-# csl: ./cse.csl
+csl: ./cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
 abstract: Variance in gene expression provides a basis for understanding physiology, disease, and evolution. Transcriptional profiling has revealed how differences in mean expression across groups can drive phenotypic variation in human populations. Recent work has expanded towards understanding the role variation in expression plays in shaping this phenotypic variation.  However, the precise landscape in which this variance exists remains unknown and the factors affecting variation across the landscape remain understudied. Here we show the landscape of expression variation over 20,000 samples across 60 studies and N tissues. Using both within study rankings of variation and a cross-study variance score,  we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Our results serve both a baseline for understanding the landscape of gene expression variance and for study the drivers of the variance. We anticipate that exploring these large public datasets will provide insights into something... probably...
@@ -192,7 +192,7 @@ Finally, we explored the link between gene expression variance and biological fu
 
 Gene expression standard deviations (SDs) were calculated for each data set using a unified pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
 Spearman correlations ($\rho_s$) between gene expression SDs reveals a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies (fig. \ref{fig:sd_corr}A and B).
-Several studies were conducted under the umbrella of two large research projects: GTEx [@GTEx2017-xb] and TCGA [tcga2013-gx], and we note these study origins in the figures.
+Several studies were conducted under the umbrella of two large research projects: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note these study origins in the figures.
 A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx  and TCGA studies are clustered among themselves and close together (fig. \ref{fig:sd_corr}C).
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
 Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable (fig. \ref{fig:sd_corr}D).
@@ -212,7 +212,7 @@ The red and blue ticks at the bottom of fig. \ref{fig:sd_corr}D show the positio
 ## What drives differences in gene expression variance?
 
 To characterize the drivers of across study similarity, we directly modeled the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
-In this model, we use individual study, sampled tissue (whether a comparison is between same tissue or different tissue), and study source (gTEX, TCGA and miscellaneous) as predictors of the pairwise correlations (see Methods).
+In this model, we use individual study, sampled tissue (whether a comparison is between same tissue or different tissue), and study source (GTEx, TCGA and miscellaneous) as predictors of the pairwise correlations (see Methods).
 This modeling (fig. \ref{fig:corr_model}) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (fig. \ref{fig:corr_model}C).
 Correlation involving studies that are not from TCGA and GTEx (marked as "Misc.") are on average lower (fig. \ref{fig:corr_model}C).
 Since these two sources are independent, this mild effect on the similarities could be due to the quality of the data coming from these two large projects.
@@ -306,32 +306,31 @@ The magnitude of the correlation with general RefSeq gene features, such as prom
 Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
 Taken together, these results are in line with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
-These results are largely in line with a previous assessment of human microarray data across 41 tissues to identify gene expression variance correlates with epigenetic marks on a tissue-by-tissue basis [@Alemu2014-jo].
-This is notable, as the gene expression variance metric used in the current study is a single representative value for the expression variance across all tissues and studies assessed, and its relationship with global genomic annotations also defined across many tissues or cell types (see Methods and [@finucane2015partitioning]).
+These results are largely in line with a previous assessment of human microarray data across 41 tissues to identify gene expression variance correlates with epigenetic marks on a tissue-by-tissue basis [@Alemu2014-jo], with the notable difference that the gene expression variance metric used here is a single expression variance rank for all tissues and studies assessed, and its relationship with global genomic annotations also defined across many tissues or cell types (see Methods and [@finucane2015partitioning]).
 The concordance between these two sets of results is consistent with the high correlation of gene expression variance across tissues (fig. \ref{fig:sd_corr}A and B), which implies that a global view into expression variance should, for the most part, recapitulate what is seen at the tissue-specific level.
 Two major considerations arise when interpreting these results.
 First, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it difficult to parse out the differential effects of individual regulatory states on gene expression variance.
 For example, open chromatin sites are broadly associated with regions that are available for gene regulation and overlap with enhancers, polycomb-mediated repressive sites, and promoters [ref and analysis], among others.
 Second, there has been a massive increase in epigenetic data collected in over 100 human tissues and cell types since these previous microarray and epigenetic mark data were curated and published, meaning we now have more cell-type-specific information and increased understanding of the diversity of regulatory states that can take shape within the nucleus.
 To address these points, we investigate both cross-tissue and tissue-specific expression variance relationships with non-overlapping annotations of chromatin states as defined through ChromHMM [@ernst2012chromhmm].
-The genome segments were defined using epigenetic data collected through ENCODE [@ENCODE2012-mz] and Roadmap [@Roadmap_Epigenomics_Consortium2015-mq], either at the universal level across 127 cell and tissue types [@vu2022universal] or in each tissue independently [ref].
+The genome segment annotations were defined using epigenetic data collected through ENCODE [@ENCODE2012-mz] and Roadmap [@Roadmap_Epigenomics_Consortium2015-mq], either at the universal level across 127 cell and tissue types [@vu2022universal] or in each tissue independently [ref].
 For eight of the tissue types assessed in the current study, we use the ChromHMM states from the corresponding tissue when available, and we use a representative cell type when the tissue itself is not available [KG supp table 2].
 
 For the cross-tissue gene expression variance comparison with the universal chromatin states, we mostly reproduce the results obtained when using the previously curated gene regulatory feature annotations, such as the positive correlation between gene expression variance and both enhancer and polycomb-mediated repressed chromatin states; and the inverse relationship between gene expression variance and active promoters or transcribed states [KG supp fig 2].
 One notable difference is that the strong positive correlation seen between gene expression variance and the union of DHS among cell types [KG supp fig 1] is not seen when using the universal chromatin state for DNase [KG supp fig 2].
 This is likely due in part to the aforementioned difference between overlapping [@finucane2015partitioning] and non-overlapping [@vu2022universal] annotations, such that regions that contain both DNase hypersensitive sites and other gene regulatory epigenetic marks are defined as the chromatin state associated with the other epigenetic marks [@vu2022universal].
 This suggests that the DNase state represents a distinct form of gene regulation not clearly defined through the histone marks profiled and used to define the universal chromatin states.
-Indeed, Vu et al. find that the DNase chromatin state that is associated with DNase only across all cell types studied is most strongly enriched for CTCF-specific chromatin states [@vu2022universal].
-CTCF can function as an activator, repressor, or insulator protein [ref], and the diverse roles it plays in gene regulation, particularly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. __(need to develop and then refine this more - lit review and any additional analysis)__
+Indeed, Vu et al. [-@vu2022universal] find that the DNase chromatin state that is associated with DNase only across all cell types studied is most strongly enriched for CTCF-specific chromatin states.
+CTCF is a transcription factor that can function as an activator, repressor, or insulator protein [Dunn2003-cu], and the diverse roles it plays in gene regulation, particularly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. __(need to develop and then refine this more - lit review and any additional analysis)__
 
 ## Do tissue-specific chromatin states associate with tissue-level gene expression variance?
 
-We next compare the cross-tissue gene expression variance relationships with universal chromatin states to the tissue-level gene expression variance relationships with tissue-specific chromatin states (need to make this wording more clear).
-Many of the cross-tissue correlations are recapitulated in the tissue-level assessment, including a strong and highly consistent positive correlation between enhancer states and gene expression variance and an inverse relationship between gene expression variance and gene transcription or ZNF states [KG supp fig 2].
+We also explore the relation of tissue-specific chromatin states and SD rank, and contrast these local analysis to the global analysis outlined above.
+Many of the cross-tissue correlations are recapitulated at the tissue-level, including a strong and highly consistent positive correlation between enhancer states and gene expression variance, and an inverse relationship between gene expression variance and gene transcription or ZNF states [KG supp fig 2].
 Two blood associations stand out as being different from the consistent effects across the other tissue-level and cross-tissue associations.
-The weak promoter state is positively correlated with gene expression variance in all comparisons except blood, reflective of a likely role of bivalent promoters in context-dependent gene expression [? lit review of bivalent promoters, development, the role in differentiated cells].
-Furthermore, as opposed to a consistent inverse correlation of gene expression variance with weak transcription, in blood the expression variance is positively correlated with this chromatin state [KG supp fig 2].
-(These results may have something to do with the fact that the top 5% most variable genes are enriched for GO terms related to immunity but I need to get everything into context and think of potential other analyses)
+The weak promoter state is positively correlated with gene expression variance in all comparisons except blood, reflective of a likely role of bivalent promoters in context-dependent gene expression __(? lit review of bivalent promoters, development, the role in differentiated cells)__.
+Furthermore, the consistent inverse correlation of gene expression variance with weak transcription is reversed in blood [KG supp fig 2].
+__(These results may have something to do with the fact that the top 5% most variable genes are enriched for GO terms related to immunity but I need to get everything into context and think of potential other analyses)__
 
 Some notable differences exist between the universal and tissue-specific chromatin state associations with gene expression variance.
 First, while the universal heterochromatin state positively correlates with cross-tissue gene expression variance, the tissue-specific heterochromatin states are inversely correlated with the tissue-level gene expression variance [KG supp fig 2].
@@ -359,7 +358,7 @@ Understanding the consequences of these differences in variance for specific tis
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
 Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
 
-While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
+While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo]. 
 Leveraging this similarity between gene expression variance, we used a multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes according to their expression variance.
 This rank is associated with within-gene sequence variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable.
@@ -410,7 +409,7 @@ __Drafts:__
 
 ## Data sources
 
-We selected 60 RNA-seq studies with large sample sizes from public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn]. Because we are interested in population variation of gene expression, we exclude single-cell studies and focus only on studies derived from populational samples. We only used studies for which raw read count data was available, and for which we could parse the metadata for batch effects.
+We selected 60 RNA-seq studies with large sample sizes from public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn]. Because we are interested in population variation of gene expression, we exclude single-cell studies and focus only on studies derived from tissue samples. We only used studies for which raw read count data was available, and for which we could parse the metadata for batch effects.
 We use studies to refer to independent data sets, which could have been generated by the same consortium.
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide out studies into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
