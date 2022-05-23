@@ -375,14 +375,14 @@ These same genes are also expected to be under strong purifying selection and sh
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place.
-One interesting aspect of the GO term analysis shown if figures \ref{skew_entropy} and \ref{go_skewness} is that there is no term associated with enrichment for intermediate variance: the low-entropy terms have either positive or negative skew, never zero skew. 
+One interesting aspect of the GO term analysis shown in figures \ref{fig:skew_entropy} and \ref{fig:go_skewness} is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew. 
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation. 
 Either there is not relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes. 
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection or (2) biological processes under disruptive selection.
 To sum up, we find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection. 
 
-Given this consistency, the natural question is then how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
-Comparing two HapMap populations, Li et al [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
+Given this consistency, a natural question is how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
+Comparing two HapMap populations, Li et al. [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
 In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non randomly distributed across signaling networks.
 These authors also find a link between gene network connectivity and expression variance, consistent with the effect we find using the gene expression variance rank.
 Also, the pattern of variance alteration differed across diseases, with Parkinson's patients showing increased expression variance, and Schizophrenia patients showing more constrained patters of expression.
@@ -392,16 +392,16 @@ We highlight three different possibilities:
 First, low variance genes, under strong stabilizing selection, could become more variable under stress, indicating a reduced capacity for maintaining homeostasis.
 Second, high variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to responding to external stimuli.
 Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
-Any one of these changes in expression variance pattern could have major physiological consequences.
+Any one of these changes in expression variance pattern could have major physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. -@Hagai2018-fu for example).
 
-Presumably genes will differ in their capacity to maintain their baseline variation levels.
-
+We also expect high and low variance genes to have different mechanisms of regulation of their gene expression variance, which is supported by the relation between SD rank and local epigenetic features. 
 
 
 __Drafts:__
 
 <!-- - Differences in gene expression variance can be driven by experimental features, so care must be taken when designing experiments focused on finding gene expression differences.
 - Tissue differences in gene expression variance are an unexplored field. -->
+- Insight into the mechanisms of gene variance regulation
 - Variation in perturbed conditions
 - Differences in robustness
 <!-- - Did we look into tissue specificity and rank?  -->
