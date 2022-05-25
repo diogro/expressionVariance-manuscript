@@ -45,3 +45,4 @@ outfile.run.xml
 .vscode/configurationCache.log
 .vscode/dryrun.log
 .vscode/targets.log
+out/archive/*
