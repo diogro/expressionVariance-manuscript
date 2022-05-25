@@ -8,8 +8,6 @@ include $(PANDOC_SCHOLAR_PATH)/Makefile
 logfile := main_$(shell date +%F).pdf
 pdf:
 	xelatex outfile.latex
-	biber outfile
-	xelatex outfile.latex
 	xelatex outfile.latex
 	mv outfile.pdf out/main.pdf
 	cp out/main.pdf out/archive/$(logfile)
