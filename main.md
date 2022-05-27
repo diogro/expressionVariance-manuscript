@@ -350,7 +350,11 @@ How to bring back to selection/conservation etc? ConsHMM could also be used?
 
 ## Linking expression variance and disease
 
-To explore the link between expression variance and disease, we use the gene annotations derived from a probabilistic transcriptome-wide association study (PTWAS, @Zhang2020-cl). Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al. [-@Zhang2020-cl], we performed a hypergeometric enrichment test for the top 5% high- and low-variance genes in our across-tissue rank. We found no enrichment for disease annotated genes among the low-variance genes, but the high-variance genes showed strong enrichment for genes associated with blood disease (xx fold enriched, $p < 10^{-3}$) and psychiatric and neurological disorders (xx fold enriched, $p < 10^{-6}$). The link with blood diseases is expected given the high enrichment for immune related genes in the high-variance group [@Hagai2018-fu]. The psychiatric disease links is consistent with previous work[@Mar2011-dr], and is discussed below.
+To explore the link between expression variance and disease, we use the gene annotations derived from a probabilistic transcriptome-wide association study (PTWAS, @Zhang2020-cl).
+Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al. [-@Zhang2020-cl], we performed a hypergeometric enrichment test for the top 5% high- and low-variance genes in our across-tissue rank.
+We found no enrichment for disease-annotated genes among the low-variance genes, but the high-variance genes showed strong enrichment for genes associated with blood disease (xx fold enriched, $p < 10^{-3}$) and psychiatric and neurological disorders (xx fold enriched, $p < 10^{-6}$).
+The link with blood diseases is expected given the high enrichment for immune-related genes in the high-variance group [@Hagai2018-fu].
+The psychiatric disease links is consistent with previous work[@Mar2011-dr], and is discussed below.
 
 # Discussion
 
