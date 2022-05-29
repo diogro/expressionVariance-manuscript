@@ -47,3 +47,5 @@ outfile.run.xml
 .vscode/targets.log
 out/archive/*
 out/Icon
+out/icon
+Icon
