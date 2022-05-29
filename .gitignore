@@ -46,3 +46,4 @@ outfile.run.xml
 .vscode/dryrun.log
 .vscode/targets.log
 out/archive/*
+out/Icon
