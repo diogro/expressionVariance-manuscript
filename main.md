@@ -490,7 +490,7 @@ __Housekeeping genes__: Human housekeeping genes were identified as genes that a
 
 __Probability of being loss-of-function intolerant (pLI)__: Genes that are likely haploinsufficient (i.e., intolerant of heterozygous loss-of-function variants) were detected as those with fewer than expected protein-truncating variants (PTVs) in ExAC [@Lek2016-xw]. We use genes with a pLI > 0.9 to test for the enrichment of loss-of-function intolerant genes in the genes exhibiting the highest and lowest 5% gene expression variance estimates. We use the hypergeometric test to assess the significance of the enrichment.
 
-__Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information table 2 from Zhang et al. [-@Zhang2020-cl]
+__Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl]
 
 ## Epigenetic marks and gene features
 
