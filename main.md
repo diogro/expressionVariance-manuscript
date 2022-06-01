@@ -433,10 +433,7 @@ We use studies to refer to independent data sets, which could have been generate
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide out studies into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
 
-
-## Data processing pipeline
-
-We use a standardized pipeline to measure gene expression variance while removing extraneous sources of variation.
+__Processing pipeline__: We use a standardized pipeline to measure gene expression variance while removing extraneous sources of variation.
 Data from case-control studies was filtered to keep only control samples.
 For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean 5 cpm reads.
 To account for the mean variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
