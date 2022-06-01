@@ -369,7 +369,7 @@ The psychiatric disease links is consistent with previous work[@Mar2011-dr] and 
 By using large publicly available data sets, we were able to probe the landscape of gene expression variance in several human tissues.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
 This would suggest that careful consideration of sample sizes and experiment design are fundamental to the study of gene expression variance, and the usual small samples of RNA-seq studies might be underpowered for the study of this particular aspect of gene expression.
-Furthermore, the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+However, both the effects of study origin and tissue were small, and the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
 Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
@@ -390,14 +390,20 @@ Stabilizing and purifying selection are consistent, genes expected to be under s
 These same genes are also expected to be under strong purifying selection and show low levels of substitution and polymorphisms, which we observe.
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
+These results are consistent with previous analysis of gene expression variance on a tissue-by-tissue basis [@Alemu2014-jo]. 
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking be somewhat consistent across studies, allowing us to create our ranking in the first place.
+
 One interesting aspect of the GO term analysis shown in figures \ref{fig:skew_entropy} and \ref{fig:go_skewness} is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew. 
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation. 
 Either there is not relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes. 
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection or (2) biological processes under disruptive selection.
-To sum up, we find strong support for the idea that there are indeed genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection. 
+Indeed, we find strong support for the idea that there are  genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection. 
+Following Alemu et al. [@Alemu2014-jo], we observe that epigenetic signatures of gene regulation, such as enhancer histone marks, make up a higher proportion of the surrounding genomic regions of genes that exhibit higher variance in expression.
+In contrast, an accumulation of strong promoter elements and overall transcriptional activation is associated with genes with lower expression variance.
+These results suggest the presence of distinct modes of regulation for genes with high vs. low variance. 
+Combined, the differences in the types of genomic regulatory features surrounding the high- and low-variance genes and their distinct functional annotations, our results encourage the development of future aims to determine whether there are distinct selection patterns between distal regulatory elements and promoters that depend on the gene expression variance level.
 
-Given this consistency, a natural question is how do these well regulated levels of gene expression variance behave in perturbed or disease conditions.
+Given the broad consistency of gene expression variance, a natural question is how do these well regulated levels of variation behave in perturbed or disease conditions.
 Comparing two HapMap populations, Li et al. [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
 In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non randomly distributed across signaling networks.
 These authors also find a link between gene network connectivity and expression variance, consistent with the effect we find using the gene expression variance rank.
@@ -489,7 +495,7 @@ __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract infor
 
 __Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for an enrichment of housekeeping genes in the genes within the highest and lowest 5% of gene expression variance rank. We use the hypergeometric test to assess the significance of the enrichment.
 
-__Probability of being loss-of-function intolerant__:
+__Probability of being loss-of-function intolerant (pLI)__: Genes that are likely haploinsufficient (i.e., intolerant of heterozygous loss-of-function variants) were detected as those with fewer than expected protein-truncating variants (PTVs) in ExAC [@Lek2016-xw]. We use genes with a pLI > 0.9 to test for the enrichment of loss-of-function intolerant genes in the genes exhibiting the highest and lowest 5% gene expression variance estimates. We use the hypergeometric test to assess the significance of the enrichment.
 
 ## Epigenetic mark and gene feature correlates of gene expression variance
 
