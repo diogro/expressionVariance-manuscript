@@ -509,9 +509,24 @@ __Data used__: We use the universal [@vu2022universal] and tissue-specific [ref]
 
 __Correlations__: Correlations were performed in the same manner as the global assessment (above) and corrected (BH) for all tests (all tissue-level (n = 8 tissues) gene expression variance ranks plus the cross-tissue ranks correlated with all 13 chromatin state categories in each tissue plus the universal annotation (n = 1,053 tests)).
 
-## Code availability
+# Code availability
 
 All code for reproducing all analysis and figures, along with a walk-through, is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
+
+# Supporting information
+
+S1 - **Metadata file describing the data used in the study as well as some intermediate processing information.**
+
+S1 - Table
+
+S1 - Column Descriptions
+
+S2 - **Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance**
+
+S2 - Table
+
+S2 - Column Descriptions
+
 
 # References
 
