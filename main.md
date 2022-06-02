@@ -1,33 +1,35 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
-author:
-  - Scott Wolf:
-      institute: lsi
-      email: swwolf@princeton.edu
-      orcid: 0000-0000-0000-0000
-      equal_contributor: "yes"
-  - Diogo Melo:
-      institute: eeb
-      email: damelo@princeton.edu
-      orcid: 0000-0002-7603-0092
-      equal_contributor: "yes"
-  - Kristina M. Garske:
-      institute: lsi
-  - Luisa Pallares:
-      institute: fml
-  - Julien Ayroles:
-      institute:
-        - lsi
-        - eeb
-      email: jayroles@princeton.edu
-      correspondence: "yes"
-institute:
-  - lsi:
-      name: Lewis-Sigler Institute for Integrative Genomics, Princeton University
-  - eeb:
-      name: Department of Ecology and Evolutionary Biology, Princeton University
-  - fml:
-      name: Friedrich Miescher Laboratory, Max Planck Society
+author: 
+  - Scott Wolf, Diogo Melo, Kristina M. Garske, Luisa Pallares, Julien Ayroles
+# author:
+#   - Scott Wolf:
+#       institute: lsi
+#       email: swwolf@princeton.edu
+#       orcid: 0000-0000-0000-0000
+#       equal_contributor: "yes"
+#   - Diogo Melo:
+#       institute: eeb
+#       email: damelo@princeton.edu
+#       orcid: 0000-0002-7603-0092
+#       equal_contributor: "yes"
+#   - Kristina M. Garske:
+#       institute: lsi
+#   - Luisa Pallares:
+#       institute: fml
+#   - Julien Ayroles:
+#       institute:
+#         - lsi
+#         - eeb
+#       email: jayroles@princeton.edu
+#       correspondence: "yes"
+# institute:
+#   - lsi:
+#       name: Lewis-Sigler Institute for Integrative Genomics, Princeton University
+#   - eeb:
+#       name: Department of Ecology and Evolutionary Biology, Princeton University
+#   - fml:
+#       name: Friedrich Miescher Laboratory, Max Planck Society
 # classoption: twocolumn
 output: pdf_document
 geometry:
@@ -510,4 +512,4 @@ All code for reproducing all analysis and figures, along with a walk-through, is
 
 # References
 
-\printbibliography
+<!-- \printbibliography -->
