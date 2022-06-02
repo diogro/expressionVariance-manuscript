@@ -12,6 +12,8 @@ pdf:
 	mv outfile.pdf out/main.pdf
 	cp out/main.pdf out/archive/$(logfile)
 	ls outfile* | grep -v main.md | xargs rm
+pandoc:
+	pandoc -o out/main.pdf main.md --pdf-engine xelatex --citeproc references.bib
 log:
 	cp out/main.pdf out/archive/$(logfile)	
 cleanall:

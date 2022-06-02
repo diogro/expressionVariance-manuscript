@@ -278,7 +278,7 @@ We use gene-level statistics capturing evolutionary and population variation to 
 We focus on three gene-level measures: nucleotide diversity($\pi$), gene expression connectivity, and the proportion of substitutions that are adaptive ($\alpha$).
 Nucleotide diversity is used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
 Here, we find a partial Spearman's correlation of 0.184 ($p < 10^{-3}$).
-Connectivity, a proxy for regulatory interactions with other genes, in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
+Connectivity, a proxy for regulatory interactions with other genes and of selective constraints [@Mahler2017-bb], in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
 The resulting partial Spearman's correlation is -0.024 ($p \approx 6 \times 10^{-3}$).
 Finally, we find a partial Spearman's correlation of -0.046 ($p \approx 1 \times 10^{-3}$) for the proportion of substitutions that are adaptive.
 In spite of all of these associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and gene expression variance.
