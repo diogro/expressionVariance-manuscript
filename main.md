@@ -409,8 +409,9 @@ In short, we find strong support for the idea that there are genes with consiste
 Following Alemu et al. [@Alemu2014-jo], we observe that epigenetic signatures of gene regulation, such as enhancer histone marks, make up a higher proportion of the surrounding genomic regions of genes that exhibit higher variance in expression.
 In contrast, an accumulation of strong promoter elements and overall transcriptional activation is associated with genes with lower expression variance.
 These results suggest the presence of distinct modes of regulation for genes with high vs. low variance.
-Combined, the differences in the types of genomic regulatory features surrounding the high- and low-variance genes and their distinct functional annotations suggest different mechanisms of regulation of their gene expression variance.
+Combined, the differences in the types of genomic regulatory features surrounding the high- and low-variance genes and their distinct functional annotations suggest different mechanisms of regulation of their gene expression variance [@Alemu2014-jo].
 This heterogeneity could lead to detectable differences in selection signatures between distal regulatory elements and promoters depending on the gene expression variance.
+We posid it should be possible to go beyond the usual caracterization of strategies of gene expression robustness, and to explore mechanisms for the _robustness of plasticity_, that is, the maintenance of high levels of gene expression variation given environmental cues.
 
 Given the broad consistency of gene expression variance, a natural question is how do these well regulated levels of variation behave in perturbed or disease conditions.
 We find some suggestive links between tissue-specific variance ranks and disease, but these links need to be better explored using more specific methods.
