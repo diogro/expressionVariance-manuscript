@@ -175,7 +175,9 @@ Even within individuals, gene expression is also variable across tissues [@GTEx2
 To what extent differences in mean expression level translate to differences in expression variance is not clear.
 Of course, genes that are exclusively expressed in a single cell type or tissue are necessarily more variable in that particular tissue, but differentially expressed genes could also be more variable in a particular context.
 For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue.
-Alternatively, expression variation across tissues could be tightly coupled, and in this example, selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
+Alternatively, expression variation across tissues could be tightly coupled, and in this example, selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation. 
+Regarding tissue-specific gene expression variation, Alemu et al. [@Alemu2014-jo] used microarray data for several human tissues to investigate the epigenetic drivers of gene expression variation, showing that several epigenetic markers were indeed linked to gene expression variation, and that these were variable across tissues and between high- and low-variance genes. 
+This apparent heterogeneity in regulation for high and low-variance genes is interesting expecially due to the usual focus on gene expression robustness, in the sense of reducing variation [@Siegal2014-dv; @Payne2015-wn; @Macneil2011-ax; @Denby2012-as]. For example, Siegal and Leu [@Siegal2014-dv] provide several examples of known regulatory mechanisms for reducing gene expression variance, but no examples for the maintenance of high gene expression variance.
 
 Here, we use public gene expression data sets to evaluate how the differences in gene expression variance is structured across independent samples.
 We collected and compared the gene expression variance across many studies and used the similarities across these studies to create a gene expression variance ranking, which orders genes from least variable to most variable.
@@ -423,6 +425,11 @@ Any one of these changes in expression variance pattern could have physiological
 Genes are also expected to differ in their capacity to maintain an optimal level of gene expression variance [@Macneil2011-ax].
 These differences in robustness are linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul].
 Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that these are the result of different patterns of selection.
+
+## Draft
+
+- We could use some epigenetics discussion in the introduction. Maybe some comments on the Alemu paper and references from it. 
+- Classes of high and low variance genes solve a tension between robustness and plasticity. Literature has plenty of examples of strategies to acheive robustness in the sense of limiting variation [@Siegal2014-dv], but not as many mechanisms to robustness in maintaining high variation, or robustness in maintaining apropriate levels of plasticity.
 
 \footnotesize
 
