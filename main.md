@@ -511,3 +511,5 @@ __Correlations__: Correlations were performed in the same manner as the global a
 All code for reproducing all analysis and figures, along with a walk-through, is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
 
 # References
+
+<!-- %% \printbibliography -->
