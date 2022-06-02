@@ -112,10 +112,17 @@ Prerequisites
 -------------
 
 This package builds on [pandoc](http://pandoc.org/), the universal
-document converter, version 2.11 or later. See the pandoc website for
-[installation instructions](http://pandoc.org/installing.html) and
-suggestions for LaTeX packages, which we use for PDF generation.
+document converter. See the pandoc website for [installation
+instructions](http://pandoc.org/installing.html) and suggestions for
+LaTeX packages, which we use for PDF generation.
 
+Starting with pandoc-scholar 3.0.0, the minimum required pandoc version
+is 2.11. If you have to use an older pandoc, please combine it with the
+last 2.* release of pandoc-scholar.
+
+Also note that pandoc's JATS support, especially citation handling, was
+buggy prior to pandoc v2.11.4. Please use that or a newer version when
+producing JATS XML.
 
 Installation
 ------------
@@ -161,7 +168,7 @@ include $(PANDOC_SCHOLAR_PATH)/Makefile
 Calling `make` as usual will create all configured output formats. Per default,
 this creates *pdf*, *latex*, *docx*, *odt*, *epub*, *html*, and *jats* output.
 The set of output files can be reduced by setting the `DEFAULT_EXTENSIONS`
-variable to a subset of the aforementioned formats.
+variable to a subset of the aforementioned formats. For example `DEFAULT_EXTENSIONS = pdf odt docx`
 
 Alternative template files can be set using `TEMPLATE_FILE_<FORMAT>` variables,
 where `<FORMAT>` is one of *HTML*, *EPUB*, *JATS*, or *LATEX*. The reference
@@ -298,13 +305,12 @@ Example:
 License
 -------
 
-Copyright © 2016–2020 Albert Krewinkel and Robert Winkler except for the
+Copyright © 2016–2021 Albert Krewinkel and Robert Winkler except for the
 following components:
 
 - HTML template: © 2016 Andrew G. York and Diana Mounter
 - dkjson: © 2010-2013 David Heiko Kolf
-- lua-filters: © 2017-2020 John MacFarlane, Albert Krewinkel, Jesse Rosenthal,
-  and Greg Tucker-Kellogg
+- lua-filters: © 2017-2021 Albert Krewinkel, John MacFarlane, and contributors.
 
 This program is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software

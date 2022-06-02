@@ -1,0 +1,5 @@
+# Generated files
+/outfile.*
+
+# Release files
+/dist
