@@ -1,35 +1,38 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
-author: 
-  - Scott Wolf, Diogo Melo, Kristina M. Garske, Luisa Pallares, Julien Ayroles
 # author:
-#   - Scott Wolf:
-#       institute: lsi
-#       email: swwolf@princeton.edu
-#       orcid: 0000-0000-0000-0000
-#       equal_contributor: "yes"
-#   - Diogo Melo:
-#       institute: eeb
-#       email: damelo@princeton.edu
-#       orcid: 0000-0002-7603-0092
-#       equal_contributor: "yes"
-#   - Kristina M. Garske:
-#       institute: lsi
-#   - Luisa Pallares:
-#       institute: fml
-#   - Julien Ayroles:
-#       institute:
-#         - lsi
-#         - eeb
-#       email: jayroles@princeton.edu
-#       correspondence: "yes"
-# institute:
-#   - lsi:
-#       name: Lewis-Sigler Institute for Integrative Genomics, Princeton University
-#   - eeb:
-#       name: Department of Ecology and Evolutionary Biology, Princeton University
-#   - fml:
-#       name: Friedrich Miescher Laboratory, Max Planck Society
+  # - Scott Wolf, Diogo Melo, Kristina M. Garske, Luisa Pallares, Julien Ayroles
+author:
+  - Scott Wolf:
+      institute: lsi
+      email: swwolf@princeton.edu
+      orcid: 0000-0003-4397-1395
+      equal_contributor: "yes"
+  - Diogo Melo:
+      institute: eeb
+      email: damelo@princeton.edu
+      orcid: 0000-0002-7603-0092
+      equal_contributor: "yes"
+  - Kristina M. Garske:
+      institute: lsi
+      orcid: 0000-0002-7228-8125
+  - Luisa Pallares:
+      institute: fml
+      orcid: 0000-0001-6547-1901
+  - Julien Ayroles:
+      institute:
+        - lsi
+        - eeb
+      email: jayroles@princeton.edu
+      correspondence: "yes"
+      orcid: 0000-0001-8729-0511
+institute:
+  - lsi:
+      name: Lewis-Sigler Institute for Integrative Genomics, Princeton University
+  - eeb:
+      name: Department of Ecology and Evolutionary Biology, Princeton University
+  - fml:
+      name: Friedrich Miescher Laboratory, Max Planck Society
 # classoption: twocolumn
 output: pdf_document
 geometry:
@@ -59,7 +62,7 @@ mainfontoptions:
 csl: ./cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
-abstract: Variance in gene expression provides a basis for understanding physiology, disease, and evolution. Transcriptional profiling has revealed how differences in mean expression across groups can drive phenotypic variation in human populations. Recent work has expanded towards understanding the role variation in expression plays in shaping this phenotypic variation.  However, the precise landscape in which this variance exists remains unknown and the factors affecting variation across the landscape remain understudied. Here we show the landscape of expression variation over 20,000 samples across 60 studies and N tissues. Using both within study rankings of variation and a cross-study variance score,  we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Our results serve both a baseline for understanding the landscape of gene expression variance and for study the drivers of the variance. We anticipate that exploring these large public datasets will provide insights into something... probably...
+abstract: Variance in gene expression provides a basis for understanding physiology, disease, and evolution. Transcriptional profiling has revealed how differences in mean expression across groups can drive phenotypic variation in human populations. Recent work has expanded towards understanding the role variation in expression plays in shaping this phenotypic variation.  However, the precise landscape in which this variance exists remains unknown and the factors affecting variation across the landscape remain understudied. Here we show the landscape of expression variation over 20,000 samples across 60 studies and 13 tissues. Using both within study rankings of variation and a cross-study variance score,  we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Our results serve both a baseline for understanding the landscape of gene expression variance and for study the drivers of the variance. We anticipate that exploring these large public datasets will provide insights into something... probably...
 ---
 
 <!-- https://tex.stackexchange.com/questions/536353/biblatex-colors-and-links-only-the-year-not-the-rest-of-the-citation -->
@@ -283,7 +286,7 @@ The resulting partial Spearman's correlation is -0.024 ($p \approx 6 \times 10^{
 Finally, we find a partial Spearman's correlation of -0.046 ($p \approx 1 \times 10^{-3}$) for the proportion of substitutions that are adaptive.
 In spite of all of these associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and gene expression variance.
 
-<!-- 
+<!--
 \begin{table}[]
 \resizebox{\linewidth}{!}{%
 \begin{tabular}{|l|l|l|}
@@ -357,11 +360,11 @@ Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al
 Despite their overall high similarity, we use both across tissue and tissue specific ranks because some genes only appear in the tissue specific rank due to their limited tissue specific gene expression.
 In the high-variance group, we find no enrichment in the across-tissue rank, but we do find enrichment of genes annotated for allergy, immune disease, and endocrine system disease among the high variance genes in several tissue-specific variance ranks.
 Among high-variance genes in the colon rank, we see enrichment for endocrine system disease (1.77-fold, BH adjusted $p < 10^{-04}$).
-Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, BH adjusted $p < 10^{-03}$), 
+Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, BH adjusted $p < 10^{-03}$),
 allergy (1.7-fold, BH adjusted $p < 10^{-03}$), and immune disease (1.32-fold, BH adjusted $p < 10^{-02}$).
-Among high-variance genes in the thyroid rank, we see enrichment for endocrine system disease (1.9-fold, BH adjusted $p < 10^{-05}$), 
+Among high-variance genes in the thyroid rank, we see enrichment for endocrine system disease (1.9-fold, BH adjusted $p < 10^{-05}$),
 allergy (1.85-fold, BH adjusted $p < 10^{-04}$), and immune disease (1.45-fold, BH adjusted $p < 10^{-04}$).
-These are all quite similar and suggest a stable pattern of high-variance gene expression across these tissues, with enrichment for these three classes of diseases. 
+These are all quite similar and suggest a stable pattern of high-variance gene expression across these tissues, with enrichment for these three classes of diseases.
 The link with immune diseases is expected given the high enrichment for immune-related genes in the high-variance group [@Hagai2018-fu].
 As for the low-variance group, we found strong enrichment for genes associated with psychiatric and neurological disorders in the across-tissue rank and in some tissue specific ranks (breast, liver, and stomach; ~1.2-fold enrichment, $p < 0.05$, for all cases).
 The psychiatric disease links is consistent with previous work[@Mar2011-dr] and is discussed below; however, the enrichment among the low-variance genes is weaker.
@@ -376,7 +379,7 @@ Understanding the consequences of these differences in variance for specific tis
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
 Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
 
-While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo]. 
+While these observed differences are notable, we also find a broadly similar pattern of gene expression variance across studies, with high correlations between gene expression variance across most studies (75% of correlations are between 0.45 and 0.9), consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
 Leveraging this similarity between gene expression variance, we used a multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes according to their expression variance.
 This rank is associated with within-gene sequence variation, with more polymorphic genes being more variable.
 Furthermore, genes with high connectivity, those with higher levels of gene expression correlations with other genes, are less variable.
@@ -395,16 +398,16 @@ Likewise, genes whose function is constrained by myriad interactions with severa
 Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking is similar across studies, allowing us to create our ranking in the first place.
 
-One interesting aspect of the GO term analysis shown in figures \ref{fig:skew_entropy} and \ref{fig:go_skewness} is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew. 
-In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation. 
-Either there is not relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes. 
+One interesting aspect of the GO term analysis shown in figures \ref{fig:skew_entropy} and \ref{fig:go_skewness} is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew.
+In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation.
+Either there is not relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes.
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance reducing selection) or (2) biological processes under disruptive selection (i.e., variance increasing selection).
-In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection. 
+In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
 Following Alemu et al. [@Alemu2014-jo], we observe that epigenetic signatures of gene regulation, such as enhancer histone marks, make up a higher proportion of the surrounding genomic regions of genes that exhibit higher variance in expression.
 In contrast, an accumulation of strong promoter elements and overall transcriptional activation is associated with genes with lower expression variance.
-These results suggest the presence of distinct modes of regulation for genes with high vs. low variance. 
-Combined, the differences in the types of genomic regulatory features surrounding the high- and low-variance genes and their distinct functional annotations suggest different mechanisms of regulation of their gene expression variance. 
+These results suggest the presence of distinct modes of regulation for genes with high vs. low variance.
+Combined, the differences in the types of genomic regulatory features surrounding the high- and low-variance genes and their distinct functional annotations suggest different mechanisms of regulation of their gene expression variance.
 This heterogeneity could lead to detectable differences in selection signatures between distal regulatory elements and promoters depending on the gene expression variance.
 
 Given the broad consistency of gene expression variance, a natural question is how do these well regulated levels of variation behave in perturbed or disease conditions.
@@ -479,7 +482,7 @@ In this trimmed network, we then take the average of the Spearman correlation of
 So, for each study we have a measure of the average correlation of each gene with every other gene.
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
-## Gene function assessment 
+## Gene function assessment
 
 __GO term enrichment__: All gene ontology analysis were done using the clusterProfiler R package v4.2.2 [@Wu2021-db] and the Org.Hs.eg.db database package v3.14.0 [@godb].
 
