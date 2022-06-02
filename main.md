@@ -361,11 +361,11 @@ To explore the link between expression variance and disease, we use the gene ann
 Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al. [-@Zhang2020-cl], we performed a hypergeometric enrichment test for the top 5% high- and low-variance genes in our across-tissue rank and in all tissue-specific gene variance ranks.
 Despite their overall high similarity, we use both across tissue and tissue specific ranks because some genes only appear in the tissue specific rank due to their limited tissue specific gene expression.
 In the high-variance group, we find no enrichment in the across-tissue rank, but we do find enrichment of genes annotated for allergy, immune disease, and endocrine system disease among the high variance genes in several tissue-specific variance ranks.
-Among high-variance genes in the colon rank, we see enrichment for endocrine system disease (1.77-fold, BH adjusted $p < 10^{-04}$).
-Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, BH adjusted $p < 10^{-03}$),
-allergy (1.7-fold, BH adjusted $p < 10^{-03}$), and immune disease (1.32-fold, BH adjusted $p < 10^{-02}$).
-Among high-variance genes in the thyroid rank, we see enrichment for endocrine system disease (1.9-fold, BH adjusted $p < 10^{-05}$),
-allergy (1.85-fold, BH adjusted $p < 10^{-04}$), and immune disease (1.45-fold, BH adjusted $p < 10^{-04}$).
+Among high-variance genes in the colon rank, we see enrichment for endocrine system disease (1.77-fold, BH adjusted $p < 10^{-4}$).
+Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, BH adjusted $p < 10^{-3}$),
+allergy (1.7-fold, BH adjusted $p < 10^{-3}$), and immune disease (1.32-fold, BH adjusted $p < 10^{-2}$).
+Among high-variance genes in the thyroid rank, we see enrichment for endocrine system disease (1.9-fold, BH adjusted $p < 10^{-5}$),
+allergy (1.85-fold, BH adjusted $p < 10^{-4}$), and immune disease (1.45-fold, BH adjusted $p < 10^{-4}$).
 These are all quite similar and suggest a stable pattern of high-variance gene expression across these tissues, with enrichment for these three classes of diseases.
 The link with immune diseases is expected given the high enrichment for immune-related genes in the high-variance group [@Hagai2018-fu].
 As for the low-variance group, we found strong enrichment for genes associated with psychiatric and neurological disorders in the across-tissue rank and in some tissue specific ranks (breast, liver, and stomach; ~1.2-fold enrichment, $p < 0.05$, for all cases).
