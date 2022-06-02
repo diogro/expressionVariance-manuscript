@@ -13,7 +13,7 @@ pdf:
 	cp out/main.pdf out/archive/$(logfile)
 	ls outfile* | grep -v main.md | xargs rm
 pandoc:
-	pandoc -o out/main.pdf main.md --pdf-engine xelatex --citeproc references.bib
+	pandoc -o out/main.pdf main.md --pdf-engine xelatex --bibliography=references.bib --citeproc
 log:
 	cp out/main.pdf out/archive/$(logfile)	
 cleanall:
