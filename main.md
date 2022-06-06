@@ -305,29 +305,19 @@ alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 
 We assess how local epigenetic features relate to gene expression variance.
 We use each gene, including the surrounding 10kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic marks and gene annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning], including promoter and enhancer regions, open chromatin (assayed through DNase hypersensitivity (DHS)), and transcription factor binding sites (TFBS).
-Biochemical features associated with cis gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
+Histone modifications associated with is gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
 For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted $p < 0.05$) [KG supp fig 1].
-As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and that made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
-This shows that gene expression variance is not simply associated with the same features as mean expression levels.
-The magnitude of the correlation with general RefSeq gene features, such as promoter and coding sequence, is lower for both the variance and mean, and we see that this coincides with an overall positive (in the case of the mean) and negative (in the case of the variance) associations with gene density in the expanded gene regions (gene +/- 250kb) [KG supp table 1; KG supp fig 1].
-Furthermore, the biochemical properties associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
+As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and the proportion of gene regions made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
+This implies that gene expression variance is not simply associated with the same features as mean expression levels.
+Furthermore, histone modifications associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
 Taken together, these results are compatible with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
-These results are largely in line with a previous assessment of human microarray data across 41 tissues to identify gene expression variance correlates with epigenetic marks on a tissue-by-tissue basis [@Alemu2014-jo], with the notable difference that the gene expression variance metric used here is a single expression variance rank for all tissues and studies assessed, and its relationship with global genomic annotations also defined across many tissues or cell types (see Methods and [@finucane2015partitioning]).
-The concordance between these two sets of results is consistent with the high correlation of gene expression variance across tissues (fig. \ref{fig:sd_corr}A and B), which implies that a global view into expression variance should, for the most part, recapitulate what is seen at the tissue-specific level.
-Two major considerations arise when interpreting these results.
-First, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it difficult to parse out the differential effects of individual regulatory states on gene expression variance.
+Importantly, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it difficult to parse out the differential effects of individual regulatory states on gene expression variance.
 For example, open chromatin sites are broadly associated with regions that are available for gene regulation and overlap with enhancers, polycomb-mediated repressive sites, and promoters [ref and analysis], among others.
-Second, there has been a massive increase in epigenetic data collected in over 100 human tissues and cell types since these previous microarray and epigenetic mark data were curated and published, meaning we now have more cell-type-specific information and increased understanding of the diversity of regulatory states that can take shape within the nucleus.
-To address these points, we investigate both cross-tissue and tissue-specific expression variance relationships with non-overlapping annotations of chromatin states as defined through ChromHMM [@ernst2012chromhmm].
-The genome segment annotations were defined using epigenetic data collected through ENCODE [@ENCODE2012-mz] and Roadmap [@Roadmap_Epigenomics_Consortium2015-mq], either at the universal level across 127 cell and tissue types [@vu2022universal] or in each tissue independently [ref].
-For eight of the tissue types assessed in the current study, we use the ChromHMM states from the corresponding tissue when available, and we use a representative cell type when the tissue itself is not available [KG supp table 2].
-
-For the cross-tissue gene expression variance comparison with the universal chromatin states, we mostly reproduce the results obtained when using the previously curated gene regulatory feature annotations, such as the positive correlation between gene expression variance and both enhancer and polycomb-mediated repressed chromatin states; and the inverse relationship between gene expression variance and active promoters or transcribed states [KG supp fig 2].
-One notable difference is that the strong positive correlation seen between gene expression variance and the union of DHS among cell types [KG supp fig 1] is not seen when using the universal chromatin state for DNase [KG supp fig 2].
-This is likely due in part to the aforementioned difference between overlapping [@finucane2015partitioning] and non-overlapping [@vu2022universal] annotations, such that regions that contain both DNase hypersensitive sites and other gene regulatory epigenetic marks are defined as the chromatin state associated with the other epigenetic marks [@vu2022universal].
+Indeed, when we investigate the expression variance relationship with non-overlapping annotations of chromatin states as defined through ChromHMM [@ernst2012chromhmm],
+the strong positive correlation seen between gene expression variance and the union of DHS among cell types [KG supp fig 1] is not seen when using the universal chromatin state for DNase [KG supp fig 2].
 This suggests that the DNase state represents a distinct form of gene regulation not clearly defined through the histone marks profiled and used to define the universal chromatin states.
-Indeed, Vu et al. [-@vu2022universal] find that the DNase chromatin state that is associated with DNase only across all cell types studied is most strongly enriched for CTCF-specific chromatin states.
+Vu et al. [-@vu2022universal] find that the universal DNase chromatin state is most strongly enriched for CTCF-specific chromatin states.
 CTCF is a transcription factor that can function as an activator, repressor, or insulator protein [Dunn2003-cu], and the diverse roles it plays in gene regulation, particularly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. __(need to develop and then refine this more - lit review and any additional analysis)__
 
 ## Do tissue-specific chromatin states associate with tissue-level gene expression variance?
@@ -402,7 +392,7 @@ Given this strong functional linkage between function and variance, it is not su
 
 One interesting aspect of the GO term analysis shown in figures \ref{fig:skew_entropy} and \ref{fig:go_skewness} is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew.
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation.
-Either there is not relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes.
+Either there is no relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes.
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance reducing selection) or (2) biological processes under disruptive selection (i.e., variance increasing selection).
 In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
@@ -428,7 +418,7 @@ Third, the covariance between different genes could be altered, leading to decoh
 Any one of these changes in expression variance pattern could have physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. [-@Hagai2018-fu] for example).
 Genes are also expected to differ in their capacity to maintain an optimal level of gene expression variance [@Macneil2011-ax].
 These differences in robustness are linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul].
-Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that these are the result of different patterns of selection.
+Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that this variability in strategies is the result of differing patterns of selection.
 
 ## Draft
 
