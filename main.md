@@ -316,7 +316,7 @@ Indeed, when we investigate the expression variance relationship with non-overla
 the strong positive correlation seen between gene expression variance and the union of DHS among cell types [KG supp fig 1] is not seen when using the universal chromatin state for DNase [KG supp fig 2].
 This suggests that the DNase state represents a distinct form of gene regulation not clearly defined through the histone marks profiled and used to define the universal chromatin states.
 Vu et al. [-@vu2022universal] find that the universal DNase chromatin state is most strongly enriched for CTCF-specific chromatin states.
-CTCF is a transcription factor that can function as an activator, repressor, or insulator protein [Dunn2003-cu], and the diverse roles it plays in gene regulation, particularly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. __(need to develop and then refine this more - lit review and any additional analysis)__
+CTCF is a transcription factor that can function as an activator, repressor, or insulator protein [@Dunn2003-cu], and the diverse roles it plays in gene regulation, particularly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. __(need to develop and then refine this more - lit review and any additional analysis)__
 
 ## Do tissue-specific chromatin states associate with tissue-level gene expression variance?
 
@@ -402,7 +402,7 @@ This heterogeneity could lead to detectable differences in selection signatures 
 This heterogeneity in regulation for high and low-variance genes is also notable due to the usual focus on gene expression robustness, in the sense of reducing variation [@Siegal2014-dv; @Payne2015-wn; @Macneil2011-ax; @Denby2012-as]. For example, Siegal and Leu [@Siegal2014-dv] provide several examples of known regulatory mechanisms for reducing gene expression variance, but no examples for the maintenance of high gene expression variance.
 We posit that it should be possible to go beyond the usual characterization of strategies of gene expression robustness, in the sense of reducing variation, and to explore mechanisms for the _robustness of plasticity_, that is, the maintenance of high levels of gene expression variation given environmental cues.
 
-Given the broad consistency of gene expression variance, a natural question is how do these well-regulated levels of variation behave in perturbed or disease conditions.
+Given the broad consistency of gene expression variance in healthy tissues, a natural question is how do these well-regulated levels of variation behave in perturbed or disease conditions.
 We find some suggestive links between tissue-specific variance ranks and disease, but these links need to be better explored using more specific methods.
 Comparing two HapMap populations, Li et al. [-@Li2010-qs] showed that gene expression variance was similar in both populations and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune-related genes among those with more variable expression.
 In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non-randomly distributed across signaling networks.
@@ -416,7 +416,7 @@ Second, high variance genes, expected to be reactive to changes in the environme
 Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
 Any one of these changes in expression variance pattern could have physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. [-@Hagai2018-fu] for example).
 Genes are also expected to differ in their capacity to maintain an optimal level of gene expression variance [@Macneil2011-ax].
-These differences in robustness are linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul].
+Variation in robustness is linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul], and therefore should differ across high- and low-variance genes.
 Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that this variability in strategies is the result of different patterns of selection.
 
 ## Draft
