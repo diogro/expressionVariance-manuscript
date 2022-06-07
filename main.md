@@ -419,11 +419,6 @@ Genes are also expected to differ in their capacity to maintain an optimal level
 Variation in robustness is linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul], and therefore should differ across high- and low-variance genes.
 Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that this variability in strategies is the result of different patterns of selection.
 
-## Draft
-
-- We could use some epigenetics discussion in the introduction. Maybe some comments on the Alemu paper and references from it. 
-- Classes of high and low variance genes solve a tension between robustness and plasticity. Literature has plenty of examples of strategies to achieve robustness in the sense of limiting variation [@Siegal2014-dv], but not as many mechanisms to robustness in maintaining high variation, or robustness in maintaining appropriate levels of plasticity.
-
 \footnotesize
 
 # Methods
