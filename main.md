@@ -160,12 +160,12 @@ Molecular phenotypes such as gene expression are a powerful tool for understandi
 In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po].
 However, gene expression variance can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
 From an evolutionary perspective, the availability of gene expression variance is what allows evolutionary change, and the genetic architecture of gene expression variance can also evolve [@Bruijning2020-bf].
-Understanding the landscape of gene expression variance, and how variable it is across genes and across human populations is then a neglected avenue to understand biological evolution and our relation to the environment.
+Focusing on the landscape of gene expression variance, and how variable it is across genes and across human populations is then a neglected avenue for understanding biological evolution and our relation to the environment.
 In particular, we lack a clear picture of which genes show more gene expression variance, or even if the pattern of gene expression variance is consistent across populations.
 
 Several competing forces act to shape gene expression variance [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
 From a genomic perspective, we expect the influx of new mutations to increase observed variation, while the selective removal of polymorphisms, via purifying selection or selective sweeps, would decrease variation.
-From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to transient increase in variance while selected alleles sweep to fixation, followed by a reduction in variance as these alleles become fixed.
+From a trait-centric perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to a transient increase in variance while selected alleles sweep to fixation, followed by a reduction in variance as these alleles become fixed.
 This simple picture is complicated by epistatic interactions between loci and other aspects of genetic architecture.
 For example, pleiotropic effects allow selection on one trait to influence the variance of other traits, potentially limiting the direct response to selection [@Wagner1997-hw; @Pavlicev2011-xm].
 The indirect effect of directional selection on variance opens the possibility that the main driver of gene expression variance is not direct selection on variance but indirect effects due to selection on trait means [@Hansen2011-es].
@@ -180,7 +180,6 @@ Of course, genes that are exclusively expressed in a single cell type or tissue 
 For example, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduced variation and differences in variation across tissue.
 Alternatively, expression variation across tissues could be tightly coupled, and in this example, selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation. 
 Regarding tissue-specific gene expression variation, Alemu et al. [@Alemu2014-jo] used microarray data for several human tissues to investigate the epigenetic drivers of gene expression variation, showing that several epigenetic markers were indeed linked to gene expression variation, and that these were variable across tissues and between high- and low-variance genes. 
-This apparent heterogeneity in regulation for high and low-variance genes is interesting expecially due to the usual focus on gene expression robustness, in the sense of reducing variation [@Siegal2014-dv; @Payne2015-wn; @Macneil2011-ax; @Denby2012-as]. For example, Siegal and Leu [@Siegal2014-dv] provide several examples of known regulatory mechanisms for reducing gene expression variance, but no examples for the maintenance of high gene expression variance.
 
 Here, we use public gene expression data sets to evaluate how the differences in gene expression variance is structured across independent samples.
 We collected and compared the gene expression variance across many studies and used the similarities across these studies to create a gene expression variance ranking, which orders genes from least variable to most variable.
@@ -366,7 +365,7 @@ The psychiatric disease links is consistent with previous work[@Mar2011-dr] and 
 By using large publicly available data sets, we were able to probe the landscape of gene expression variance in several human tissues.
 Differences in gene expression variance were driven by technical aspects of gene expression measurement, with data derived from large consortia showing more similar patters of variance across genes; and by tissue, with studies using the same tissues also showing higher similarities.
 This would suggest that careful consideration of sample sizes and experiment design are fundamental to the study of gene expression variance, and the usual small samples of RNA-seq studies might be underpowered for the study of this particular aspect of gene expression.
-However, both the effects of study origin and tissue were small, and the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues know to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
+However, both the effects of study origin and tissue were small, and the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues known to have divergent gene expression patterns (i.e. bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
 Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
@@ -378,21 +377,21 @@ Furthermore, genes with high connectivity, those with higher levels of gene expr
 
 Functional analysis using GO enrichment indicated a clear link between function and gene expression variance.
 First, genes with high gene expression variance were enriched for biological functions related to reacting to environmental pressures, like immune function and tissue reconstruction.
-Likewise, low variance genes were enriched for basic cell function, like RNA processing, translation, DNA methylation, and cell duplication.
+Likewise, low variance genes were enriched for basic cell functions, like RNA processing, translation, DNA methylation, and cell duplication.
 These results are consistent with previous analysis of gene expression variance on a tissue-by-tissue basis [@Alemu2014-jo].
-This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each terms in the GO hierarchy.
+This pattern of enrichment is also observed when we look at enrichment for high or low variance genes within the genes associated with each term in the GO hierarchy.
 Basic cell function terms are enriched for low variance genes, and terms involved in response to external stimulus are enriched for high variance genes.
 
 While indirect, all these patterns point to a selective structuring of gene expression variance.
-Stabilizing and purifying selection are consistent: genes expected to be under strong stabilizing selection, those linked with fundamental baseline biological processes, are indeed over represented in the least variable genes.
+Stabilizing and purifying selection are consistent: genes expected to be under strong stabilizing selection, those linked with fundamental baseline biological processes, are indeed overrepresented in the least variable genes.
 These same genes are also expected to be under strong purifying selection and to show low levels of polymorphisms, which we observe.
 Likewise, genes whose function is constrained by myriad interactions with several other genes, those with high connectivity, are less variable.
-Furthermore, genes involved with direct interaction to the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
+Furthermore, genes involved with direct interaction with the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of genes related to interacting with the environment among the most variable.
 Given this strong functional linkage between function and variance, it is not surprising that the gene variance ranking is similar across studies, allowing us to create our ranking in the first place.
 
 One interesting aspect of the GO term analysis shown in figures \ref{fig:skew_entropy} and \ref{fig:go_skewness} is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew.
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation.
-Either there is no relation between the gene expression variance and the biological process, or there is a strong bias towards high or low-variance genes.
+For the GO terms we used, either there is no relation between the gene expression variance and the biological process, or there is a strong bias toward high or low-variance genes.
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance reducing selection) or (2) biological processes under disruptive selection (i.e., variance increasing selection).
 In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
@@ -401,29 +400,30 @@ In contrast, an accumulation of strong promoter elements and overall transcripti
 These results suggest the presence of distinct modes of regulation for genes with high vs. low variance.
 Combined, the differences in the types of genomic regulatory features surrounding the high- and low-variance genes and their distinct functional annotations suggest different mechanisms of regulation of their gene expression variance [@Alemu2014-jo].
 This heterogeneity could lead to detectable differences in selection signatures between distal regulatory elements and promoters depending on the gene expression variance.
-We posid that it should be possible to go beyond the usual caracterization of strategies of gene expression robustness, in the sense of reducing variation, and to explore mechanisms for the _robustness of plasticity_, that is, the maintenance of high levels of gene expression variation given environmental cues.
+This heterogeneity in regulation for high and low-variance genes is also notable due to the usual focus on gene expression robustness, in the sense of reducing variation [@Siegal2014-dv; @Payne2015-wn; @Macneil2011-ax; @Denby2012-as]. For example, Siegal and Leu [@Siegal2014-dv] provide several examples of known regulatory mechanisms for reducing gene expression variance, but no examples for the maintenance of high gene expression variance.
+We posit that it should be possible to go beyond the usual characterization of strategies of gene expression robustness, in the sense of reducing variation, and to explore mechanisms for the _robustness of plasticity_, that is, the maintenance of high levels of gene expression variation given environmental cues.
 
-Given the broad consistency of gene expression variance, a natural question is how do these well regulated levels of variation behave in perturbed or disease conditions.
+Given the broad consistency of gene expression variance, a natural question is how do these well-regulated levels of variation behave in perturbed or disease conditions.
 We find some suggestive links between tissue-specific variance ranks and disease, but these links need to be better explored using more specific methods.
-Comparing two HapMap populations, Li et al. [-@Li2010-qs] showed that gene expression variance was similar in both populations, and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune related genes among those with more variable expression.
-In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non randomly distributed across signaling networks.
+Comparing two HapMap populations, Li et al. [-@Li2010-qs] showed that gene expression variance was similar in both populations and that high variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune-related genes among those with more variable expression.
+In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non-randomly distributed across signaling networks.
 These authors also find a link between gene network connectivity and expression variance, in agreement with the effect we find using the gene expression variance rank.
-Also, the pattern of variance alteration differed across diseases, with Parkinson's patients showing increased expression variance, and Schizophrenia patients showing more constrained patters of expression.
-The authors hypothesizes that the reduced variance in Schizophrenia patients reduces the robustness of their gene expression networks.
+Also, the pattern of variance alteration differed across diseases, with Parkinson's patients showing increased expression variance, and Schizophrenia patients showing more constrained patterns of expression.
+The authors hypothesize that the reduced variance in Schizophrenia patients reduces the robustness of their gene expression networks.
 This suggests several types of shifts in gene expression variation are possible, with different outcomes.
 We highlight three distinct possibilities:
 First, low variance genes, under strong stabilizing selection, could become more variable under stress, indicating a reduced capacity for maintaining homeostasis.
-Second, high variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to responding to external stimuli.
+Second, high variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to respond to external stimuli.
 Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
 Any one of these changes in expression variance pattern could have physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. [-@Hagai2018-fu] for example).
 Genes are also expected to differ in their capacity to maintain an optimal level of gene expression variance [@Macneil2011-ax].
 These differences in robustness are linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul].
-Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that this variability in strategies is the result of differing patterns of selection.
+Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that this variability in strategies is the result of different patterns of selection.
 
 ## Draft
 
 - We could use some epigenetics discussion in the introduction. Maybe some comments on the Alemu paper and references from it. 
-- Classes of high and low variance genes solve a tension between robustness and plasticity. Literature has plenty of examples of strategies to acheive robustness in the sense of limiting variation [@Siegal2014-dv], but not as many mechanisms to robustness in maintaining high variation, or robustness in maintaining apropriate levels of plasticity.
+- Classes of high and low variance genes solve a tension between robustness and plasticity. Literature has plenty of examples of strategies to achieve robustness in the sense of limiting variation [@Siegal2014-dv], but not as many mechanisms to robustness in maintaining high variation, or robustness in maintaining appropriate levels of plasticity.
 
 \footnotesize
 
@@ -431,16 +431,16 @@ Our results suggest that low- and high-variance genes could use different strate
 
 ## Data sources
 
-We selected 60 RNA-seq studies with large sample sizes from public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn]. Because we are interested in population level variation of gene expression, we exclude single-cell studies and focus only on studies derived from tissue samples. We only used studies for which raw read count data was available, and for which we could parse the metadata for batch effects.
+We selected 60 RNA-seq studies with large sample sizes from public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn]. Because we are interested in population-level variation of gene expression, we exclude single-cell studies and focus only on studies derived from tissue samples. We only used studies for which raw read count data was available, and for which we could parse the metadata for batch effects.
 We use studies to refer to independent data sets, which could have been generated by the same consortium.
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide out studies into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
 
 __Processing pipeline__: We use a standardized pipeline to measure gene expression variance while removing extraneous sources of variation.
-Data from case-control studies was filtered to keep only control samples.
-For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean 5 cpm reads.
-To account for the mean variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
-Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed effect model.
+Data from case-control studies were filtered to keep only control samples.
+For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean of 5 cpm reads.
+To account for the mean-variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
+Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed-effects model.
 Outlier individuals in the residual distribution were removed using a robust Principal Component Analysis (PCA) approach of automatic outlier detection [@Chen2020-fy].
 Gene expression standard deviation is measured as the residual standard deviation after fixed effect correction and outlier removal.
 
@@ -473,10 +473,9 @@ Similarly, we used gene level information when possible, and for tracks with onl
 Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case CEU population within 1000 genomes.
 The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\theta$.
 
-__Gene connectivity__: As a proxy for the degree of trans regulation that each gene is subjected to, we calculate the average weighted connectivity for all genes.
-To do this, for each study, we create a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
-We then trim this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%.
-In this trimmed network, we then take the average of the Spearman correlation of all remaining edges for each gene.
+__Gene connectivity__: We calculated the average weighted connectivity for all genes by creating a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression.
+We then trimmed this graph by keeping only edges for which the Spearman correlation is significant at a false discovery rate of 1%.
+In this trimmed network, we then took the average of the Spearman correlation of all remaining edges for each gene.
 So, for each study we have a measure of the average correlation of each gene with every other gene.
 The average connectivity for each gene is the average across all studies in which that gene is expressed.
 
