@@ -303,12 +303,11 @@ alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
 ## How do molecular signatures of gene regulation relate to gene expression variance?
 
 We assess how local epigenetic features relate to gene expression variance.
-We use each gene, including the surrounding 10kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic marks and gene annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning], including promoter and enhancer regions, open chromatin (assayed through DNase hypersensitivity (DHS)), and transcription factor binding sites (TFBS).
-Histone modifications associated with is gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
+We use each gene, including the surrounding 10kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic signatures of gene regulation defined through ChromHMM [@ernst2012chromhmm] chromatin states.
+Chromatin states associated with distal (i.e., non-promoter) gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
 For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted $p < 0.05$) [KG supp fig 1].
 As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and the proportion of gene regions made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
-This implies that gene expression variance is not simply associated with the same features as mean expression levels.
-Furthermore, histone modifications associated with promoter flanking regions, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
+Furthermore, histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
 Taken together, these results are compatible with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
 Importantly, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it difficult to parse out the differential effects of individual regulatory states on gene expression variance.
