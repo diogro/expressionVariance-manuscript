@@ -62,7 +62,7 @@ mainfontoptions:
 csl: ./cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
-abstract: Gene expression provides a basis for understanding physiology, disease, and evolution. Transcriptional profiling has revealed how differences in mean expression across groups can drive phenotypic variation in human populations. Recent work has expanded towards understanding the role variation in expression plays in shaping this phenotypic variation.  However, the precise landscape in which this variance exists remains unknown and the factors affecting variation across the landscape remain understudied. Here we show the landscape of expression variation over 20,000 samples across 60 studies and 13 tissues. Using both within study rankings of variation and a cross-study variance score,  we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Our results serve both a baseline for understanding the landscape of gene expression variance and for study the drivers of the variance. We anticipate that this work will serve as starting point for understanding the factors driving variation in gene expression further push the field torwards a comprehensive understanding of gene expression variation.
+abstract: Gene expression provides a basis for understanding physiology, disease, and evolution. Transcriptional profiling has revealed how differences in mean expression across groups can drive phenotypic variation in human populations. Recent work has expanded towards understanding the role variation in expression plays in shaping this phenotypic variation.  However, the precise landscape in which this variance exists remains unknown and the factors affecting variation across the landscape remain understudied. Here we show the landscape of expression variation over 20,000 samples across 60 studies and 13 tissues. Using both within study rankings of variation and a cross-study variance score,  we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Our results serve both a baseline for understanding the landscape of gene expression variance and for the study of drivers of this variance. We anticipate that this work will serve as starting point for understanding the factors driving variation in gene expression further push the field torwards a comprehensive understanding of gene expression variation.
 ---
 
 <!-- https://tex.stackexchange.com/questions/536353/biblatex-colors-and-links-only-the-year-not-the-rest-of-the-citation -->
@@ -154,6 +154,10 @@ abstract: Gene expression provides a basis for understanding physiology, disease
         \savefield{fullhash}{\cbx@lasthash}}}}
 \makeatother
 
+# Author Summary
+
+Required for PLOS Genetics...
+
 # Intro
 
 Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations.
@@ -196,7 +200,7 @@ Finally, we explored the link between gene expression variance and biological fu
     \label{fig:sd_corr}
 \end{figure*}
 
-Gene expression standard deviations (SDs) were calculated for each data set using a unified pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see methods for details).
+Gene expression standard deviations (SDs) were calculated for each data set using a unified pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see [Methods](#Methods) for details).
 Spearman correlations ($\rho_s$) between gene expression SDs reveals a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies (fig. \ref{fig:sd_corr}A and B).
 Several studies were conducted under the umbrella of two large research projects: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note these study origins in the figures.
 A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx  and TCGA studies are clustered among themselves and close together (fig. \ref{fig:sd_corr}C).
@@ -218,7 +222,7 @@ The red and blue ticks at the bottom of fig. \ref{fig:sd_corr}D show the positio
 ## What drives differences in gene expression variance?
 
 To characterize the drivers of across study similarity, we directly modeled the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
-In this model, we use individual study, sampled tissue (whether a comparison is between same tissue or different tissue), and study source (GTEx, TCGA and miscellaneous) as predictors of the pairwise correlations (see Methods).
+In this model, we use individual study, sampled tissue (whether a comparison is between same tissue or different tissue), and study source (GTEx, TCGA and miscellaneous) as predictors of the pairwise correlations (see [Methods](#Methods)).
 This modeling (fig. \ref{fig:corr_model}) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (fig. \ref{fig:corr_model}C).
 Correlation involving studies that are not from TCGA and GTEx (marked as "Misc.") are on average lower (fig. \ref{fig:corr_model}C).
 Since these two sources are independent, this mild effect on the similarities could be due to the quality of the data coming from these two large projects.
@@ -228,9 +232,9 @@ These studies also show up further away in the PCoA plot in fig. \ref{fig:sd_cor
 
 ## Does biological function explain variance in expression?
 
-To explore the relationship between variance and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (about ~560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group.
+To explore the relationship between variance and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group.
 This allowed us to establish the representative functions of these consistently high and low-variance genes.
-In total, using a Benjamini-Hochberg (BH) adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see supporting table 1 for a complete listing).
+In total, using a Benjamini-Hochberg (BH) adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see S2 Table for a complete listing).
 Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (fig. \ref{fig:go_tails}A).
 In line with this GO term enrichment, the top 5% most variable genes are enriched 7.7-fold for genes that encode secreted proteins, relative to all other genes ($p < 10^{-3}$).
 Among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (fig. \ref{fig:go_tails}B); and accordingly we find that previously characterized human housekeeping genes [@Hounkpe2020-yq] are enriched within the 5% least variable genes 2.0-fold relative to all other genes ($p < 10^{-3}$).
@@ -287,19 +291,6 @@ The resulting partial Spearman's correlation is -0.024 ($p \approx 6 \times 10^{
 Finally, we find a partial Spearman's correlation of -0.046 ($p \approx 1 \times 10^{-3}$) for the proportion of substitutions that are adaptive.
 In spite of all of these associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and gene expression variance.
 
-<!--
-\begin{table}[]
-\resizebox{\linewidth}{!}{%
-\begin{tabular}{|l|l|l|}
-\hline
-Covariate         & P-value      & Partial Spearman Correlation \\ \hline
-pi                & $9.57 \times 10^{-85}$ & 0.184              \\ \hline
-mean connectivity & $5.87 \times 10^{-3}$ & -0.024              \\ \hline
-alpha             & $1.18 \times 10^{-3}$ & -0.046              \\ \hline
-\end{tabular}%
-}
-\end{table} -->
-
 ## How do molecular signatures of gene regulation relate to gene expression variance?
 
 We assess how local epigenetic features relate to gene expression variance.
@@ -345,7 +336,7 @@ How to bring back to selection/conservation etc? ConsHMM could also be used?
 
 ## Linking expression variance and disease
 
-To explore the link between expression variance and disease, we use the gene annotations derived from a probabilistic transcriptome-wide association study (PTWAS, @Zhang2020-cl).
+To explore the link between expression variance and disease, we use the gene annotations derived from a probabilistic transcriptome-wide association study (PTWAS @Zhang2020-cl).
 Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al. [-@Zhang2020-cl], we performed a hypergeometric enrichment test for the top 5% high- and low-variance genes in our across-tissue rank and in all tissue-specific gene variance ranks.
 Despite their overall high similarity, we use both across tissue and tissue specific ranks because some genes only appear in the tissue specific rank due to their limited tissue specific gene expression.
 In the high-variance group, we find no enrichment in the across-tissue rank, but we do find enrichment of genes annotated for allergy, immune disease, and endocrine system disease among the high variance genes in several tissue-specific variance ranks.
@@ -430,6 +421,7 @@ We use studies to refer to independent data sets, which could have been generate
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide out studies into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
 
+Table: Data Source Table \label{tab1}
 
 |ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |Citation                                                             |
 |:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
@@ -462,7 +454,6 @@ We divide out studies into three categories depending on their origin: GTEx, TCG
 |E-GEOD-52166 (Blood)                                                                                                                                                                                                                                                                                                                                                                                                                                               |Tran et al., 2016 - @Tran2016-ro                                     |
 |SRP032775 (Blood)                                                                                                                                                                                                                                                                                                                                                                                                                                                  |Tran et al., 2016 - @Tran2016-ro                                     |
 |SRP069212 (Liver)                                                                                                                                                                                                                                                                                                                                                                                                                                                  |Yang et al., 2017 - @Yang2017-lu                                     |
-
 
 
 __Processing pipeline__: We use a standardized pipeline to measure gene expression variance while removing extraneous sources of variation.
