@@ -266,7 +266,7 @@ Genes associated with baseline fundamental functions, expected to be under stron
 
 \begin{figure*}[t!]
     \centering
-    \includegraphics[width=\linewidth]{figures/skew_entropy.png}
+    \includegraphics[width=\linewidth]{figures/GOterm_entropy_by_skewness.png}
     \caption{Relationship between skew and entropy of rank decile distributions for each GO term. High entropy terms, to the right of the plot, are associated with a more egalitarian proportion of genes in each of the SD rank deciles. Terms on the left of the plot are associated with more genes in some particular decile. The skewness in the y-axis measures if the high- or low-variance deciles are more represented for a particular term. Terms on the positive side of the y-axis are associated with low-variation genes, and terms on the negative side of the y-axis are associated with high variation genes. The GO terms are filtered for gene counts greater than 100, as in fig. \ref{fig:go_skewness}.}
     \label{fig:skew_entropy}
 \end{figure*}
@@ -465,7 +465,7 @@ Gene expression standard deviation is measured as the residual standard deviatio
 ## Gene expression variance across-tissue correlation
 
 We assessed the similarity in gene expression variance across studies by using a between-study Spearman correlation matrix of the measured SDs.
-Only genes present in all studies were used to calculate the Spearman correlation matrix, 4300 genes in total.
+Only genes present in all studies were used to calculate the Spearman correlation matrix, ~4200 genes in total.
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
 This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression variance.
