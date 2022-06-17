@@ -1,19 +1,10 @@
-# Assume pandoc-scholar is in the parent directory.
-# Should usually be overwritten or configured via an environment variable.
-PANDOC_SCHOLAR_PATH ?= $(PWD)/pandoc-scholar
-ARTICLE_FILE=main.md
-BIBLIOGRAPHY_FILE=references.bib
-DEFAULT_EXTENSIONS = latex
-include $(PANDOC_SCHOLAR_PATH)/Makefile
 logfile := main_$(shell date +%F).pdf
-pdf:
-	xelatex outfile.latex
-	xelatex outfile.latex
-	mv outfile.pdf out/main.pdf
-	cp out/main.pdf out/archive/$(logfile)
-	ls outfile* | grep -v main.md | xargs rm
-pandoc:
-	pandoc -o out/main.pdf -o out/main.docx main.md --pdf-engine xelatex --bibliography=references.bib --citeproc
+all:
+	pandoc main.md  --lua-filter=scholarly-metadata.lua --lua-filter=author-info-blocks.lua  --filter pandoc-crossref  --citeproc  --pdf-engine=xelatex -o main.pdf
+	mv main.pdf out/
+doc:
+	pandoc main.md  --lua-filter=scholarly-metadata.lua --lua-filter=author-info-blocks.lua  --filter pandoc-crossref  --citeproc -o main.docx 
+	mv main.docx out/
 log:
 	cp out/main.pdf out/archive/$(logfile)	
 cleanall:
