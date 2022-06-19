@@ -278,21 +278,11 @@ We use each gene, including the surrounding 10kb on both ends, to calculate the 
 Chromatin states associated with distal (i.e., non-promoter) gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
 For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted $p < 0.05$) [KG supp fig 1].
 As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and the proportion of gene regions made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
-Furthermore, histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
+Histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
 Taken together, these results are compatible with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
-Importantly, there is considerable overlap between the different epigenetic marks either globally or in a given tissue, making it difficult to parse out the differential effects of individual regulatory states on gene expression variance.
-For example, open chromatin sites are broadly associated with regions that are available for gene regulation and overlap with enhancers, polycomb-mediated repressive sites, and promoters [ref and analysis], among others.
-Indeed, when we investigate the expression variance relationship with non-overlapping annotations of chromatin states as defined through ChromHMM [@ernst2012chromhmm],
-the strong positive correlation seen between gene expression variance and the union of DHS among cell types [KG supp fig 1] is not seen when using the universal chromatin state for DNase [KG supp fig 2].
-This suggests that the DNase state represents a distinct form of gene regulation not clearly defined through the histone marks profiled and used to define the universal chromatin states.
-Vu et al. [-@vu2022universal] find that the universal DNase chromatin state is most strongly enriched for CTCF-specific chromatin states.
-CTCF is a transcription factor that can function as an activator, repressor, or insulator protein [@Dunn2003-cu], and the diverse roles it plays in gene regulation, particularly at the universal level, likely have widespread differential effects on gene expression variance, thus leading to the lack of correlation between the DNase state and gene expression variance. __(need to develop and then refine this more - lit review and any additional analysis)__
-
-## Do tissue-specific chromatin states associate with tissue-level gene expression variance?
-
-We also explore the relation of tissue-specific chromatin states and SD rank, and contrast these local analysis to the global analysis outlined above.
-Many of the cross-tissue correlations are recapitulated at the tissue-level, including a strong and highly consistent positive correlation between enhancer states and gene expression variance, and an inverse relationship between gene expression variance and gene transcription or ZNF states [KG supp fig 2].
+We also explore the relationship between tissue-specific chromatin states and SD rank, and contrast these tissue-level analyses to the cross-tissue analysis outlined above.
+Many of the cross-tissue correlations are recapitulated at the tissue level, including a strong and highly consistent positive correlation between enhancer states and gene expression variance, and an inverse relationship between gene expression variance and gene transcription [KG supp fig 2].
 Two blood associations stand out as being different from the consistent effects across the other tissue-level and cross-tissue associations.
 The weak promoter state is positively correlated with gene expression variance in all comparisons except blood, reflective of a likely role of bivalent promoters in context-dependent gene expression __(? lit review of bivalent promoters, development, the role in differentiated cells)__.
 Furthermore, the consistent inverse correlation of gene expression variance with weak transcription is reversed in blood [KG supp fig 2].
@@ -307,12 +297,6 @@ However, interestingly in both adipose and liver tissues, the tissue-specific pr
 This could be reflective of the necessity for rapid environmental responses at key expressed genes in these metabolic tissues [ref?].
 Taken together, XX...
 __(look more closely at the Alemu paper supplement to see if they show similar results - I don't think they do a great job comparing the tissue patterns in their results/dicussion?)__
-
-We ask whether the associations seen between a given tissue's gene expression variance and its corresponding chromatin state is specific to that tissue by comparing the tissue-level expression variance to the universal and other tissue chromatin states [KG supp fig 3].
-
-Maybe do some TF binding site analyses in the different tissue-specific regions to see what might be contributing to gene expression variance at the cross-tissue vs. tissue level.
-
-How to bring back to selection/conservation etc? ConsHMM could also be used?
 
 ## Linking expression variance and disease
 
