@@ -106,20 +106,20 @@ Finally, we explored the link between gene expression variance and biological fu
 # Results
 
 
-![A. Correlation heatmap showing the across study Spearman correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in @fig:corr_model, panel A; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors; D. Density plot of standard deviations after z-normalization. Inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).](figures/fig1.png){#fig:sd_corr}
+![A. Correlation heatmap showing the across study Spearman correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in @fig:corr_model, panel A; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors; D. Density plot of standard deviations after z-normalization. The inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).](figures/fig1.png){#fig:sd_corr}
 
 Gene expression standard deviations (SDs) were calculated for each data set using a unified pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see [Methods](#Methods) for details).
-Spearman correlations ($\rho_s$) between gene expression SDs reveals a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies (@fig:sd_corr A and B).
+Spearman correlations ($\rho_s$) between gene expression SDs reveal a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies (@fig:sd_corr A and B).
 Several studies were conducted under the umbrella of two large research projects: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note these study origins in the figures.
 A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a distance measure does not show clearly delineated groups, but GTEx  and TCGA studies are clustered among themselves and close together (@fig:sd_corr C).
 This indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
-Observed range of gene expression SD across genes is variable across studies, but can be normalized so that the distributions are comparable (@fig:sd_corr D).
+The observed range of gene expression SD across genes is variable across studies but can be normalized so that the distributions are comparable (@fig:sd_corr D).
 Given that the correlations across studies are broadly high, indicating similar ordering of the genes, we seek to summarize the differences in variance across genes by using a single cross-study rank, averaging the ordering across all studies.
 To create this rank, we used the score of each gene in the first principal component of the Spearman correlation matrix.
 This generates a ranked list of genes, with most variable genes having the highest rank.
-The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the least and most variable gene in our variance rank.
+The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the least and most variable genes in our variance rank.
 
-![Coefficient estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in @fig:sd_corr A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50% and 95% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example: comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the "Misc." category (non GTEx and TCGA) tend to be lower, while comparison involving GTEx and TCGA are higher.](figures/correlationModeling.png){#fig:corr_model}
+![Coefficient estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in @fig:sd_corr A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50% and 95% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example, comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the "Misc." category (non-GTEx and -TCGA) tend to be lower, while comparisons involving GTEx and TCGA are higher.](figures/correlationModeling.png){#fig:corr_model}
 
 
 
@@ -209,7 +209,7 @@ This could be reflective of the necessity for rapid environmental responses at k
 
 To explore the link between expression variance and disease, we use the gene annotations derived from a probabilistic transcriptome-wide association study (PTWAS @Zhang2020-cl).
 Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al. [-@Zhang2020-cl], we performed a hypergeometric enrichment test for the top 5% high- and low-variance genes in our across-tissue rank and in all tissue-specific gene variance ranks.
-Despite their overall high similarity, we use both across tissue and tissue specific ranks because some genes only appear in the tissue specific rank due to their limited tissue specific gene expression.
+Despite their overall high similarity, we use both across-tissue and tissue-specific ranks because some genes only appear in the tissue-specific rank due to their limited tissue-specific gene expression.
 In the high-variance group, we find no enrichment in the across-tissue rank, but we do find enrichment of genes annotated for allergy, immune disease, and endocrine system disease among the high variance genes in several tissue-specific variance ranks.
 Among high-variance genes in the colon rank, we see enrichment for endocrine system disease (1.77-fold, BH adjusted $p < 10^{-4}$).
 Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, BH adjusted $p < 10^{-3}$),
@@ -355,7 +355,7 @@ We further investigate the tissue-level expression variance ranks as they relate
 ## Gene level statistics
 
 __Genetic variation__: Genetic variation measures were obtained from the PopHuman project, which provides a comprehensive set of genomic information for human populations derived from the 1000 Genomes Project.
-Gene level metrics were used when available.
+Gene-level metrics were used when available.
 If only window-based metrics are available, we assembled gene-level information from 10kb window tracks where each window that overlaps with a given gene was assigned to the gene and the mean metric value is reported.
 In parallel, we use the PopHumanScan data set, which expands PopHuman by compiling and annotating regions under selection.
 Similarly, we used gene-level information when possible, and for tracks with only window-based metrics, gene-level information was assembled from the 10kb windows using the same assignment method described above.
