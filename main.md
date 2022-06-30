@@ -9,7 +9,9 @@ author:
       orcid: 0000-0003-4397-1395
       equal_contributor: "yes"
   - Diogo Melo:
-      institute: eeb
+      institute: 
+        - lsi
+        - eeb
       email: damelo@princeton.edu
       orcid: 0000-0002-7603-0092
       equal_contributor: "yes"
