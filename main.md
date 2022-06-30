@@ -16,10 +16,10 @@ author:
   - Kristina M. Garske:
       institute: lsi
       orcid: 0000-0002-7228-8125
-  - Luisa Pallares:
+  - Luisa F. Pallares:
       institute: fml
       orcid: 0000-0001-6547-1901
-  - Julien Ayroles:
+  - Julien F. Ayroles:
       institute:
         - lsi
         - eeb
