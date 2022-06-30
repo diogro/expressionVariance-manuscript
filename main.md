@@ -71,7 +71,7 @@ abstract: Gene expression variance has been linked to organismal function and fi
 
 Required for PLOS Genetics...
 
-# Intro
+# Introduction
 
 Molecular phenotypes such as gene expression are a powerful tool for understanding physiology, disease, and evolutionary adaptations.
 In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po].
