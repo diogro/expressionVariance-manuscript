@@ -106,7 +106,7 @@ Finally, we explored the link between gene expression variance and biological fu
 # Results
 
 
-![A. Correlation heatmap showing the across study Spearman correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in @fig:corr_model, panel A; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors; D. Density plot of standard deviations after z-normalization. The inset plot shows distribution of mean centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).](figures/fig1.png){#fig:sd_corr}
+![A. Correlation heatmap showing the across-study Spearman correlation of standard deviations. Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in @fig:corr_model, panel A; B. Histogram of the correlations shown in the previous panel; C. Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors; D. Density plot of standard deviations after z-normalization. The inset plot shows the distribution of mean-centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest ranking gene in standard deviation rank (right, blue) and lowest (left, red).](figures/fig1.png){#fig:sd_corr}
 
 Gene expression standard deviations (SDs) were calculated for each data set using a unified pipeline that normalized the mean-variance relation in count data, controlled for batch effects, and removed outliers (see [Methods](#Methods) for details).
 Spearman correlations ($\rho_s$) between gene expression SDs reveal a broadly similar rank of gene expression variance, so genes that are most variable in one study tend to be most variable in all studies (@fig:sd_corr A and B).
@@ -125,7 +125,7 @@ The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the
 
 ## What drives differences in gene expression variance?
 
-To characterize the drivers of across study similarity, we directly modeled the correlations across studies using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
+To characterize the drivers of across study similarity, we directly modeled the correlations across-study using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
 In this model, we use individual study, sampled tissue (whether a comparison is between the same tissue or different tissue), and study source (GTEx, TCGA, and miscellaneous) as predictors of the pairwise correlations (see [Methods](#Methods)).
 This modeling (@fig:corr_model) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (@fig:corr_model C).
 Correlations involving studies that are not from TCGA and GTEx (marked as "Misc.") are on average lower (@fig:corr_model C).
@@ -194,8 +194,8 @@ As expected, the proportion of gene regions made up of repressed genomic states 
 Histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
 Taken together, these results are compatible with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
-We also explore the relationship between tissue-specific chromatin states and SD rank, and contrast these tissue-level analyses to the cross-tissue analysis outlined above.
-Many of the cross-tissue correlations are recapitulated at the tissue level, including a strong and highly consistent positive correlation between the proportion of gene regions made up on enhancer states and that gene’s expression variance, and an inverse relationship between gene expression variance and histone marks associated with gene transcription [KG supp fig 2].
+We also explore the relationship between tissue-specific chromatin states and SD rank and contrast these tissue-level analyses to the cross-tissue analysis outlined above.
+Many of the cross-tissue correlations are recapitulated at the tissue level, including a strong and highly consistent positive correlation between the proportion of gene regions made up of enhancer states and that gene’s expression variance, and an inverse relationship between gene expression variance and histone marks associated with gene transcription [KG supp fig 2].
 Two blood associations stand out as being different from the consistent effects across the other tissue-level and cross-tissue associations.
 First, the weak promoter state is positively correlated with gene expression variance in all comparisons except blood. 
 Second, the consistent inverse correlation of gene expression variance with weak transcription is reversed in blood, such that there is a positive correlation between histone marks associated with weak transcription and blood gene expression variance [KG supp fig 2]. 
@@ -276,10 +276,10 @@ We highlight three distinct possibilities:
 First, low variance genes, under strong stabilizing selection, could become more variable under stress, indicating a reduced capacity for maintaining homeostasis.
 Second, high variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to respond to external stimuli.
 Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
-Any one of these changes in expression variance pattern could have physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. [-@Hagai2018-fu] for example).
+Any one of these changes in expression variance patterns could have physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. [-@Hagai2018-fu] for example).
 Genes are also expected to differ in their capacity to maintain an optimal level of gene expression variance [@Macneil2011-ax].
 Variation in robustness is linked to gene regulatory networks and epigenetic gene expression regulation [@Payne2015-wn; @Chalancon2012-ul], and therefore should differ across high- and low-variance genes.
-Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation, and that this variability in strategies is the result of different patterns of selection.
+Our results suggest that low- and high-variance genes could use different strategies in order to maintain their optimal levels of variation and that this variability in strategies is the result of different patterns of selection.
 
 \footnotesize
 
@@ -328,7 +328,7 @@ __Processing pipeline__: We use a standardized pipeline to measure gene expressi
 Data from case-control studies were filtered to keep only control samples.
 Technical replicates were summed.
 For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean of 5 cpm reads.
-To account for the mean-variance relation in count data, remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
+To account for the mean-variance relation in count data, the remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
 Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed-effects model.
 Outlier individuals in the residual distribution were removed using a robust Principal Component Analysis (PCA) approach of automatic outlier detection [@Chen2020-fy].
 Gene expression standard deviation is measured as the residual standard deviation after fixed effect correction and outlier removal.
@@ -348,7 +348,7 @@ Genes that were expressed in at least 50% of the studies were included in the ra
 In order to project a particular gene onto the PC1 of the between-study correlation matrix, we impute missing values using a PCA-based imputation [@Husson2019-sl].
 The imputation procedure has minimal effect on the ranking, and imputing missing SD ranks at the beginning or at the end of the ranks produces similar results.
 We also create a tissue-specific variance ranking, using the same ranking procedure but joining studies done in the same tissue type.
-For this tissue level ranking, we only use genes that are expressed in all studies of a given tissue.
+For this tissue-level ranking, we only use genes that are expressed in all studies of a given tissue.
 For tissues that are represented by a single study, we use the SD ranking for that study as the tissue rank.
 We further investigate the tissue-level expression variance ranks as they relate to genomic regulation.
 
@@ -359,7 +359,7 @@ Gene-level metrics were used when available.
 If only window-based metrics are available, we assembled gene-level information from 10kb window tracks where each window that overlaps with a given gene was assigned to the gene and the mean metric value is reported.
 In parallel, we use the PopHumanScan data set, which expands PopHuman by compiling and annotating regions under selection.
 Similarly, we used gene-level information when possible, and for tracks with only window-based metrics, gene-level information was assembled from the 10kb windows using the same assignment method described above.
-Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case, CEU population within 1000 genomes.
+Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case, the CEU population within 1000 genomes.
 The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\theta$.
 
 __Gene connectivity__: We calculated the average weighted connectivity for all genes by creating a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression levels.
@@ -379,15 +379,6 @@ __Housekeeping genes__: Human housekeeping genes were identified as genes that a
 __Probability of being loss-of-function intolerant (pLI)__: Genes that are likely haploinsufficient (i.e., intolerant of heterozygous loss-of-function variants) were detected as those with fewer than expected protein-truncating variants (PTVs) in ExAC [@Lek2016-xw]. We use genes with a pLI > 0.9 to test for the enrichment of loss-of-function intolerant genes in the genes exhibiting the highest and lowest 5% gene expression variance estimates. We use the hypergeometric test to assess the significance of the enrichment.
 
 __Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl]
-
-## Epigenetic marks and gene features
-
-__Data used__: We first obtain various annotations previously used to stratify the genome into interpretable functional categories [@finucane2015partitioning].
-A subset of these annotations are used to quantify functional and molecular correlates of the gene expression variance metric: 1) promoter, coding, and 3' and 5' UTR are annotations from the RefSeq gene model; 2) CTCF, promoter flanking, transcribed, transcription start site, and enhancer categories were defined as the union [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 3) the repressed category was defined as the intersection [@finucane2015partitioning] of these annotations derived from ChromHMM/Segway across 6 cell types [@hoffman2013integrative]; 4) conserved elements were identified across 29 mammalian species [@lindblad2011high; @ward2012evidence]; 5) TFBS were identified from digital genomic footprinting of DNase hypersensitive sites in 57 cell lines [@gusev2014partitioning; @ENCODE2012-mz]; super-enhancers were defined as the union [@finucane2015partitioning] of all super-enhancers identified in 86 human cell and tissue types [@hnisz2013super]; 6) DHS sites were defined as the union [@finucane2015partitioning] of DHSs identified across 13 cell lines [@ENCODE2012-mz; @trynka2013chromatin].
-
-__Correlations__: We use the ppcor R package [@kim2015ppcor] v1.1 to run the pairwise partial Spearman correlations for three variables: the gene expression variance and mean ranks and the proportion of the gene regions (gene +/- 10 kb) made up of the various features described above, one at a time.
-We extract the partial Spearman correlation rho and p-values for the variance and mean associations with the chromatin and gene features.
-P-values are corrected using the Benjamini-Hochberg procedure and comparisons with an adjusted $p < 0.05$ are considered significant.
 
 ## Cross-tissue vs. tissue-level chromatin states
 
