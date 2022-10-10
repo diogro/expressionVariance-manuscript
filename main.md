@@ -368,7 +368,7 @@ Gene-level metrics were used when available.
 If only window-based metrics are available, we assembled gene-level information from 10kb window tracks where each window that overlaps with a given gene was assigned to the gene and the mean metric value is reported.
 In parallel, we use the PopHumanScan data set, which expands PopHuman by compiling and annotating regions under selection.
 Similarly, we used gene-level information when possible, and for tracks with only window-based metrics, gene-level information was assembled from the 10kb windows using the same assignment method described above.
-Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight in the genetic diversity within a population, in this case, the CEU population within 1000 genomes.
+Nucleotide diversity ($\pi$), the average pairwise number of differences per site among the chromosomes in a population [@Nei1979-hg], provides insight into the genetic diversity within a population, in this case, the CEU population within 1000 genomes.
 The nucleotide diversity can also be used as an estimator of the central population genetic parameter, normally given as $\theta$.
 
 __Gene connectivity__: We calculated the average weighted connectivity for all genes by creating a fully connected gene-by-gene graph in which each edge is weighted by the Spearman correlation between gene expression levels.
