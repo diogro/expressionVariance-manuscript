@@ -125,7 +125,7 @@ The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the
 
 ## What drives differences in gene expression variance?
 
-To characterize the drivers of across study similarity, we directly modeled the correlations across-study using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
+To characterize the drivers of across-study similarity, we directly modeled the correlations across-study using a mixed effect linear model [@Dias2021-wk; @Dias2021-hb].
 In this model, we use individual study, sampled tissue (whether a comparison is between the same tissue or different tissue), and study source (GTEx, TCGA, and miscellaneous) as predictors of the pairwise correlations (see [Methods](#Methods)).
 This modeling (@fig:corr_model) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (@fig:corr_model C).
 Correlations involving studies that are not from TCGA and GTEx (marked as "Misc.") are on average lower (@fig:corr_model C).
