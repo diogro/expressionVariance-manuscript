@@ -119,7 +119,7 @@ To create this rank, we used the score of each gene in the first principal compo
 This generates a ranked list of genes, with most variable genes having the highest rank.
 The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the least and most variable genes in our variance rank.
 
-![Coefficient estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in @fig:sd_corr A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50% and 95% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example, comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates: correlations among studies that use the same tissue are higher, and correlations involving studies in the "Misc." category (non-GTEx and -TCGA) tend to be lower, while comparisons involving GTEx and TCGA are higher.](figures/correlationModeling.png){#fig:corr_model}
+![Coefficient estimates from a linear model using the among studies Spearman correlations as the response variable. These correlations are shown in @fig:sd_corr A and B. In the linear model, correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50% and 95% credibility intervals. Panel A: The per-study random effect captures the non-independence of the correlation values and estimates the characteristic contribution of each study to the correlation. For example, comparisons involving bone marrow (from GTEx) tend to be lower than the others. Panels B and C: Fixed effect estimates for the effects of tissue congruence and study-source effect. In (B) we see that correlations among studies that use the same tissue are slightly higher; and (C) correlations involving studies in the "Misc." category (non-GTEx and -TCGA) tend to be lower, while comparisons involving GTEx and TCGA are higher.](figures/correlationModeling.png){#fig:corr_model}
 
 
 
@@ -169,7 +169,7 @@ Genes associated with baseline fundamental functions, expected to be under stron
 ![Relationship between skew and entropy of rank decile distributions for each GO term. High entropy terms, to the right of the plot, are associated with a more egalitarian proportion of genes in each of the SD rank deciles. Terms on the left of the plot are associated with more genes in some particular decile. The skewness in the y-axis measures if the high- or low-variance deciles are more represented for a particular term. Terms on the positive side of the y-axis are associated with low-variation genes, and terms on the negative side of the y-axis are associated with high variation genes. The GO terms are filtered for gene counts greater than 100, as in @fig:go_skewness .](figures/GOterm_entropy_by_skewness.png){#fig:skew_entropy}
 
 
-![Distributions of decile ranks of level 3 GO terms. Each plot shows the count of genes in each decile of the rank. These GO terms are filtered for gene counts greater than 100 and sorted by the skewness of the distribution. The top panel shows the top 5 and the bottom panel shows the bottom 5.](figures/GOterm_decile_barplot.png){#fig:go_skewness}
+![Distributions of decile ranks of level 3 GO terms. Each plot shows the count of genes in each decile of the rank. These GO terms are filtered for gene counts greater than 100 and sorted by the skewness of the distribution. The top panel shows the 5 most positively skewed terms and the bottom panel shows the 5 most negatively skewed terms.](figures/GOterm_decile_barplot.png){#fig:go_skewness}
 
 
 
@@ -181,7 +181,7 @@ Nucleotide diversity is used as a proxy for cis-regulation sites, and we expect 
 Here, we find a partial Spearman's correlation of 0.184 ($p < 10^{-3}$).
 Connectivity, a proxy for regulatory interactions with other genes and of selective constraints [@Mahler2017-bb], in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
 The resulting partial Spearman's correlation is -0.024 ($p \approx 6 \times 10^{-3}$).
-Finally, we find a partial Spearman's correlation of -0.046 ($p \approx 1 \times 10^{-3}$) for the proportion of substitutions that are adaptive.
+Finally, we find a partial Spearman's correlation of -0.046 ($p \approx 10^{-3}$) for the proportion of substitutions that are adaptive.
 In spite of all of these associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and gene expression variance.
 
 ## How do molecular signatures of gene regulation relate to gene expression variance?
@@ -338,9 +338,18 @@ Gene expression standard deviation is measured as the residual standard deviatio
 We assessed the similarity in gene expression variance across studies by using a between-study Spearman correlation matrix of the measured SDs.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, ~4200 genes in total.
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
-To investigate the factors involved in determining correlations between studies, we used a varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
+To investigate the factors involved in determining correlations between studies, we used a Bayesian varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
 This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression variance.
-This is accomplished by adding a per-study random effect, see [@Dias2021-hb] for details.
+This is accomplished by adding a per-study random effect, see [@Dias2021-hb] for details. 
+The Fisher z-transformed Spearman correlations across studies ($z(\rho_{ij})$) are modeled as:
+
+$$\begin{aligned}
+z(\rho_{ij}) &\sim N(\mu_{ij}, \sigma) \\
+\mu_{ij} &= \mu_0 + \alpha_i + \alpha_j + \beta X \\ 
+\alpha_i &\sim N(0, \sigma_{\alpha})
+\end{aligned}$$
+
+The $\alpha$ terms account for the non-independence between the pairs of correlations and estimate a idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha$) receive weakly informative normal priors with variance one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@carpenter2017stan] via the rethinking R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions. 
 
 __Gene expression SD rank:__ Given that most of the variation in the Spearman correlation across studies is explained by a single principal component, we use the ranked projections of gene expression SDs in this principal component (PC1) to create an across-study rank of gene variation.
 The higher the rank, the higher the expression SD of a given gene.
