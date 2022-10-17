@@ -64,7 +64,7 @@ mainfontoptions:
 csl: ./pandoc/cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
-abstract: Differences in expression variance is an often neglected aspect of .... We lack a comprehensive view of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use large publicly available human RNA-seq data sets to investigate the landscape of gene expression variance. In particular, we ask if there are consistently more or less variable genes across tissues and across data sets. Using both global and within-tissue rankings of variation, we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Gene expression variance is strongly predictive of gene function, with low-variance genes being associated with fundamental cell processes, and high-variance genes being linked to responding to the environment. Our results show differences in the regulatory mechanisms of high and low gene expression variance, in addition to a clear link between function and gene expression variation, suggesting that these differences are adaptive. We expect these results will help to place the pattern of variation at the center of our understanding of molecular phenotypes.
+abstract: Differences in expression variance is an often neglected aspect of transcriptome regulation, even though expression variance has been linked to fitness and has salient evolutionary relevance. We lack a comprehensive view of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use large publicly available human RNA-seq data sets to investigate the landscape of gene expression variance. In particular, we ask if there are consistently more or less variable genes across tissues and across data sets. Using both global and within-tissue rankings of variation, we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Gene expression variance is strongly predictive of gene function, with low-variance genes being associated with fundamental cell processes, and high-variance genes being linked to responding to the environment. Our results show differences in the regulatory mechanisms of high and low gene expression variance, in addition to a clear link between function and gene expression variation, suggesting that these differences are adaptive. We expect these results will help to place the pattern of variation at the center of our understanding of molecular phenotypes.
 ---
 
 # Author Summary
@@ -334,7 +334,7 @@ For each study, we filtered genes that did not achieve a minimum of 1 count per 
 To account for the mean-variance relation in count data, the remaining genes were subjected to the variance stabilizing transformation implemented in DESeq2 [@Love2014-mp].
 Fixed effects were manually curated from the metadata for all studies and removed using a linear fixed-effects model.
 Outlier individuals in the residual distribution were removed using a robust Principal Component Analysis (PCA) approach of automatic outlier detection [@Chen2020-fy].
-Gene expression standard deviation is measured as the residual standard deviation after fixed effect correction and outlier removal.
+Gene expression standard deviation is measured as the residual standard deviation after fixed effect correction and outlier removal. The full annotated pipeline is available at [the github repository ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
 
 ## Gene expression variance across-tissue correlation
 
@@ -404,7 +404,7 @@ __Correlations:__ We use the ppcor R package v1.1 [@kim2015ppcor] to run the pai
 
 # Code availability
 
-All code for reproducing all analysis and figures, along with a walk-through, is available at [github.com/Wolfffff/exp_var](https://github.com/Wolfffff/exp_var).
+All code for reproducing all analysis and figures, along with a walk-through, is available at [github.com/ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
 
 # Supporting information
 
