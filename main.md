@@ -398,7 +398,7 @@ __Disease annotations__: We use the gene annotations for involvement with diseas
 
 ## Cross-tissue vs. tissue-level chromatin states
 
-__Data used__: We use the universal [@vu2022universal] and tissue-specific [ref] ChromHMM [@ernst2012chromhmm] chromatin states to compare the non-overlapping genome segmentation to cross-tissue and tissue-level gene expression variance metrics.
+__Data used__: We use the universal [@vu2022universal] and tissue-specific [@Ernst2015-zk] ChromHMM [@ernst2012chromhmm] chromatin states to compare the non-overlapping genome segmentation to cross-tissue and tissue-level gene expression variance metrics.
 
 __Correlations:__ We use the ppcor R package v1.1 [@kim2015ppcor] to run the pairwise partial Spearman correlations for three variables: the gene expression variance and mean ranks and the proportion of the gene regions (gene +/- 10 kb) made up of the chromHMM chromatin states, one at a time. We extract the partial Spearman correlation rho and p-values for the variance and mean associations with the chromatin states. P-values are corrected using the Benjamini-Hochberg procedure and comparisons with an adjusted p<0.05 are considered significant
 
