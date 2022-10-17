@@ -179,7 +179,7 @@ Genes associated with baseline fundamental functions, expected to be under stron
 ## Sequence variation and gene expression connectivity
 
 We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variance rank.
-We focus on three gene-level measures: nucleotide diversity($\pi$), gene expression connectivity, and the proportion of substitutions that are adaptive ($\alpha$).
+We focus on three gene-level measures: nucleotide diversity ($\pi$), gene expression connectivity, and the proportion of substitutions that are adaptive ($\alpha$).
 Nucleotide diversity is used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
 Here, we find a partial Spearman correlation of 0.184 (p < 10\textsuperscript{-3}).
 Connectivity, a proxy for regulatory interactions with other genes and of selective constraints [@Mahler2017-bb], in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
@@ -342,7 +342,7 @@ We assessed the similarity in gene expression variance across studies by using a
 Only genes present in all studies were used to calculate the Spearman correlation matrix, ~4200 genes in total.
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a Bayesian varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
-This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression variance.
+This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression SDs.
 This is accomplished by adding a per-study random effect, see [@Dias2021-hb] for details. 
 The Fisher z-transformed Spearman correlations across studies ($z(\rho_{ij})$) are modeled as:
 
