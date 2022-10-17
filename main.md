@@ -64,7 +64,7 @@ mainfontoptions:
 csl: ./pandoc/cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
-abstract: Gene expression variance has been linked to organismal function and fitness but remains a commonly neglected aspect in the study of gene expression. We lack a comprehensive view of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use large publicly available human RNA-seq data sets to investigate the landscape of gene expression variance, with a particular focus on determining if there are consistently more or less variable genes across tissues and across studies. Using both within-study rankings of variation and a cross-study variance score, we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Gene expression variance is strongly predictive of gene function, with low-variance genes being associated with fundamental cell processes, and high-variance genes being linked to responding to the environment. Our results serve both as a baseline for understanding the landscape of gene expression variance and for the study of drivers of this variance. We anticipate that this work will serve as a starting point for understanding the factors driving variation in gene expression, and further pushing the field toward a comprehensive understanding of gene expression variation.
+abstract: Differences in expression variance is an often neglected aspect of .... We lack a comprehensive view of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use large publicly available human RNA-seq data sets to investigate the landscape of gene expression variance. In particular, we ask if there are consistently more or less variable genes across tissues and across data sets. Using both global and within-tissue rankings of variation, we show that gene function, sequence variation, and molecular signatures are key regulators of gene expression variance. Gene expression variance is strongly predictive of gene function, with low-variance genes being associated with fundamental cell processes, and high-variance genes being linked to responding to the environment. Our results show differences in the regulatory mechanisms of high and low gene expression variance, in addition to a clear link between function and gene expression variation, suggesting that these differences are adaptive. We expect these results will help to place the pattern of variation at the center of our understanding of molecular phenotypes.
 ---
 
 # Author Summary
@@ -141,12 +141,12 @@ The only negative correlation we observe is between these two studies, which als
 
 To explore the relationship between variance and function, we took the top 5% most variable and the bottom 5% least variable genes in our ranking (560 genes in each group) and performed a Gene Ontology (GO) enrichment analysis within each group.
 This analysis allowed us to establish the representative functions of these consistently high and low-variance genes.
-In total, using a hypergeometric test and Benjamini-Hochberg (BH) adjusted p-value threshold of $10^{-3}$, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see S2 Table for a complete listing).
+In total, using a hypergeometric test and Benjamini-Hochberg (BH) adjusted p-value threshold of 10\textsuperscript{-3}, we found 59 enriched terms in the low variance genes, and 738 enriched terms in the high variance genes (see S2 Table for a complete listing).
 Among the 5% most variable genes we observe enrichment for biological processes like immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (@fig:go_tails A).
-In line with this GO term enrichment, the top 5% most variable genes are enriched 7.7-fold for genes that encode secreted proteins, relative to all other genes (hypergeometric test, $p < 10^{-3}$).
-Among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails B); and accordingly, we find that previously characterized human housekeeping genes [@Hounkpe2020-yq] are enriched within the 5% least variable genes 2.0-fold relative to all other genes (hypergeometric test, $p < 10^{-3}$).
-The genes exhibiting the lowest variance (lowest 5%) are also enriched for those that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, hypergeometric test, $p < 10^{-3}$).
-Genes with a high pLI have been shown to be important in housekeeping functions, and have higher mean expression values across a broad set of tissues and cell types [@lek2016analysis]. Our result that genes with low variance are enriched for both housekeeping genes and genes with high pLI is consistent with this previous report; and we further see that the mean expression of genes positively correlates with pLI (Partial Spearman correlation $\rho_s$ = 0.32, $p < 10^{-3}$), showing the opposite relationship between variance and mean expression when considering pLI.
+In line with this GO term enrichment, the top 5% most variable genes are enriched 7.7-fold for genes that encode secreted proteins, relative to all other genes (hypergeometric test, p < 10\textsuperscript{-3}).
+Among the 5% least variable genes we see enrichment for housekeeping functions like mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails B); and accordingly, we find that previously characterized human housekeeping genes [@Hounkpe2020-yq] are enriched within the 5% least variable genes 2.0-fold relative to all other genes (hypergeometric test, p < 10\textsuperscript{-3}).
+The genes exhibiting the lowest variance (lowest 5%) are also enriched for those that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, hypergeometric test, p < 10\textsuperscript{-3}).
+Genes with a high pLI have been shown to be important in housekeeping functions, and have higher mean expression values across a broad set of tissues and cell types [@lek2016analysis]. Our result that genes with low variance are enriched for both housekeeping genes and genes with high pLI is consistent with this previous report; and we further see that the mean expression of genes positively correlates with pLI (Partial Spearman correlation $\rho_s$ = 0.32, p < 10\textsuperscript{-3}), showing the opposite relationship between variance and mean expression when considering pLI.
 
 We also explored the distribution of expression variance among the genes associated with GO terms.
 To do this, we gathered all biological process GO terms in level 3 (i.e. terms that are at a distance of 3 from the top of the GO hierarchy).
@@ -165,7 +165,7 @@ Both GO analyses suggest a strong influence of biological function in determinin
 Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
 
 
-![Gene set enrichment analyses testing for over-representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variance rank. High-variance genes are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis, and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions. All displayed terms are significant with a 5% FDR corrected p-value below $10^{-3}$.](figures/local_go_lowerUpper.png){#fig:go_tails}
+![Gene set enrichment analyses testing for over-representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variance rank. High-variance genes are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis, and inflammatory response. In contrast, low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions. All displayed terms are significant with a 5% FDR corrected p-value below 10\textsuperscript{-3}.](figures/local_go_lowerUpper.png){#fig:go_tails}
 
 
 
@@ -181,10 +181,10 @@ Genes associated with baseline fundamental functions, expected to be under stron
 We use gene-level statistics capturing evolutionary and population variation to link processes that potentially influence variation in gene expression to the observed variance rank.
 We focus on three gene-level measures: nucleotide diversity($\pi$), gene expression connectivity, and the proportion of substitutions that are adaptive ($\alpha$).
 Nucleotide diversity is used as a proxy for cis-regulation sites, and we expect variation to increase with diversity.
-Here, we find a partial Spearman correlation of 0.184 ($p < 10^{-3}$).
+Here, we find a partial Spearman correlation of 0.184 (p < 10\textsuperscript{-3}).
 Connectivity, a proxy for regulatory interactions with other genes and of selective constraints [@Mahler2017-bb], in turn, should be negatively correlated with variation, as highly connected genes are expected to be more constrained in their variability.
-The resulting partial Spearman correlation is -0.024 ($p \approx 6 \times 10^{-3}$).
-Finally, we find a partial Spearman correlation of -0.046 ($p \approx 10^{-3}$) for the proportion of substitutions that are adaptive.
+The resulting partial Spearman correlation is -0.024 (p $\approx$ 6 \times 10\textsuperscript{-3}).
+Finally, we find a partial Spearman correlation of -0.046 (p $\approx$ 10\textsuperscript{-3}) for the proportion of substitutions that are adaptive.
 In spite of all of these associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and gene expression variance.
 
 ## How do molecular signatures of gene regulation relate to gene expression variance?
@@ -192,7 +192,7 @@ In spite of all of these associations being significant and in the expected dire
 We assess how local epigenetic features relate to gene expression variance.
 We use each gene, including the surrounding 10kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic signatures of gene regulation defined through ChromHMM [@ernst2012chromhmm] chromatin states.
 Chromatin states associated with distal (i.e., non-promoter) gene regulation are positively correlated with the gene expression variance rank metric, regardless of whether the regulatory effect on gene expression is positive or negative [KG supp fig 1].
-For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted $p < 0.05$) [KG supp fig 1].
+For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted p < 0.05) [KG supp fig 1].
 As expected, the proportion of gene regions made up of repressed genomic states is inversely correlated with mean expression of the gene, and the proportion of gene regions made up of enhancers is positively correlated with the mean expression of genes [KG supp fig 1].
 Histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance, whereas they are positively correlated with the mean expression [KG supp fig 1].
 Taken together, these results are compatible with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than overall active transcriptional state of a gene region, as is the case with mean gene expression.
@@ -214,14 +214,14 @@ To explore the link between expression variance and disease, we use the gene ann
 Using the list of significant gene-trait pairs at 5% FDR provided by Zhang et al. [-@Zhang2020-cl], we performed a hypergeometric enrichment test for the top 5% high- and low-variance genes in our across-tissue rank and in all tissue-specific gene variance ranks.
 Despite their overall high similarity, we use both across-tissue and tissue-specific ranks because some genes only appear in the tissue-specific rank due to their limited tissue-specific gene expression.
 In the high-variance group, we find no enrichment in the across-tissue rank, but we do find enrichment of genes annotated for allergy, immune disease, and endocrine system disease among the high variance genes in several tissue-specific variance ranks.
-Among high-variance genes in the colon rank, we see enrichment for endocrine system disease (1.77-fold, hypergeometric test, $p < 10^{-4}$).
-Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, hypergeometric test, $p < 10^{-3}$),
-allergy (1.7-fold, hypergeometric test, $p < 10^{-3}$), and immune disease (1.32-fold, hypergeometric test, $p < 10^{-2}$).
-Among high-variance genes in the thyroid rank, we see enrichment for endocrine system disease (1.9-fold, hypergeometric test, $p < 10^{-5}$),
-allergy (1.85-fold, hypergeometric test, $p < 10^{-4}$), and immune disease (1.45-fold, hypergeometric test, $p < 10^{-4}$).
+Among high-variance genes in the colon rank, we see enrichment for endocrine system disease (1.77-fold, hypergeometric test, p < 10\textsuperscript{-4}).
+Among high-variance genes in immune cell rank, we see enrichment for endocrine system disease (1.67-fold, hypergeometric test, p < 10\textsuperscript{-3}),
+allergy (1.7-fold, hypergeometric test, p < 10\textsuperscript{-3}), and immune disease (1.32-fold, hypergeometric test, p < 10\textsuperscript{-2}).
+Among high-variance genes in the thyroid rank, we see enrichment for endocrine system disease (1.9-fold, hypergeometric test, p < 10\textsuperscript{-5}),
+allergy (1.85-fold, hypergeometric test, p < 10\textsuperscript{-4}), and immune disease (1.45-fold, hypergeometric test, p < 10\textsuperscript{-4}).
 These are all quite similar and suggest a stable pattern of high-variance gene expression across these tissues, with enrichment for these three classes of diseases.
 The link with immune diseases is expected given the high enrichment for immune-related genes in the high-variance group [@Hagai2018-fu].
-As for the low-variance group, we found strong enrichment for genes associated with psychiatric and neurological disorders in the across-tissue rank and in some tissue-specific ranks (breast, liver, and stomach; ~1.2-fold enrichment, hypergeometric test, $p < 0.05$, for all cases).
+As for the low-variance group, we found strong enrichment for genes associated with psychiatric and neurological disorders in the across-tissue rank and in some tissue-specific ranks (breast, liver, and stomach; ~1.2-fold enrichment, hypergeometric test, p < 0.05, for all cases).
 The psychiatric disease link is consistent with previous work[@Mar2011-dr] and is discussed below; however, the enrichment among the low-variance genes is weaker.
 
 # Discussion
