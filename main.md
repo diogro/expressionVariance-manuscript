@@ -134,7 +134,7 @@ Both tissue-specific and across-study ranks are available in the Supporting Info
 To characterize the drivers of across-study similarity, we directly modeled the correlations across-study using a mixed-effect linear model [@Dias2021-wk; @Dias2021-hb].
 In this model, we use individual study, pairwise tissue congruence (whether a comparison is within the same tissue or different tissue), and pairwise study source (GTEx, TCGA, and miscellaneous) as predictors of the correlations (see [Methods](#Methods)).
 This modeling (@fig:corr_model) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (@fig:corr_model C).
-Correlations involving studies that are not from TCGA and GTEx (marked as "Misc.") are on average lower (@fig:corr_model C).
+Correlations involving studies that are not from TCGA or GTEx (marked as "Misc.") are on average lower (@fig:corr_model C).
 Since these two sources are independent, this mild effect on the similarities could be due to the quality of the data coming from these two large projects.
 Tissue also affects the similarity between gene expression SD, with studies using the same tissue being, on average, more similar (@fig:corr_model B).
 However, all of these pairwise effects are mild, and the largest effects on the correlations are those associated with individual studies, in particular some specific tissues, i.e., comparisons involving \textsc{bone marrow} (from GTEx) and study \textsc{srp057500} (which used platelets) are on average lower (@fig:corr_model A). 
@@ -249,7 +249,7 @@ Given this strong functional linkage between function and variance, it is not su
 One interesting aspect of the GO term analysis shown in @fig:skew_entropy and @fig:go_skewness is that there is no biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew.
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation.
 For the GO terms we used, either there is no relation between the gene expression variance and the biological process, or there is a strong bias toward high or low-variance genes.
-This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance reducing selection) or (2) biological processes under disruptive selection (i.e., variance increasing selection).
+This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance-reducing selection) or (2) biological processes under disruptive selection (i.e., varianc-increasing selection).
 In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
 Following Alemu et al. [@Alemu2014-jo], we observe that epigenetic signatures of gene regulation, such as enhancer histone marks, make up a higher proportion of the surrounding genomic regions of genes that exhibit higher variance in expression.
@@ -270,7 +270,7 @@ The authors hypothesize that the reduced variance in Schizophrenia patients redu
 This suggests several types of shifts in gene expression variation are possible, with different outcomes.
 We highlight three distinct possibilities:
 First, low variance genes, under strong stabilizing selection, could become more variable under stress, indicating a reduced capacity for maintaining homeostasis.
-Second, high-variance genes, expected to be reactive to changes in the environment, could become less variable, indicating reduced capacity to respond to external stimuli.
+Second, high-variance genes, expected to be reactive to changes in the environment, could become less variable, indicating a reduced capacity to respond to external stimuli.
 Third, the covariance between different genes could be altered, leading to decoherence between interdependent genes [@Lea2019-pq].
 Any one of these changes in expression variance patterns could have physiological consequences, and exploring these differences should be a major part of linking gene expression to cell phenotypes and function (see Hagai et al. [-@Hagai2018-fu] for example).
 Genes are also expected to differ in their capacity to maintain an optimal level of gene expression variance [@Macneil2011-ax].
