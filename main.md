@@ -400,17 +400,13 @@ All code for reproducing all analysis and figures, along with a walk-through, is
 
 # Supporting information
 
-S1 - **Metadata file describing the data used in the study as well as some intermediate processing information.**
+1. SI table - Metadata file describing the data used in the study as well as some intermediate processing information.
 
-S1 - Table
+1. SI table - Gene expression mean and variance ranks.
 
-S1 - Column Descriptions
+1. SI table - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
-S2 - **Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance**
-
-S2 - Table
-
-S2 - Column Descriptions
+1. SI figure 1 - Those funky heatplots
 
 
 # References
