@@ -64,7 +64,7 @@ mainfontoptions:
 csl: ./pandoc/cse.csl
 sansfont: Skolar Sans PE TEST
 bibliography: ./references.bib
-abstract: Differences in gene expression variance is an often neglected aspect in the study of transcriptomes, even though expression variance has been linked to fitness and has salient evolutionary relevance. We lack a comprehensive view of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use large publicly available human RNA-seq data sets to investigate the landscape of gene expression variance. In particular, we ask if there are consistently more or less variable genes across tissues and across data sets and what mechanisms drive these patterns. We show that gene expression variance is broadly similar across tissues and studies. We use this similarity to create both global and within-tissue rankings of variation, which we use to show that function, sequence variation, and gene regulatory signatures contribute to gene expression variance. Gene expression variance is strongly predictive of gene function, with low-variance genes being associated with fundamental cell processes, and high-variance genes being linked to responding to the environment. Our results show differences in the regulatory mechanisms of high and low gene expression variance, in addition to a clear link between function and gene expression variance, suggesting that these differences are adaptive. We expect these results will help to place the pattern of variation at the center of our understanding of molecular phenotypes.
+abstract: Gene expression variance has been linked to organismal function and fitness but remains a commonly neglected aspect of gene expression research. We lack a comprehensive view of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use large publicly available human RNA-seq data sets to investigate the landscape of gene expression variance. In particular, we ask if there are consistently more or less variable genes across tissues and across data sets and what mechanisms drive these patterns. We show that gene expression variance is broadly similar across tissues and studies. We use this similarity to create both global and within-tissue rankings of variation, which we use to show that function, sequence variation, and gene regulatory signatures contribute to gene expression variance. Gene expression variance is strongly predictive of gene function, with low-variance genes being associated with fundamental cell processes, and high-variance genes being linked to responding to the environment. Our results show differences in the regulatory mechanisms of high and low gene expression variance, in addition to a clear link between function and gene expression variance, suggesting that these differences are adaptive. We expect these results will help to place the pattern of variation at the center of our understanding of molecular phenotypes.
 ---
 
 # Author Summary
@@ -195,7 +195,7 @@ Although all associations are significant and in the expected direction, their e
 
 We assess how local epigenetic features relate to gene expression variance. We use each gene, including the surrounding 10 kb on both ends, to calculate the proportion of gene regions that correspond to epigenetic signatures of gene regulation defined through ChromHMM [@ernst2012chromhmm] chromatin states. Chromatin states associated with distal (i.e., non-promoter) gene regulation are positively correlated with the across-study variance rank, regardless of whether the regulatory effect on gene expression is positive or negative (@fig:lineplot; see also "across-study" correlations in supplementary fig. 1A). For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted p < 0.05). Histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance (supplementary fig. 1A), whereas they are positively correlated with the mean rank (supplementary fig. 1B). Taken together, these results are compatible with gene expression variance being more associated with distal (i.e., non-promoter) gene regulation, rather than the overall active transcriptional state of a gene region, as is the case with mean gene expression.
 
-![chromHMM annotations by extremes of the across-study gene expression variance rank.](figures/var_meanrank_top_bottom_5p_medianComp_wSEMlines.png){#fig:lineplot}
+![Proportion of gene regions made up of ChromHMM chromatin states for genes in the top and bottom 5% of the across-study variance rank metric. Line plot contrasts the proportion of gene regions made up of the indicated chromatin states for genes in the top and bottom 5% of the across-study variance rank metric. Ends denote the median proportion of gene regions made up of the chromatin state, and error bars represent the standard error of the mean (SEM). States colored black are not significant, all others exhibit significant differences in gene region made up of the chromatin state for genes in the top and bottom 5% of the variance rank metric (Benjamini-Hochberg adjusted Wilcoxon signed-rank test, p < 0.05). Het indicates heterochromatin; TSS, transcription start sites; znf, zinc finger genes.](figures/top_bottom_5pVarrank_fxnlGen_lineplot_10kb_simplified.png){#fig:lineplot}
 
 We also explore the relationship between tissue-specific ChromHMM chromatin states and SD rank and contrast these tissue-level analyses to the across-study analysis outlined above. Many of the across-study correlations are recapitulated at the tissue-specific level, including a strong and highly consistent positive correlation between the proportion of gene regions made up of enhancer states and that gene’s expression variance, and an inverse relationship between gene expression variance and histone marks associated with gene transcription  (supplementary fig. 1A). Two blood associations stand out as being different from the consistent effects across the other tissue-level and across-study associations. First, the weak (i.e., histone marks associated with both activating and repressive functions) promoter state is positively correlated with gene expression variance in all comparisons except blood. Second, the consistent inverse correlation of gene expression variance with weak transcription is reversed in blood, such that there is a positive correlation between histone marks associated with weak transcription and blood gene expression variance (supplementary fig. 1A). Taken together, these results suggest that, rather than genes with a bivalent promoter state (i.e., poised genes) exhibiting more expression variance, blood high-variance genes are more likely already expressed at basal levels (i.e., weakly transcribed), as discussed previously [@Rogatsky2014-bi]. 
 
@@ -400,13 +400,20 @@ All code for reproducing all analysis and figures, along with a walk-through, is
 
 # Supporting information
 
-1. SI table - Metadata file describing the data used in the study as well as some intermediate processing information.
+1. SI figure 1 - Across-study and tissue-specific gene expression variance and mean correlations 
+with non-overlapping chromatin states through ChromHMM
 
-1. SI table - Gene expression mean and variance ranks.
+1. SI figure 2 - Proportion of gene regions made up of ChromHMM chromatin states for genes in
+the top and bottom 5% of the across-study mean rank metric.
 
-1. SI table - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
+1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
+used.
 
-1. SI figure 1 - Those funky heatplots
+1. SI data - Metadata file describing the data used in the study as well as some intermediate processing information.
+
+1. SI data - Gene expression mean and variance ranks.
+
+1. SI data - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
 
 # References
