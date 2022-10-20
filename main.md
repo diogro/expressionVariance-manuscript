@@ -411,11 +411,11 @@ the top and bottom 5% of the across-study mean rank metric.
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
 
-1. SI data - Metadata file describing the data used in the study as well as some intermediate processing information.
+1. SI data - **Study metadata** -  Metadata file describing the data used in the study as well as some intermediate processing information.
 
-1. SI data - Gene expression mean and variance ranks.
+1. SI data - **Ranks** - Gene expression mean and variance ranks, across-study and tissue-specific.
 
-1. SI data - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
+1. SI data - **GO enrichment** - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
 
 # References
