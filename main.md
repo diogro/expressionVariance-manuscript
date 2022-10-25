@@ -99,7 +99,7 @@ To what extent differential expression (i.e., differences in mean expression lev
 Higher expression could lead to higher variation, but other processes could also affect transcriptional variance.
 For example, if a gene is expressed in more than one tissues, stabilizing selection on gene expression could be more intense depending on the role of that gene in a particular tissue, leading to a local reduction in variation that causes differences in variance across tissues that is not necessarily correlated with mean expression.
 Alternatively, expression variation across tissues could be tightly coupled, and in this example, selection in one tissue would lead to a reduction in variance across tissues, resulting in a consistent pattern of variation.
-Alemu et al. [@Alemu2014-jo] used microarray data from several human tissues to show that epigenetic markers were linked to gene expression variation and that these markers were variable across tissues and between high- and low-variance genes.
+Regarding tissue-specific gene expression variation, Alemu et al. [@Alemu2014-jo] used microarray data from several human tissues to show that epigenetic markers were linked to gene expression variation and that these markers were variable across tissues and between high- and low-variance genes.
 
 Here, we use publicly available human gene expression data sets to evaluate how the differences in gene expression variance are structured across independent samples.
 By comparing the gene expression variance measured across many studies, we show that the patterns of gene expression variance are broadly similar across studies and tissues.
@@ -129,7 +129,7 @@ Given that the correlations across studies are mostly positive and high (75% of 
 To create this rank, we used the score of each gene in the first principal component of the Spearman correlation matrix.
 Ordering genes using these scores generate a ranked list of genes, with the most variable genes having the highest rank.
 We create a similar across-study rank for mean expression.
-The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the least and most variable genes in our variance rank. The position of these highlighted genes in the SD distributions illustrates how the extremes of the rank are indeed some of the least and most variable genes across all studies.
+The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the most (*HBB*) and least (*WDR33*) variable genes in our variance rank. The position of these highlighted genes in the SD distributions illustrates how the extremes of the rank are indeed some of the least and most variable genes across all studies.
 We also create a set of tissue-specific SD ranks, which use the same procedure outlined above but using only studies that were performed on the same tissue.
 This creates a series of gene ranks, one for each sampled tissue, which describes the gene expression SD rank in that particular tissue.
 Both tissue-specific and across-study ranks are available in the Supporting Information.
