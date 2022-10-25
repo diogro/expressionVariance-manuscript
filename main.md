@@ -78,18 +78,18 @@ In this context, average trait values are usually the focus of investigation, wh
 However, variability is ubiquitous in nature and is, alongside robustness, a fundamental feature of most complex systems. 
 Gene expression variance can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
 Yet, few studies have investigated variance itself as a regulated trait, and the consequences of transcriptional variance on complex traits and diseases [@Li2010-qs; @Mar2011-dr; @Hagai2018-fu].
-From an evolutionary perspective, the availability of transcriptional variance can drive phenotypic variation - the substrate for evolutionary change [@Hansen2021-zo]. 
+From an evolutionary perspective, the availability of transcriptional variance can drive phenotypic variation - the substrate for evolutionary change [@Hansen2021-zo].
 Previous work also demonstrate that  the genetic architecture of variance it self can evolve [@Bruijning2020-bf].
 Focusing on the landscape of gene expression variance, and how variable it is across genes and across human populations is a neglected avenue for understanding biological evolution, disease traits, and our relation to the environment. 
 In particular, we still have a very poor understanding of whether some genes are inherently more variable than others, or if the pattern of transcriptional variance is consistent across populations. 
 Nor do we know how the degree of variance is linked to context-specific gene regulation and gene function.
 
 From a mechanistic perspective, several competing forces act to shape gene expression variance [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
-At the genomic sequence level, we expect the influx of new mutations to increase observed variation, while the selective removal of these polymorphisms, via purifying selection or selective sweeps, would decrease variation. 
-The extent to which mutations and polymorphisms can contribute to variance depends on aspects of genetic architecture, like mutation target size and the presence of epistatic interactions.
+At the genomic sequence level, we expect the influx of new mutations to increase the variance, while the selective removal of these polymorphisms, via purifying selection or selective sweeps, would decrease variation. 
+The extent to which mutations and polymorphisms can contribute to variance depends on aspects of genetic architecture, like mutational target size and the presence of epistatic interactions.
 From a quantitative trait perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to a transient increase in variance while selected alleles sweep to fixation, followed by a reduction in variance as these alleles become fixed.
 Pleiotropic effects are also important, as they allow selection on one trait to influence the variance of other traits [@Wagner1997-hw; @Pavlicev2011-xm].
-The indirect effect of directional selection on variance opens the possibility that the main driver of gene expression variance is not direct selection on variance but indirect effects due to selection on trait means [@Hansen2011-es].
+Both indirect effects of directional selection on variance opens the possibility that the main driver of gene expression variance is not direct selection on variance but indirect effects due to selection on trait means [@Hansen2011-es].
 To what extent these processes shape gene expression variance is an open question.
 If homogeneous selection across groups is the main driver of gene expression variance, we would expect to have consistently more or less variable genes.
 If idiosyncratic selection patterns and context-specific environmental interactions are more important, we could observe large differences in gene expression variance across groups.
