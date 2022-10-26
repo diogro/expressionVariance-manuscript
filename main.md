@@ -291,7 +291,7 @@ Our results suggest that low- and high-variance genes could use different strate
 
 ## Data sources
 
-We selected 57 human RNA-seq data sets with large sample sizes (from 12 to 2931) downloaded from the public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn].
+We selected 57 human RNA-seq data sets with large sample sizes (mean: 389.35, median: 251, min: 12, max: 2931) downloaded from the public gene expression repositories recount3 [@Wilks2021-uj] and Expression Atlas [@Papatheodorou2020-dn].
 We only used data sets with an associated publication, for which raw read count and sample-level metadata was available.
 Because we are interested in population-level variation of gene expression, we exclude single-cell studies.
 Metadata and details on the included data sets can be found in the supporting information.
