@@ -438,9 +438,11 @@ used.
 
 1. SI data - Study metadata -  Metadata file describing the data used in the study as well as some intermediate processing information.
 
-1. SI data - Gene ranks - Gene expression mean and variance ranks, across-study and tissue-specific.
+1. SI data - Gene expression means and standard deviations - Tables with final calculated means and standard deviations.
 
-1. SI data - GO enrichment - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
+2. SI data - Gene ranks - Gene expression mean and variance ranks, across-study and tissue-specific.
+
+3. SI data - GO enrichment - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
 
 # References
