@@ -116,9 +116,9 @@ Finally, we explore the link between gene expression variance and biological fun
 
 ## Datasets
 
-We use 57 publicly available human gene expression RNA-seq data sets which are derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section. 
-We only use data sets from populational samples, so we exclude studies using single-cell data. 
-We also excluded data sets with no associated publication and no sample-level metadata. 
+We use 57 publicly available human gene expression RNA-seq data sets which are derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section.
+We only use data sets from populational samples, so we exclude studies using single-cell data.
+We also excluded data sets with no associated publication and no sample-level metadata.
 Several data sets were derived from two large consortiums: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note the origin of the data sets in the figures.
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
 
@@ -355,7 +355,7 @@ After all filtering, the mean sample size we used for each data set was 390, wit
 We choose standard deviation as a measure of variation to have a statistic on a linear scale, and we do not use coefficient of variation because we have already corrected for mean differences and for the mean-variance relation inherent to RNA-seq count data [@De_Jong2019-po].
 The full annotated pipeline is available at [the github repository ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
 
-## Correlations in transcriptional variance 
+## Correlations in transcriptional variance
 
 We assessed the similarity in gene expression variance across studies by using a between-study Spearman correlation matrix of the measured SDs.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, ~4200 genes in total.
@@ -432,7 +432,7 @@ with non-overlapping chromatin states through ChromHMM.
 the top and bottom 5% of the across-study mean rank metric.
 
 1. SI figure 3 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix in gene expresion standard deviations.
-  
+
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
 
@@ -441,6 +441,10 @@ used.
 1. SI data - Gene ranks - Gene expression mean and variance ranks, across-study and tissue-specific.
 
 1. SI data - GO enrichment - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
+
+1. SI data - Study gene lists - List of genes included in each study.
+
+1. SI data - Mean and standard deviation values per gene by study.
 
 
 # References
