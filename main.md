@@ -144,7 +144,7 @@ Both tissue-specific and across-study ranks are available in the Supporting Info
 
 ## What drives differences in gene expression variance?
 
-To characterize what factors may explain differences in across-study similarity, we directly modeled the across-study correlations using a mixed-effect linear model designed to account for the non-independence in pairwise correlation data [@Dias2021-wk; @Dias2021-hb].
+To characterize what factors may explain differences in across-study similarity, we directly modeled the across-study correlations using a mixed-effect linear model designed to account for the non-independence in pairwise correlation data [@Dias2021-wk; @Dias2022-au].
 In this model (see [Methods](#Methods)), we use a random effect for individual study ID, a fixed effect for pairwise tissue congruence (whether a comparison is within the same tissue or different tissue), and a fixed effect for pairwise study source (which pair of sources among GTEx, TCGA, and miscellaneous is involved in a comparison) as predictors of the correlations (see [Methods](#Methods)).
 This model (@fig:corr_model) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (@fig:corr_model C).
 Correlations that do not involve studies from TCGA and GTEx (marked as "Misc.") are on average lower (@fig:corr_model C).
@@ -362,7 +362,7 @@ Only genes present in all studies were used to calculate the Spearman correlatio
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more- or less-variable across studies.
 To investigate the factors involved in determining correlations between studies, we used a Bayesian varying effects model to investigate the effect of study origin and tissue on the correlations across studies.
 This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression SDs.
-This is accomplished by adding a per-study random effect, see [@Dias2021-hb] for details.
+This is accomplished by adding a per-study random effect, see [@Dias2022-au] for details.
 The Fisher z-transformed Spearman correlations across studies ($z(\rho_{ij})$) are modeled as:
 
 $$\begin{aligned}
@@ -371,7 +371,7 @@ z(\rho_{ij}) &\sim N(\mu_{ij}, \sigma) \\
 \alpha_i &\sim N(0, \sigma_{\alpha})
 \end{aligned}$$
 
-The $\alpha$ terms account for the non-independence between the pairs of correlations and estimate the idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha$) receive weakly informative normal priors with a standard deviation of one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@carpenter2017stan] via the _rethinking_ R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions.
+The $\alpha$ terms account for the non-independence between the pairs of correlations and estimate the idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha$) receive weakly informative normal priors with a standard deviation of one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@Carpenter2017-pn] via the _rethinking_ R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions.
 
 __Gene expression SD rank:__ Given that most of the variation in the Spearman correlation across studies is explained by a single principal component (PC1 accounts for 62% of the variation in the across-study Spearman correlation matrix, while PC2 accounts for only 5%; see SI fig. 3), we use the ranked projections of gene expression SDs in this principal component (PC1) to create an across-study rank of gene variation.
 The higher the rank, the higher the expression SD of a given gene.
