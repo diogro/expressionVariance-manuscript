@@ -112,7 +112,7 @@ Finally, we explore the link between gene expression variance and biological fun
 # Results
 
 
-![Overview of the distribution of transcriptional variance across studies. (A) Heatmap showing the correlation in transcriptional variance across studies (as the Spearman correlation of gene expression standard deviations). Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in @fig:corr_model, panel A. (B) Histogram of the correlations shown in the previous panel. (C) Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors. (D) Density plot of standard deviations after z-normalization. The inset plot shows the distribution of mean-centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest-ranking gene in standard deviation rank (\textsc{hbb}) (right, blue) and lowest (\textsc{wdr33}) (left, red).](figures/fig1.png){#fig:sd_corr}
+![Overview of the distribution of transcriptional variance across studies. (A) Heatmap showing the correlation in transcriptional variance across studies (as the Spearman correlation of gene expression standard deviations). Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in @fig:corr_model, panel A. (B) Histogram of the correlations shown in the previous panel. (C) Standard deviation correlation PCoA. There is no clear structuring of the studies with respect to their source, which is indicated by the colors. (D) Density plot of standard deviations after z-normalization. The inset plot shows the distribution of mean-centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest-ranking gene in standard deviation rank (\textsc{\textit{hbb}}) (right, blue) and lowest (\textsc{\textit{wdr33}}) (left, red).](figures/fig1.png){#fig:sd_corr}
 
 ## Datasets
 
@@ -133,7 +133,7 @@ Given that the correlations across studies are mostly positive and high (75% of 
 To create this rank, we used the score of each gene in the first principal component of the Spearman correlation matrix.
 Ordering genes using these scores generate a ranked list of genes, with the most variable genes having the highest rank.
 We create a similar across-study rank for mean expression.
-The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the most (\textsc{hbb}) and least (\textsc{wdr33}) variable genes in our variance rank. The position of these highlighted genes in the SD distributions illustrates how the extremes of the rank are indeed some of the least and most variable genes across all studies.
+The red and blue ticks at the bottom of @fig:sd_corr D show the positions on the SD distributions of the most (\textsc{\textit{hbb}}) and least (\textsc{\textit{wdr33}}) variable genes in our variance rank. The position of these highlighted genes in the SD distributions illustrates how the extremes of the rank are indeed some of the least and most variable genes across all studies.
 We also create a set of tissue-specific SD ranks, which use the same procedure outlined above but using only studies that were performed on the same tissue.
 This creates a series of gene ranks, one for each sampled tissue, which describes the gene expression SD rank in that particular tissue.
 Both tissue-specific and across-study ranks are available in the Supporting Information.
@@ -371,7 +371,7 @@ z(\rho_{ij}) &\sim N(\mu_{ij}, \sigma) \\
 \alpha_i &\sim N(0, \sigma_{\alpha})
 \end{aligned}$$
 
-The $\alpha$ terms account for the non-independence between the pairs of correlations and estimate the idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha$) receive weakly informative normal priors with a standard deviation of one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@carpenter2017stan] via the rethinking R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions.
+The $\alpha$ terms account for the non-independence between the pairs of correlations and estimate the idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha$) receive weakly informative normal priors with a standard deviation of one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@carpenter2017stan] via the _rethinking_ R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions.
 
 __Gene expression SD rank:__ Given that most of the variation in the Spearman correlation across studies is explained by a single principal component (PC1 accounts for 62% of the variation in the across-study Spearman correlation matrix, while PC2 accounts for only 5%; see SI fig. 3), we use the ranked projections of gene expression SDs in this principal component (PC1) to create an across-study rank of gene variation.
 The higher the rank, the higher the expression SD of a given gene.
@@ -431,7 +431,7 @@ with non-overlapping chromatin states through ChromHMM.
 1. SI figure 2 - Proportion of gene regions made up of ChromHMM chromatin states for genes in
 the top and bottom 5% of the across-study mean rank metric.
 
-1. SI figure 3 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix in gene expresion standard deviations.
+1. SI figure 3 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expresion standard deviations.
   
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
