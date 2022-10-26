@@ -431,6 +431,8 @@ with non-overlapping chromatin states through ChromHMM.
 1. SI figure 2 - Proportion of gene regions made up of ChromHMM chromatin states for genes in
 the top and bottom 5% of the across-study mean rank metric.
 
+1. SI figure 3 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix in gene expresion standard deviations.
+  
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
 
