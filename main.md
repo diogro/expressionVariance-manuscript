@@ -76,7 +76,7 @@ In this context, average trait values are usually the focus of investigation, wh
 However, variability is ubiquitous in nature and is, alongside robustness, a fundamental feature of most complex systems.
 Gene expression variance can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can also be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
 Yet, few studies have investigated variance itself as a regulated trait, and the consequences of transcriptional variance on complex traits and diseases [@Li2010-qs; @Mar2011-dr; @Hagai2018-fu].
-From an evolutionary perspective, the availability of transcriptional variance can drive phenotypic variation - the substrate for evolutionary change [@Hansen2021-zo].
+From an evolutionary perspective, the availability of transcriptional variance can drive phenotypic variation---the substrate for evolutionary change [@Hansen2021-zo].
 Previous work also demonstrates that the genetic architecture of variance itself can evolve [@Bruijning2020-bf].
 Focusing on the landscape of gene expression variance, and how variable it is across genes and across human populations is a neglected avenue for understanding biological evolution, disease traits, and how we respond to the environment.
 In particular, we still have a very poor understanding of whether some genes are inherently more variable than others, or if the pattern of transcriptional variance is consistent across populations.
