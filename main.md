@@ -1,7 +1,5 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
-# author:
-  # - Scott Wolf, Diogo Melo, Kristina M. Garske, Luisa Pallares, Julien Ayroles
 author:
   - Scott Wolf:
       institute: lsi
@@ -79,7 +77,7 @@ However, variability is ubiquitous in nature and is, alongside robustness, a fun
 Gene expression variance can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], and changes in the associations between gene expression can also be indicative of disease, even in the absence of changes in mean expression [@Lea2019-pq].
 Yet, few studies have investigated variance itself as a regulated trait, and the consequences of transcriptional variance on complex traits and diseases [@Li2010-qs; @Mar2011-dr; @Hagai2018-fu].
 From an evolutionary perspective, the availability of transcriptional variance can drive phenotypic variation - the substrate for evolutionary change [@Hansen2021-zo].
-Previous work also demonstrates that  the genetic architecture of variance it self can evolve [@Bruijning2020-bf].
+Previous work also demonstrates that the genetic architecture of variance itself can evolve [@Bruijning2020-bf].
 Focusing on the landscape of gene expression variance, and how variable it is across genes and across human populations is a neglected avenue for understanding biological evolution, disease traits, and how we respond to the environment.
 In particular, we still have a very poor understanding of whether some genes are inherently more variable than others, or if the pattern of transcriptional variance is consistent across populations.
 Nor do we know how transcriptional variance is linked to context-specific gene regulation and function.
@@ -126,7 +124,7 @@ We refer to data sets and studies interchangeably, and so each tissue in GTEx is
 
 For each study, gene expression standard deviations (SDs) were calculated using a unified pipeline that normalized the mean-variance relation in read-count data, controlled for batch effects, and removed outliers (see [Methods](#Methods) for details).
 Spearman correlations ($\rho_s$) between gene expression SDs reveal a broadly similar rank of gene expression variance, such that genes that are most variable in one study tend to be most variable in all studies (@fig:sd_corr A and B).
-A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a between-study distance measure does not show clearly delineated groups, but GTEx  and TCGA studies are clustered among themselves and close together (@fig:sd_corr C).
+A principal coordinate analysis [@Gower1966-dk] using $|1 - \rho_s|$ as a between-study distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together (@fig:sd_corr C).
 This clustering indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
 The observed range of gene expression SD across genes is variable across studies but can be normalized so that the distributions are comparable (@fig:sd_corr D).
 Given that the correlations across studies are mostly positive and high (75% of correlations are between 0.45 and 0.9), indicating similar ordering of the genes, we seek to summarize the differences in variance across genes by using a single cross-study rank, averaging the ordering across all studies.
@@ -175,8 +173,8 @@ Higher entropy is associated with a more uniform distribution of genes across de
 GO terms with low entropy indicate some deciles are over-represented in the genes associated with that term.
 We also measured skewness for each term, which should be zero if no decile is over-represented, negative if high-variance terms are over-represented, and positive if low-variance deciles are over-represented.
 The relation between skewness and entropy for each GO term can be seen in @fig:skew_entropy .
-Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with housekeeping functions, like RNA localization, translation initiation, methylation and chromosome segregation (@fig:go_skewness  A).
-Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment (@fig:go_skewness  B).
+Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with housekeeping functions, like RNA localization, translation initiation, methylation and chromosome segregation (@fig:go_skewness A).
+Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment (@fig:go_skewness B).
 
 Both GO analyses suggest a strong association between biological function and the degree of transcriptional variance.
 Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
@@ -209,7 +207,7 @@ We assess how local epigenetic features relate to gene expression variance. We u
 
 ![Proportion of gene regions made up of ChromHMM chromatin states for genes in the top and bottom 5% of the across-study variance rank metric. Line plot contrasts the proportion of gene regions made up of the indicated chromatin states for genes in the top and bottom 5% of the across-study variance rank metric. Ends denote the median proportion of gene regions made up of the chromatin state, and error bars represent the standard error of the mean. States colored black are not significant, all others exhibit significant differences in gene region made up of the chromatin state for genes in the top and bottom 5% of the variance rank metric (BH adjusted Wilcoxon signed-rank test, p < 0.05). Het indicates heterochromatin; TSS, transcription start sites; znf, zinc finger genes.](figures/top_bottom_5pVarrank_fxnlGen_lineplot_10kb_simplified.png){#fig:lineplot}
 
-We also explore the relationship between tissue-specific ChromHMM chromatin states and SD rank and contrast these tissue-level analyses to the across-study analysis outlined above. Many of the across-study correlations are recapitulated at the tissue-specific level, including a strong and highly consistent positive correlation between the proportion of gene regions made up of enhancer states and that gene’s expression variance, and an inverse relationship between gene expression variance and histone marks associated with gene transcription  (supplementary fig. 1A). Two blood associations stand out as being different from the consistent effects across the other tissue-level and across-study associations. First, the weak (i.e., histone marks associated with both activating and repressive functions) promoter state is positively correlated with gene expression variance in all comparisons except blood. Second, the consistent inverse correlation of gene expression variance with weak transcription is reversed in blood, such that there is a positive correlation between histone marks associated with weak transcription and blood gene expression variance (supplementary fig. 1A). Taken together, these results suggest that, rather than genes with a bivalent promoter state (i.e., poised genes) exhibiting more expression variance, blood high-variance genes are more likely already expressed at basal levels (i.e., weakly transcribed), as discussed previously [@Rogatsky2014-bi].
+We also explore the relationship between tissue-specific ChromHMM chromatin states and SD rank and contrast these tissue-level analyses to the across-study analysis outlined above. Many of the across-study correlations are recapitulated at the tissue-specific level, including a strong and highly consistent positive correlation between the proportion of gene regions made up of enhancer states and that gene’s expression variance, and an inverse relationship between gene expression variance and histone marks associated with gene transcription (supplementary fig. 1A). Two blood associations stand out as being different from the consistent effects across the other tissue-level and across-study associations. First, the weak (i.e., histone marks associated with both activating and repressive functions) promoter state is positively correlated with gene expression variance in all comparisons except blood. Second, the consistent inverse correlation of gene expression variance with weak transcription is reversed in blood, such that there is a positive correlation between histone marks associated with weak transcription and blood gene expression variance (supplementary fig. 1A). Taken together, these results suggest that, rather than genes with a bivalent promoter state (i.e., poised genes) exhibiting more expression variance, blood high-variance genes are more likely already expressed at basal levels (i.e., weakly transcribed), as discussed previously [@Rogatsky2014-bi].
 
 Immediate early genes (IEGs) respond quickly to external signals without requiring _de novo_ protein synthesis, and a bivalent state has been reported to be associated with IEG promoters [reviewed in @Bahrami2016-dx]. Given our results that genes with high expression variance are enriched for cellular signaling and response mechanisms (@fig:go_tails A), and bivalent promoter states are correlated with the gene expression variance rank (supplementary fig. 1A), we hypothesized that IEGs would be enriched within genes in the top expression variance ranks. This was the case for all tissue-level gene expression variance ranks (enrichment ratios range from 3.3-8.8, Bonferroni-adjusted hypergeometric test, p < 0.05), except for in blood (enrichment ratio = 1.2, hypergeometric test, p = 0.3). Thus, once again blood stands out when attempting to understand genomic regulatory drivers of expression variance. In all, while high-variance genes are generally shared across tissues and enriched for immune and environmental signaling pathways, it seems that the gene regulatory mechanisms governing their expression are distinct between immune cell types and other tissues studied here.
 
@@ -303,7 +301,7 @@ We use the word "studies" to refer to independent data sets, which could have be
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide our data sets into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
 
-Table: Data Source Table. Columns show the study ID, with the corresponding tissue in parentesis, and the source publication.  \label{tab1}
+Table: Data Source Table. Columns show the study ID, with the corresponding tissue in parentesis, and the source publication. \label{tab1}
 
 |Study ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |Citation                                                             |
 |:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
@@ -411,7 +409,7 @@ __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract infor
 
 __Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for enrichment of housekeeping genes in the genes within the highest and lowest 5% of gene expression variance rank.
 
-__Immediate early genes (IEGs):__ Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment. We use the hypergeometric test to assess the significance of the enrichment. Immediate early genes (IEGs): Human IEGs were curated from the literature in  @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment.
+__Immediate early genes (IEGs):__ Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment. We use the hypergeometric test to assess the significance of the enrichment. Immediate early genes (IEGs): Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment.
 
 __Probability of being loss-of-function intolerant (pLI)__: Genes that are likely haploinsufficient (i.e., intolerant of heterozygous loss-of-function variants) were detected as those with fewer than expected protein-truncating variants (PTVs) in ExAC [@Lek2016-xw]. We use genes with a pLI > 0.9 to test for the enrichment of loss-of-function intolerant genes in the genes exhibiting the highest and lowest 5% gene expression variance estimates.
 
@@ -432,11 +430,11 @@ with non-overlapping chromatin states through ChromHMM.
 the top and bottom 5% of the across-study mean rank metric.
 
 1. SI figure 3 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expresion standard deviations.
-  
+
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
 
-1. SI data - Study metadata -  Metadata file describing the data used in the study as well as some intermediate processing information.
+1. SI data - Study metadata - Metadata file describing the data used in the study as well as some intermediate processing information.
 
 1. SI data - Gene expression means and standard deviations - Tables with final calculated means and standard deviations.
 
