@@ -438,7 +438,7 @@ used.
 
 1. SI data 1 - Study metadata - Metadata file describing the data used in the study as well as some intermediate processing information.
 
-1. SI data 2 - Study gene lists - List of genes included in each study.
+1. SI data 2 - Study gene lists - List of genes included in each study after filtering.
 
 1. SI data 3 - Gene expression means and standard deviations - Tables with final calculated means and standard deviations.
 
