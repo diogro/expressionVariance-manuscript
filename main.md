@@ -301,7 +301,7 @@ We use the word "studies" to refer to independent data sets, which could have be
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide our data sets into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
 
-Table: Data Source Table. Columns show the study ID, with the corresponding tissue in parentesis, and the source publication. \label{tab1}
+Table: Data Source Table. Columns show the study ID, with the corresponding tissue in parenthesis, and the source publication. \label{tab1}
 
 |Study ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |Citation                                                             |
 |:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
@@ -341,15 +341,15 @@ Technical replicates were summed.
 For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean of 5 cpm reads across samples.
 To account for the mean-variance relation in RNA-seq count data, we applied a variance stabilizing transformation implemented in DESeq2 [@Love2014-mp] to the genes passing the read-count filters.
 This mean-variance correction was verified by plotting mean-variance relations before and after correction, and these plots can be seen in the supporting information.
-Various technical covariates (like experimental batch, sex, etc.) were manually curated from the metadata for each study and accounted for using a linear fixed-effects model.
+Various technical covariates (like experimental batch, sex, etc.) were manually curated from the metadata associated with each study and accounted for using a linear fixed-effects model.
 A list of covariates used for each study is available in the supporting information.
 Outlier individuals in the residual distribution were removed using a robust Principal Component Analysis (PCA) approach of automatic outlier detection described in @Chen2020-fy.
 This procedure first estimates a robust Principal Components for each study and then measures the Mahalanobis distance between each sample and the robust mean.
 Samples that are above the 0.99 percentile in Mahalanobis distance to the mean are marked as outliers and removed.
 We verify that the batch effect correction and outlier removal are reasonable by using PCA scatter plots after each step of the pipeline to check the result for residual problems like groupings or other artifacts.
 These PCA plots before and after batch correction and outlier removal are also included in the supporting information.
-Gene expression standard deviation is measured as the residual standard deviation after fixed effect correction and outlier removal.
-After all filtering, the mean sample size we used for each data set was 390, with a median of 251, and a ranged from 12 to 2931 samples.
+After all sample filtering, the mean sample size we used for each data set was 390, with a median of 251, and a ranged from 12 to 2931 samples.
+Gene expression standard deviations (SDs) are measured as the residual standard deviations after fixed effect correction and outlier removal.
 We choose standard deviation as a measure of variation to have a statistic on a linear scale, and we do not use coefficient of variation because we have already corrected for mean differences and for the mean-variance relation inherent to RNA-seq count data [@De_Jong2019-po].
 The full annotated pipeline is available at [the github repository ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
 
@@ -369,7 +369,7 @@ z(\rho_{ij}) &\sim N(\mu_{ij}, \sigma) \\
 \alpha_i &\sim N(0, \sigma_{\alpha})
 \end{aligned}$$
 
-The $\alpha$ terms account for the non-independence between the pairs of correlations and estimate the idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha$) receive weakly informative normal priors with a standard deviation of one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@Carpenter2017-pn] via the _rethinking_ R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions.
+The $\alpha_i$ terms account for the non-independence between the pairs of correlations and estimate the idiosyncratic contribution of each study to all the correlations it is involved in. The fixed effects encoded in the design matrix $X$ measure the effects of tissue congruence and study-origin congruence. All fixed effect parameters ($\beta$) and per-study parameters ($\alpha_i$) receive weakly informative normal priors with a standard deviation of one quarter. For the overall variance ($\sigma$) we use a unit exponential prior, and for the intercept ($\mu_0$) a unit normal prior. This model was fit in Stan [@Carpenter2017-pn] via the _rethinking_ R package [@mcelreath2020statistical], using eight chains, with 4000 warm-up iterations and 2000 sampling iterations per chain. Convergence was assessed using R-hat diagnostics [@Gelman2013-ae], and we observed no warnings or divergent transitions.
 
 __Gene expression SD rank:__ Given that most of the variation in the Spearman correlation across studies is explained by a single principal component (PC1 accounts for 62% of the variation in the across-study Spearman correlation matrix, while PC2 accounts for only 5%; see SI fig. 3), we use the ranked projections of gene expression SDs in this principal component (PC1) to create an across-study rank of gene variation.
 The higher the rank, the higher the expression SD of a given gene.
@@ -417,7 +417,7 @@ __Disease annotations__: We use the gene annotations for involvement with diseas
 
 # Code availability
 
-All code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
+Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
 
 # Supporting information
 
@@ -434,7 +434,7 @@ the top and bottom 5% of the across-study mean rank metric.
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
 
-1. SI Appendix 1 - Diagnostics plots for processing pipeline.
+1. SI appendix 1 - Diagnostics plots for processing pipeline.
 
 1. SI data 1 - Study metadata - Metadata file describing the data used in the study as well as some intermediate processing information.
 
