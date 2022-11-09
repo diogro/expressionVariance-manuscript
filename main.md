@@ -106,6 +106,8 @@ We use the observed similarities to create an across-study gene expression varia
 We then integrate various functional annotations as well as sequence variation to probe the drivers of this variance ranking.
 Finally, we explore the link between gene expression variance and biological function by leveraging gene ontology and disease annotations.
 
+![Variance regulation across conditions.](figures/variance_control_horizontal.png){#fig:variance_control width=570px}
+
 
 # Results
 
