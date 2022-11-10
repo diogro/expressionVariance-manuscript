@@ -106,7 +106,7 @@ We use the observed similarities to create an across-study gene expression varia
 We then integrate various functional annotations as well as sequence variation to probe the drivers of this variance ranking.
 Finally, we explore the link between gene expression variance and biological function by leveraging gene ontology and disease annotations.
 
-![Variance regulation across conditions.](figures/variance_control_horizontal.png){#fig:variance_control width=570px}
+![Overview figure showing how differences in the regulation of transcriptional variance can drive changes in gene expression variation correlations. (A) Plot showing the distribution of gene expression values for a single gene across two conditions. Condition here can refer to different tissues, environments, populations, etc. In this initial condition, the gene variance is consistent across conditions. (B, C) Following a change in the expression variance in one condition, the regulatory architecture can lead to different outcomes. In (B), a shared regulatory architecture maintains consistent variance across both conditions. In (C), independent regulation causes the reduction in variation to be restricted to condition 1. (D, E) When comparing several genes across conditions, these difference in regulation can lead to more or less similarity across conditions. In (D), the shared control leads to high correlation across conditions. In (E) independent regulation results in lower correlation across conditions.](figures/variance_control_horizontal.png){#fig:variance_control width=570px}
 
 
 # Results
