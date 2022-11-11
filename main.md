@@ -43,7 +43,7 @@ geometry:
 - bottom=20mm
 header-includes:
 - \usepackage[left]{lineno}
-- \linenumbers
+- \modulolinenumbers[5]
 - \usepackage[backref=true,style=authoryear]{biblatex}
 - \DefineBibliographyStrings{english}{backrefpage = {page}, backrefpages = {pages}}
 - \usepackage{multicol}
@@ -71,7 +71,7 @@ abstract: Gene expression variance has been linked to organismal function and fi
 Required for PLOS Genetics... -->
 
 # Introduction
-
+\linenumbers
 Molecular phenotypes such as gene expression are powerful tools for understanding physiology, disease, and evolutionary adaptations.
 In this context, average trait values are usually the focus of investigation, while variation is treated as a nuisance [@De_Jong2019-po].
 However, variability is ubiquitous in nature and is, alongside robustness, a fundamental feature of most complex systems.
