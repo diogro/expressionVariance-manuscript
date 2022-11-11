@@ -1,5 +1,6 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
+short_title: "The landscape of transcriptional variance"
 author:
   - Scott Wolf:
       institute: lsi
@@ -302,7 +303,7 @@ We use the word "studies" to refer to independent data sets, which could have be
 For example, the GTEx data are separated by tissue, and we refer to each tissue as a separate study.
 We divide our data sets into three categories depending on their origin: GTEx, TCGA, and Miscellaneous.
 
-Table: Data Source Table. Columns show the study ID, with the corresponding tissue in parenthesis, and the source publication. \label{tab1}
+Table: Table 1: Data set source references. Columns show the study ID, with the corresponding tissue in parenthesis, and the source publication. \label{tab1}
 
 |Study ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |Citation                                                             |
 |:----------------------------------------------------------------------------------------------------------------------------------|:--------------------------------------------------------------------|
