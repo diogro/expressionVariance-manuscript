@@ -162,7 +162,7 @@ A Gene Ontology (GO) enrichment analysis shows 59 enriched terms in the low vari
 
 Among the most variable genes we observe enrichment for biological processes such as immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (@fig:go_tails A).
 Furthermore, we see a 7.7-fold enrichment for genes that encode secreted proteins in the most variable genes, relative to all other genes (hypergeometric test, p < 10^-3^).
-Given that the GO enrichment suggest high-variance genes are involved in responding to stimulus, we compare them to a recently generated catalog of environmentally responsive genes. This catalog was generated using 11 environmental exposures in 544 immortalized Lymphoblastoid Cell Line (LCL) from the 1000 Genomes Project [@Lea2021-hf]. We find a strong enrichment of high-variance genes among environmentally responsive genes across the 7 out of the 10 environmental exposure we used (hypergeometric test, p < 10^-3^). We do not find any enrichment among the least least variable genes (SI table XX). 
+Given that the GO enrichment suggest high-variance genes are involved in responding to stimulus, we compare them to a recently generated catalog of environmentally responsive genes. This catalog was generated using 11 environmental exposures in 544 immortalized Lymphoblastoid Cell Line (LCL) from the 1000 Genomes Project [@Lea2021-hf]. We find a strong enrichment of high-variance genes among environmentally responsive genes across the 7 out of the 10 environmental exposures we used (hypergeometric test, p < 10^-3^). We do not find any enrichment among the least least variable genes (SI table XX). 
 
 Among the least variable genes we see enrichment for housekeeping functions such as mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (@fig:go_tails B); and accordingly, we also find a 2.0-fold enrichment in previously characterized human housekeeping genes [@Hounkpe2020-yq] (hypergeometric test, p < 10^-3^) .
 The genes exhibiting the lowest variance are also enriched for genes that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, hypergeometric test, p < 10^-3^).
@@ -179,7 +179,7 @@ We measured how far from this uniform allocation each term is by measuring the S
 Higher entropy is associated with a more uniform distribution of genes across deciles.
 GO terms with low entropy indicate some deciles are over-represented in the genes associated with that term.
 We also measured skewness for each term, which should be zero if no decile is over-represented, negative if high-variance terms are over-represented, and positive if low-variance deciles are over-represented.
-The relation between skewness and entropy for each GO term can be seen in @fig:skew_entropy .
+The relation between skewness and entropy for each GO term can be seen in @fig:skew_entropy.
 Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with housekeeping functions, like RNA localization, translation initiation, methylation and chromosome segregation (@fig:go_skewness A).
 Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment (@fig:go_skewness B).
 
