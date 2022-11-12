@@ -427,8 +427,6 @@ __Probability of being loss-of-function intolerant (pLI)__: Genes that are likel
 
 __Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl].
 
-[Add LCL method somewhere]
-
 # Code availability
 
 Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
