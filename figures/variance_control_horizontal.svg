@@ -5,12 +5,10 @@
         <g transform="matrix(0.585148,0,0,2.17224,1882.91,-110.953)">
             <path d="M1858.79,114.426C1858.79,103.272 1825.17,94.217 1783.77,94.217L129.008,94.217C87.603,94.217 53.987,103.272 53.987,114.426L53.987,942.002C53.987,953.156 87.603,962.211 129.008,962.211L1783.77,962.211C1825.17,962.211 1858.79,953.156 1858.79,942.002L1858.79,114.426Z" style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:2.51px;"/>
         </g>
-        <g transform="matrix(1,0,0,1,68.926,-97.7564)">
-            <text x="1901.8px" y="167.749px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:64px;">C.</text>
-            <text x="1976.49px" y="167.749px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">Across</text>
-            <g transform="matrix(64,0,0,64,2808.02,167.749)">
+        <g transform="matrix(1,0,0,1,45.926,-97.7564)">
+            <g transform="matrix(72,0,0,72,2892.33,167.749)">
             </g>
-            <text x="2176.46px" y="167.749px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:64px;">-study <tspan x="2351.3px 2390.43px 2418.83px " y="167.749px 167.749px 167.749px ">Var</tspan>iance Ranking</text>
+            <text x="1901.8px" y="167.749px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">C. <tspan x="1981.85px 2033.85px " y="167.749px 167.749px ">Ac</tspan>ross-study <tspan x="2378.52px 2422.54px 2454.49px " y="167.749px 167.749px 167.749px ">Var</tspan>iance Ranking</text>
         </g>
     </g>
     <g id="Box-C" serif:id="Box C" transform="matrix(1,0,0,1,1,0)">
@@ -39,11 +37,13 @@
             <g transform="matrix(1,0,0,1,2030.73,1825.42)">
                 <path d="M0,0L850.715,0" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:3px;stroke-linecap:butt;stroke-miterlimit:10;"/>
             </g>
-            <g transform="matrix(0,-1,1,0,41.926,79.5254)">
-                <text x="-1693.51px" y="1964.76px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Across-study Correlation PC2</text>
+            <g transform="matrix(1.51044e-17,-1,1,-2.00502e-17,29.926,151.525)">
+                <g transform="matrix(50,0,0,50,-1001.12,1966.15)">
+                </g>
+                <text x="-1603.86px" y="1966.15px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:50px;">Across-study Correlation PC2</text>
             </g>
-            <g transform="matrix(1,0,0,1,49.926,86.5254)">
-                <text x="2115.72px" y="1785.52px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Across-study Correlation PC1</text>
+            <g transform="matrix(1,0,0,1,-37.074,98.5254)">
+                <text x="2216.82px" y="1786.91px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:50px;">Across-study Correlation PC1</text>
             </g>
             <g transform="matrix(0.707107,0.707107,-0.707107,0.707107,2506.18,1914.25)">
                 <path d="M0,-512.631L-2.311,-530.063L-9.196,-543.36L-20.573,-552.296L-36.247,-556.755L-55.99,-556.658L-79.508,-552.019L-106.429,-542.888L-136.361,-529.428L-168.831,-511.834L-203.369,-490.365L-239.437,-465.365L-276.497,-437.192L-313.997,-406.267L-351.335,-373.08L-387.972,-338.136L-423.34,-301.954L-456.917,-265.089L-488.184,-228.077L-516.65,-191.505L-541.927,-155.925L-563.59,-121.876L-581.331,-89.845L-594.889,-60.369L-604.036,-33.855L-608.643,-10.71L-608.643,8.691L-604.036,24.088L-594.889,35.221L-581.331,41.926L-563.59,44.124L-541.927,41.747L-516.65,34.846L-488.184,23.534L-456.917,7.991L-423.34,-11.589L-387.972,-34.864L-351.335,-61.508L-313.997,-91.114L-276.497,-123.227L-239.437,-157.358L-203.369,-192.986L-168.831,-229.591L-136.361,-266.586L-106.429,-303.451L-79.508,-339.6L-55.99,-374.48L-36.247,-407.585L-20.573,-438.396L-9.196,-466.44L-2.311,-491.309L0,-512.631" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:1.07px;stroke-linecap:butt;stroke-miterlimit:10;"/>
@@ -660,8 +660,10 @@
                 <g transform="matrix(1,0,0,1,46.926,46.5254)">
                     <text x="2604.45px" y="1003.5px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Gene C</text>
                 </g>
-                <g transform="matrix(0,-1,1,0,38.5911,46.5254)">
-                    <text x="-746.306px" y="1966.1px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Gene Expression</text>
+                <g transform="matrix(1.63702e-17,-1,1,-2.23437e-17,26.5911,113.169)">
+                    <g transform="matrix(50,0,0,50,-346.174,1967.49)">
+                    </g>
+                    <text x="-686.36px" y="1967.49px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:50px;">Gene Expression</text>
                 </g>
                 <g transform="matrix(0,-1,-1,0,2170.31,575.292)">
                     <path d="M-31.917,31.917L31.917,31.917" style="fill:none;fill-rule:nonzero;stroke:rgb(51,51,51);stroke-width:1.07px;stroke-linecap:butt;stroke-miterlimit:10;"/>
@@ -3246,8 +3248,10 @@
         <g transform="matrix(1,0,0,1,958.773,1504.04)">
             <path d="M0,29.918L25.906,14.959L0,0L0,29.918Z" style="fill-rule:nonzero;stroke:black;stroke-width:5px;stroke-linecap:butt;stroke-miterlimit:2;"/>
         </g>
-        <g transform="matrix(0,-1,1,0,-2.07405,39.5254)">
-            <text x="-1598.7px" y="137.341px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Gene Expression</text>
+        <g transform="matrix(1.61743e-17,-1,1,-2.19804e-17,-15.074,110.331)">
+            <g transform="matrix(50,0,0,50,-1199.57,138.729)">
+            </g>
+            <text x="-1539.76px" y="138.729px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:50px;">Gene Expression</text>
         </g>
         <g transform="matrix(-4.08653e-18,-1,1,3.83086e-18,-13.6551,71.5254)">
             <text x="-1764.87px" y="1060.27px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:40px;">Gene Expression <tspan x="-1483.45px -1458.99px -1441.24px " y="1060.27px 1060.27px 1060.27px ">Var</tspan>iance in Context 1</text>
@@ -3259,10 +3263,9 @@
             <text x="986.745px" y="1040.66px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">High Correlation <tspan x="1322.7px 1357.36px " y="1040.66px 1040.66px ">Ac</tspan>ross Contexts</text>
         </g>
         <g transform="matrix(1,0,0,1,5.2134,6.16452)">
-            <text x="79.787px" y="1056.33px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:64px;">B. Shared <tspan x="347.037px 386.162px 414.568px " y="1056.33px 1056.33px 1056.33px ">Var</tspan>iance</text>
-            <g transform="matrix(72,0,0,72,806.888,1056.33)">
+            <g transform="matrix(72,0,0,72,870.275,1056.33)">
             </g>
-            <text x="586.88px" y="1056.33px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">Control</text>
+            <text x="79.787px" y="1056.33px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">B. Shared <tspan x="380.443px 424.458px 456.416px " y="1056.33px 1056.33px 1056.33px ">Var</tspan>iance Control</text>
         </g>
     </g>
     <g id="Box-A" serif:id="Box A" transform="matrix(1,0,0,1,-5,-2.43906)">
@@ -3270,10 +3273,9 @@
             <path d="M1858.79,130.297C1858.79,110.384 1842.46,94.217 1822.34,94.217L90.441,94.217C70.322,94.217 53.987,110.384 53.987,130.297L53.987,926.131C53.987,946.044 70.322,962.211 90.441,962.211L1822.34,962.211C1842.46,962.211 1858.79,946.044 1858.79,926.131L1858.79,130.297Z" style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:3.98px;"/>
         </g>
         <g transform="matrix(1,0,0,1,-24.2734,4.66509)">
-            <text x="79.273px" y="67.766px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:64px;">A. Independent <tspan x="488.648px 527.773px 556.18px " y="67.766px 67.766px 67.766px ">Var</tspan>iance</text>
-            <g transform="matrix(72,0,0,72,948.5,67.7662)">
+            <g transform="matrix(72,0,0,72,1029.65,67.7662)">
             </g>
-            <text x="728.492px" y="67.766px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">Control</text>
+            <text x="79.273px" y="67.766px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">A. Independent <tspan x="539.82px 583.836px 615.793px " y="67.766px 67.766px 67.766px ">Var</tspan>iance Control</text>
         </g>
         <g transform="matrix(0,-1,-1,0,470.619,495.776)">
             <path d="M-341.051,341.561L341.561,341.561" style="fill:none;fill-rule:nonzero;stroke:black;stroke-width:3px;stroke-linecap:butt;stroke-miterlimit:10;"/>
@@ -3910,8 +3912,10 @@
             <text x="609.622px" y="838.147px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Gene <tspan x="720.247px " y="838.147px ">A</tspan></text>
             <text x="586.966px" y="895.747px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Context 2</text>
         </g>
-        <g transform="matrix(0,-1,1,0,-32.074,43.5254)">
-            <text x="-609.711px" y="137.793px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Gene Expression</text>
+        <g transform="matrix(1.60758e-17,-1,1,-2.17987e-17,-44.074,114.349)">
+            <g transform="matrix(50,0,0,50,-211.08,139.182)">
+            </g>
+            <text x="-551.265px" y="139.182px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:50px;">Gene Expression</text>
         </g>
         <g transform="matrix(1,0,0,1,52.4636,101.537)">
             <text x="992.089px" y="50.382px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">Low Correlation <tspan x="1320.03px 1354.69px " y="50.382px 50.382px ">Ac</tspan>ross Contexts</text>
