@@ -415,6 +415,8 @@ __Correlations:__ We use the ppcor R package v1.1 [@kim2015ppcor] to run the pai
 
 __GO term enrichment__: All gene ontology (GO) analyses were done using the clusterProfiler R package v4.2.2 [@Wu2021-db] and the Org.Hs.eg.db database package v3.14.0 [@godb]. GO and all further enrichment analysis used the hypergeometric test to assess the significance of the enrichment.
 
+__Enviromentally reponsive genes__: We use the list of environmentally responsive genes available the supporting information from Lea et al. [@Lea2021-hf].
+
 __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract information on which proteins are secreted [@uhlen2019human] and test for enrichment of genes with secreted products in the genes within the highest and lowest 5% of gene expression variance rank.
 
 __Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for enrichment of housekeeping genes in the genes within the highest and lowest 5% of gene expression variance rank.
@@ -437,16 +439,20 @@ Supporting information is available at [github.com/diogro/expVarManuscript](http
 
 1. SI figure 1 - Modeling the correlations between transcriptional variance across studies.
 
-2. SI figure 2 - Across-study and tissue-specific gene expression variance and mean correlations
+1. SI figure 2 - GO enrichment analysis of the most and least variable genes.
+
+2. SI figure 3 - Across-study and tissue-specific gene expression variance and mean correlations
 with non-overlapping chromatin states through ChromHMM.
 
-1. SI figure 3 - Proportion of gene regions made up of ChromHMM chromatin states for genes in
+1. SI figure 4 - Proportion of gene regions made up of ChromHMM chromatin states for genes in
 the top and bottom 5% of the across-study mean rank metric.
 
-1. SI figure 4 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expresion standard deviations.
+1. SI figure 5 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expresion standard deviations.
 
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
+
+1. SI table 2 - Enrichment analysis of environmentally responsive genes.
 
 1. SI appendix 1 - Diagnostics plots for processing pipeline.
 
