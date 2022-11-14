@@ -440,7 +440,7 @@ Code for reproducing all analyses and figures, along with a walk-through, is ava
 
 ## Supporting information
 
-Supporting information is available at [github.com/diogro/expVarManuscript](https://github.com/diogro/expVarManuscript).
+Supporting information is available at [github.com/ayroles-lab/expressionVariance-manuscript](https://github.com/ayroles-lab/expressionVariance-manuscript).
 
 1. SI figure 1 - Modeling the correlations between transcriptional variance across studies.
 
