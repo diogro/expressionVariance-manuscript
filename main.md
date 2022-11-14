@@ -126,10 +126,10 @@ The final list of genes used from each study can found in SI data 2.
 
 For each study, transcriptional variance per gene was measured as the standard deviation (SD) of the distribution of gene expression values for all individuals in a particular study.
 Mean and variance are know to be correlated correlated in RNA-seq data, both due to the nature of count data and the expectation that more highly expressed genes should have more variation.
-As our focus here is on variance, we attempt to control for both of these expected drivers of transcriptional variation.
+As our focus is on variance, we control for both of these expected drivers of transcriptional variation.
 To achieve this, SD was calculated using a unified pipeline that normalized the mean-variance relation in read-count data, controlled for batch effects, and removed outliers (see [Methods](#Methods) for details, and the calculated values for means and standard deviations are available in SI data 3).
-The observed range of gene expression SD across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D).
-This comparison reveals differences in the range of gene expression SD that can be due to any number of methodological or biological differences between the data sets.
+The observed range of gene expression SDs across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D).
+This comparison reveals differences in the range of gene expression SDs that can be due to any number of methodological or biological differences between the data sets.
 We avoid having to deal with these global differences in the range of variation by using only the ranking of the genes according to their gene expression SD in each study.
 Given this choice to only use rankings, global patterns of transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
 This comparison reveals a broadly similar rank of gene expression variance as the correlations across studies are mostly positive and high (75% of correlations are between 0.45 and 0.9, @fig:sd_corr A and B), indicating that genes that are most variable in one study tend to be most variable in all studies.
@@ -148,7 +148,7 @@ The only negative correlation we observe is between these two studies, which als
 ## Transcriptional variance rank
 
 The strong correlations between transcriptional variance across studies suggests that variance rank is indeed a property of genes that can be robustly estimated.
-To estimate this gene-level rank, we devised a cross-study approach that allowed us to rank individual genes according to their degree of transcriptional variance by averaging the ordering across all studies.
+To estimate this gene-level rank, we devised an across-study approach that allowed us to rank individual genes according to their degree of transcriptional variance by averaging the ordering across all studies.
 We do this by calculating the score of each gene on the first principal component of the across-study Spearman correlation matrix shown in @fig:sd_corr A. This procedure is illustrated in @fig:variance_control C.
 Ordering genes using these scores generate a ranked list of genes, with the most variable genes having the highest rank.
 The position in the SD distributions shown in @fig:sd_corr D of the most and least variable genes in this rank illustrates how the extremes of the rank are indeed some of the least and most variable genes across all studies.
