@@ -5,7 +5,7 @@
         <g transform="matrix(0.585148,0,0,2.17224,1882.91,-110.953)">
             <path d="M1858.79,114.426C1858.79,103.272 1825.17,94.217 1783.77,94.217L129.008,94.217C87.603,94.217 53.987,103.272 53.987,114.426L53.987,942.002C53.987,953.156 87.603,962.211 129.008,962.211L1783.77,962.211C1825.17,962.211 1858.79,953.156 1858.79,942.002L1858.79,114.426Z" style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:2.51px;"/>
         </g>
-        <g transform="matrix(1,0,0,1,45.926,-97.7564)">
+        <g transform="matrix(1,0,0,1,42.6978,-97.7564)">
             <g transform="matrix(72,0,0,72,2892.33,167.749)">
             </g>
             <text x="1901.8px" y="167.749px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">C. <tspan x="1981.85px 2033.85px " y="167.749px 167.749px ">Ac</tspan>ross-study <tspan x="2378.52px 2422.54px 2454.49px " y="167.749px 167.749px 167.749px ">Var</tspan>iance Ranking</text>
@@ -3262,7 +3262,7 @@
         <g transform="matrix(1,0,0,1,87.8079,93.5008)">
             <text x="986.745px" y="1040.66px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:48px;">High Correlation <tspan x="1322.7px 1357.36px " y="1040.66px 1040.66px ">Ac</tspan>ross Contexts</text>
         </g>
-        <g transform="matrix(1,0,0,1,5.2134,6.16452)">
+        <g transform="matrix(1,0,0,1,10.2134,6.16452)">
             <g transform="matrix(72,0,0,72,870.275,1056.33)">
             </g>
             <text x="79.787px" y="1056.33px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">B. Shared <tspan x="380.443px 424.458px 456.416px " y="1056.33px 1056.33px 1056.33px ">Var</tspan>iance Control</text>
@@ -3272,7 +3272,7 @@
         <g transform="matrix(1,0,0,1.01038,-23.9869,0.953728)">
             <path d="M1858.79,130.297C1858.79,110.384 1842.46,94.217 1822.34,94.217L90.441,94.217C70.322,94.217 53.987,110.384 53.987,130.297L53.987,926.131C53.987,946.044 70.322,962.211 90.441,962.211L1822.34,962.211C1842.46,962.211 1858.79,946.044 1858.79,926.131L1858.79,130.297Z" style="fill:rgb(235,235,235);fill-opacity:0;stroke:black;stroke-width:3.98px;"/>
         </g>
-        <g transform="matrix(1,0,0,1,-24.2734,4.66509)">
+        <g transform="matrix(1,0,0,1,-19.2734,4.66509)">
             <g transform="matrix(72,0,0,72,1029.65,67.7662)">
             </g>
             <text x="79.273px" y="67.766px" style="font-family:'TimesNewRomanPSMT', 'Times New Roman', serif;font-size:72px;">A. Independent <tspan x="539.82px 583.836px 615.793px " y="67.766px 67.766px 67.766px ">Var</tspan>iance Control</text>
