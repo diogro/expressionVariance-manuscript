@@ -105,7 +105,7 @@ While we lack a clear picture on how tissue-specific gene expression variation i
 To explore the landscape of gene expression variance and the association between transcriptional variance and biological function, we use 57 publicly available human gene expression data sets spanning a wide range of experimental context and tissues.
 By comparing the gene expression variance measured across such heterogeneous data sets, we show that the degree of expression variance is indeed consistent across studies and tissues.
 We use the observed similarities to create an across-study gene expression variance ranking, which orders genes from least variable to most variable.
-We then integrate various genomic level functional annotations as well as sequence variation to probe the drivers of this variance ranking. 
+We then integrate various genomic level functional annotations as well as sequence variation to probe the drivers of this variance ranking.
 Finally, we explore the link between gene expression variance and biological function by leveraging gene ontology and other gene annotations.
 
 # Results
@@ -128,7 +128,7 @@ For each study, transcriptional variance per gene was measured as the standard d
 Mean and variance are know to be correlated correlated in RNA-seq data, both due to the nature of count data and the expectation that more highly expressed genes should have more variation.
 As our focus here is on variance, we attempt to control for both of these expected drivers of transcriptional variation.
 To achieve this, SD was calculated using a unified pipeline that normalized the mean-variance relation in read-count data, controlled for batch effects, and removed outliers (see [Methods](#Methods) for details, and the calculated values for means and standard deviations are available in SI data 3).
-The observed range of gene expression SD across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D). 
+The observed range of gene expression SD across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D).
 This comparison reveals differences in the range of gene expression SD that can be due to any number of methodological or biological differences between the data sets.
 We avoid having to deal with these global differences in the range of variation by using only the ranking of the genes according to their gene expression SD in each study.
 Given this choice to only use rankings, global patterns of transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
@@ -167,7 +167,7 @@ A Gene Ontology (GO) enrichment analysis shows 59 enriched terms in the low vari
 
 Among the most variable genes we observe enrichment for biological processes such as immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (SI fig. 2 A).
 Furthermore, we see a 7.7-fold enrichment for genes that encode secreted proteins in the most variable genes, relative to all other genes (hypergeometric test, p < 10^-3^).
-Given that the GO enrichment suggest high-variance genes are involved in responding to stimulus, we compare them to a recently generated catalog of environmentally responsive genes. This catalog was generated using 11 environmental exposures in 544 immortalized Lymphoblastoid Cell Line (LCL) from the 1000 Genomes Project [@Lea2021-hf]. We find a strong enrichment of high-variance genes among environmentally responsive genes across the 7 out of the 10 environmental exposures we used (hypergeometric test, p < 10^-3^). We do not find any enrichment among the least variable genes (SI table 2). 
+Given that the GO enrichment suggest high-variance genes are involved in responding to stimulus, we compare them to a recently generated catalog of environmentally responsive genes. This catalog was generated using 11 environmental exposures in 544 immortalized Lymphoblastoid Cell Lines (LCLs) from the 1000 Genomes Project [@Lea2021-hf]. We find a strong enrichment of high-variance genes among environmentally responsive genes across the 7 out of the 10 environmental exposures we used (hypergeometric test, p < 10^-3^). We do not find any enrichment among the least variable genes (SI table 2).
 
 Among the least variable genes we see enrichment for housekeeping functions such as mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (SI fig. 2 B); and accordingly, we also find a 2.0-fold enrichment in previously characterized human housekeeping genes [@Hounkpe2020-yq] (hypergeometric test, p < 10^-3^) .
 The genes exhibiting the lowest variance are also enriched for genes that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, hypergeometric test, p < 10^-3^).
@@ -206,7 +206,7 @@ Genes associated with baseline fundamental functions, expected to be under stron
 ## Evolutionary forces at play in shaping transcriptional variance
 
 We use three gene-level summary statistics, nucleotide diversity (π), gene expression connectivity, and the rate of adaptive substitutions (α), as proxy to assess whether selection might be involved in shaping gene expression variance.
-For all the correlations in this section we use partial Spearman correlations that include the mean gene expression rank as a covariate, which accounts for any residual mean-variance correlation. 
+For all the correlations in this section we use partial Spearman correlations that include the mean gene expression rank as a covariate, which accounts for any residual mean-variance correlation.
 Nucleotide diversity is used as a proxy for the impact of cis-regulatory genetic variation on transcriptional variance.
 As expected, low-variance genes tend to have lower levels of polymorphisms (partial Spearman correlation, ρ~s~ = 0.184, p < 10^-3^).
 Gene-gene connectivity, a proxy for gene regulatory interactions and selective constraints [@Mahler2017-bb], is, in turn, negatively correlated with the expression variance (partial Spearman correlation, ρ~s~ = -0.024, p $\approx$ 6 \times 10^-3^), supporting the expectation that highly connected genes are more constrained in their variation.
@@ -428,7 +428,7 @@ __Housekeeping genes__: Human housekeeping genes were identified as genes that a
 
 __Probability of being loss-of-function intolerant (pLI)__: Genes that are likely haploinsufficient (i.e., intolerant of heterozygous loss-of-function variants) were detected as those with fewer than expected protein-truncating variants (PTVs) in ExAC [@Lek2016-xw]. We use genes with a pLI > 0.9 to test for the enrichment of loss-of-function intolerant genes in the genes exhibiting the highest and lowest 5% gene expression variance estimates.
 
-__Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract information on which proteins are secreted [@uhlen2019human] and test for enrichment of genes with secreted products in the genes within the highest and lowest 5% of gene expression variance rank. 
+__Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract information on which proteins are secreted [@uhlen2019human] and test for enrichment of genes with secreted products in the genes within the highest and lowest 5% of gene expression variance rank.
 
 __Immediate early genes (IEGs):__ Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment. We use the hypergeometric test to assess the significance of the enrichment. Immediate early genes (IEGs): Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment.
 
@@ -457,7 +457,7 @@ the top and bottom 5% of the across-study mean rank metric.
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
 used.
 
-1. SI table 2 - Enrichment analysis of environmentally responsive genes.
+1. SI table 2 - Enrichment analysis of environmentally responsive genes in LCLs.
 
 1. SI appendix 1 - Diagnostics plots for processing pipeline.
 
