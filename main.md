@@ -20,7 +20,7 @@ author:
       institute: lsi
       orcid: 0000-0002-7228-8125
   - Luisa F. Pallares:
-      institute: fml, lsi
+      institute: lsi, fml
       orcid: 0000-0001-6547-1901
   - Julien F. Ayroles:
       institute:
@@ -117,7 +117,7 @@ Finally, we explore the link between gene expression variance and biological fun
 
 We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in the supporting information (SI data 1).
 We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10.
-These data sets span 13 different tissue types and the post-filtering the mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
+These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Several data sets were derived from two large consortia: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note the origin of the data sets in the figures where appropriate.
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
 The final list of genes used from each study can be found in SI data 2.
@@ -173,7 +173,7 @@ Among the least variable genes, we see enrichment for housekeeping functions suc
 The genes exhibiting the lowest variance are also enriched for genes that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, hypergeometric test, p < 10^-3^).
 Genes with a high pLI have been shown to be important in housekeeping functions and have higher mean expression values across a broad set of tissues and cell types [@lek2016analysis]. The observation that genes with low variance are enriched for both housekeeping genes and genes with high pLI is consistent with this previous report; and we further see that the mean expression of genes positively correlates with pLI (partial Spearman correlation $\rho_s$ = 0.32, p < 10^-3^), showing the opposite relationship between variance and mean expression when considering pLI.
 
-![Relationship between skew and entropy of rank decile distributions for each GO term. High entropy terms, to the right of the plot, are associated with a more egalitarian proportion of genes in each of the SD rank deciles. Terms on the left of the plot are associated with more genes in some particular decile. The skewness in the y-axis measures if the high- or low-variance deciles are more represented for a particular term. Terms on the positive side of the y-axis are associated with low-variance genes, and terms on the negative side of the y-axis are associated with high-variance genes. The GO terms are filtered for gene counts greater than 100, as in @fig:go_skewness. Some of the top high- and low-skewness terms are labeled for illustration.](figures/GOterm_entropy_by_skewness.png){#fig:skew_entropy width=500px}
+![Relationship between skew and entropy of rank decile distributions for each GO term. High entropy terms, to the right of the plot, are associated with a more egalitarian proportion of genes in each of the SD rank deciles. The terms on the left of the plot are associated with more genes in some particular decile. The skewness in the y-axis measures if the high- or low-variance deciles are more represented for a particular term. Terms on the positive side of the y-axis are associated with low-variance genes, and terms on the negative side of the y-axis are associated with high-variance genes. The GO terms are filtered for gene counts greater than 100, as in @fig:go_skewness. Some of the top high- and low-skewness terms are labeled for illustration.](figures/GOterm_entropy_by_skewness.png){#fig:skew_entropy width=500px}
 
 In the previous analysis, we explored the relationship between transcriptional variance and function by starting from the extremes of the variance distribution and searching for GO enrichment among these high- and low-variance genes.
 We also approach the problem from the opposite direction, starting from the genes associated with each GO term and searching for enrichment for high- or low-variance genes among them.
@@ -360,15 +360,15 @@ To account for library size and the mean-variance relation in RNA-seq count data
 This mean-variance correction was verified by plotting mean-variance relations before and after correction, and these plots can be seen in the supporting information (SI appendix 1).
 Various technical covariates (like experimental batch, sex, etc.) were manually curated from the metadata associated with each study and accounted for using an independent linear fixed-effects model for each study.
 A list of covariates used for each study is available in the supporting information (SI data 1).
-Outlier individuals in the residual distribution were removed using robust Principal Component Analysis (PCA) approach of automatic outlier detection described in @Chen2020-fy.
-This procedure first estimates a robust Principal Components for each study and then measures the Mahalanobis distance between each sample and the robust mean.
+Outlier individuals in the residual distribution were removed using a robust Principal Component Analysis (PCA) approach of automatic outlier detection described in @Chen2020-fy.
+This procedure first estimates robust Principal Components for each study and then measures the Mahalanobis distance between each sample and the robust mean.
 Samples that are above the 0.99 percentile in Mahalanobis distance to the mean are marked as outliers and removed.
 We verify that the batch effect correction and outlier removal are reasonable by using PCA scatter plots after each step of the pipeline to check the result for residual problems like groupings or other artifacts.
 These PCA plots before and after batch correction and outlier removal are also included in SI appendix 1.
 After all sample filtering, the mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Gene expression standard deviations (SDs) are measured as the residual standard deviations after fixed effect correction and outlier removal.
 We choose standard deviation as a measure of variation to have a statistic on a linear scale, and we do not use the coefficient of variation because we have already corrected for mean differences and for the mean-variance relation inherent to RNA-seq count data [@De_Jong2019-po].
-The full annotated pipeline is available at [the github repository ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
+The full annotated pipeline is available at [the GitHub repository ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
 
 ## Correlations in transcriptional variance
 
