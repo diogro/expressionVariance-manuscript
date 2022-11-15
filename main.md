@@ -209,9 +209,9 @@ Genes associated with baseline fundamental functions, expected to be under stron
 We use three gene-level summary statistics, nucleotide diversity (π), gene expression connectivity, and the rate of adaptive substitutions (α), as a proxy to assess whether selection might be involved in shaping gene expression variance.
 For all the correlations in this section, we use partial Spearman correlations that include the mean gene expression rank as a covariate, which accounts for any residual mean-variance correlation.
 Nucleotide diversity in the gene region is used as a proxy for the impact of cis-regulatory genetic variation on transcriptional variance.
-As expected, low-variance genes tend to have lower levels of polymorphisms (partial Spearman correlation, ρ~s~ = 0.184, p < 10^-3^).
-Gene-gene connectivity, a proxy for gene regulatory interactions and selective constraints [@Mahler2017-bb], is, in turn, negatively correlated with the expression variance (partial Spearman correlation, ρ~s~ = -0.024, p $\approx$ 0.006), supporting the expectation that highly connected genes are more constrained in their variation.
-Finally, we also find that low-variance genes tend to have fewer substitutions by comparing the across-study rank with $\alpha$ (partial Spearman correlation, ρ~s~ = -0.046, p $\approx$ 10^-3^), in line with the expectation that genes under stronger selection should be less variable.
+As expected, low-variance genes tend to have lower levels of polymorphisms (partial Spearman correlation, ρ~s~ = 0.184, p < 10^-10^).
+Gene-gene connectivity, a proxy for gene regulatory interactions and selective constraints [@Mahler2017-bb], is, in turn, negatively correlated with the expression variance (partial Spearman correlation, ρ~s~ = -0.024, p < 10^-2^), supporting the expectation that highly connected genes are more constrained in their variation.
+Finally, we also find that low-variance genes tend to have fewer substitutions by comparing the across-study rank with $\alpha$ (partial Spearman correlation, ρ~s~ = -0.044, p < 10^-2^), in line with the expectation that genes under stronger selection should be less variable.
 Despite all associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and transcriptional variance.
 
 ## Specific gene regulatory signatures are associated with transcriptional variance
