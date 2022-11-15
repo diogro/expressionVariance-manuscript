@@ -131,7 +131,7 @@ To achieve this, SD was calculated using a unified pipeline that normalized the 
 The observed range of gene expression SDs across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D).
 This comparison reveals differences in the range of gene expression SDs that can be due to any number of methodological or biological differences between the data sets.
 We avoid having to deal with these global differences in the range of variation by using only the ranking of the genes according to their gene expression SD in each study.
-Global patterns of transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
+Therefore, transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
 This comparison reveals a broadly similar rank of gene expression variance as the correlations across studies are mostly positive and high (75% of correlations are between 0.45 and 0.9, @fig:sd_corr A and B), indicating that genes that are most variable in one study tend to be most variable in all studies.
 A principal coordinate analysis [@Gower1966-dk] using |1 -- ρ~s~| as a between-study distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together (@fig:sd_corr C).
 This clustering indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
@@ -434,7 +434,7 @@ __Immediate early genes (IEGs):__ Human IEGs were curated from the literature in
 
 __Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl] and test for enrichment for disease annotations in the genes within the highest and lowest 5% of gene expression variance rank.
 
-__LCLs__: We utilized LCL exposure data collected ... 
+__LCLs__: We utilized LCL exposure data collected ...
 
 
 ## Code availability
