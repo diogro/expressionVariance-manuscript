@@ -164,7 +164,7 @@ return {
       -- Overwrite authors with formatted values. We use a single, formatted
       -- string for most formats. LaTeX output, however, looks nicer if we
       -- provide a authors as a list.
-      meta.author = FORMAT:match 'latex'
+      meta.author = FORMAT:match 'pdf_document'
         and pandoc.MetaList(doc.meta.author):map(author_inline_generator(mark))
         or pandoc.MetaInlines(create_authors_inlines(doc.meta.author, mark))
       -- Institute info is now baked into the affiliations block.
