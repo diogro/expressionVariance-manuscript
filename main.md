@@ -484,7 +484,7 @@ used.
 
 We thank the Ayroles lab members for their support, and Noah Rose and Cara Weisman for their thoughtful comments. We thank Pedro Madrigal for help with the Expression Atlas interface. S.W. is supported by the NSF Graduate Research Fellowship Program (DGE-2039656). D.M. was funded by a fellowship from the Princeton Presidential Postdoctoral Research Fellows Program. K.G. is funded by NIH grant F32ES034668. L.P. was funded by a Long-Term Postdoctoral Fellowship from the Human Frontiers Science Program. J.A. is funded by NIH/NIEHS grant R01-ES029929. This study was supported in part by the Lewis-Sigler Institute for Integrative Genomics at Princeton University.
 
-The author(s) are pleased to acknowledge that the work reported on in this paper was substantially performed using the Princeton Research Computing resources at Princeton University which is consortium of groups led by the Princeton Institute for Computational Science and Engineering (PICSciE) and Office of Information Technology's Research Computing.
+The authors are pleased to acknowledge that the work reported on in this paper was substantially performed using the Princeton Research Computing resources at Princeton University which is consortium of groups led by the Princeton Institute for Computational Science and Engineering (PICSciE) and Office of Information Technology's Research Computing.
 
 # References
 
