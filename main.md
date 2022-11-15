@@ -477,8 +477,8 @@ used.
 **Conceptualization**: S.W., D.M., L.P., and J.A.
 **Analysis**: S.W., D.M., and K.G.
 **Draft**: D.M.
-**Review and Editing**: S.W., D.M., K.G., L.A., and J.A.
-**Funding Acquisition**: S.W., D.M., K.G., L.A., and J.A.
+**Review and Editing**: S.W., D.M., K.G., L.P., and J.A.
+**Funding Acquisition**: S.W., D.M., K.G., L.P., and J.A.
 
 
 # References
