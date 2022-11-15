@@ -1,7 +1,7 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 short_title: "The landscape of transcriptional variance"
-date: Nov 11th, 2022
+date: Nov 15th, 2022
 author:
   - Scott Wolf:
       institute: lsi
