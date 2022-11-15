@@ -451,11 +451,15 @@ $else$
 \makeatletter
 \renewcommand{\maketitle}{\setlength{\parindent}{0pt}
 \begin{flushleft}
-    \Large{\textbf{$title$}}
+    \huge{\textbf{$title$}}
 
-    \normalsize{$author$}
+    \vspace{0.8cm}
 
-    \@date
+    \Large{$author$}
+
+    \vspace{0.3cm}
+
+    \normalsize{Preprint v1.0 - $date$}
 \end{flushleft}
 }
 \makeatother

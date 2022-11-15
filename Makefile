@@ -17,6 +17,3 @@ log:
 	cp out/expressionVariance.docx out/archive/$(logfile).docx
 cleanall:
 	ls outfile* | grep -v main.md | xargs rm
-
-
-pandoc main.md --template=pandoc/default.latex --lua-filter=pandoc/scholarly-metadata.lua --lua-filter=pandoc/author-info-blocks.lua  --filter pandoc-crossref --citeproc --pdf-engine=xelatex -o expressionVariance.pdf

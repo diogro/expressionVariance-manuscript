@@ -1,7 +1,7 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 short_title: "The landscape of transcriptional variance"
-Date: 2022-11-11
+date: Nov 11th, 2022
 author:
   - Scott Wolf:
       institute: lsi
@@ -132,7 +132,7 @@ To achieve this, SD was calculated using a unified pipeline that normalized the 
 The observed range of gene expression SDs across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D).
 This comparison reveals differences in the range of gene expression SDs that can be due to any number of methodological or biological differences between the data sets.
 We avoid having to deal with these global differences in the range of variation by using only the ranking of the genes according to their gene expression SD in each study.
-Therefore, transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
+Therefore, patterns of transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
 This comparison reveals a broadly similar rank of gene expression variance as the correlations across studies are mostly positive and high (75% of correlations are between 0.45 and 0.9, @fig:sd_corr A and B), indicating that genes that are most variable in one study tend to be most variable in all studies.
 A principal coordinate analysis [@Gower1966-dk] using |1 -- ρ~s~| as a between-study distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together (@fig:sd_corr C).
 This clustering indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
