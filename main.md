@@ -131,7 +131,7 @@ To achieve this, SD was calculated using a unified pipeline that normalized the 
 The observed range of gene expression SDs across genes is variable but can be normalized so that the distributions are comparable (@fig:sd_corr D).
 This comparison reveals differences in the range of gene expression SDs that can be due to any number of methodological or biological differences between the data sets.
 We avoid having to deal with these global differences in the range of variation by using only the ranking of the genes according to their gene expression SD in each study.
-Given this choice to only use rankings, global patterns of transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
+Global patterns of transcriptional variance were compared across studies using Spearman correlations (ρ~s~) between gene expression SDs.
 This comparison reveals a broadly similar rank of gene expression variance as the correlations across studies are mostly positive and high (75% of correlations are between 0.45 and 0.9, @fig:sd_corr A and B), indicating that genes that are most variable in one study tend to be most variable in all studies.
 A principal coordinate analysis [@Gower1966-dk] using |1 -- ρ~s~| as a between-study distance measure does not show clearly delineated groups, but GTEx and TCGA studies are clustered among themselves and close together (@fig:sd_corr C).
 This clustering indicates some effect of study source on the similarity between gene expression SD across studies, which we explore in detail below.
@@ -209,7 +209,7 @@ We use three gene-level summary statistics, nucleotide diversity (π), gene expr
 For all the correlations in this section, we use partial Spearman correlations that include the mean gene expression rank as a covariate, which accounts for any residual mean-variance correlation.
 Nucleotide diversity is used as a proxy for the impact of cis-regulatory genetic variation on transcriptional variance.
 As expected, low-variance genes tend to have lower levels of polymorphisms (partial Spearman correlation, ρ~s~ = 0.184, p < 10^-3^).
-Gene-gene connectivity, a proxy for gene regulatory interactions and selective constraints [@Mahler2017-bb], is, in turn, negatively correlated with the expression variance (partial Spearman correlation, ρ~s~ = -0.024, p $\approx$ 6 \times 10^-3^), supporting the expectation that highly connected genes are more constrained in their variation.
+Gene-gene connectivity, a proxy for gene regulatory interactions and selective constraints [@Mahler2017-bb], is, in turn, negatively correlated with the expression variance (partial Spearman correlation, ρ~s~ = -0.024, p $\approx$ 0.006), supporting the expectation that highly connected genes are more constrained in their variation.
 Finally, we also find that low-variance genes tend to have fewer substitutions by comparing the across-study rank with $\alpha$ (partial Spearman correlation, ρ~s~ = -0.046, p $\approx$ 10^-3^), in line with the expectation that genes under stronger selection should be less variable.
 Despite all associations being significant and in the expected direction, their effect sizes are very small, suggesting a weak link between these broad measures and transcriptional variance.
 
@@ -368,7 +368,7 @@ These PCA plots before and after batch correction and outlier removal are also i
 After all sample filtering, the mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Gene expression standard deviations (SDs) are measured as the residual standard deviations after fixed effect correction and outlier removal.
 We choose standard deviation as a measure of variation to have a statistic on a linear scale, and we do not use the coefficient of variation because we have already corrected for mean differences and for the mean-variance relation inherent to RNA-seq count data [@De_Jong2019-po].
-The full annotated pipeline is available at [the GitHub repository ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
+The full annotated pipeline is available on GitHub at [github.com/ayroles-lab/expressionVariance-code](https://github.com/ayroles-lab/expressionVariance-code).
 
 ## Correlations in transcriptional variance
 
@@ -433,6 +433,9 @@ __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract infor
 __Immediate early genes (IEGs):__ Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment. We use the hypergeometric test to assess the significance of the enrichment. Immediate early genes (IEGs): Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment.
 
 __Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl] and test for enrichment for disease annotations in the genes within the highest and lowest 5% of gene expression variance rank.
+
+__LCLs__: We utilized LCL exposure data collected ... 
+
 
 ## Code availability
 
