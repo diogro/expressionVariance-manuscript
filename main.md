@@ -434,9 +434,6 @@ __Immediate early genes (IEGs):__ Human IEGs were curated from the literature in
 
 __Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl] and test for enrichment for disease annotations in the genes within the highest and lowest 5% of gene expression variance rank.
 
-__LCLs__: We utilized LCL exposure data collected ...
-
-
 ## Code availability
 
 Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
@@ -473,6 +470,14 @@ used.
 2. SI data 4 - Gene ranks - Gene expression mean and variance ranks, across-study and tissue-specific.
 
 3. SI data 5 - GO enrichment - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
+
+# Author Contributions
+
+**Conceptualization**: S.W., D.M., L.P., and J.A.
+**Analysis**: S.W., D.M., and K.G.
+**Draft**: D.M.
+**Review and Editing**: S.W., D.M., K.G., L.A., and J.A.
+**Funding Acquisition**: S.W., D.M., K.G., L.A., and J.A.
 
 
 # References
