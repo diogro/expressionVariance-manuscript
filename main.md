@@ -1,7 +1,7 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 short_title: "The landscape of transcriptional variance"
-date: Nov 15th, 2022
+date: Dec 29th, 2022
 author:
   - Scott Wolf:
       institute: lsi
@@ -22,6 +22,9 @@ author:
   - Luisa F. Pallares:
       institute: lsi, fml
       orcid: 0000-0001-6547-1901
+  - Amanda J. Lea:
+      institute: lsi, eeb, van, ciar
+      orcid: 0000-0001-6547-1901
   - Julien F. Ayroles:
       institute:
         - lsi
@@ -35,7 +38,12 @@ institute:
   - eeb:
       name: Department of Ecology and Evolutionary Biology, Princeton University
   - fml:
-      name: "Current address: Friedrich Miescher Laboratory, Max Planck Society"
+      name: "Friedrich Miescher Laboratory, Max Planck Society"
+  - van:
+      name: "Department of Biological Sciences, Vanderbilt University"
+  - ciar:
+      name: "Child and Brain Development, Canadian Institute for Advanced Research"
+
 # classoption: twocolumn
 output: pdf_document
 geometry:
@@ -58,20 +66,20 @@ header-includes:
 - \hideFromPandoc{ \let\Begin\begin \let\End\end}
 - \addbibresource{references.bib}
 link-citations: yes
-mainfont: Skolar PE TEST Regular
+mainfont: Skolar PE
 mainfontoptions:
 - Numbers=Lowercase
 - Numbers=Proportional
 csl: ./pandoc/cse.csl
-sansfont: Skolar Sans PE TEST
+sansfont: Skolar Sans PE
 bibliography: ./references.bib
 ---
-<!--
+# Abstract
+Gene expression variance has been linked to organismal function and fitness but remains a commonly neglected aspect of molecular research. As a result, we lack a comprehensive understanding of the patterns of transcriptional variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use 57 large publicly available RNA-seq data sets to investigate the landscape of gene expression variance. These studies cover a wide range of tissues and allowed us to assess if there are consistently more or less variable genes across tissues and data sets and what mechanisms drive these patterns. We show that gene expression variance is broadly similar across tissues and studies, indicating that the pattern of transcriptional variance is consistent. We use this similarity to create both global and within-tissue rankings of variation, which we use to show that function, sequence variation, and gene regulatory signatures contribute to gene expression variance. Low-variance genes are associated with fundamental cell processes and have lower levels of genetic polymorphisms, have higher gene-gene connectivity, and tend to be associated with chromatin states associated with transcription. In contrast, high-variance genes are enriched for genes involved in immune response, environmentally responsive genes, immediate early genes, and are associated with higher levels of polymorphisms. These results show that the pattern of transcriptional variance is not noise. Instead, it is a consistent gene trait that seems to be functionally constrained in human populations. Furthermore, this commonly neglected aspect of molecular phenotypic variation harbors important information to understand complex traits and disease.
+
 # Author Summary
 
-Required for PLOS Genetics... -->
-# Abstract
-Gene expression variance has been linked to organismal function and fitness but remains a commonly neglected aspect of gene expression research. As a result, we lack a comprehensive understanding of the patterns of variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use 57 large publicly available RNA-seq data sets to investigate the landscape of gene expression variance. These studies cover a wide range of tissues and allowed us to assess if there are consistently more or less variable genes across tissues and data sets and what mechanisms drive these patterns. We show that gene expression variance is broadly similar across tissues and studies, indicating that the pattern of transcriptional variance is consistent. We use this similarity to create both global and within-tissue rankings of variation, which we use to show that function, sequence variation, and gene regulatory signatures contribute to gene expression variance. Low-variance genes are associated with fundamental cell processes and have lower levels of genetic polymorphisms, have higher gene-gene connectivity, and tend to be associated with chromatin states associated with transcription. In contrast, high-variance genes are enriched for genes involved in immune response, environmentally responsive genes, immediate early genes, and are associated with higher levels of polymorphisms. These results show that the pattern of transcriptional variance is not noise. Instead, it is a consistent gene trait that seems to be functionally constrained in human populations. Furthermore, this commonly neglected aspect of molecular phenotypic variation harbors important information to understand complex traits and disease.
+Gene expression variance, or the variation in the level of gene expression within a population, can have significant impacts on physiology, disease, and evolutionary adaptations. While the average level of gene expression is typically the focus of research, the variation around this average level (i.e., gene expression variance) can also be important for understanding complex traits and disease. Here, we investigate the landscape of transcriptional variance across tissues, populations, and studies. Using large publicly available RNA-seq data sets, we were able to identify the general properties associated with high- and low-variance genes, as well as factors driving variation in variance across genes. Specifically, we uncovered gene expression variance was significantly associated with gene length, nucleotide diversity, the degree of connectivity and the presence of non-coding RNA. Our results suggest that the mechanisms responsible for maintaining optimal levels of variation in high- versus low-variance differ, and that this variability is the result of different patterns of selection. 
 
 \newpage
 
@@ -84,8 +92,8 @@ In this context, average trait values are usually the focus of investigation, wh
 However, gene expression variance can be directly involved in determining fitness [@Fraser2004-sv; @Wang2011-ts], can drive phenotypic variation [@Hansen2021-zo], and the genetic architecture of variance itself can evolve [@Bruijning2020-bf].
 This suggests that studying gene expression variance as a bona fide trait, its genetic architecture, and the evolutionary mechanisms shaping and maintaining gene-specific patterns of variance has the potential to further our understanding of complex traits and disease [@Li2010-qs; @Mar2011-dr; @Hagai2018-fu].
 
-Variability is ubiquitous in nature and is, alongside robustness, a fundamental feature of most complex systems.
-But, at the same time, the degree of variability seems to differ between genes [@De_Jong2019-po] suggesting that it might be associated with biological function and therefore be constrained by selection.
+Variability is ubiquitous in nature and is, alongside its counterpart, robustness, a fundamental feature of most complex systems.
+But, at the same time, the degree of variability seems to differ between genes [@De_Jong2019-po] suggesting that it might be associated with biological function and therefore be shaped by selection.
 From a mechanistic perspective, several competing forces act to shape transcriptional variance [@Houle1998-mj; @Bruijning2020-bf], and the outcome of the interaction between these processes is still poorly understood [@Hansen2011-es].
 For example, we expect the influx of new mutations to increase the variance, while the selective removal of these polymorphisms, via purifying selection or selective sweeps, to decrease it [@Schmutzer2020-cd; @Pettersson2012-om].
 From a quantitative trait perspective, stabilizing selection should decrease variation around an optimal value, and directional selection can lead to a transient increase in variance while selected alleles sweep to fixation, followed by a reduction in variance as these alleles become fixed.
@@ -94,8 +102,8 @@ Both indirect effects of directional selection on variance open the possibility 
 How the interaction of these processes shape gene expression variance is an open question.
 However, some general predictions can be made.
 If a homogeneous pattern of stabilizing selection is the main driver of gene expression variance, we would expect transcriptional variance to be consistent regardless of the population, tissue, or environmental context.
-If idiosyncratic selection patterns and context-specific environmental interactions are more important, we could observe large differences in gene
-expression variance.
+If idiosyncratic selection or environmental patterns are more important, we could observe large differences in gene
+expression variance across studies.
 
 A key difficulty in addressing these questions is that the constraints on gene expression variance might also be dependent on the gene tissue specificity.
 Mean expression is known to differ across tissues [@GTEx2017-xb], however, to what extent differential expression (i.e., differences in mean expression level) translate into differences in expression variance is not clear.
@@ -117,13 +125,14 @@ Finally, we explore the link between gene expression variance and biological fun
 
 # Results
 
+\vspace{0.5cm}
 
-![Overview of the distribution of transcriptional variance across studies. (A) Heatmap showing the correlation in transcriptional variance across studies (as the Spearman correlation of gene expression standard deviations). Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in SI fig. 1, panel A. (B) Distribution of the pairwise Spearman correlations between studies shown in the previous panel. (C) PCoA using the distance between studies derived from the pairwise correlations. There is no clear structuring of the studies with respect to their source, which is indicated by the colors. (D) Density plot of standard deviations after z-normalization. The inset plot shows the distribution of mean-centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest-ranking gene in standard deviation rank ([_hbb_]{.smallcaps}) (right, blue) and lowest ([_wdr33_]{.smallcaps}) (left, red).](figures/fig1.png){#fig:sd_corr}
+![Overview of the distribution of transcriptional variance across studies. (A) Heatmap showing the correlation in transcriptional variance across studies (as the Spearman correlation of gene expression standard deviations). Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in SI fig. 1, panel A. (B) Distribution of the pairwise Spearman correlations between studies shown in the previous panel. (C) PCoA using the distance between studies derived from the pairwise correlations. (D) Density plot of standard deviations after z-normalization. The inset plot shows the distribution of mean-centered standard deviations grouped by study without normalization. The corresponding rug plots show the location of the highest-ranking gene in standard deviation rank ([_hbb_]{.smallcaps}) (right, blue) and lowest ([_wdr33_]{.smallcaps}) (left, red).](figures/fig1.png){#fig:sd_corr}
 
 ## Data sets
 
 We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in the supporting information (SI data 1).
-We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10.
+We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not included data from non-baseline/exposure/stimulated datasets).
 These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Several data sets were derived from two large consortia: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note the origin of the data sets in the figures where appropriate.
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
@@ -164,9 +173,6 @@ To explore tissue-specific divers or transcriptional variation, we also create a
 To that end, we used the same procedure outlined above but using only studies that were performed on  the same tissue.
 Both tissue-specific and across-study ranks are available in the Supporting Information (SI data 4).
 
-<!-- ![Modeling the correlations between transcriptional variance across studies. The panels show coefficient estimates from a linear model using the among studies Spearman correlations between gene expression SDs as the response variable. These correlations are shown in @fig:sd_corr, panels A and B. In the linear model (see Methods for model equation), correlations are Fisher z-transformed. Study source and tissue are added as fixed effects. Coefficient estimates are shown with 50% and 95% credibility intervals. (A) The per-study random effect which accounts for the non-independence between the pairwise correlation values and estimates the characteristic contribution of each study to these correlations. For example, the lowest estimate among these parameters, which corresponds to the study [bone marrow]{.smallcaps} (from GTEx), indicates that correlations involving this study tend to be lower than the others. (B) and (C) Fixed effect estimates for the effects of tissue congruence and study-source effect. In (B) we see that correlations among studies that use the same tissue are slightly higher; and (C) correlations involving studies in the "Misc." category (non-GTEx and non-TCGA) tend to be lower, while comparisons involving GTEx and TCGA are higher.](figures/correlationModeling.png){#fig:corr_model width=550px} -->
-
-
 ## Biological function explains gene-level transcriptional variance
 
 As a first step toward explaining the factors that drive variation in variability between transcripts, we focused on the top 5% most variable and the bottom 5% least variable genes in the across-study ranking (560 genes in each group).
@@ -174,7 +180,6 @@ A Gene Ontology (GO) enrichment analysis shows 59 enriched terms in the low-vari
 
 Among the most variable genes, we observe enrichment for biological processes such as immune function, response to stimulus, maintenance of homeostasis, and tissue morphogenesis (SI fig. 2 A).
 Furthermore, we see a 7.7-fold enrichment for genes that encode secreted proteins in the most variable genes, relative to all other genes (hypergeometric test, p < 10^-3^).
-Given that the GO enrichment suggests high-variance genes are involved in responding to stimulus, we compare them to a recently generated catalog of environmentally responsive genes. This catalog was generated using 11 environmental exposures in 544 immortalized Lymphoblastoid Cell Lines (LCL) from the 1000 Genomes Project [@Lea2021-hf]. We find a strong enrichment of high-variance genes among environmentally responsive genes across 7 out of the 10 environmental exposures we used (hypergeometric test, p < 10^-3^). We do not find any enrichment among the least variable genes (SI table 2).
 
 Among the least variable genes, we see enrichment for housekeeping functions such as mRNA processing, cell cycle regulation, methylation, histone modification, translation, transcription, and DNA repair (SI fig. 2 B); accordingly, we also find a 2.0-fold enrichment in previously characterized human housekeeping genes [@Hounkpe2020-yq] (hypergeometric test, p < 10^-3^).
 The genes exhibiting the lowest variance are also enriched for genes that have been previously shown to have a high probability of being loss-of-function intolerant (pLI) [@lek2016analysis] (1.2-fold enrichment, hypergeometric test, p < 10^-3^).
@@ -203,13 +208,17 @@ Both GO analyses suggest a strong association between biological function and th
 Genes associated with baseline fundamental functions, expected to be under strong stabilizing selection, are also low-variance; high-variance genes are associated with responding to external stimuli (i.e., tissue reorganization and immune response).
 
 
-<!-- ![Gene set enrichment analyses testing for over-representation of gene ontology categories in the upper and lower 5\% quantiles of the gene variance rank. (A) High-variance genes are enriched for terms related to immune function, response to wounding, blood vessel morphogenesis, and inflammatory response. In contrast, (B) low-variance genes are associated with translation, control of methylation, RNA processing, chromosome separation, and other cell housekeeping functions. All displayed terms are significant with a 5% FDR corrected p-value below 10^-3^.](figures/local_go_lowerUpper.png){#fig:go_tails width=500px} -->
-
-
 \vspace{0.5cm}
 
 ![Distributions of decile ranks of level-3 GO terms. Each plot shows the count of genes in each decile of the rank. Only GO terms that are associated with at least 100 genes are used. We sort these terms by the skewness of the distribution. The top panel (A) shows the 5 most positively skewed terms, and the bottom panel (B) shows the 5 most negatively skewed terms.](figures/GOterm_decile_barplot.png){#fig:go_skewness}
 
+
+
+## Environmental sensitivity predicts transcriptional variance
+
+As suggested by our GO enrichment analyses, one mechanism that may generate consistent variability in gene expression is the response to environmental inputs. In other words, high-variance genes may be those that are environmentally sensitive, while low-variance genes may be robust to environmental stimuli or perturbations (or alternatively, responsive to all stimuli, such that they are always highly expressed across individuals). To understand the relationship between environmental sensitivity and variance, we drew on gene expression data from a recently generated catalog of environmentally responsive genes in lymphoblastoid cell lines (LCLs). This catalog was generated by exposing 544 LCLs derived from individuals included in the 1000 Genomes Project to each of 11 in vitro exposures (including immune signaling molecules, hormones, and man-made chemicals), as well as a control; these manipulations of the cellular environment were followed by mRNA-seq and differential expression analyses comparing each treatment to its control [@Lea2022-bl]. Using lists of environmentally responsive genes derived from this study, we found that high-variance genes were more likely to respond to at least one in vitro exposure, relative to genes not classified as high- or low-variance (Fisher’s exact test: p < 0.05, odds = 1.524); as predicted, the same is not true for low-variance genes (Fisher’s exact test: p = 0.993, odds = 0.797). 
+When we analyzed each exposure separately, we found that high-variance genes were more likely to be responsive to 4 out of the 10 environments we explored (1 environment was dropped due to a lack of differentially expressed genes in the original experiment; Fisher’s exact test, FDR < 10%; SI table 2). These exposures included key immune stimuli and hormones such as interferon gamma and dexamethasone (a synthetic glucocorticoid). In contrast, we found that low-variance genes showed the opposite pattern: they are significantly underrepresented among environmentally responsive genes across 4/10 environments (Fisher’s exact test, FDR < 10%; SI table 2). Though not all of our environment-specific tests reached statistical significance, it is also worth noting that almost all 10 environments showed concordance in effect size direction (i.e., high-variance genes tended to be overrepresented among environmentally responsive genes and low-variance genes tended to be underrepresented). 
+While the above analyses show that high-variance genes tend to overlap with genes induced by a given exposure, we hypothesized that genes that are similarly induced by many different exposures may in fact exhibit moderate or low variance. In other words, genes induced by many stimuli may always be highly expressed across individuals, and thus low variance, while genes induced by select stimuli may only be upregulated in a subset of the population, and thus exhibit high variance. In support of this idea, we found that, among genes that responded to at least one environments in the LCL experiment, high-variance genes responded to a median of only one environment, while both low-variance genes and the background set responded to a median of 4/10 environments (generalized linear model comparing high-variance to background and low-variance, p < 10^-7^ and p < 10^-11^, respectively). Thus, high-variance genes are indeed more likely to be environmentally sensitive, but in a highly select and stimulus-specific manner, which we hypothesize drives their between-individual heterogeneity. We note that all analyses presented in this section focused on the composite set of high- and low-variance genes defined across tissues, but we obtain similar results when focusing on blood, the tissue in our dataset most similar to LCLs (SI table 2).
 
 
 ## Evolutionary forces at play in shaping transcriptional variance
@@ -225,6 +234,8 @@ Despite all associations being significant and in the expected direction, their 
 ## Specific gene regulatory signatures are associated with transcriptional variance
 
 To assess how local epigenetic features relate to gene expression variance we calculate the proportion of the gene (±10 kb) that corresponds to epigenetic signatures of gene regulation defined through ChromHMM [@ernst2012chromhmm] chromatin states. Chromatin states associated with distal (i.e., non-promoter) gene regulation are positively correlated with the across-study variance rank, regardless of whether the regulatory effect on gene expression is positive or negative (@fig:lineplot; see across-study correlations in SI fig. 3A). For example, both the proportion of gene regions made up of enhancers and repressed genomic states are positively correlated with gene expression variance (BH adjusted Spearman correlation, p < 0.05). In contrast, histone modifications associated with active promoters, as well as transcribed states, are inversely correlated with gene expression variance (SI fig. 3A), whereas they are positively correlated with the mean rank (SI fig. 3B). Taken together, these results are compatible with gene expression variance being regulated through distal (i.e., non-promoter) gene regulatory mechanisms, rather than the overall active transcriptional state of a gene region, as is the case with mean gene expression.
+
+\vspace{0.5cm}
 
 ![Proportion of gene regions made up of ChromHMM chromatin states for low- and high-variance genes. The line plot contrasts the proportion of gene regions made up of the indicated chromatin states for genes in the top and bottom 5% of the across-study variance rank metric. Ends denote the median proportion of gene regions made up of the chromatin state, and error bars represent the standard error of the mean. States colored black are not significant, all others exhibit significant differences between low- and high-variance genes (BH adjusted Wilcoxon signed-rank test, p < 0.05). Het indicates heterochromatin; TSS, transcription start sites; znf, zinc finger genes. The mean rank version of this analysis is shown in SI fig. 4.](figures/top_bottom_5pVarrank_fxnlGen_lineplot_10kb.png){#fig:lineplot width=350px}
 
@@ -296,7 +307,7 @@ This heterogeneity could lead to detectable differences in selection signatures 
 This heterogeneity in regulation for high and low-variance genes suggests that important biological information has been overlooked given the focus that the field has placed on understanding gene expression robustness, in the sense of reducing variation [@Siegal2014-dv; @Payne2015-wn; @Macneil2011-ax; @Denby2012-as]. For example, Siegal and Leu [@Siegal2014-dv] provide several examples of known regulatory mechanisms for reducing gene expression variance, but no examples for the maintenance of high gene expression variance.
 We posit that it should be possible to go beyond the usual characterization of mechanisms of gene expression robustness, in the sense of reducing variation, and to explore mechanisms for the _robustness of plasticity_, that is, the maintenance of high levels of gene expression variation given environmental cues.
 
-Given the broad consistency of gene expression variance in healthy tissues, a natural question is how do these well-regulated levels of variation behave in perturbed or disease conditions.
+Given the broad consistency of gene expression variance in healthy tissues, a natural question is how do these well-regulated levels of variation behave in disease conditions.
 We find some suggestive links between tissue-specific variance ranks and disease, but these links need to be further explored using more specific methods.
 Comparing two HapMap populations, Li et al. [-@Li2010-qs] showed that gene expression variance was similar in both populations and that high-variance genes were enriched for genes related to HIV susceptibility, consistent with our observation of enrichment for immune-related genes among those with more variable expression.
 In a case-control experiment, Mar et al. [-@Mar2011-dr] showed that expression variance was related to disease status in Schizophrenia and Parkinson's disease patients, with altered genes being non-randomly distributed across signaling networks.
@@ -431,7 +442,7 @@ __Correlations:__ We use the ppcor R package v1.1 [@kim2015ppcor] to run the pai
 
 __GO term enrichment__: All gene ontology (GO) analyses were done using the clusterProfiler R package v4.2.2 [@Wu2021-db] and the Org.Hs.eg.db database package v3.14.0 [@godb]. GO and all further enrichment analyses used the hypergeometric test to assess the significance of the enrichment.
 
-__Environmentally responsive genes__: We use the list of environmentally responsive genes available in the supporting information from Lea et al. [@Lea2021-hf] and test for enrichment of environmentally responsive genes in the genes within the highest and lowest 5% of gene expression variance rank.
+__Environmentally responsive genes__: We used the list of environmentally responsive genes available in the supporting information from Lea et al. [@Lea2022-bl]. When we overlapped the list of LCL-expressed genes with our list of ranked genes, we retained 9282 genes in the cross-tissue analyses presented in the main text, and 5574 genes in the blood-specific analyses presented in SI table 1. We used Fisher’s exact tests to ask whether high-variance genes were more likely to be responsive to >0 environments relative to all genes not included in the low-variance category (and vice versa for low-variance genes). We also used Fisher’s exact tests followed by Benjamini-Hochberg false discovery rate correction to ask whether high-variance genes were more likely to be responsive to each individual environment relative to all genes not included in the low-variance category (and vice versa for low-variance genes). Finally, we used generalized linear models with a Poisson error structure to test for an effect of gene category (high-variance, low-variance, or neither) on the number of environments that a gene responded to (ranging from 0-11). 
 
 __Housekeeping genes__: Human housekeeping genes were identified as genes that are expressed with low variance in all 52 human cell and tissue types, assessed in over 10,000 samples [@Hounkpe2020-yq]. We test for enrichment of housekeeping genes in the genes within the highest and lowest 5% of gene expression variance rank.
 
@@ -445,7 +456,7 @@ __Disease annotations__: We use the gene annotations for involvement with diseas
 
 ## Code availability
 
-Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/ExpressionVariance](https://github.com/ayroles-lab/ExpressionVariance).
+Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/expressionVariance-code](https://github.com/ayroles-lab/expressionVariance-code).
 
 ## Supporting information
 
@@ -463,8 +474,7 @@ the top and bottom 5% of the across-study mean rank metric.
 
 1. SI figure 5 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expression standard deviations.
 
-1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations
-used.
+1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations used.
 
 1. SI table 2 - Enrichment analysis of environmentally responsive genes in LCLs.
 
@@ -483,14 +493,14 @@ used.
 # Author Contributions
 
 **Conceptualization**: S.W., D.M., L.P., and J.A.
-**Analysis**: S.W., D.M., and K.G.
+**Analysis**: S.W., D.M., K.G., and A.L.
 **Draft**: D.M.
-**Review and Editing**: S.W., D.M., K.G., L.P., and J.A.
-**Funding Acquisition**: S.W., D.M., K.G., L.P., and J.A.
+**Review and Editing**: S.W., D.M., K.G., L.P., A.L., and J.A.
+**Funding Acquisition**: S.W., D.M., K.G., L.P., A.L., and J.A.
 
 # Acknowledgments
 
-We thank all members of the Ayroles lab for their support. We thank Amanda Lea for her thoughtful input and discussion. We thank Noah Rose and Cara Weisman for their thoughtful comments. We thank Pedro Madrigal for help with the Expression Atlas interface. S.W. is supported by the National Science Foundation Graduate Research Fellowship Program (DGE-2039656). D.M. is funded by a fellowship from the Princeton Presidential Postdoctoral Research Fellows Program. K.G. is funded by National Institutes of Health (NIH) grant F32ES034668. L.P. was funded by a Long-Term Postdoctoral Fellowship from the Human Frontiers Science Program. J.A. is funded by grants from the NIH: National Institute of Environmental Health Sciences (R01-ES029929) and National Institute of General Medical Sciences (R35GM124881). This study was supported in part by the Lewis-Sigler Institute for Integrative Genomics at Princeton University. We also acknowledge that the work reported in this paper was substantially performed using the Princeton Research Computing resources at Princeton University which is a consortium of groups led by the Princeton Institute for Computational Science and Engineering (PICSciE) and Office of Information Technology's Research Computing.
+We thank all members of the Ayroles lab for their support. We thank Amanda Lea for her thoughtful input and discussion. We thank Noah Rose and Cara Weisman for their thoughtful comments. We thank Pedro Madrigal for help with the Expression Atlas interface. S.W. is supported by the National Science Foundation Graduate Research Fellowship Program (DGE-2039656). D.M. is funded by a fellowship from the Princeton Presidential Postdoctoral Research Fellows Program. K.G. is funded by National Institutes of Health (NIH) grant F32ES034668. L.P. was funded by a Long-Term Postdoctoral Fellowship from the Human Frontiers Science Program. J.A. is funded by grants from the NIH: National Institute of Environmental Health Sciences (R01-ES029929) and National Institute of General Medical Sciences (NIGMS) (R35GM124881). This study was supported in part by the Lewis-Sigler Institute for Integrative Genomics at Princeton University. We also acknowledge that the work reported in this paper was substantially performed using the Princeton Research Computing resources at Princeton University which is a consortium of groups led by the Princeton Institute for Computational Science and Engineering (PICSciE) and Office of Information Technology's Research Computing. A.L. is supported by the Canadian Institute for Advanced Research Global Scholars Program, the Searle Scholars Program, and through the NIH/NIGMS (R35GM147267).
 
 # References
 
