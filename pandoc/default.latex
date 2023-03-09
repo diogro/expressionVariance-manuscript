@@ -440,6 +440,12 @@ $if(logo)$
 $endif$
 $endif$
 
+$if(titlefont)$
+\newfontfamily\titlefont{$titlefont$}
+$else$
+\newfontfamily\titlefont{$mainfont$}
+$endif$
+
 \begin{document}
 $if(has-frontmatter)$
 \frontmatter
@@ -459,7 +465,9 @@ $else$
 
     \vspace{0.3cm}
 
+    $if(version)$
     \normalsize{Manuscript v$version$ - \today}
+    $endif$
 \end{flushleft}
 }
 \makeatother
@@ -471,7 +479,6 @@ $abstract$
 \end{abstract}
 $endif$
 $endif$
-
 
 $for(include-before)$
 $include-before$
@@ -511,6 +518,7 @@ $if(has-frontmatter)$
 \mainmatter
 $endif$
 
+\footnotesize
 $body$
 
 $if(has-frontmatter)$

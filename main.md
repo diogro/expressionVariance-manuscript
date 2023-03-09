@@ -65,7 +65,6 @@ header-includes:
 - \newcommand{\hideFromPandoc}[1]{#1}
 - \hideFromPandoc{ \let\Begin\begin \let\End\end}
 - \addbibresource{references.bib}
-- \newfontfamily\titlefont{Skolar Sans PE}
 link-citations: yes
 mainfont: Skolar PE
 mainfontoptions:
@@ -73,8 +72,11 @@ mainfontoptions:
 - Numbers=Proportional
 csl: ./pandoc/cse.csl
 sansfont: Skolar Sans PE
+titlefont: Skolar Sans PE
 bibliography: ./references.bib
 ---
+
+\normalsize
 # Abstract
 Gene expression variance has been linked to organismal function and fitness but remains a commonly neglected aspect of molecular research. As a result, we lack a comprehensive understanding of the patterns of transcriptional variance across genes, and how this variance is linked to context-specific gene regulation and gene function. Here, we use 57 large publicly available RNA-seq data sets to investigate the landscape of gene expression variance. These studies cover a wide range of tissues and allowed us to assess if there are consistently more or less variable genes across tissues and data sets and what mechanisms drive these patterns. We show that gene expression variance is broadly similar across tissues and studies, indicating that the pattern of transcriptional variance is consistent. We use this similarity to create both global and within-tissue rankings of variation, which we use to show that function, sequence variation, and gene regulatory signatures contribute to gene expression variance. Low-variance genes are associated with fundamental cell processes and have lower levels of genetic polymorphisms, have higher gene-gene connectivity, and tend to be associated with chromatin states associated with transcription. In contrast, high-variance genes are enriched for genes involved in immune response, environmentally responsive genes, immediate early genes, and are associated with higher levels of polymorphisms. These results show that the pattern of transcriptional variance is not noise. Instead, it is a consistent gene trait that seems to be functionally constrained in human populations. Furthermore, this commonly neglected aspect of molecular phenotypic variation harbors important information to understand complex traits and disease.
 
