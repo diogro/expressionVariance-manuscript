@@ -1,7 +1,7 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 short_title: "The landscape of transcriptional variance"
-date: Jan 9th, 2023
+version: "3.0"
 author:
   - Scott Wolf:
       institute: lsi
@@ -65,6 +65,7 @@ header-includes:
 - \newcommand{\hideFromPandoc}[1]{#1}
 - \hideFromPandoc{ \let\Begin\begin \let\End\end}
 - \addbibresource{references.bib}
+- \newfontfamily\titlefont{Skolar Sans PE}
 link-citations: yes
 mainfont: Skolar PE
 mainfontoptions:

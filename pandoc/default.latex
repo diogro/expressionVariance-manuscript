@@ -451,7 +451,7 @@ $else$
 \makeatletter
 \renewcommand{\maketitle}{\setlength{\parindent}{0pt}
 \begin{flushleft}
-    \huge{\textbf{$title$}}
+    \huge{\titlefont \textbf{$title$}}
 
     \vspace{0.8cm}
 
@@ -459,7 +459,7 @@ $else$
 
     \vspace{0.3cm}
 
-    \normalsize{Submission v2.0 - $date$}
+    \normalsize{Manuscript v$version$ - \today}
 \end{flushleft}
 }
 \makeatother
@@ -472,10 +472,11 @@ $abstract$
 $endif$
 $endif$
 
+
 $for(include-before)$
 $include-before$
-
 $endfor$
+
 $if(toc)$
 $if(toc-title)$
 \renewcommand*\contentsname{$toc-title$}
@@ -509,6 +510,7 @@ $endif$
 $if(has-frontmatter)$
 \mainmatter
 $endif$
+
 $body$
 
 $if(has-frontmatter)$
