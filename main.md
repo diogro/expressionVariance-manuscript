@@ -62,7 +62,6 @@ header-includes:
 - \usepackage{afterpage}
 - \usepackage{stfloats}
 - \usepackage{graphicx}
-- \usepackage{xfrac}
 - \newcommand{\hideFromPandoc}[1]{#1}
 - \hideFromPandoc{ \let\Begin\begin \let\End\end}
 - \addbibresource{references.bib}
@@ -407,9 +406,9 @@ For each pair of studies $i$ and $j$, the Fisher z-transformed Spearman correlat
 $$\begin{aligned}
 z(\rho_{ij}) &\sim N(\mu_{ij}, \sigma), \textrm{ for all } i > j \\
 \mu_{ij} &= \mu_0 + \alpha_i + \alpha_j + \beta_{[t_{ij}]} + \gamma_{[so_{ij}]} \\
-\alpha_i &\sim N(0, \sigma_{\alpha}), \textrm{ for } i = 1\dots 57 \\
-\gamma_k &\sim N(0, \sfrac{1}{4}), \textrm{ for } k = 1\dots 6 \\
-\beta_l &\sim N(0,\sfrac{1}{4}), \textrm{ for } l = 1\dots 2 \\
+\alpha_i &\sim N(0, \sigma_{\alpha}), \textrm{ for } i = 1 \dots 57 \\
+\gamma_k &\sim N(0, 1/4), \textrm{ for } k = 1 \dots 6 \\
+\beta_l &\sim N(0, 1/4), \textrm{ for } l = 1, 2 \\
 \mu_0 &\sim N(0, 1) \\
 \sigma, \sigma_{\alpha} &\sim Exp(1) \\
 \end{aligned}$$
