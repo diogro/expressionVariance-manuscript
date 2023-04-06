@@ -157,7 +157,7 @@ This clustering indicates some effect of study source on the similarity between 
 
 To characterize what factors may explain differences in across-study similarity, we directly modeled the across-study correlations using a mixed-effect linear model designed to account for the non-independence in pairwise correlation data [@Dias2021-wk; @Dias2022-au].
 In this model (see [Methods](#Methods)), we use a random effect for individual study ID, a fixed effect for pairwise tissue congruence (whether a comparison is within the same tissue or different tissue), and a fixed effect for pairwise study source (which pair of sources among GTEx, TCGA, and miscellaneous is involved in a comparison) as predictors of the correlations (see [Methods](#Methods)).
-This model (SI fig. 1) shows that comparisons of studies within GTEx and TCGA have on average higher values of $\rho_s$, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (SI fig. 1 C).
+This model (SI fig. 1) shows that comparisons of studies within GTEx and TCGA have on average higher values of ρ~s~, but also that comparing studies across GTEx and TCGA also shows a mild increase in the average correlation (SI fig. 1 C).
 Correlations that do not involve studies from TCGA and GTEx (marked as "Misc.") are on average lower (SI fig. 1 C).
 While we do not have a clear explanation for this pattern, since TCGA and GTEx are independent, this mild effect on the similarities could be due to the level of standardization of the data coming from these two large consortia.
 Tissue type also affects the degree of similarity in transcriptional variance, with studies using the same tissue being, on average, more similar (SI fig. 1 B).
@@ -381,6 +381,7 @@ Technical replicates were summed.
 For each study, we filtered genes that did not achieve a minimum of 1 count per million (cpm) reads in all samples and a mean of 5 cpm reads across samples.
 To account for library size and the mean-variance relation in RNA-seq count data, we applied a variance stabilizing transformation implemented in the function vst from the DESeq2 R package [@Love2014-mp] to the genes passing the read-count filters.
 This mean-variance correction was verified by plotting mean-variance relations before and after correction, and these plots can be seen in the supporting information (SI appendix 1).
+Some studies still show higher variances for genes with lower expression even after the vst correction, like [blood]{.smallcaps}, [colon]{.smallcaps}, and [stad]{.smallcaps}, but given that these do not show a large difference in the variance rank when compared to the other studies, we do not expect this residual mean effect to be relevant. 
 Various technical covariates (like experimental batch, sex, etc.) were manually curated from the metadata associated with each study and accounted for using an independent linear fixed-effects model for each study.
 A list of covariates used for each study is available in the supporting information (SI data 1).
 Outlier individuals in the residual distribution were removed using a robust Principal Component Analysis (PCA) approach of automatic outlier detection described in @Chen2020-fy.
@@ -395,16 +396,19 @@ The full annotated pipeline is available on GitHub at [github.com/ayroles-lab/ex
 
 ## Correlations in transcriptional variance
 
-We assessed the similarity in gene expression variance across studies by using a across-study Spearman correlation matrix of the measured SDs.
+We assessed the similarity in gene expression variance across studies by using an across-study Spearman correlation matrix of the measured SDs.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, ~4200 genes in total.
+To do this, the SDs for this common subset of genes are organized in a $N \times p$ matrix $D$, where $N$ is the number of genes and $p$ the number of studies. 
+Then, we take the Spearman correlation between all the columns of $D$, resulting in a symmetric $p \times p$ correlation matrix $\Rho$ (shown in @fig:sd_corr A).
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
-To investigate the factors involved in determining correlations between studies, we used a Bayesian random effects model to investigate the effect of study origin and tissue on the correlations across studies.
+
+To investigate the factors affecting the correlations between studies, we used a Bayesian random effects model to estimate the effect of study origin and tissue on the correlations across studies.
 This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression SDs.
 This is accomplished by adding a per-study random effect, see [@Dias2022-au] for details.
-For each pair of studies $i$ and $j$, the Fisher z-transformed Spearman correlation between them ($z(\rho_{ij})$) is modeled as:
+For each pair of studies $i$ and $j$, the Fisher z-transformed Spearman correlation between their SDs ($z(\Rho_{ij})$) is modeled as:
 
 $$\begin{aligned}
-z(\rho_{ij}) &\sim N(\mu_{ij}, \sigma), \textrm{ for all } i > j \\
+z(\Rho_{ij}) &\sim N(\mu_{ij}, \sigma), \textrm{ for all } i > j \\
 \mu_{ij} &= \mu_0 + \alpha_i + \alpha_j + \beta_{[t_{ij}]} + \gamma_{[so_{ij}]} \\
 \alpha_i &\sim N(0, \sigma_{\alpha}), \textrm{ for } i = 1 \dots 57 \\
 \gamma_k &\sim N(0, 1/4), \textrm{ for } k = 1 \dots 6 \\
@@ -443,7 +447,7 @@ The weighted connectivity for each gene is the average across all studies in whi
 
 __Cross-tissue vs. tissue-level chromatin states__: We use the universal [@vu2022universal] and tissue-specific [@Ernst2015-zk] ChromHMM [@ernst2012chromhmm] chromatin states to compare the non-overlapping genome segmentation to cross-tissue and tissue-level gene expression variance metrics. We use the proportion of the gene regions (gene ± 10 kb) made up of each of the ChromHMM chromatin states.
 
-__Correlations:__ We use the ppcor R package v1.1 [@kim2015ppcor] to run the pairwise partial Spearman correlations between gene-level statistics and the gene expression variance rank while controlling for the mean expression rank. P-values are corrected using the Benjamini-Hochberg procedure and comparisons with an adjusted p<0.05 are considered significant.
+__Correlations:__ We use the ppcor R package v1.1 [@kim2015ppcor] to calculate the pairwise partial Spearman correlations between gene-level statistics and the gene expression variance rank while controlling for the mean expression rank. P-values are corrected using the Benjamini-Hochberg procedure and comparisons with an adjusted p<0.05 are considered significant.
 
 ## Gene function assessment
 
