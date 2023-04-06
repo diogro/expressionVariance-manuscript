@@ -136,10 +136,22 @@ Finally, we explore the link between gene expression variance and biological fun
 
 We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in the supporting information (SI data 1).
 We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not included data from non-baseline/exposure/stimulated datasets).
+Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation, specially variation due to segregating genetic variation, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
 These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Several data sets were derived from two large consortia: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note the origin of the data sets in the figures where appropriate.
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
 The final list of genes used from each study can be found in SI data 2.
+
+## Variation or variability?
+
+There is some confusion in the literature as to how to refer to the different levels of variation that are possible in gene expression, and what we refer to here as _gene expression variance_ or 
+_transcriptional variance_ has also been called gene expression variability or even gene expression noise. Following @Wagner1996-hp, we suggest that variation and variability should be distinguished, and variation should be used to refer to the realized differences across some population at any organization scale.
+For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, or whatever replicated level we are using), leading to a high transcriptional variance (how we actually measure variation).
+We would then specify at which level of variation we are working with: across individuals, across cells, within genotypes, and so on.
+In contrast, variability should refer to the potential to generate variation.
+So, a gene might have low variation, with all individuals in a population having a similar expression of the gene, but also have a large mutational target for its expression level, leading to many potential mutations that would cause its expression level to change, and therefore have high variability. 
+It should be clear that in this manuscript we are interested in population level, across individual, realized variation in gene expression, measured as gene expression variance. 
+Since we are using phenotypic variation, the variance we measure is a combination of the contribution of several sources, both genetic, due to segregating expression quantitative trait loci (eQTL) or variance QTL (vQTL), and whatever environmental differences there are across the individuals in a particular study.
 
 ## Gene expression variance
 
