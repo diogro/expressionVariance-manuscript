@@ -144,7 +144,7 @@ The final list of genes used from each study can be found in SI data 2.
 
 ## Variation or variability?
 
-There is some confusion in the literature as to how to refer to the different levels of variation that are possible in gene expression, and what we refer to here as _gene expression variance_ or 
+There is some confusion in the literature as to how to refer to the different levels of variation that are possible in gene expression, and the type of variation that we refer to here as _gene expression variance_ or 
 _transcriptional variance_ has also been called gene expression variability or even gene expression noise. Following @Wagner1996-hp, we suggest that variation and variability should be distinguished, and variation should be used to refer to the realized differences across some population at any organization scale.
 For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, or whatever replicated level we are using), leading to a high transcriptional variance (how we actually measure variation).
 We would then specify at which level of variation we are working with: across individuals, across cells, within genotypes, and so on.
