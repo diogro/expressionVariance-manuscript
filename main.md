@@ -52,6 +52,7 @@ geometry:
 - right=25mm
 - bottom=20mm
 header-includes:
+- \usepackage{amsmath}
 - \usepackage[left]{lineno}
 - \modulolinenumbers[1]
 - \usepackage[backref=true,style=authoryear]{biblatex}
@@ -413,16 +414,16 @@ The full annotated pipeline is available on GitHub at [github.com/ayroles-lab/ex
 We assessed the similarity in gene expression variance across studies by using an across-study Spearman correlation matrix of the measured SDs.
 Only genes present in all studies were used to calculate the Spearman correlation matrix, ~4200 genes in total.
 To do this, the SDs for this common subset of genes are organized in a $N \times p$ matrix $D$, where $N$ is the number of genes and $p$ the number of studies. 
-Then, we take the Spearman correlation between all the columns of $D$, resulting in a symmetric $p \times p$ correlation matrix $\Rho$ (shown in @fig:sd_corr A).
+Then, we take the Spearman correlation between all the columns of $D$, resulting in a symmetric $p \times p$ correlation matrix $\boldsymbol\rho$ (shown in @fig:sd_corr A).
 Using Spearman correlations avoids problems related to overall scaling or coverage differences, and allows us to assess if the same genes are usually more or less variable across studies.
 
 To investigate the factors affecting the correlations between studies, we used a Bayesian random effects model to estimate the effect of study origin and tissue on the correlations across studies.
 This model is designed to take the non-independent nature of a set of correlations into account when modeling the correlation between gene expression SDs.
 This is accomplished by adding a per-study random effect, see [@Dias2022-au] for details.
-For each pair of studies $i$ and $j$, the Fisher z-transformed Spearman correlation between their SDs ($z(\Rho_{ij})$) is modeled as:
+For each pair of studies $i$ and $j$, the Fisher z-transformed Spearman correlation between their SDs ($z(\boldsymbol\rho_{ij})$) is modeled as:
 
 $$\begin{aligned}
-z(\Rho_{ij}) &\sim N(\mu_{ij}, \sigma), \textrm{ for all } i > j \\
+z(\boldsymbol\rho_{ij}) &\sim N(\mu_{ij}, \sigma), \textrm{ for all } i > j \\
 \mu_{ij} &= \mu_0 + \alpha_i + \alpha_j + \beta_{[t_{ij}]} + \gamma_{[so_{ij}]} \\
 \alpha_i &\sim N(0, \sigma_{\alpha}), \textrm{ for } i = 1 \dots 57 \\
 \gamma_k &\sim N(0, 1/4), \textrm{ for } k = 1 \dots 6 \\
