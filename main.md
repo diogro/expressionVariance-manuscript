@@ -284,7 +284,7 @@ The psychiatric disease link is consistent with previous work [@Mar2011-dr] and 
 # Discussion
 
 Using large publicly available data sets allowed us to probe the landscape of transcriptional variance in humans.
-We find a broadly similar pattern of transcriptional variance, evidenced by the high correlations between gene expression variance across most studies, consistent with measurements of expression variance in single cells and in populations of cells for various tissues [@Li2010-qs; @Dong2011-sa; @Alemu2014-jo].
+We find a broadly similar pattern of transcriptional variance, evidenced by the high correlations between gene expression variance across most studies, consistent with measurements of expression variance for various tissues [@Li2010-qs; @Alemu2014-jo].
 Leveraging this similarity between gene expression variance across tissues and contexts, we developed a multivariate strategy to create a single rank of expression variance, which allowed us to order almost 13k genes (~65% of the genes expressed in humans) according to their transcriptional variance.
 Using this rank, we were able to study the general properties associated with high- and low-variance genes as well as factors driving variation in variance across genes.
 
