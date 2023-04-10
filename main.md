@@ -289,6 +289,8 @@ Using this rank, we were able to study the general properties associated with hi
 
 Some differences in gene expression variance were driven by technical aspects of gene expression measurement (with data derived from large consortia showing more similar patterns of variance across genes), and by tissue (with studies using the same tissues also showing higher similarities).
 This suggests that careful consideration of sample sizes and experimental design are fundamental to the study of gene expression variance, and the usual small samples of RNA-seq studies might be underpowered for the study of this particular aspect of gene expression.
+In particular, comparing studies within GTEx was associated with higher similarities in gene expression variance rank. 
+This higher similarity could be due to some individuals being included in more than one GTEx study, and therefore the same eQTLs could be driving gene expression variance in these samples and therefore leading to higher similarities.
 However, both the effects of study origin and tissue were small, and the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues known to have divergent gene expression patterns (i.e., bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
