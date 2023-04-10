@@ -1,0 +1,321 @@
+Gene Ontology Term,Number of Associated Genes,Shannon Entropy,Skewness
+humoral immune response,104,1.324499094,-1.826298519
+circulatory system process,342,1.81963408,-1.45817063
+neuron projection guidance,124,1.86483088,-1.432575657
+leukocyte chemotaxis,128,1.764878793,-1.375321637
+positive regulation of vasculature development,113,1.792367878,-1.332462903
+regulation of chemotaxis,141,1.851432266,-1.326975961
+myeloid leukocyte migration,119,1.788509471,-1.264035127
+chemotaxis,346,1.907094327,-1.257605688
+cell-cell adhesion,530,1.93335501,-1.204076278
+positive regulation of cell activation,243,1.896841532,-1.198598134
+negative regulation of cell activation,132,1.818859699,-1.194368125
+regulation of leukocyte migration,131,1.876941837,-1.172014019
+mononuclear cell migration,110,1.878151275,-1.167461526
+positive regulation of leukocyte activation,236,1.912215942,-1.16689417
+adaptive immune response,293,1.919754629,-1.156164142
+myeloid leukocyte activation,143,1.851745378,-1.153220873
+angiogenesis,372,1.919043832,-1.129398329
+G protein-coupled receptor signaling pathway,296,1.98638981,-1.106417021
+positive regulation of cell adhesion,299,1.931570857,-1.101929551
+regulation of cell activation,396,1.960317877,-1.092634042
+morphogenesis of a branching epithelium,107,1.93000567,-1.090298366
+negative regulation of leukocyte activation,115,1.865958759,-1.049406716
+leukocyte proliferation,191,1.949530692,-1.048568838
+tumor necrosis factor superfamily cytokine production,114,1.986798726,-1.041987415
+blood vessel development,489,1.978220762,-1.038331195
+positive regulation of hemopoiesis,109,1.976895308,-1.037890147
+negative regulation of cell adhesion,203,1.972668388,-1.032135219
+regulation of cell adhesion,509,1.994998081,-1.025615125
+blood coagulation,142,1.935461674,-1.017198774
+muscle system process,251,2.014212372,-1.01472927
+regulation of leukocyte activation,366,1.987375793,-1.012966681
+phagocytosis,190,1.981454674,-0.982494429
+regulation of system process,284,2.017954937,-0.971545782
+response to wounding,360,1.9888831,-0.970797259
+regulation of cell shape,128,2.031107501,-0.962474814
+cell fate commitment,108,2.040277551,-0.960760711
+positive regulation of cytokine production,296,2.03701547,-0.957590952
+positive regulation of ion transport,140,1.984507844,-0.94158992
+positive regulation of cellular component movement,405,2.022940696,-0.940876602
+negative regulation of cellular component movement,216,2.024134376,-0.931623167
+cell-substrate adhesion,267,2.031896412,-0.929005855
+positive regulation of cell motility,397,2.022734536,-0.928950463
+muscle cell proliferation,152,1.991136875,-0.922732102
+regeneration,127,2.053807138,-0.918287739
+negative regulation of cell motility,211,2.027611212,-0.915283245
+negative regulation of response to external stimulus,246,2.033882243,-0.912172094
+cardiac chamber development,101,2.080019409,-0.904718276
+regulation of body fluid levels,227,2.045622231,-0.904317523
+response to bacterium,357,1.969623956,-0.90417122
+regulation of cell motility,675,2.04670818,-0.901971635
+regulation of cellular component movement,716,2.052743139,-0.901858548
+tissue homeostasis,167,2.030481325,-0.88512108
+tube morphogenesis,576,2.04895453,-0.874233227
+cell migration,959,2.075155625,-0.873474484
+negative regulation of cytokine production,176,2.049742721,-0.870079418
+regulation of cytokine production,471,2.089391242,-0.855503015
+positive regulation of cell population proliferation,559,2.097432061,-0.829831349
+epithelial cell proliferation,259,2.051635258,-0.829608742
+leukocyte mediated immunity,245,2.013821935,-0.828161467
+response to mechanical stimulus,138,2.04726332,-0.813860952
+immune response-activating signal transduction,169,2.088538641,-0.811358604
+epithelium migration,233,2.063592743,-0.804081493
+muscle structure development,400,2.115565408,-0.801949701
+tube development,695,2.084912644,-0.801611945
+response to BMP,101,2.052524237,-0.792693519
+regulation of cellular response to growth factor stimulus,189,2.091710232,-0.76170826
+lymphocyte activation,496,2.118033121,-0.761468717
+cell activation involved in immune response,186,2.098858063,-0.757228084
+leukocyte activation involved in immune response,182,2.098114742,-0.755666836
+positive regulation of response to external stimulus,249,2.095721883,-0.75535044
+female pregnancy,115,2.076123038,-0.755234831
+animal organ morphogenesis,564,2.114452393,-0.751829814
+response to xenobiotic stimulus,267,2.132614965,-0.747360579
+regulation of epithelial cell migration,184,2.076101183,-0.741645878
+actin cytoskeleton organization,536,2.136878333,-0.740596324
+regulation of immune effector process,203,2.09508837,-0.726315144
+negative regulation of defense response,153,2.111048885,-0.724489171
+regulation of hemopoiesis,250,2.100256942,-0.717969615
+regulation of anatomical structure morphogenesis,635,2.133465737,-0.712340551
+positive regulation of immune effector process,138,2.097817015,-0.712247805
+tissue development,1105,2.137318379,-0.710297038
+regulation of multicellular organismal development,835,2.116046037,-0.705068315
+regulation of response to external stimulus,570,2.125800721,-0.697891422
+response to transforming growth factor beta,187,2.146189983,-0.696544913
+regulation of cell population proliferation,1038,2.15119956,-0.695083506
+reactive oxygen species metabolic process,163,2.106880056,-0.692314225
+negative regulation of cell population proliferation,472,2.14516794,-0.681750287
+regulation of production of molecular mediator of immune response,104,2.147086649,-0.676566971
+positive regulation of immune response,332,2.109655668,-0.673838768
+regulation of hormone levels,255,2.139203356,-0.671099427
+negative regulation of cell differentiation,379,2.146638783,-0.668001073
+regulation of synapse structure or activity,122,2.168099109,-0.666255485
+regulation of actin filament-based process,297,2.13274348,-0.666202216
+regulation of transporter activity,156,2.13013771,-0.663662245
+positive regulation of cell differentiation,543,2.138710403,-0.659571557
+response to nutrient,117,2.076261944,-0.658876846
+response to hypoxia,214,2.139212447,-0.654821565
+response to toxic substance,160,2.096326816,-0.650940007
+immune response-regulating signaling pathway,298,2.153200425,-0.641500414
+defense response,923,2.133258544,-0.641384896
+tissue morphogenesis,369,2.150744946,-0.640853112
+regulation of transmembrane transport,297,2.12472229,-0.634166807
+cell morphogenesis,655,2.189499584,-0.620872003
+regulation of membrane potential,204,2.119251121,-0.601596201
+negative regulation of immune response,132,2.14249369,-0.599395878
+osteoblast differentiation,150,2.118702088,-0.595211401
+positive regulation of defense response,159,2.137347255,-0.592985779
+cellular chemical homeostasis,476,2.193721957,-0.591064103
+regulation of hormone secretion,133,2.174464218,-0.584067265
+negative regulation of cell growth,133,2.13863319,-0.581775288
+positive regulation of transmembrane transport,129,2.028806596,-0.577328849
+cellular modified amino acid metabolic process,116,2.14203952,-0.576577032
+anatomical structure maturation,121,2.131805346,-0.576401383
+developmental growth involved in morphogenesis,158,2.155638469,-0.573747345
+temperature homeostasis,115,2.098822032,-0.573168274
+regulation of immune response,555,2.174887101,-0.571499473
+cell surface receptor signaling pathway,1650,2.197623233,-0.555807367
+appendage development,105,2.182030623,-0.554555314
+regulation of cell differentiation,958,2.178456549,-0.554444089
+regulation of synaptic plasticity,103,2.14187062,-0.553443052
+response to oxygen levels,248,2.174363478,-0.540730769
+cellular response to biotic stimulus,152,2.157641061,-0.536390958
+lipid localization,263,2.150090571,-0.530838657
+organic hydroxy compound metabolic process,320,2.176348092,-0.528196572
+cellular component morphogenesis,465,2.212526516,-0.527735219
+positive regulation of secretion,184,2.188944318,-0.527558782
+nervous system process,437,2.191077041,-0.527043427
+hematopoietic or lymphoid organ development,598,2.205568996,-0.524664611
+regulation of anatomical structure size,350,2.192930502,-0.512528055
+positive regulation of secretion by cell,172,2.199660902,-0.507444905
+defense response to other organism,596,2.172498986,-0.506098379
+regulation of cold-induced thermogenesis,101,2.108404617,-0.504574883
+cold-induced thermogenesis,101,2.108404617,-0.504574883
+homeostatic process,1100,2.213270079,-0.503414053
+positive regulation of nervous system development,164,2.166763669,-0.503287356
+response to external biotic stimulus,828,2.169641647,-0.501482527
+viral entry into host cell,102,2.043590137,-0.501289457
+alcohol metabolic process,232,2.173964338,-0.495876417
+regionalization,160,2.200470825,-0.485934331
+axon ensheathment,102,2.160410267,-0.48543391
+cell development,1248,2.224483605,-0.482845121
+regulation of developmental growth,202,2.196369327,-0.477794015
+animal organ development,2045,2.219743222,-0.474457862
+regulation of secretion by cell,328,2.200410865,-0.472666311
+developmental cell growth,157,2.195999006,-0.461941575
+cellular response to chemical stimulus,1947,2.223562262,-0.461313105
+response to oxygen-containing compound,1091,2.211061819,-0.460560117
+embryonic morphogenesis,345,2.199171239,-0.45865275
+regulation of trans-synaptic signaling,223,2.190099143,-0.457668665
+cell differentiation,2401,2.23381902,-0.446464601
+signal release,250,2.22093171,-0.44613328
+response to hormone,590,2.228742505,-0.437352502
+sex differentiation,142,2.20891626,-0.435178547
+ion transmembrane transport,560,2.207798227,-0.433561763
+response to inorganic substance,378,2.189060335,-0.432956881
+positive regulation of signal transduction,996,2.237215707,-0.43222694
+reproductive structure development,246,2.180099501,-0.431720004
+development of primary sexual characteristics,122,2.21262299,-0.429038359
+positive regulation of cell communication,1101,2.237310978,-0.426948927
+negative regulation of cell communication,907,2.234711328,-0.425906084
+endocytosis,419,2.231073005,-0.423723665
+system development,2852,2.23797566,-0.419411804
+regulation of small molecule metabolic process,225,2.188689122,-0.418271957
+negative regulation of signal transduction,861,2.234886472,-0.417943587
+small molecule biosynthetic process,374,2.215701479,-0.415635521
+positive regulation of cell death,439,2.20736493,-0.406193973
+synaptic signaling,341,2.234179584,-0.405970638
+cellular response to endogenous stimulus,876,2.22413369,-0.402377563
+regulation of transport,1069,2.24196616,-0.39946674
+intracellular signal transduction,1872,2.258072087,-0.394602704
+regulation of neurotransmitter levels,111,2.219758147,-0.393155596
+response to organic substance,1991,2.238009826,-0.392072203
+forebrain development,222,2.219446032,-0.385480791
+regulation of cell communication,2173,2.25331437,-0.373000607
+secretion by cell,487,2.22726534,-0.372781545
+regulation of signal transduction,1974,2.255946117,-0.370859859
+response to temperature stimulus,117,2.205158678,-0.368386192
+regulation of response to cytokine stimulus,115,2.187612944,-0.368337856
+cellular response to external stimulus,255,2.225400404,-0.358843637
+cell surface receptor signaling pathway involved in cell-cell signaling,352,2.264645731,-0.350978046
+regulation of cell death,1103,2.250672085,-0.327325021
+neuron death,257,2.238001685,-0.325426511
+negative regulation of molecular function,734,2.252608895,-0.324950454
+telencephalon development,156,2.215662078,-0.321468289
+small molecule catabolic process,247,2.194741187,-0.320130011
+regulation of cell growth,297,2.225938435,-0.318579163
+establishment of cell polarity,109,2.254789191,-0.316890444
+response to nitrogen compound,762,2.25155383,-0.313715824
+negative regulation of cell death,663,2.258014316,-0.304391196
+positive regulation of molecular function,1038,2.271104848,-0.303014584
+response to extracellular stimulus,345,2.237546933,-0.299485565
+regulation of catalytic activity,1689,2.275861141,-0.299267786
+head development,506,2.26011153,-0.298839979
+dendrite development,168,2.259586359,-0.296650687
+response to oxidative stress,343,2.24710646,-0.294361675
+lipid metabolic process,874,2.253471946,-0.292564802
+embryo development,658,2.261306774,-0.292462835
+negative regulation of cellular component organization,504,2.274438503,-0.289716797
+regulation of response to stress,881,2.256235245,-0.288510159
+cell-cell signaling by wnt,313,2.275359055,-0.283816263
+erythrocyte homeostasis,108,2.233759374,-0.277860448
+response to virus,261,2.248133876,-0.277201312
+regulation of DNA-binding transcription factor activity,301,2.270567105,-0.276166138
+regulation of response to biotic stimulus,219,2.239351748,-0.275755873
+programmed cell death,1333,2.272000403,-0.265857148
+regulation of cellular component biogenesis,713,2.278337671,-0.259408581
+organic acid metabolic process,633,2.26168871,-0.25026745
+positive regulation of cellular component biogenesis,389,2.276456133,-0.248630303
+cellular lipid metabolic process,677,2.256806501,-0.246703504
+phosphorus metabolic process,1956,2.28262499,-0.244103325
+cellular response to extracellular stimulus,197,2.24169308,-0.243149029
+apoptotic signaling pathway,455,2.272395855,-0.235285129
+pallium development,111,2.243201379,-0.225840515
+biological process involved in interaction with host,152,2.238168311,-0.224755751
+regulation of vesicle-mediated transport,369,2.258607573,-0.224686243
+regulation of cell division,103,2.239654065,-0.219380653
+cellular carbohydrate metabolic process,207,2.235283122,-0.218888866
+sulfur compound metabolic process,240,2.251606154,-0.21479702
+cellular ketone metabolic process,136,2.207902868,-0.211092219
+regulation of cellular component organization,1623,2.285076026,-0.209720753
+monosaccharide metabolic process,193,2.228553952,-0.207530672
+tube formation,101,2.229427153,-0.200088838
+organophosphate metabolic process,695,2.264503242,-0.198217416
+positive regulation of cellular component organization,772,2.280624015,-0.181608198
+nucleobase-containing small molecule metabolic process,424,2.259549472,-0.178056575
+carbohydrate metabolic process,425,2.240967283,-0.168929977
+cellular response to environmental stimulus,237,2.258032863,-0.166944924
+cellular response to abiotic stimulus,237,2.258032863,-0.166944924
+exocytosis,234,2.249210868,-0.162594469
+positive regulation of protein transport,236,2.278464931,-0.159911984
+germ cell development,126,2.255227427,-0.158688383
+intracellular receptor signaling pathway,202,2.288659158,-0.147880609
+regulation of binding,280,2.275454057,-0.142471315
+regulation of protein localization,645,2.287132452,-0.130431949
+carbohydrate derivative metabolic process,749,2.26225157,-0.130381429
+positive regulation of cell growth,118,2.248700132,-0.121770224
+response to starvation,159,2.281952415,-0.082884834
+regulation of cellular localization,625,2.291024141,-0.07985278
+positive regulation of cellular protein localization,226,2.286197944,-0.075165737
+transport,2916,2.297881887,-0.074581681
+regulation of cellular response to stress,509,2.289846136,-0.063579289
+regulation of viral life cycle,111,2.211188162,-0.036667626
+microtubule cytoskeleton organization,408,2.268051692,-0.028918077
+macromolecule glycosylation,168,2.213854883,-0.028469239
+cellular component organization,4071,2.301007954,-0.025382609
+positive regulation of macromolecule metabolic process,2348,2.294089253,-0.025218014
+cellular amino acid metabolic process,195,2.279679316,-0.024369051
+hormone-mediated signaling pathway,128,2.288536023,-0.014448193
+negative regulation of cellular metabolic process,1748,2.298611389,-0.00975027
+negative regulation of nitrogen compound metabolic process,1634,2.29884575,-0.009095
+negative regulation of macromolecule metabolic process,1907,2.296953748,0.003578155
+positive regulation of cellular metabolic process,2256,2.298534393,0.006399195
+regulation of microtubule-based process,168,2.258528679,0.011286062
+generation of precursor metabolites and energy,382,2.237933389,0.020096732
+positive regulation of intracellular transport,169,2.242821303,0.02777536
+positive regulation of nitrogen compound metabolic process,2114,2.298199089,0.028723893
+response to topologically incorrect protein,139,2.282958956,0.030153191
+localization within membrane,505,2.297576664,0.040756987
+negative regulation of biosynthetic process,1126,2.297464943,0.047128911
+organonitrogen compound metabolic process,4408,2.299916841,0.057221821
+positive regulation of biosynthetic process,1383,2.294728989,0.06975187
+negative regulation of cell cycle,269,2.274637913,0.074262439
+regulation of cell cycle,731,2.294018258,0.077059141
+vesicle-mediated transport in synapse,119,2.263493282,0.086985715
+regulation of macromolecule metabolic process,4075,2.299108052,0.087106403
+cellular component biogenesis,2242,2.29828717,0.08919807
+regulation of cellular metabolic process,4030,2.29968832,0.089805119
+gamete generation,346,2.291103414,0.093293109
+regulation of primary metabolic process,3844,2.299386109,0.094985693
+response to radiation,310,2.271350121,0.097108634
+cellular response to stress,1453,2.296799995,0.099912861
+regulation of nitrogen compound metabolic process,3735,2.299017595,0.103149456
+organic substance catabolic process,1529,2.289298132,0.110302626
+protein metabolic process,3804,2.296980416,0.114242009
+microtubule-based movement,202,2.253653323,0.123029878
+organic substance biosynthetic process,4030,2.293944238,0.135934449
+cytokinesis,123,2.238762184,0.136335059
+cellular biosynthetic process,3987,2.293682498,0.137107074
+positive regulation of cell cycle,200,2.283884994,0.13801961
+protein localization,1921,2.294405281,0.146219104
+regulation of biosynthetic process,2797,2.294271128,0.164627018
+establishment of localization in cell,1574,2.289625537,0.17507963
+cellular macromolecule metabolic process,5455,2.291410503,0.180618826
+cellular macromolecule localization,1395,2.287710005,0.183262198
+macromolecule metabolic process,6325,2.292441196,0.184243989
+microtubule organizing center organization,108,2.193330576,0.192266384
+cellular catabolic process,1685,2.284127564,0.193508519
+oxidative phosphorylation,115,2.09500131,0.194328085
+mitotic cell cycle,639,2.281911029,0.194916047
+positive regulation of catabolic process,412,2.287081255,0.203693115
+regulation of protein stability,256,2.270922718,0.206845761
+regulation of catabolic process,786,2.286232672,0.218944548
+mitotic cell cycle process,523,2.273205089,0.219411108
+spermatogenesis,259,2.281869814,0.221874652
+regulation of cell cycle process,445,2.270176008,0.235839538
+positive regulation of cell cycle process,145,2.276879225,0.236606781
+negative regulation of catabolic process,244,2.272297083,0.245861549
+establishment of organelle localization,294,2.282448315,0.253822244
+organic cyclic compound metabolic process,4115,2.280065559,0.256910124
+negative regulation of cell cycle process,204,2.241101021,0.261772638
+cellular nitrogen compound metabolic process,4443,2.277846503,0.26224974
+establishment of protein localization,1366,2.28240474,0.263455912
+cell cycle phase transition,367,2.256063473,0.270506307
+autophagy,461,2.275795744,0.278569751
+cellular aromatic compound metabolic process,3980,2.27547108,0.28310484
+organelle localization,395,2.278074769,0.286917898
+heterocycle metabolic process,3959,2.273785275,0.29158453
+vesicle-mediated transport to the plasma membrane,123,2.253510372,0.292984342
+nucleobase-containing compound metabolic process,3861,2.271783887,0.303994375
+spindle organization,138,2.230553964,0.329819756
+intracellular transport,1256,2.256229652,0.335924294
+lysosomal transport,101,2.237532432,0.368688999
+endosomal transport,205,2.187395265,0.54229955
+translational initiation,109,2.081837572,0.576409828
+nuclear chromosome segregation,173,2.145647062,0.592530202
+Golgi vesicle transport,268,2.124145393,0.658638663
+macromolecule methylation,244,2.090157159,0.693218211
+regulation of RNA stability,141,2.100137563,0.712725126
+RNA localization,179,2.001019011,0.960173316
+establishment of RNA localization,145,2.009035879,0.976236618
