@@ -519,6 +519,8 @@ the top and bottom 5% of the across-study mean rank metric.
 
 3. SI data 5 - GO enrichment - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
+5. SI data 6 - Level-3 GO terms - Skewness by Shannon entropy for all level-3 GO terms.
+
 # Author Contributions
 
 **Conceptualization**: S.W., D.M., L.P., and J.A.
