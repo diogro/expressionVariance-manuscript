@@ -145,8 +145,8 @@ The final list of genes used from each study can be found in SI data 2.
 
 ## Variation or variability?
 
-There is some confusion in the literature as to how to refer to the different levels of variation that are possible in gene expression, and the type of variation that we refer to here as _gene expression variance_ or 
-_transcriptional variance_ has also been called gene expression variability or even gene expression noise. Following @Wagner1996-hp, we suggest that variation and variability should be distinguished, and variation should be used to refer to the realized differences across some population at any organization scale.
+There is no consensus in the literature as to how to refer to the different levels of variation that are possible in gene expression, and the type of variation that we refer to here as _gene expression variance_ or _transcriptional variance_ has also been called gene expression variability or even gene expression noise.
+Following @Wagner1996-hp, we suggest that variation and variability should be distinguished, and variation should be used to refer to the realized differences across some population at any organization scale.
 For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, or whatever replicated level we are using), leading to a high transcriptional variance (how we actually measure variation).
 We would then specify at which level of variation we are working with: across individuals, across cells, within genotypes, and so on.
 In contrast, variability should refer to the potential to generate variation.
@@ -186,7 +186,7 @@ Ordering genes using these scores generate a ranked list of genes, with the most
 The position in the SD distributions shown in @fig:sd_corr D of the most and least variable genes in this rank illustrates how the extremes of the rank are indeed some of the least and most variable genes across all studies.
 In addition, to be able to account for any residual effect of mean expression on the variance we also created a similar across-study rank for mean expression.
 To explore tissue-specific divers or transcriptional variation, we also create a set of tissue-specific SD ranks.
-To that end, we used the same procedure outlined above but using only studies that were performed on  the same tissue.
+To that end, we used the same procedure outlined above but using only studies that were performed on the same tissue.
 Both tissue-specific and across-study ranks are available in the Supporting Information (SI data 4).
 
 ## Biological function explains gene-level transcriptional variance
