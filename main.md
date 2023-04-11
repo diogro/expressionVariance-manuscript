@@ -150,7 +150,8 @@ Following @Wagner1996-hp, we suggest that variation and variability should be di
 For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, or whatever replicated level we are using), leading to a high transcriptional variance (how we actually measure variation).
 We would then specify at which level of variation we are working with: across individuals, across cells, within genotypes, and so on.
 In contrast, variability should refer to the potential to generate variation.
-So, a gene might have low variation, with all individuals in a population having a similar expression of the gene, but also have a large mutational target for its expression level, leading to many potential mutations that would cause its expression level to change, and therefore have high variability.
+For example, a given gene might have low realized variation because all individuals in a population have a similar genotype and environment, which leads to similar expression levels across individuals.
+At the same time, this same gene can also have a large mutational target for its expression level, leading to many potential mutations that would cause its expression level to change, and therefore we would consider this gene to have high variability and low variation.
 It should be clear that in this manuscript we are interested in population level, across individual, realized variation in gene expression, measured as gene expression variance.
 Since we are using phenotypic variation, the variance we measure is a combination of the contribution of several sources, both genetic, due to segregating expression quantitative trait loci (eQTL) or variance QTL (vQTL), and whatever environmental differences there are across the individuals in a particular study.
 
