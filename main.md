@@ -137,7 +137,7 @@ Finally, we explore the link between gene expression variance and biological fun
 
 We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in the supporting information (SI data 1).
 We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not included data from non-baseline/exposure/stimulated datasets).
-Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation, specially variation due to segregating genetic variation, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
+Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation, in particular, variation due to segregating genetic variation, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
 These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Several data sets were derived from two large consortia: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note the origin of the data sets in the figures where appropriate.
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
@@ -240,7 +240,7 @@ While the above analyses show that high-variance genes tend to overlap with gene
 ## Evolutionary forces at play in shaping transcriptional variance
 
 We use three gene-level summary statistics, nucleotide diversity (π), gene expression connectivity, and the rate of adaptive substitutions (α), as a proxy to assess whether selection might be involved in shaping gene expression variance.
-For all the correlations in this section, we use partial Spearman correlations that include the mean gene expression rank as a covariate, which accounts for any residual mean-variance correlation (Spearman correlation between mean and sd ranks, ρ~s~ = -0.07, p < 10^-18^).
+For all the correlations in this section, we use partial Spearman correlations that include the mean gene expression rank as a covariate, which accounts for any residual mean-variance correlation (Spearman correlation between mean and SD ranks, ρ~s~ = -0.07, p < 10^-18^).
 Nucleotide diversity in the gene region is used as a proxy for the impact of cis-regulatory genetic variation on transcriptional variance.
 As expected, low-variance genes tend to have lower levels of polymorphisms (partial Spearman correlation, ρ~s~ = 0.184, p < 10^-87^).
 Gene-gene connectivity, a proxy for gene regulatory interactions and selective constraints [@Mahler2017-bb], is, in turn, negatively correlated with the expression variance (partial Spearman correlation, ρ~s~ = -0.08, p < 10^-21^), supporting the expectation that highly connected genes are more constrained in their variation.
@@ -315,9 +315,9 @@ One interesting aspect of the GO term analysis shown in @fig:skew_entropy and @f
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation.
 For the GO terms we used, either there is no relation between the transcriptional variance and the biological process, or there is a strong bias toward high or low-variance genes.
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance-reducing selection) or (2) biological processes under disruptive selection (i.e., variance-increasing selection).
-The only outlier in the skewness-by-entropy relation is the "oxidative phosphorylation" term, which displays a relatively small entropy and a small skewness, and indeed we see that there is some enrichment for intermediate variance rank in the genes associated with this term (SI fig. **TODO**).
+The only outlier in the skewness-by-entropy relation is the "oxidative phosphorylation" term, which displays relatively low entropy and low skewness, and indeed we see that there is some enrichment for intermediate variance rank in the genes associated with this term (SI fig. **TODO**).
 This term being the only outlier in the skewness-by-variance relation is interesting, as cell respiration has a particular mixture of being both a base cell process [@Das2006-ez], like the other low-variance biased terms, and being a process that must react to the environmental conditions in a dynamic fashion [@Caja2017-oi; @Hoppins2014-fq], similar to the other high-variance biased terms.
-While we can not be certain of what is driving the enrichment for intermediate-variance genes, this particular combination is suggestive that the enrichment for intermediate variance genes is related to a combination of the selective regimes we outline above.
+While we can not be certain of what is driving the enrichment for intermediate-variance genes, this combination is suggestive that the enrichment for intermediate variance genes is related to a combination of the selective regimes we outline above.
 In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
 Following Alemu et al. [@Alemu2014-jo], we observe that epigenetic signatures of gene regulation, such as enhancer histone marks, make up a higher proportion of the surrounding genomic regions of genes that exhibit higher variance in expression.
@@ -519,7 +519,7 @@ the top and bottom 5% of the across-study mean rank metric.
 
 3. SI data 5 - GO enrichment - Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
-5. SI data 6 - Level-3 GO terms - Skewness by Shannon entropy for all level-3 GO terms.
+4. SI data 6 - Level-3 GO terms - Skewness by Shannon entropy for level-3 GO terms.
 
 # Author Contributions
 
