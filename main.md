@@ -208,7 +208,7 @@ Genes with a high pLI have been shown to be important in housekeeping functions 
 ![Relationship between skew and entropy of rank decile distributions for each GO term. High entropy terms, to the right of the plot, are associated with a more egalitarian proportion of genes in each of the SD rank deciles. The terms on the left of the plot are associated with more genes in some particular decile. The skewness in the y-axis measures if the high- or low-variance deciles are more represented for a particular term. Terms on the positive side of the y-axis are associated with low-variance genes, and terms on the negative side of the y-axis are associated with high-variance genes. The GO terms are filtered for gene counts greater than 100, as in @fig:go_skewness. Some of the top high- and low-skewness terms are labeled for illustration.](figures/GOterm_entropy_by_skewness.png){#fig:skew_entropy}
 
 In the previous analysis, we explored the relationship between transcriptional variance and function by starting from the extremes of the variance distribution and searching for GO enrichment among these high- and low-variance genes.
-We also approach the problem from the opposite direction, starting from the genes associated with each GO term and searching for enrichment for high- or low-variance genes among them.
+We also approach the problem from the opposite direction, starting from the genes associated with each GO term and searching for enrichment for high- or low-variance genes among them, as this allows to probe the link between variation and function across the full variance rank.
 To this end, we gathered all biological process GO terms in level 3 (i.e., terms that are at a distance of 3 from the top of the GO hierarchy).
 Using level-3 terms gives us a good balance between number of terms and genes per term.
 We separated the genes associated with at least one of these level-3 terms into expression variance deciles, with the first decile having the lowest variance.
@@ -218,7 +218,7 @@ We measured how far from this uniform allocation each term is by measuring the S
 Higher entropy is associated with a more uniform distribution of genes across deciles.
 GO terms with low entropy indicate some deciles are over-represented in the genes associated with that term.
 We also measured skewness for each term, which should be zero if no decile is over-represented, negative if high-variance terms are over-represented, and positive if low-variance deciles are over-represented.
-The relation between skewness and entropy for each GO term can be seen in @fig:skew_entropy.
+The relation between skewness and entropy for each GO term can be seen in @fig:skew_entropy and in SI data 6.
 Positive-skew low-entropy terms, those enriched with low-variance genes, are associated with housekeeping functions, like RNA localization, translation initiation, methylation, and chromosome segregation (@fig:go_skewness A).
 Likewise, terms with negative skew and low entropy, enriched for high-variance genes, are related to immune response, tissue morphogenesis, chemotaxis---all dynamic biological functions related to interacting with the environment (@fig:go_skewness B).
 
@@ -296,6 +296,7 @@ In particular, comparing studies within GTEx was associated with higher similari
 This higher similarity could be due to some individuals being included in more than one GTEx study, and therefore the same eQTLs could be driving similarities in gene expression variance in these samples.
 However, both the effects of study origin and tissue were small, and the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues known to have divergent gene expression patterns (i.e., bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
+Also, because we are working with bulk samples, a part of these differences could be due to cell-type heterogeneity across samples [@Okada2022-xt].
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
 Even after we account for differences in mean expression, differences in gene expression variance carry information about tissue origin and function.
 

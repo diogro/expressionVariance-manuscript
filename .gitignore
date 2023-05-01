@@ -53,3 +53,5 @@ out
 revisions
 expressionVariance_SI.zip
 missfont.log
+.vscode/ltex.dictionary.en-US.txt
+.vscode/ltex.hiddenFalsePositives.en-US.txt
