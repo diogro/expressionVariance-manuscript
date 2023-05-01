@@ -136,8 +136,8 @@ Finally, we explore the link between gene expression variance and biological fun
 ## Data sets
 
 We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in the supporting information (SI data 1).
-We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not included data from non-baseline/exposure/stimulated datasets).
-Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation, in particular, variation due to segregating genetic variation, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
+We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not include data from non-baseline/exposure/stimulated datasets).
+Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation. In particular, we are interested in variation due to segregating genetic variants, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
 These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Several data sets were derived from two large consortia: GTEx [@GTEx2017-xb] and TCGA [@tcga2013-gx], and we note the origin of the data sets in the figures where appropriate.
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
@@ -145,15 +145,16 @@ The final list of genes used from each study can be found in SI data 2.
 
 ## Variation or variability?
 
-There is no consensus in the literature as to how to refer to the different levels of variation that are possible in gene expression, and the type of variation that we refer to here as _gene expression variance_ or _transcriptional variance_ has also been called gene expression variability or even gene expression noise.
+There is no consensus in the literature as to how to refer to different levels of variation.
+The type of variation that we refer to here as _gene expression variance_ or _transcriptional variance_ has also been called gene expression variability or even gene expression noise.
 Following @Wagner1996-hp, we suggest that variation and variability should be distinguished, and variation should be used to refer to the realized differences across some population at any organization scale.
-For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, or whatever replicated level we are using), leading to a high transcriptional variance (how we actually measure variation).
+For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, etc.), leading to a high transcriptional variance (the statistical measure of variation).
 We would then specify at which level of variation we are working with: across individuals, across cells, within genotypes, and so on.
 In contrast, variability should refer to the potential to generate variation.
 For example, a given gene might have low realized variation because all individuals in a population have a similar genotype and environment, which leads to similar expression levels across individuals.
 At the same time, this same gene can also have a large mutational target for its expression level, leading to many potential mutations that would cause its expression level to change, and therefore we would consider this gene to have high variability and low variation.
 It should be clear that in this manuscript we are interested in population level, across individual, realized variation in gene expression, measured as gene expression variance.
-Since we are using phenotypic variation, the variance we measure is a combination of the contribution of several sources, both genetic, due to segregating expression quantitative trait loci (eQTL) or variance QTL (vQTL), and whatever environmental differences there are across the individuals in a particular study.
+Since we are using phenotypic variation, the variance we measure is a combination of the contribution of several sources, spanning genetic (e.g., due to segregating expression quantitative trait loci (eQTL) or variance QTL (vQTL)) and environmental differences across individuals.
 
 ## Gene expression variance
 
@@ -292,7 +293,7 @@ Using this rank, we were able to study the general properties associated with hi
 Some differences in gene expression variance were driven by technical aspects of gene expression measurement (with data derived from large consortia showing more similar patterns of variance across genes), and by tissue (with studies using the same tissues also showing higher similarities).
 This suggests that careful consideration of sample sizes and experimental design are fundamental to the study of gene expression variance, and the usual small samples of RNA-seq studies might be underpowered for the study of this particular aspect of gene expression.
 In particular, comparing studies within GTEx was associated with higher similarities in gene expression variance rank. 
-This higher similarity could be due to some individuals being included in more than one GTEx study, and therefore the same eQTLs could be driving gene expression variance in these samples and therefore leading to higher similarities.
+This higher similarity could be due to some individuals being included in more than one GTEx study, and therefore the same eQTLs could be driving similarities in gene expression variance in these samples.
 However, both the effects of study origin and tissue were small, and the largest drivers of differences across studies were idiosyncratic differences related to single data sets, with tissues known to have divergent gene expression patterns (i.e., bone marrow, blood, testis, and platelets) also showing the largest differences in gene expression variance.
 Understanding the consequences of these differences in variance for specific tissues is still an open field.
 It is clear, however, that differences in variance are informative beyond the differences in mean expression.
@@ -317,8 +318,6 @@ In other words, there is no annotated biological process for which the associate
 For the GO terms we used, either there is no relation between the transcriptional variance and the biological process, or there is a strong bias toward high or low-variance genes.
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance-reducing selection) or (2) biological processes under disruptive selection (i.e., variance-increasing selection).
 The only outlier in the skewness-by-entropy relation is the "oxidative phosphorylation" term, which displays relatively low entropy and low skewness, and indeed we see that there is some enrichment for intermediate variance rank in the genes associated with this term (SI fig. 6).
-This term being the only outlier in the skewness-by-variance relation is interesting, as cell respiration has a particular mixture of being both a base cell process [@Das2006-ez], like the other low-variance biased terms, and being a process that must react to the environmental conditions in a dynamic fashion [@Caja2017-oi; @Hoppins2014-fq], similar to the other high-variance biased terms.
-While we cannot be certain of what is driving the enrichment for intermediate-variance genes, this combination is suggestive that the enrichment for intermediate variance genes is related to a combination of the selective regimes we outline above.
 In short, we find strong support for the idea that there are genes with consistently more (or less) variable expression levels, and that these differences in variance are the result of different patterns of selection.
 
 Following Alemu et al. [@Alemu2014-jo], we observe that epigenetic signatures of gene regulation, such as enhancer histone marks, make up a higher proportion of the surrounding genomic regions of genes that exhibit higher variance in expression.
@@ -503,6 +502,8 @@ with non-overlapping chromatin states through ChromHMM.
 the top and bottom 5% of the across-study mean rank metric.
 
 1. SI figure 5 - Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expression standard deviations.
+
+1. SI figure 6 - Distributions of decile ranks of the GO term oxidative phosphorylation.
 
 1. SI table 1 - Variance and mean rank metrics and the corresponding ChromHMM annotations used.
 
