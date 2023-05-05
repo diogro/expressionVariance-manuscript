@@ -143,9 +143,10 @@ Several data sets were derived from two large consortia: GTEx [@GTEx2017-xb] and
 We refer to data sets and studies interchangeably, and so each tissue in GTEx is referred to as a different study.
 The final list of genes used from each study can be found in SI data 2.
 
-## Variation or variability?
+## What level of variation are we exploring?
 
-There is no consensus in the literature as to how to refer to different levels of variation.
+Variance, variation, or variability? 
+There is no consensus in the literature as to when to refer to these different levels of variation and under what scenario. 
 The type of variation that we refer to here as _gene expression variance_ or _transcriptional variance_ has also been called gene expression variability or even gene expression noise.
 Following @Wagner1996-hp, we suggest that variation and variability should be distinguished, and variation should be used to refer to the realized differences across some population at any organization scale.
 For example, a gene will have high variation if its gene expression differs greatly across individuals (or cells, or conditions, etc.), leading to a high transcriptional variance (the statistical measure of variation).
