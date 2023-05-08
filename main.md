@@ -1,7 +1,7 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 short_title: "The landscape of transcriptional variance"
-version: "3.0"
+version: "4.0"
 author:
   - Scott Wolf:
       institute: lsi
@@ -528,10 +528,19 @@ the top and bottom 5% of the across-study mean rank metric.
 # Author Contributions
 
 **Conceptualization**: S.W., D.M., L.P., and J.A.
-**Analysis**: S.W., D.M., K.G., and A.L.
-**Draft**: D.M.
-**Review and Editing**: S.W., D.M., K.G., L.P., A.L., and J.A.
+**Data Curation**: S.W., D.M., and K.G.
+**Formal Analysis**: S.W., D.M., K.G., and A.L.
 **Funding Acquisition**: S.W., D.M., K.G., L.P., A.L., and J.A.
+**Investigation**:  S.W., D.M., K.G., and A.L.
+**Methodology**: S.W., D.M., K.G., L.P., A.L., and J.A.
+**Project Administration**: J.A.
+**Resources**: J.A.
+**Software**: S.W., D.M., and K.G.
+**Supervision**: J.A.
+**Validation**: S.W., D.M.
+**Visualization**: S.W., D.M., and K.G.
+**Writing – Original Draft Preparation**: D.M.	
+**Writing – Review & Editing**:	S.W., D.M., K.G., L.P., A.L., and J.A.
 
 # Acknowledgments
 
