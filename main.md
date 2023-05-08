@@ -54,7 +54,7 @@ geometry:
 header-includes:
 - \usepackage{amsmath}
 - \usepackage[left]{lineno}
-- \modulolinenumbers[1]
+- \modulolinenumbers[5]
 - \usepackage[backref=true,style=authoryear]{biblatex}
 - \DefineBibliographyStrings{english}{backrefpage = {page}, backrefpages = {pages}}
 - \usepackage{multicol}
@@ -89,7 +89,7 @@ Gene expression variance, or the variation in the level of gene expression withi
 
 # Introduction
 \linenumbers
-\doublespacing
+\onehalfspacing
 
 Molecular phenotypes such as gene expression are powerful tools for understanding physiology, disease, and evolutionary adaptations.
 In this context, average trait values are usually the focus of investigation, while variation around the average is often considered a nuisance and treated as noise [@De_Jong2019-po].
