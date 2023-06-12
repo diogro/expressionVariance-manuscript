@@ -413,7 +413,7 @@ These PCA plots before and after batch correction and outlier removal are also i
 After all sample filtering, the mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
 Gene expression standard deviations (SDs) are measured as the residual standard deviations after fixed effect correction and outlier removal.
 We choose standard deviation as a measure of variation to have a statistic on a linear scale, and we do not use the coefficient of variation because we have already corrected for mean differences and for the mean-variance relation inherent to RNA-seq count data [@De_Jong2019-po].
-The full annotated pipeline is available on GitHub at [github.com/ayroles-lab/expressionVariance-code](https://github.com/ayroles-lab/expressionVariance-code).
+The full annotated pipeline is available on GitHub at [github.com/ayroles-lab/expressionVariance-code](https://github.com/ayroles-lab/expressionVariance-code) and is archived at [doi: 10.5281/zenodo.8028650](https://doi.org/10.5281/zenodo.8028650).
 
 ## Correlations in transcriptional variance
 
