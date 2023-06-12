@@ -1,6 +1,6 @@
 # Description
 
-Repository for the manuscript source and supporting information for: Characterizing the landscape of gene expression variance in humans
+Repository for the manuscript source and supporting information for: "Characterizing the landscape of gene expression variance in humans"
 Scott Wolf, Diogo Melo, Kristina M. Garske, Luisa F. Pallares, Amanda J. Lea, Julien F. Ayroles
 bioRxiv 2022.11.15.516646; doi: https://doi.org/10.1101/2022.11.15.516646
 
