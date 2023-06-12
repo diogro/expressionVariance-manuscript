@@ -505,11 +505,9 @@ Supporting information is available at [github.com/ayroles-lab/expressionVarianc
 
 1. SI figure 2 -- GO enrichment analysis of the most and least variable genes.
 
-1. SI figure 3 -- Across-study and tissue-specific gene expression variance and mean correlations
-with non-overlapping chromatin states through ChromHMM.
+1. SI figure 3 -- Across-study and tissue-specific gene expression variance and mean correlations with non-overlapping chromatin states through ChromHMM.
 
-1. SI figure 4 -- Proportion of gene regions made up of ChromHMM chromatin states for genes in
-the top and bottom 5% of the across-study mean rank metric.
+1. SI figure 4 -- Proportion of gene regions made up of ChromHMM chromatin states for genes in the top and bottom 5% of the across-study mean rank metric.
 
 1. SI figure 5 -- Scree plot showing variance explained by each PC of the across-study Spearman correlation matrix of gene expression standard deviations.
 
