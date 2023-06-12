@@ -506,7 +506,7 @@ Supporting information is available at [github.com/ayroles-lab/expressionVarianc
 
 1. SI figure 2 -- GO enrichment analysis of the most and least variable genes.
 
-2. SI figure 3 -- Across-study and tissue-specific gene expression variance and mean correlations
+1. SI figure 3 -- Across-study and tissue-specific gene expression variance and mean correlations
 with non-overlapping chromatin states through ChromHMM.
 
 1. SI figure 4 -- Proportion of gene regions made up of ChromHMM chromatin states for genes in
@@ -528,11 +528,11 @@ the top and bottom 5% of the across-study mean rank metric.
 
 1. SI data 3 -- Gene expression means and standard deviations. Tables with final calculated means and standard deviations.
 
-2. SI data 4 -- Gene ranks. Gene expression mean and variance ranks, across-study and tissue-specific.
+1. SI data 4 -- Gene ranks. Gene expression mean and variance ranks, across-study and tissue-specific.
 
-3. SI data 5 -- GO enrichment. Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
+1. SI data 5 -- GO enrichment. Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
-4. SI data 6 -- Level-3 GO terms. Skewness by Shannon entropy for level-3 GO terms.
+1. SI data 6 -- Level-3 GO terms. Skewness by Shannon entropy for level-3 GO terms.
 
 # Author Contributions
 
