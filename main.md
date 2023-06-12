@@ -499,7 +499,7 @@ Code for reproducing all analyses and figures, along with a walk-through, is ava
 
 ## Supporting information
 
-Supporting information is available at [github.com/ayroles-lab/expressionVariance-manuscript](https://github.com/ayroles-lab/expressionVariance-manuscript).
+Supporting information is available at [github.com/ayroles-lab/expressionVariance-manuscript](https://github.com/ayroles-lab/expressionVariance-manuscript) and is archived at [doi: 10.5281/zenodo.8028690](https://doi.org/10.5281/zenodo.8028690).
 
 1. SI figure 1 -- Modeling the correlations between transcriptional variance across studies.
 
