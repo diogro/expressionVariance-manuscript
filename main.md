@@ -1,7 +1,7 @@
 ---
 title: "Characterizing the landscape of gene expression variance in humans"
 short_title: "The landscape of transcriptional variance"
-version: "4.0"
+version: "5.0"
 author:
   - Scott Wolf:
       institute: lsi
