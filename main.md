@@ -40,7 +40,7 @@ institute:
   - fml:
       name: "Friedrich Miescher Laboratory of the Max Planck Society, Tübingen, Germany"
   - van:
-      name: "Department of Biological Sciences, Vanderbilt University, Nashville, Tennessee, United States of America."
+      name: "Department of Biological Sciences, Vanderbilt University, Nashville, Tennessee, United States of America"
   - ciar:
       name: "Child and Brain Development, Canadian Institute for Advanced Research, Toronto, Canada"
 
