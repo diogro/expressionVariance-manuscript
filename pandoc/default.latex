@@ -446,6 +446,14 @@ $else$
 \newfontfamily\titlefont{$mainfont$}
 $endif$
 
+$if(sectionfont)$
+\usepackage{titlesec}
+\newfontfamily\sectionfont{$sectionfont$}
+\titleformat*{\section}{\Large\bfseries\sectionfont}
+\titleformat*{\subsection}{\large\bfseries\sectionfont}
+\titleformat*{\subsubsection}{\normalsize\bfseries\sectionfont}
+$endif$
+
 \begin{document}
 $if(has-frontmatter)$
 \frontmatter
