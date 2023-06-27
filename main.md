@@ -73,7 +73,6 @@ figureTitle: "Fig"
 figPrefix:
   - "Fig"
   - "Figs"
-fignos-caption-name: "Fig"
 mainfont: Skolar PE
 mainfontoptions:
 - Numbers=Lowercase
