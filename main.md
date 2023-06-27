@@ -81,6 +81,7 @@ mainfontoptions:
 csl: ./pandoc/plos.csl
 sansfont: Skolar Sans PE
 titlefont: Skolar Sans PE
+sectionfont: Skolar Sans PE
 bibliography: [references.bib]
 ---
 
@@ -142,7 +143,7 @@ Finally, we explore the link between gene expression variance and biological fun
 
 ## Data sets
 
-We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in Table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in S1 Dataset.
+We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in Table 1 of the [Methods](#Methods) section, and a complete metadata table for each study is available in S1 Dataset.
 We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not include data from non-baseline/exposure/stimulated datasets).
 Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation. In particular, we are interested in variation due to segregating genetic variants, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
 These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
@@ -521,7 +522,7 @@ Code for reproducing all analyses and figures, along with a walk-through, is ava
 **Writing – Original Draft Preparation**: D.M.	
 **Writing – Review & Editing**:	S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A. -->
 
-# Acknowledgments
+## Acknowledgments
 
 We thank all members of the Ayroles lab for their support. We thank Noah Rose and Cara Weisman for their thoughtful comments. We thank Pedro Madrigal for help with the Expression Atlas interface. 
 <!-- S.W. is supported by the National Science Foundation Graduate Research Fellowship Program (DGE-2039656). D.M. is funded by a fellowship from the Princeton Presidential Postdoctoral Research Fellows Program. K.M.G. is funded by National Institutes of Health (NIH) grant F32ES034668. L.F.P. was funded by a Long-Term Postdoctoral Fellowship from the Human Frontiers Science Program and is funded by the Max Planck Society. J.F.A. is funded by grants from the NIH: National Institute of Environmental Health Sciences (R01-ES029929) and National Institute of General Medical Sciences (NIGMS) (R35GM124881). A.J.L. is supported by the Canadian Institute for Advanced Research Global Scholars Program, the Searle Scholars Program, and through the NIH/NIGMS (R35GM147267). -->
@@ -532,9 +533,9 @@ We also acknowledge that the work reported in this paper was substantially perfo
 ::: {#refs}
 :::
 
-# Supporting information
+## Supporting information
 
-All relevant data are within the paper and its Supporting Information files, and at https://github.com/diogro/expressionVariance-manuscript (archived at [doi: 10.5281/zenodo.8028690](https://doi.org/10.5281/zenodo.8028690)).
+Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/expressionVariance-code](https://github.com/ayroles-lab/expressionVariance-code). All relevant data are within the paper and its Supporting Information files, and at [github.com/diogro/expressionVariance-manuscript](https://github.com/diogro/expressionVariance-manuscript) (archived at [doi: 10.5281/zenodo.8028690](https://doi.org/10.5281/zenodo.8028690)).
 
 1. S1 Fig -- Modeling the correlations between transcriptional variance across studies.
 
