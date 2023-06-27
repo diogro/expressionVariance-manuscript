@@ -16,6 +16,7 @@ author:
       correspondence: "yes"
       orcid: 0000-0002-7603-0092
       equal_contributor: "yes"
+      initial: DM
   - Kristina M. Garske:
       institute: lsi
       orcid: 0000-0002-7228-8125
@@ -32,6 +33,7 @@ author:
       email: jayroles@princeton.edu
       correspondence: "yes"
       orcid: 0000-0001-8729-0511
+      initial: JFA
 institute:
   - lsi:
       name: Lewis-Sigler Institute for Integrative Genomics, Princeton University, Princeton, New Jersey, United States of America
@@ -67,9 +69,11 @@ header-includes:
 - \hideFromPandoc{ \let\Begin\begin \let\End\end}
 - \addbibresource{references.bib}
 link-citations: yes
+figureTitle: "Fig"
 figPrefix:
   - "Fig"
   - "Figs"
+fignos-caption-name: "Fig"
 mainfont: Skolar PE
 mainfontoptions:
 - Numbers=Lowercase
@@ -134,11 +138,11 @@ Finally, we explore the link between gene expression variance and biological fun
 
 \vspace{0.5cm}
 
-![Overview of the distribution of transcriptional variance across studies. (A) Heatmap showing the correlation in transcriptional variance across studies (as the Spearman correlation of gene expression standard deviations). Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in Fig S1A. (B) Distribution of the pairwise Spearman correlations between studies shown in the previous panel. (C) PCoA using the distance between studies derived from the pairwise correlations. (D) Density plot of standard deviations after z-normalization. Each distribution is colored by study. The inset plot shows the distribution of mean-centered standard deviations grouped and colored by study, without normalization. The corresponding rug plots show the location of the highest-ranking gene in standard deviation rank ([_hbb_]{.smallcaps}) (right, blue) and lowest ([_wdr33_]{.smallcaps}) (left, red).](figures/fig1.png){#fig:sd_corr}
+![Overview of the distribution of transcriptional variance across studies. (A) Heatmap showing the correlation in transcriptional variance across studies (as the Spearman correlation of gene expression standard deviations). Pairs of studies with more similar patterns of gene expression variance have higher correlations. Studies are shown in the same order as in S1A Fig. (B) Distribution of the pairwise Spearman correlations between studies shown in the previous panel. (C) PCoA using the distance between studies derived from the pairwise correlations. (D) Density plot of standard deviations after z-normalization. Each distribution is colored by study. The inset plot shows the distribution of mean-centered standard deviations grouped and colored by study, without normalization. The corresponding rug plots show the location of the highest-ranking gene in standard deviation rank ([_hbb_]{.smallcaps}) (right, blue) and lowest ([_wdr33_]{.smallcaps}) (left, red).](figures/fig1.png){#fig:sd_corr}
 
 ## Data sets
 
-We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in S1 Dataset.
+We use 57 publicly available human gene expression RNA-seq data sets which were derived from the publications listed in Table \ref{tab1} of the [Methods](#Methods) section, and a complete metadata table for each study is available in S1 Dataset.
 We only use data sets that fulfilled the following conditions: samples came from bulk RNA-seq (and no single cell approaches), data sets were associated with a publication, sample-level metadata was available, and the post-filtering sample size was greater than 10 (note that we did not include data from non-baseline/exposure/stimulated datasets).
 Our focus is on bulk RNA-seq data sets because we are interested in studying population level variation. In particular, we are interested in variation due to segregating genetic variants, which is expected to contribute to the evolution of gene expression, and studies using bulk RNA tend to have many more genetically variable biological replicates. 
 These data sets span 13 different tissue types and the post-filtering mean sample size we used for each data set was 390, with a median of 251, and ranged from 12 to 2931 samples.
@@ -319,7 +323,7 @@ Likewise, genes whose function is constrained by myriad interactions with severa
 Furthermore, genes involved with direct interaction with the environment, which must change their pattern of expression depending on external conditions, are expected to be more variable, and again we see a strong enrichment of environmentally responsive genes among the most variable.
 Given this strong link between function and variance, it is not surprising that the gene variance ranking is similar across data sets.
 
-One interesting aspect of the GO term analysis shown in @fig:skew_entropy and @fig:go_skewness is that there is no GO biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew.
+One interesting aspect of the GO term analysis shown in [Figs @fig:skew_entropy] [and @fig:go_skewness] is that there is no GO biological process term associated with enrichment for intermediate variance genes: the low-entropy terms have either positive or negative skew, never zero skew.
 In other words, there is no annotated biological process for which the associated genes are kept at some intermediary level of variation.
 For the GO terms we used, either there is no relation between the transcriptional variance and the biological process, or there is a strong bias toward high or low-variance genes.
 This suggests that selective shaping of gene expression has two modes, corresponding with (1) biological processes under strong stabilizing selection (i.e., variance-reducing selection) or (2) biological processes under disruptive selection (i.e., variance-increasing selection).
@@ -494,13 +498,41 @@ __Secreted genes__: We use The Protein Atlas [@uhlen2015tissue] to extract infor
 
 __Immediate early genes (IEGs):__ Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment. We use the hypergeometric test to assess the significance of the enrichment. Immediate early genes (IEGs): Human IEGs were curated from the literature in @Arner2015-be as genes that respond to experimental stimulation through up-regulation within the first 60 minutes of the experiment.
 
-__Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information Table S2 from Zhang et al. [-@Zhang2020-cl] and test for enrichment for disease annotations in the genes within the highest and lowest 5% of gene expression variance rank.
+__Disease annotations__: We use the gene annotations for involvement with diseases provided by the supporting information S2 Table from Zhang et al. [-@Zhang2020-cl] and test for enrichment for disease annotations in the genes within the highest and lowest 5% of gene expression variance rank.
 
 <!-- ## Code availability
 
 Code for reproducing all analyses and figures, along with a walk-through, is available at [github.com/ayroles-lab/expressionVariance-code](https://github.com/ayroles-lab/expressionVariance-code) and is archived at [doi: 10.5281/zenodo.8028650](https://doi.org/10.5281/zenodo.8028650). -->
 
-## Supporting information
+<!-- # Author Contributions
+
+**Conceptualization**: S.W., D.M., L.F.P., and J.F.A.
+**Data Curation**: S.W., D.M., and K.M.G.
+**Formal Analysis**: S.W., D.M., K.M.G., and A.J.L.
+**Funding Acquisition**: S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A.
+**Investigation**:  S.W., D.M., K.M.G., and A.J.L.
+**Methodology**: S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A.
+**Project Administration**: J.F.A.
+**Resources**: J.F.A.
+**Software**: S.W., D.M., and K.M.G.
+**Supervision**: J.F.A.
+**Validation**: S.W., D.M.
+**Visualization**: S.W., D.M., and K.M.G.
+**Writing – Original Draft Preparation**: D.M.	
+**Writing – Review & Editing**:	S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A. -->
+
+# Acknowledgments
+
+We thank all members of the Ayroles lab for their support. We thank Noah Rose and Cara Weisman for their thoughtful comments. We thank Pedro Madrigal for help with the Expression Atlas interface. 
+<!-- S.W. is supported by the National Science Foundation Graduate Research Fellowship Program (DGE-2039656). D.M. is funded by a fellowship from the Princeton Presidential Postdoctoral Research Fellows Program. K.M.G. is funded by National Institutes of Health (NIH) grant F32ES034668. L.F.P. was funded by a Long-Term Postdoctoral Fellowship from the Human Frontiers Science Program and is funded by the Max Planck Society. J.F.A. is funded by grants from the NIH: National Institute of Environmental Health Sciences (R01-ES029929) and National Institute of General Medical Sciences (NIGMS) (R35GM124881). A.J.L. is supported by the Canadian Institute for Advanced Research Global Scholars Program, the Searle Scholars Program, and through the NIH/NIGMS (R35GM147267). -->
+We also acknowledge that the work reported in this paper was substantially performed using the Princeton Research Computing resources at Princeton University which is a consortium of groups led by the Princeton Institute for Computational Science and Engineering (PICSciE) and Office of Information Technology's Research Computing.
+
+# References
+
+::: {#refs}
+:::
+
+# Supporting information
 
 All relevant data are within the paper and its Supporting Information files, and at https://github.com/diogro/expressionVariance-manuscript (archived at [doi: 10.5281/zenodo.8028690](https://doi.org/10.5281/zenodo.8028690)).
 
@@ -533,30 +565,3 @@ All relevant data are within the paper and its Supporting Information files, and
 1. S5 Dataset -- GO enrichment. Combined table describing gene ontology enrichment in the top 5% and bottom 5% of genes as ranked by variance.
 
 1. S6 Dataset -- Level-3 GO terms. Skewness by Shannon entropy for level-3 GO terms.
-
-<!-- # Author Contributions
-
-**Conceptualization**: S.W., D.M., L.F.P., and J.F.A.
-**Data Curation**: S.W., D.M., and K.M.G.
-**Formal Analysis**: S.W., D.M., K.M.G., and A.J.L.
-**Funding Acquisition**: S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A.
-**Investigation**:  S.W., D.M., K.M.G., and A.J.L.
-**Methodology**: S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A.
-**Project Administration**: J.F.A.
-**Resources**: J.F.A.
-**Software**: S.W., D.M., and K.M.G.
-**Supervision**: J.F.A.
-**Validation**: S.W., D.M.
-**Visualization**: S.W., D.M., and K.M.G.
-**Writing – Original Draft Preparation**: D.M.	
-**Writing – Review & Editing**:	S.W., D.M., K.M.G., L.F.P., A.J.L., and J.F.A. -->
-
-# Acknowledgments
-
-We thank all members of the Ayroles lab for their support. We thank Noah Rose and Cara Weisman for their thoughtful comments. We thank Pedro Madrigal for help with the Expression Atlas interface. 
-<!-- S.W. is supported by the National Science Foundation Graduate Research Fellowship Program (DGE-2039656). D.M. is funded by a fellowship from the Princeton Presidential Postdoctoral Research Fellows Program. K.M.G. is funded by National Institutes of Health (NIH) grant F32ES034668. L.F.P. was funded by a Long-Term Postdoctoral Fellowship from the Human Frontiers Science Program and is funded by the Max Planck Society. J.F.A. is funded by grants from the NIH: National Institute of Environmental Health Sciences (R01-ES029929) and National Institute of General Medical Sciences (NIGMS) (R35GM124881). A.J.L. is supported by the Canadian Institute for Advanced Research Global Scholars Program, the Searle Scholars Program, and through the NIH/NIGMS (R35GM147267). -->
-We also acknowledge that the work reported in this paper was substantially performed using the Princeton Research Computing resources at Princeton University which is a consortium of groups led by the Princeton Institute for Computational Science and Engineering (PICSciE) and Office of Information Technology's Research Computing.
-
-# References
-
-<!-- %% \printbibliography -->

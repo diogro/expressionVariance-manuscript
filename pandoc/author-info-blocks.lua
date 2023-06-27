@@ -23,9 +23,9 @@ local default_marks
 local default_marks = {
   corresponding_author = FORMAT == 'latex'
     and {pandoc.RawInline('latex', '*')}
-    or {pandoc.Str '✉'},
+    or {pandoc.Str '* fe'},
   equal_contributor = FORMAT == 'latex'
-    and {pandoc.RawInline('latex', '$\\dagger{}$')}
+    and {pandoc.RawInline('latex', '$\\S{}$')}
     or {pandoc.Str '*'},
 }
 
@@ -110,8 +110,8 @@ local function create_correspondence_blocks(authors, mark)
     if is_corresponding_author(author) then
       local mailto = 'mailto:' .. pandoc.utils.stringify(author.email)
       local author_with_mail = List:new(
-        author.name .. List:new{pandoc.Space(),  pandoc.Str '<'} ..
-        author.email .. List:new{pandoc.Str '>'}
+        List:new{pandoc.Str '*'} .. author.email .. List:new{pandoc.Space(),  pandoc.Str '('} ..
+        author.initial .. List:new{pandoc.Str ')'}
       )
       local link = pandoc.Link(author_with_mail, mailto)
       table.insert(corresponding_authors, {link})
@@ -121,12 +121,11 @@ local function create_correspondence_blocks(authors, mark)
     return nil
   end
   local correspondence = List:new{
-    pandoc.Superscript(mark'corresponding_author'),
     pandoc.Space(),
-    pandoc.Str'Correspondence:',
+    pandoc.Str'',
     pandoc.Space()
   }
-  local sep = List:new{pandoc.Str',',  pandoc.Space()}
+  local sep = List:new{pandoc.Str';',  pandoc.Space()}
   return {
     pandoc.Para(correspondence .. intercalate(corresponding_authors, sep))
   }
